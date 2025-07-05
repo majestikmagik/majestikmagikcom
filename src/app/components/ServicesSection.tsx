@@ -11,7 +11,6 @@ interface Service {
 const techStackLogos = [
   { name: "React", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg", alt: "React Logo", className: "lazy-logo" },
   { name: "Python", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg", alt: "Python Logo", className: "lazy-logo"   },
-  { name: "Three.js", imgSrc: "https://seeklogo.com/images/T/three-js-logo-07A32307F1-seeklogo.com.png", alt: "Three.js Logo", className: "lazy-logo"  }, // Using a PNG as a good SVG was not immediately available
   { name: "Node.js", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg", alt: "Node.js Logo", className: "lazy-logo"  },
   { name: "GitHub Actions", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg", alt: "GitHub Logo (for Actions)", className: "lazy-logo"  },
   { name: "AWS", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", alt: "AWS Logo", className: "lazy-logo"  },
