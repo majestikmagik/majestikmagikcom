@@ -1,0 +1,143 @@
+/* 1. Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+/* 2. Import Tailwind */
+@import 'tailwindcss';
+
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    font-display: swap;
+}
+
+/* --- Scroll Animation Styles --- */
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(0.645, 0.045, 0.355, 1), transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition-delay: 0.2s; /* A default delay for a nice effect */
+}
+
+.scroll-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* --- Infinite Logo Scroller --- */
+@keyframes marquee-scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%); /* Moves left by half the total width (one set of logos) */
+  }
+}
+
+@keyframes marquee-scroll-right {
+  0% {
+    transform: translateX(-50%); /* Starts with the second set of logos visible (content shifted left) */
+  }
+  100% {
+    transform: translateX(0%);    /* Scrolls to show the first set of logos (original position) */
+  }
+}
+
+
+/* Keyframes for Team Card Hover Effect */
+@keyframes teamCardHoverEffect {
+  /* from { transform: translateY(0) scale(1); } /* Optional: define from state if different from base */
+  to {
+    transform: translateY(-0.25rem) scale(1.03); /* -0.25rem is equivalent to -translate-y-1 */
+  }
+}
+
+/* Keyframes for Services Card Hover Effect */
+@keyframes servicesCardHoverEffect {
+  /* from { transform: translateY(0) scale(1); } /* Optional: define from state if different from base */
+  to {
+    transform: translateY(-0.25rem) scale(1.03); /* -0.25rem is equivalent to -translate-y-1 */
+  }
+}
+
+/* --- Infinite Logo Scroller Styles --- */
+.scrolling-logos-wrapper {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  /* Optional: Add a mask for fading edges if desired, more complex */
+   -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); 
+   mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); 
+}
+
+.scrolling-logos-container {
+  display: flex;
+  width: 80%; /* Crucial for the animation to calculate width based on content */
+  animation: marquee-scroll-left 30s linear infinite; /* Adjust 30s for speed (longer = slower) */
+  will-change: transform; /* Performance hint for the browser */
+}
+
+.scrolling-logos-container-services {
+  display: flex;
+  width: 80%; /* Crucial for the animation to calculate width based on content */
+  animation: marquee-scroll-right 30s linear infinite; /* Adjust 30s for speed (longer = slower) */
+  will-change: transform; /* Performance hint for the browser */
+}
+
+.scrolling-logos-wrapper:hover .scrolling-logos-container {
+  animation-play-state: paused; /* Pause animation on hover */
+}
+
+/* --- Team Card Hover Effect Styles --- */
+.team-card-hover-animate {
+  transition: transform 0.3s ease-in-out; /* Match this with your animation duration */
+  will-change: transform; /* Performance hint for the browser */
+}
+.team-card-hover-animate:hover {
+  animation-name: teamCardHoverEffect;
+  animation-duration: 0.3s; /* Should match your transition duration */
+  animation-timing-function: ease-in-out; /* Should match your transition easing */
+  animation-fill-mode: forwards; /* Keeps the state at the end of the animation */
+}
+
+/* --- Services Card Hover Effect Styles --- */
+.services-card-hover-animate {
+  transition: transform 0.3s ease-in-out; /* Match this with your animation duration */
+  will-change: transform; /* Performance hint for the browser */
+}
+.services-card-hover-animate:hover {
+  animation-name: servicesCardHoverEffect;
+  animation-duration: 0.3s; /* Should match your transition duration */
+  animation-timing-function: ease-in-out; /* Should match your transition easing */
+  animation-fill-mode: forwards; /* Keeps the state at the end of the animation */
+}
+
+/* --- Custom Scrollbar Styles (from index.html) --- */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1e293b; /* bg-slate-800 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4f46e5; /* indigo-600 */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1; /* indigo-500 */
+}
+
+/* --- Code Block Styles (from index.html) --- */
+pre code.language-typescript {
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
+    monospace;
+  white-space: pre-wrap; /* Since CSS 2.1 */
+  white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+  white-space: -pre-wrap; /* Opera 4-6 */
+  white-space: -o-pre-wrap; /* Opera 7 */
+  word-wrap: break-word; /* Internet Explorer 5.5+ */
+}
