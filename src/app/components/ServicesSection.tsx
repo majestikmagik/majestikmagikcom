@@ -14,8 +14,8 @@ const techStackLogos = [
   { name: "Node.js", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Node.js_logo.svg", alt: "Node.js Logo", className: "lazy-logo"  },
   { name: "GitHub Actions", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg", alt: "GitHub Logo (for Actions)", className: "lazy-logo"  },
   { name: "AWS", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg", alt: "AWS Logo", className: "lazy-logo"  },
-  { name: "Gemini AI", imgSrc: "./img/gemini-brand.webp", alt: "Gemini AI Logo", className: "lazy-logo"  },
-  { name: "OpenAI", imgSrc: "./img/openai.svg", alt: "Open AI Logo", className: "lazy-logo"  },
+  { name: "Gemini AI", imgSrc: "/img/gemini-brand.webp", alt: "Gemini AI Logo", className: "lazy-logo"  },
+  { name: "OpenAI", imgSrc: "/img/openai.svg", alt: "Open AI Logo", className: "lazy-logo"  },
   { name: "Tailwind CSS", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg", alt: "Tailwind CSS Logo", className: "lazy-logo"  },
   { name: "TypeScript", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/500px-Typescript_logo_2020.svg.png", alt: "TypeScript Logo", className: "lazy-logo"  },
   { name: "PostgreSQL", imgSrc: "https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg", alt: "PostgreSQL Logo", className: "lazy-logo"  },
@@ -90,6 +90,7 @@ const ServicesSection: React.FC = () => {
                     src={tech.imgSrc}
                     alt={tech.alt}
                     className="lazy-logo h-10 sm:h-12 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
+                    loading="lazy"
                   />
                 </div>
               ))}

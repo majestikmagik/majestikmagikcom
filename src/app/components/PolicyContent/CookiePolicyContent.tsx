@@ -7,7 +7,7 @@ export const CookiePolicyContent: React.FC = () => {
       <p className="text-sm text-slate-400 mb-4">Last Updated: May 18, 2025</p>
 
       <p>
-        This Cookie Policy explains how Majestik Magik ("we," "us," or "our") uses cookies and similar technologies to recognize you when you visit our website, https://www.majestikmagik.com (the "Site"). It explains what these technologies are and why we use them, as well as your rights to control our use of them.
+        This Cookie Policy explains how Majestik Magik (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) uses cookies and similar technologies to recognize you when you visit our website, https://www.majestikmagik.com (the &quot;Site&quot;). It explains what these technologies are and why we use them, as well as your rights to control our use of them.
       </p>
 
       <div className="space-y-2">
@@ -43,8 +43,8 @@ export const CookiePolicyContent: React.FC = () => {
         <h3 className="text-xl font-semibold text-slate-200 mt-5 mb-1">4. How to Control Cookies</h3>
         <p>You have the right to decide whether to accept or reject cookies. You can exercise your cookie preferences in the following ways:</p>
         <ul className="list-disc list-inside space-y-1 ml-4">
-          <li><strong>Browser Controls:</strong> You can set or amend your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our Site though your access to some functionality and areas of our Site may be restricted. As the means by which you can refuse cookies through your web browser controls vary from browser to browser, you should visit your browser's help menu for more information.</li>
-          <li><strong>Specific Cookie Opt-Outs:</strong> For certain third-party cookies, you may be able to go directly to the third party's website to opt-out of their use of cookies. For example, many advertising providers offer opt-out mechanisms.</li>
+          <li><strong>Browser Controls:</strong> You can set or amend your web browser controls to accept or refuse cookies. If you choose to reject cookies, you may still use our Site though your access to some functionality and areas of our Site may be restricted. As the means by which you can refuse cookies through your web browser controls vary from browser to browser, you should visit your browser&apos;s help menu for more information.</li>
+          <li><strong>Specific Cookie Opt-Outs:</strong> For certain third-party cookies, you may be able to go directly to the third party&apos;s website to opt-out of their use of cookies. For example, many advertising providers offer opt-out mechanisms.</li>
           <li><strong>Our Cookie Banner:</strong> When you first visit our Site, we may display a cookie banner that allows you to manage your cookie preferences. You can usually revisit and change your settings at any time through a link on our Site (if implemented).</li>
         </ul>
         <p>Please note that if you disable cookies, some features of our Site may not function properly.</p>

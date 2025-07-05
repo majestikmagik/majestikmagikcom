@@ -90,7 +90,7 @@ const PolicyPage: React.FC<PolicyPageProps> = ({ policyId, policyLinks, onClose 
           ) : (
             <>
               <p className="text-slate-300 mb-4 leading-relaxed">
-                The full content for the "{title}" would be displayed here. In a real application, this information would be
+                The full content for the &quot;{title}&quot; would be displayed here. In a real application, this information would be
                 fetched or derived from our official policy documentation.
               </p>
               <div className="border-t border-slate-700 pt-6 mt-6 text-slate-300 space-y-4">
@@ -100,7 +100,7 @@ const PolicyPage: React.FC<PolicyPageProps> = ({ policyId, policyLinks, onClose 
                   Each policy is crucial for understanding your rights and our commitments.
                 </p>
                 <p>
-                  For example, a typical <strong>Privacy Policy</strong> would cover data collection, use, storage, user rights (like access or deletion), cookie usage (if not separate), third-party disclosures, security practices, children's privacy, policy updates, and contact details for privacy-related inquiries.
+                  For example, a typical <strong>Privacy Policy</strong> would cover data collection, use, storage, user rights (like access or deletion), cookie usage (if not separate), third-party disclosures, security practices, children&apos;s privacy, policy updates, and contact details for privacy-related inquiries.
                 </p>
                 <p>
                   A <strong>Terms of Service</strong> document would outline the rules for using our website and services, user responsibilities, intellectual property rights regarding our content, limitations of liability, dispute resolution processes, and termination clauses.
@@ -118,7 +118,7 @@ const PolicyPage: React.FC<PolicyPageProps> = ({ policyId, policyLinks, onClose 
                   The <strong>Cyber Security</strong> information would describe the measures we take to protect our systems and user data, and may include advice for users on protecting their own accounts.
                 </p>
                 <p className="mt-4 text-slate-400 text-xs">
-                  Note: The content above is illustrative. Please consult the linked official documents for authoritative information.
+                  Note: The content above is illustrative. Please consult the linked official documents for authoritative information. {sourceUrl}
                 </p>
               </div>
             </>

@@ -7,7 +7,7 @@ export const PrivacyPolicyContent: React.FC = () => {
       <p className="text-sm text-slate-400 mb-4">Last Updated: June 29, 2025</p>
 
       <p>
-        This Privacy Policy describes how Majestik Magik ("we," "us," or "our") collects, uses, and shares personal information of users ("you" or "users") of our website, https://www.majestikmagik.com (the "Site"). This policy also outlines your choices regarding your personal information.
+        This Privacy Policy describes how Majestik Magik (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) collects, uses, and shares personal information of users (&quot;you&quot; or &quot;users&quot;) of our website, https://www.majestikmagik.com (the &quot;Site&quot;). This policy also outlines your choices regarding your personal information.
       </p>
 
       {/* Section 1 */}
@@ -26,7 +26,7 @@ export const PrivacyPolicyContent: React.FC = () => {
 
         <h4 className="text-lg font-medium text-slate-200 mt-3 mb-1">Information We Collect Automatically:</h4>
         <ul className="list-disc list-inside space-y-1 ml-4">
-          <li><strong>Log Data:</strong> Our servers automatically record information ("Log Data") created by your use of the Site. This may include your IP address, browser type, referring/exit pages, operating system, date/time stamps, and related data.</li>
+          <li><strong>Log Data:</strong> Our servers automatically record information (&quot;Log Data&quot;) created by your use of the Site. This may include your IP address, browser type, referring/exit pages, operating system, date/time stamps, and related data.</li>
           <li><strong>Cookies and Similar Technologies:</strong> We may use cookies, web beacons, and other similar technologies to collect information about your Browse activities on our Site. Cookies are small data files stored on your device that help us improve our Site and your experience. You can control the use of cookies at the individual browser level.</li>
           <li><strong>Usage Information:</strong> We may collect information about how you interact with our Site, such as the pages you visit, the links you click, and the time you spend on certain pages.</li>
         </ul>
@@ -77,7 +77,7 @@ export const PrivacyPolicyContent: React.FC = () => {
           <li><strong>Restriction of Processing:</strong> The right to request that we restrict the processing of your personal information in certain circumstances.</li>
           <li><strong>Data Portability:</strong> The right to receive a copy of your personal information in a structured, commonly used, and machine-readable format and to transmit it to another controller.</li>
           <li><strong>Withdrawal of Consent:</strong> If we are processing your personal information based on your consent, you have the right to withdraw your consent at any time.</li>
-          <li><strong>Do Not Track:</strong> Our Site does not currently respond to "Do Not Track" signals from your browser.</li>
+          <li><strong>Do Not Track:</strong> Our Site does not currently respond to &quot;Do Not Track&quot; signals from your browser.</li>
         </ul>
         <p>To exercise any of these rights, please contact us using the contact information provided below. We may require you to verify your identity before responding to your request.</p>
       </div>
@@ -97,12 +97,12 @@ export const PrivacyPolicyContent: React.FC = () => {
       {/* Section 7 */}
       <div className="space-y-2">
         <h3 className="text-xl font-semibold text-slate-200 mt-5 mb-1">7. Links to Other Websites</h3>
-        <p>Our Site may contain links to other websites that are not operated by us. If you click on a third-party link, you will be directed to that third party's website. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
+        <p>Our Site may contain links to other websites that are not operated by us. If you click on a third-party link, you will be directed to that third party&apos;s website. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.</p>
       </div>
 
       {/* Section 8 */}
       <div className="space-y-2">
-        <h3 className="text-xl font-semibold text-slate-200 mt-5 mb-1">8. Children's Privacy</h3>
+        <h3 className="text-xl font-semibold text-slate-200 mt-5 mb-1">8. Children&apos;s Privacy</h3>
         <p>Our Site and services are not directed to individuals under the age of 16. We do not knowingly collect personal information from children under 16. If we become aware that we have collected personal information from a child under 16, we will take steps to delete such information.</p>
       </div>
 

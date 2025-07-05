@@ -7,7 +7,7 @@ export const TermsOfServiceContent: React.FC = () => {
       <p className="text-sm text-slate-400 mb-4">Last Updated: May 15, 2025</p>
 
       <p>
-        These Terms of Service ("Terms") govern your use of the website https://www.majestikmagik.com (the "Site") and the website design and development services provided by Majestik Magik ("we," "us," or "our") (the "Services"). By accessing the Site or engaging our Services, you ("you" or "client") agree to be bound by these Terms.
+        These Terms of Service (&quot;Terms&quot;) govern your use of the website https://www.majestikmagik.com (the &quot;Site&quot;) and the website design and development services provided by Majestik Magik (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) (the &quot;Services&quot;). By accessing the Site or engaging our Services, you (&quot;you&quot; or &quot;client&quot;) agree to be bound by these Terms.
       </p>
 
       {/* Section 1 */}
@@ -99,7 +99,7 @@ export const TermsOfServiceContent: React.FC = () => {
       {/* Section 9 */}
       <div className="space-y-2">
         <h3 className="text-xl font-semibold text-slate-200 mt-5 mb-1">9. Indemnification</h3>
-        <p>You agree to indemnify and hold harmless Majestik Magik, its affiliates, officers, directors, employees, and agents from and against any and all claims, liabilities, damages, losses, and expenses (including reasonable attorneys' fees) arising out of or relating to:</p>
+        <p>You agree to indemnify and hold harmless Majestik Magik, its affiliates, officers, directors, employees, and agents from and against any and all claims, liabilities, damages, losses, and expenses (including reasonable attorneys&apos; fees) arising out of or relating to:</p>
         <ul className="list-disc list-inside space-y-1 ml-4">
           <li>Your breach of these Terms.</li>
           <li>Your use of the Site or our Services.</li>

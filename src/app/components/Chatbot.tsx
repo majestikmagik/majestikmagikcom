@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { XMarkIcon, MagicWandIcon } from './Icons'; // Assuming Icons.tsx exists and exports these
 
 interface ChatMessage {
@@ -18,7 +19,7 @@ interface ChatbotProps {
   chatError: string | null;
   isGeminiInitialized: boolean;
   chatMessagesEndRef: React.RefObject<HTMLDivElement>;
-  handleViewPolicy: (policy: string) => void; 
+  handleViewPolicy: (policy: string) => void;
 }
 
 const Chatbot: React.FC<ChatbotProps> = ({
@@ -35,24 +36,26 @@ const Chatbot: React.FC<ChatbotProps> = ({
   handleViewPolicy,
   // Assuming this is passed down for policy viewing
 }) => {
-return (
-  <>
-    <button
-      onClick={handleToggleChat}
-      className="fixed bottom-6 right-6 bg-gradient-to-br from-indigo-600 to-purple-700 hover:from-indigo-500 hover:to-purple-600 text-white p-4 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300 cursor-pointer z-50 focus:outline-none focus:ring-4 focus:ring-indigo-400 focus:ring-opacity-50"
-      aria-label={isChatOpen ? "Close chat" : "Open chat assistant"}
-      disabled={!isGeminiInitialized && chatMessages.length === 0}
-    >
-      {isChatOpen ? <XMarkIcon className="w-8 h-8" /> : <img src="https://www.svgrepo.com/show/97854/headphones.svg" alt="Support icon" className="w-8 h-8 filter brightness-0 invert" />}
-    </button>
+  return (
+    <>
+      <button
+        onClick={handleToggleChat}
+        className="fixed bottom-6 right-6 bg-gradient-to-br from-indigo-600 to-purple-700 hover:from-indigo-500 hover:to-purple-600 text-white p-4 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300 cursor-pointer z-50 focus:outline-none focus:ring-4 focus:ring-indigo-400 focus:ring-opacity-50"
+        aria-label={isChatOpen ? "Close chat" : "Open chat assistant"}
+        disabled={!isGeminiInitialized && chatMessages.length === 0}
+      >
+        {isChatOpen ? <XMarkIcon className="w-8 h-8" /> : <Image src="/img/headphones-with-microphone.svg" alt="Support icon" className="w-8 h-8 filter brightness-0 invert" loading="lazy"
+          width={10}
+          height={12} />}
+      </button>
 
-    <div
-      className={`fixed bottom-20 right-6 w-[300px] max-w-sm h-[70vh] max-h-[500px] bg-slate-800 rounded-xl shadow-2xl flex flex-col z-50 overflow-hidden border border-slate-700 transition-all duration-300 ease-out transform origin-bottom-right 
+      <div
+        className={`fixed bottom-20 right-6 w-[300px] max-w-sm h-[70vh] max-h-[500px] bg-slate-800 rounded-xl shadow-2xl flex flex-col z-50 overflow-hidden border border-slate-700 transition-all duration-300 ease-out transform origin-bottom-right 
         ${isChatOpen ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'}`}
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="chat-assistant-heading"
-    >
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="chat-assistant-heading"
+      >
         <div className="flex items-center justify-between p-4 border-b bg-slate-900 border-slate-700">
           <h3 id="chat-assistant-heading" className="flex items-center text-md font-semibold text-indigo-400">
             <MagicWandIcon className="w-5 h-5 mr-2 text-pink-500" />
@@ -108,16 +111,16 @@ return (
         )}
 
         <div className="px-3 pt-2 text-xs text-center text-slate-500">
-            By using chat, you agree to our{' '}
-            <button
-              onClick={() => handleViewPolicy('privacy-policy')}
-              className="underline transition-colors cursor-pointer hover:text-indigo-400"
-              aria-label="View Privacy Policy"
-            >
-              Privacy Policy
-            </button>
-            . AI conversations may be reviewed.
-          </div>
+          By using chat, you agree to our{' '}
+          <button
+            onClick={() => handleViewPolicy('privacy-policy')}
+            className="underline transition-colors cursor-pointer hover:text-indigo-400"
+            aria-label="View Privacy Policy"
+          >
+            Privacy Policy
+          </button>
+          . AI conversations may be reviewed.
+        </div>
         <form onSubmit={handleSendChatMessage} className="flex items-center p-3 space-x-2 border-t bg-slate-900 border-slate-700">
           <input
             type="text"
@@ -134,12 +137,12 @@ return (
             className="cursor-pointer p-2.5 text-white transition-colors duration-300 rounded-md shadow-md bg-indigo-600 hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed"
             aria-label="Send chat message"
           >
-            <img src="https://www.svgrepo.com/show/489766/paperplane.svg" className="w-5 h-5 filter brightness-0 invert" alt="Send message" />
+            <Image src="/img/paperplane.svg" className="w-5 h-5 filter brightness-0 invert" alt="Send message" width={10} height={10} />
           </button>
         </form>
-    </div>
-  </>
-);
+      </div>
+    </>
+  );
 };
 
 export default Chatbot;

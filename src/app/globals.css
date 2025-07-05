@@ -133,7 +133,7 @@ body {
 
 /* --- Code Block Styles (from index.html) --- */
 pre code.language-typescript {
-  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier,
+  font-family: 'Geist-Mono', Consolas, 'Liberation Mono', Menlo, Courier,
     monospace;
   white-space: pre-wrap; /* Since CSS 2.1 */
   white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
