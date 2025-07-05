@@ -677,8 +677,7 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
         handleSendChatMessage={handleSendChatMessage}
         isChatLoading={isChatLoading}
         chatError={chatError}
-        isGeminiInitialized={isGeminiInitialized} // Pass the correct initialized state
-        chatMessagesEndRef={chatMessagesEndRef}
+        isGeminiInitialized={chatMessagesEndRef as React.RefObject<HTMLDivElement>}
         handleViewPolicy={handleViewPolicy}
       />
       <VideoModal

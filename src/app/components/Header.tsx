@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { Bars3Icon, XMarkIcon } from './Icons'; // Assuming Icons.tsx is in the same directory
 
 interface HeaderProps {
@@ -46,7 +47,7 @@ const Header: React.FC<HeaderProps> = ({
           className="flex items-center space-x-2 text-2xl text-white cursor-pointer"
           aria-label="Majestik Magik Home"
         >
-          <img
+          <Image
             src="/img/logo_majestikmagik.webp"
             className="w-8 h-8 lazy-logo"
             alt="Majestik Magik icon"
