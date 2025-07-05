@@ -7,7 +7,7 @@ export const IntellectualPropertyPolicyContent: React.FC = () => {
       <p className="text-sm text-slate-400 mb-4">Last Updated: May 18, 2025</p>
 
       <p>
-        This Intellectual Property Policy outlines the ownership and usage guidelines for the intellectual property associated with Majestik Magik ("we," "us," or "our") and our website, https://www.majestikmagik.com (the "Site"). This policy also addresses the intellectual property rights of others.
+        This Intellectual Property Policy outlines the ownership and usage guidelines for the intellectual property associated with Majestik Magik (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;) and our website, https://www.majestikmagik.com (the &quot;Site&quot;). This policy also addresses the intellectual property rights of others.
       </p>
 
       <div className="space-y-2">
@@ -77,7 +77,7 @@ export const IntellectualPropertyPolicyContent: React.FC = () => {
           <li>A description of where the material that you claim is infringing is located on the Site.</li>
           <li>Your address, telephone number, and email address.</li>
           <li>A statement by you that you have a good faith belief that the disputed use is not authorized by the copyright owner, its agent, or the law.</li>
-          <li>A statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.</li>
+          <li>A statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner&quot;s behalf.</li>
         </ul>
         <p>Please send your notice to our designated copyright agent at:</p>
         <p>

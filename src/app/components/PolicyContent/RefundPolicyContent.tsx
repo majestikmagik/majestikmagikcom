@@ -7,7 +7,7 @@ export const RefundPolicyContent: React.FC = () => {
       <p className="text-sm text-slate-400 mb-4">Last Updated: May 17, 2025</p>
 
       <p>
-        At MajestikMagik.com, we strive to provide high-quality digital products and services. We understand that sometimes things don't work out as expected. This policy outlines the conditions under which refunds may be issued.
+        At MajestikMagik.com, we strive to provide high-quality digital products and services. We understand that sometimes things don&apos;t work out as expected. This policy outlines the conditions under which refunds may be issued.
       </p>
 
       <div className="space-y-2">
@@ -50,11 +50,11 @@ export const RefundPolicyContent: React.FC = () => {
       <div className="space-y-2">
         <h3 className="text-xl font-semibold text-slate-200 mt-5 mb-1">Changes to This Policy</h3>
         <p>
-          We reserve the right to modify this refund policy at any time. Any changes will be posted on this page, and the "Last Updated" date will be revised accordingly. We encourage you to review this policy periodically.
+          We reserve the right to modify this refund policy at any time. Any changes will be posted on this page, and the &quot;Last Updated&quot; date will be revised accordingly. We encourage you to review this policy periodically.
         </p>
       </div>
 
-      <p className="mt-4">If you have any questions about our refund policy, please don't hesitate to contact us.</p>
+      <p className="mt-4">If you have any questions about our refund policy, please don&apos;t hesitate to contact us.</p>
     </div>
   );
 };

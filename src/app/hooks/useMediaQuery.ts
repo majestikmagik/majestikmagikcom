@@ -1,27 +1,25 @@
 import { useState, useEffect } from 'react';
 
 const useMediaQuery = (query: string): boolean => {
-  const [matches, setMatches] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      return window.matchMedia(query).matches;
-    }
-    return false;
-  });
+  // Initialize with `false` to ensure consistency between server and client initial render.
+  // This avoids a React hydration warning.
+  const [matches, setMatches] = useState<boolean>(false);
 
   useEffect(() => {
-    if (typeof window === 'undefined') return;
-
+    // This effect only runs on the client, so `window` is guaranteed to be defined.
     const mediaQueryList = window.matchMedia(query);
+
+    // Update state with the correct initial value after the first client render.
+    setMatches(mediaQueryList.matches);
+
+    // Set up the listener for future changes.
     const listener = () => setMatches(mediaQueryList.matches);
 
-    // Initial check in case the match status changes between initial render and effect
-    if (mediaQueryList.matches !== matches) {
-      setMatches(mediaQueryList.matches);
-    }
-
     mediaQueryList.addEventListener('change', listener);
+
+    // Clean up the listener on unmount or when the query changes.
     return () => mediaQueryList.removeEventListener('change', listener);
-  }, [query]); // Re-run effect if the query string changes
+  }, [query]);
 
   return matches;
 };

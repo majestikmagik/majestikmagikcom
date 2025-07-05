@@ -1,6 +1,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { PlayCircleIcon } from './Icons'; // Assuming Icons.tsx is in the same directory
 
 interface HeroSectionProps {
@@ -11,15 +12,15 @@ interface HeroSectionProps {
 const partners = [
   {
     id: 'parrisgainer', href: "https://www.parrisgainer.com",
-    content: <img src="./img/parrisgainer.webp" alt="Parris Gainer Consulting Services" className="lazy-logo h-8 sm:h-10 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
+    content: <img src="/img/parrisgainer.webp" alt="Parris Gainer Consulting Services" className="lazy-logo h-8 sm:h-10 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
   },
   {
     id: 'cearco', href: "https://cearcochemicals.com",
-    content: <img src="./img/cearco.webp" alt="Cearco Chemicals" className="lazy-logo h-8 sm:h-10 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
+    content: <img src="/img/cearco.webp" alt="Cearco Chemicals" className="lazy-logo h-8 sm:h-10 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
   },
   {
     id: 'noelcustoms', href: "https://noelcustoms.shop",
-    content: <img src="./img/noel_customs.webp" alt="Noel Customs Shop" className="lazy-logo h-8 sm:h-10 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
+    content: <img src="/img/noel_customs.webp" alt="Noel Customs Shop" className="lazy-logo h-8 sm:h-10 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
   },
   {
     id: 'orbitt', href: "https://orbitt.pro/mm",
@@ -61,7 +62,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
             aria-label="View our pricing plans"
             style={{ transitionDelay: '0.4s' }}
           >
-            <img src="https://www.svgrepo.com/show/437236/sparkles.svg" className="lazy-logo w-6 h-6 mr-2 filter brightness-0 invert" alt="Sparkles icon" loading="lazy" />
+            <Image src="/img/sparkles.svg" className="lazy-logo w-6 h-6 mr-2 filter brightness-0 invert" alt="Sparkles icon" loading="lazy" width={24} height={24} />
             Get Started
           </button>
           
