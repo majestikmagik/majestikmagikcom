@@ -36,7 +36,7 @@ const STRIPE_PAYMENT_LINK_REACT_URL = "https://checkout.majestikmagik.com/b/aFad
 const DEFAULT_PLACEHOLDER_STRIPE_PAYMENT_LINK_HTML_URL = "https://buy.stripe.com/YOUR_HTML_PAYMENT_LINK_ID";
 const DEFAULT_PLACEHOLDER_STRIPE_PAYMENT_LINK_REACT_URL = "https://buy.stripe.com/YOUR_REACT_PAYMENT_LINK_ID";
 
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3001/'; // Assuming backend runs here
+const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3000/'; // Assuming backend runs here
 
 
 interface ChatMessage {
@@ -677,7 +677,8 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
         handleSendChatMessage={handleSendChatMessage}
         isChatLoading={isChatLoading}
         chatError={chatError}
-        isGeminiInitialized={chatMessagesEndRef as React.RefObject<HTMLDivElement>}
+        isGeminiInitialized={isGeminiInitialized}
+        chatMessagesEndRef={chatMessagesEndRef as React.RefObject<HTMLDivElement>}
         handleViewPolicy={handleViewPolicy}
       />
       <VideoModal
