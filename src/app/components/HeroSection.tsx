@@ -12,15 +12,15 @@ interface HeroSectionProps {
 const partners = [
   {
     id: 'parrisgainer', href: "https://www.parrisgainer.com",
-    content: <Image src="/img/parrisgainer.webp" alt="Parris Gainer Consulting Services" className="lazy-logo h-8 sm:h-10 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
+    content: <Image src="/img/parrisgainer.webp" alt="Parris Gainer Consulting Services" className="lazy-logo h-8 sm:h-8 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" width={120} height={40} />
   },
   {
     id: 'cearco', href: "https://cearcochemicals.com",
-    content: <Image src="/img/cearco.webp" alt="Cearco Chemicals" className="lazy-logo h-8 sm:h-10 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
+    content: <Image src="/img/cearco.webp" alt="Cearco Chemicals" className="lazy-logo h-8 sm:h-10 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" width={90} height={40} />
   },
   {
     id: 'noelcustoms', href: "https://noelcustoms.shop",
-    content: <Image src="/img/noel_customs.webp" alt="Noel Customs Shop" className="lazy-logo h-8 sm:h-10 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" />
+    content: <Image src="/img/noel_customs.webp" alt="Noel Customs Shop" className="lazy-logo h-8 sm:h-10 opacity-50 hover:opacity-100 transition-opacity" loading="lazy" width={90} height={40} />
   },
   {
     id: 'orbitt', href: "https://orbitt.pro/mm",

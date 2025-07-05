@@ -91,6 +91,8 @@ const ServicesSection: React.FC = () => {
                     alt={tech.alt}
                     className="lazy-logo h-10 sm:h-12 object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
                     loading="lazy"
+                    width={48}
+                    height={48}
                   />
                 </div>
               ))}
