@@ -1,4 +1,6 @@
-import React from 'react';
+'use client';
+
+import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
 
@@ -45,6 +47,13 @@ interface FooterProps {
 }
 
 const Footer: React.FC<FooterProps> = ({ policyLinks, handleViewPolicy }) => {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    // This effect runs only on the client, after the initial render
+    setIsClient(true);
+  }, []);
+
   return (
     <footer id="contact" aria-labelledby="contact-heading" className="bg-slate-800  text-slate-400">
       <div className="container px-6 py-12 mx-auto">
@@ -105,9 +114,15 @@ const Footer: React.FC<FooterProps> = ({ policyLinks, handleViewPolicy }) => {
           <div className="scroll-animate md:text-left" style={{ transitionDelay: '0.2s' }}>
             <h3 className="mb-4 font-bold tracking-wider text-slate-300 uppercase">Social Media</h3>
             <ul className="space-x-6 flex items-center justify-center text-xl text-slate-400">
-              <a href="https://www.facebook.com/majestikmagik/" aria-label="Follow us on Facebook" className="transition-colors duration-300 hover:text-indigo-400"><FontAwesomeIcon icon={faFacebook} /></a>
-              <a href="https://www.instagram.com/majestikmagik/" aria-label="Follow us on Instagram" className="transition-colors duration-300 hover:text-indigo-400"><FontAwesomeIcon icon={faInstagram} /></a>
-              <a href="https://github.com/majestikmagik" aria-label="Check out our GitHub profile" className="transition-colors duration-300 hover:text-indigo-400"><FontAwesomeIcon icon={faGithub} /></a>
+              <li>
+                <a href="https://www.facebook.com/majestikmagik/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="transition-colors duration-300 hover:text-indigo-400"><FontAwesomeIcon icon={faFacebook} /></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/majestikmagik/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="transition-colors duration-300 hover:text-indigo-400"><FontAwesomeIcon icon={faInstagram} /></a>
+              </li>
+              <li>
+                <a href="https://github.com/majestikmagik" target="_blank" rel="noopener noreferrer" aria-label="Check out our GitHub profile" className="transition-colors duration-300 hover:text-indigo-400"><FontAwesomeIcon icon={faGithub} /></a>
+              </li>
             </ul>
           </div>
         </div>
@@ -117,7 +132,14 @@ const Footer: React.FC<FooterProps> = ({ policyLinks, handleViewPolicy }) => {
       <div className="bg-slate-900">
         <div className="container px-6 py-4 mx-auto border-t border-slate-800">
           <div className="flex flex-col items-center justify-between text-sm md:flex-row">
-            <p className="mb-4 text-center md:mb-0 md:text-left">&copy; {new Date().getFullYear()} Majestik Magik. All rights reserved.</p>
+            <p className="mb-4 text-center md:mb-0 md:text-left">&copy; 2025 Majestik Magik. All rights reserved.</p>
+            {isClient && (
+              <div className="trustpilot-widget transition-colors hover:text-indigo-400" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="66c36745eb620c5977db34ef" data-style-height="52px" data-style-width="100%">
+                <a href="https://www.trustpilot.com/review/majestikmagik.com" target="_blank" rel="noopener noreferrer">
+                 Review Us On Trustpilot
+                </a>
+              </div>
+            )}
             <button className="flex items-center mt-4 transition-colors md:mt-0 hover:text-indigo-400">
               <LanguageIcon />
               English (United States)
