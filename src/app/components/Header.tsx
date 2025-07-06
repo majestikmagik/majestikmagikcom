@@ -37,7 +37,7 @@ const Header: React.FC<HeaderProps> = ({
 
   return (
     <header className={`sticky top-0 z-50 transition-all duration-300 ease-in-out ${isScrolled || isMobileMenuOpen || currentPolicyPageId 
-      ? 'bg-slate-950/70 backdrop-blur-md shadow-xl shadow-slate-950'
+      ? 'bg-slate-950/70 backdrop-blur-md shadow-2xl shadow-slate-950'
       : 'bg-transparent shadow-none'
       }`}
     >
