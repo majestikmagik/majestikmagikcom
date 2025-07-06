@@ -36,8 +36,8 @@ const Header: React.FC<HeaderProps> = ({
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ease-in-out ${isScrolled || isMobileMenuOpen || currentPolicyPageId
-      ? 'bg-slate-950 backdrop-blur-md shadow-xl shadow-slate-950'
+    <header className={`sticky top-0 z-50 transition-all duration-300 ease-in-out ${isScrolled || isMobileMenuOpen || currentPolicyPageId 
+      ? 'bg-slate-950/70 backdrop-blur-md shadow-xl shadow-slate-950'
       : 'bg-transparent shadow-none'
       }`}
     >
@@ -90,7 +90,7 @@ const Header: React.FC<HeaderProps> = ({
       </div>
 
       {isMobileMenuOpen && (
-        <div className="xl:hidden absolute top-full left-0 right-0 bg-slate-950 backdrop-blur-md shadow-lg z-40" id="mobile-menu">
+        <div className="xl:hidden absolute top-full left-0 right-0 bg-slate-950/90 backdrop-blur-md shadow-slate-950 shadow-lg z-40" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-3 sm:px-3">
             {navItems.map((item) => (
               <a
