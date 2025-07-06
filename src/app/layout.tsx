@@ -56,9 +56,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
-      </head>
+      
       {/*
         The <body> tag combines classes from both files:
         - `montserrat.className` applies the Google Font globally.
@@ -68,6 +66,11 @@ export default function RootLayout({
       <body className={`${montserrat.className} bg-gradient-to-br from-slate-900 via-indigo-800 to-slate-900 text-slate-200 overflow-x-hidden`}>
         {children}
         <CookieBanner />
+        <Script
+          strategy="afterInteractive"
+          type="text/javascript"
+          src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
+        />
       </body>
 
       {/* Google tag (gtag.js) loaded optimally with next/script */}

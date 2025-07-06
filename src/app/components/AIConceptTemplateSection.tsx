@@ -81,7 +81,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
             <button
               onClick={handleGenerateConceptPreview}
               disabled={isConceptLoading || !isGeminiInitialized}
-              className="flex items-center justify-center w-100 px-6 py-3 mt-4 font-semibold text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-indigo-600 hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed scroll-animate"
+              className="flex items-center justify-center w-60 px-6 py-3 mt-4 font-semibold text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-indigo-600 hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed scroll-animate"
               aria-live="polite"
             >
               {isConceptLoading ? (

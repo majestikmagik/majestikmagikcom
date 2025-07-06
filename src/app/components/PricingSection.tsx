@@ -41,7 +41,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({
           </p>
         </div>
 
-        <div className="flex justify-center mb-10 scroll-animate">
+        <div className="flex justify-center mb-20 scroll-animate">
           <div className="inline-flex rounded-md shadow-sm bg-slate-700/50" role="group">
             <button
               type="button"
