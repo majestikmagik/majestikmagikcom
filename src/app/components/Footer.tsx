@@ -133,7 +133,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
               <li className="mb-2">
-                <a href="/cybersecurity"
+                <a href="/cyber-security-policy"
                   className="footer-link flex items-center font-semibold transition-colors hover:text-indigo-400 duration-300"
                   aria-label="Learn about our Cyber Security practices"
 
