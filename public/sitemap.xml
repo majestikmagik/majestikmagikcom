@@ -4,7 +4,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://www.majestikmagik.com/</loc>
+    <loc>https://majestikmagik.com/</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
@@ -12,37 +12,37 @@
 
   <!-- Policy Pages -->
   <url>
-    <loc>https://www.majestikmagik.com/privacy-policy</loc>
+    <loc>https://majestikmagik.com/privacy-policy</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.majestikmagik.com/terms-of-service</loc>
+    <loc>https://majestikmagik.com/terms-of-service</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.majestikmagik.com/refund-policy</loc>
+    <loc>https://majestikmagik.com/refund-policy</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.majestikmagik.com/cookie-policy</loc>
+    <loc>https://majestikmagik.com/cookie-policy</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.majestikmagik.com/intellectual-property-policy</loc>
+    <loc>https://majestikmagik.com/intellectual-property-policy</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.majestikmagik.com/cyber-security-policy</loc>
+    <loc>https://majestikmagik.com/cyber-security-policy</loc>
     <lastmod>2025-07-07</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
