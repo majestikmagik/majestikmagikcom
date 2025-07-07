@@ -141,6 +141,15 @@ const Footer: React.FC = () => {
                   Cyber Security
                 </a>
               </li>
+              <li className="mb-2">
+                <a href="/sitemap.xml"
+                  className="footer-link flex items-center font-semibold transition-colors hover:text-indigo-400 duration-300"
+                  aria-label="View our Sitemap"
+
+                >
+                  Sitemap
+                </a>
+              </li>
 
             
             </ul>
