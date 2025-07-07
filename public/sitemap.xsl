@@ -6,6 +6,7 @@
   <html>
     <head>
       <title>XML Sitemap</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <style type="text/css">
         body {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -14,7 +15,7 @@
           margin: 0;
           font-family: 'Montserrat', sans-serif;
           line-height: 1.6;
-          padding: 2rem;
+          padding: 1rem;
         }
         .container {
           max-width: 960px;
@@ -50,6 +51,7 @@
         a {
           color: #007bff;
           text-decoration: none;
+          word-break: break-all;
         }
         a:hover {
           text-decoration: underline;
@@ -59,6 +61,51 @@
             text-align: center;
             font-size: 0.9em;
             color: #6c757d;
+        }
+
+        /* --- Mobile View Media Query --- */
+        @media screen and (max-width: 768px) {
+          body {
+            padding: 0.5rem;
+          }
+          .container {
+            padding: 1rem;
+          }
+          table, thead, tbody, th, td, tr {
+            display: block;
+          }
+          thead tr {
+            position: absolute;
+            top: -9999px;
+            left: -9999px;
+          }
+          tr {
+            border: 1px solid #dee2e6;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            overflow: hidden;
+          }
+          td {
+            border: none;
+            border-bottom: 1px solid #e9ecef;
+            position: relative;
+            padding-left: 50%;
+            text-align: right;
+          }
+          td:before {
+            position: absolute;
+            top: 0.75rem;
+            left: 0.75rem;
+            width: 45%;
+            padding-right: 10px;
+            white-space: nowrap;
+            text-align: left;
+            font-weight: 600;
+          }
+          td:nth-of-type(1):before { content: "URL"; }
+          td:nth-of-type(2):before { content: "Last Modified"; }
+          td:nth-of-type(3):before { content: "Change Freq."; }
+          td:nth-of-type(4):before { content: "Priority"; }
         }
       </style>
     </head>
@@ -99,3 +146,4 @@
 </xsl:template>
 
 </xsl:stylesheet>
+<!-- End of file: public/sitemap.xsl -->
