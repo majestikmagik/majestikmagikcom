@@ -14,7 +14,7 @@ import { ArrowLeftIcon } from '../components/Icons';
 /**
  * Content Component for the Cyber Security Policy
  */
-export const CyberSecurityPolicyContent: React.FC = () => {
+export const CyberSecurityPolicyPage: React.FC = () => {
     return (
         <div className="text-slate-300 leading-relaxed space-y-4">
             <h1 className="text-3xl md:text-4xl font-bold text-slate-100 mb-1">Our Commitment to Your Website Security</h1>
@@ -75,7 +75,7 @@ export const CyberSecurityPolicyContent: React.FC = () => {
 /**
  * The main page component that wraps the content with a layout.
  */
-const CyberSecurityPolicyPage = () => {
+const CyberSecurityPolicy = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
     const navItems = ['Home', 'AI Web Templates', 'Services', 'Pricing', 'Team', 'Contact'];
     
@@ -105,7 +105,7 @@ const CyberSecurityPolicyPage = () => {
                     </Link>
 
                     <article className="bg-slate-800 p-6 md:p-10 rounded-xl shadow-2xl">
-                        <CyberSecurityPolicyContent />
+                        <CyberSecurityPolicy />
                     </article>
                 </div>
             </main>
