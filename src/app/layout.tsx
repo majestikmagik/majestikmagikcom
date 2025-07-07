@@ -63,7 +63,7 @@ export default function RootLayout({
         - `bg-gradient...` provides the background from the original layout.
         - `text-slate-200` and `overflow-x-hidden` are from the index.html styles.
       */}
-      <body className={`${montserrat.className} bg-gradient-to-br from-slate-900 via-indigo-800 to-slate-900 text-slate-200 overflow-x-hidden`}>
+       <body className={`${montserrat.className} bg-gradient-to-br from-slate-900 via-indigo-800 to-slate-900 text-slate-200 overflow-x-hidden`}>
         {children}
         <CookieBanner />
         <Script
@@ -86,7 +86,6 @@ export default function RootLayout({
           gtag('config', 'AW-16649126006');
         `}
       </Script>
-      
     </html>
   );
 }

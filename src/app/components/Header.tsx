@@ -9,8 +9,7 @@ interface HeaderProps {
   isMobileMenuOpen: boolean;
   setIsMobileMenuOpen: (isOpen: boolean) => void;
   handleNavClick: (e: React.MouseEvent<HTMLAnchorElement>, item: string) => void;
-  currentPolicyPageId: string | null; // Add this prop
-  handleClosePolicyPage: () => void; // Add this prop
+
 }
 
 const Header: React.FC<HeaderProps> = ({
@@ -18,8 +17,6 @@ const Header: React.FC<HeaderProps> = ({
   isMobileMenuOpen,
   setIsMobileMenuOpen,
   handleNavClick,
-  currentPolicyPageId,
-  handleClosePolicyPage
 }) => {
 
   const [isScrolled, setIsScrolled] = useState(false);
@@ -36,14 +33,14 @@ const Header: React.FC<HeaderProps> = ({
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 transition-all duration-300 ease-in-out ${isScrolled || isMobileMenuOpen || currentPolicyPageId 
+    <header className={`sticky top-0 z-50 transition-all duration-300 ease-in-out ${isScrolled || isMobileMenuOpen
       ? 'bg-slate-950/70 backdrop-blur-md shadow-2xl shadow-slate-950'
       : 'bg-transparent shadow-none'
       }`}
     >
       <div className="container mx-auto px-6 py-6 flex justify-between items-center">
         <button
-          onClick={() => currentPolicyPageId ? handleClosePolicyPage() : document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
+          onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
           className="flex items-center space-x-2 text-2xl text-white cursor-pointer"
           aria-label="Majestik Magik Home"
         >

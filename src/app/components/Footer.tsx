@@ -34,19 +34,10 @@ const LanguageIcon = () => (
 );
 
 
-interface PolicyLink {
-  id: string;
-  name: string;
-  url: string;
-}
 
 
-interface FooterProps {
-  policyLinks: PolicyLink[]; // Expecting policyLinks
-  handleViewPolicy: (policyId: string) => void;
-}
 
-const Footer: React.FC<FooterProps> = ({ policyLinks, handleViewPolicy }) => {
+const Footer: React.FC = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -94,19 +85,64 @@ const Footer: React.FC<FooterProps> = ({ policyLinks, handleViewPolicy }) => {
           <div className="scroll-animate md:text-left" style={{ transitionDelay: '0.4s' }}>
             <h3 className="mb-4 font-bold tracking-wider text-slate-300 uppercase">Quick Links</h3>
             <ul className="space-y-2">
-              {policyLinks.map((policy) => (
-                <li key={policy.id}>
-                  <a href={`#policy-${policy.id}`} onClick={(e) => {
-                    e.preventDefault();
-                    handleViewPolicy(policy.id); // Use the passed function
-                  }}
-                    className="footer-link flex items-center font-semibold transition-colors hover:text-indigo-400 duration-300"
-                    aria-label={`Read our ${policy.name}`}
-                  >
-                    {policy.name}
-                  </a>
-                </li>
-              ))}
+
+              <li className="mb-2">
+                <a href="/privacy-policy"
+                  className="footer-link flex items-center font-semibold transition-colors hover:text-indigo-400 duration-300"
+                  aria-label="Read our Privacy Policy"
+
+                >
+                  Privacy Policy
+                </a>
+              </li>
+              <li className="mb-2">
+                <a href="/terms-of-service"
+                  className="footer-link flex items-center font-semibold transition-colors hover:text-indigo-400 duration-300"
+                  aria-label="Read our Privacy Policy"
+
+                >
+                  Terms of Service
+                </a>
+              </li>
+
+              <li className="mb-2">
+                <a href="/cookie-policy"
+                  className="footer-link flex items-center font-semibold transition-colors hover:text-indigo-400 duration-300"
+                  aria-label="Read our Cookie Policy"
+
+                >
+                  Cookie Policy
+                </a>
+              </li>
+              <li className="mb-2">
+                <a href="/refund-policy"
+                  className="footer-link flex items-center font-semibold transition-colors hover:text-indigo-400 duration-300"
+                  aria-label="Read our Refund Policy"
+
+                >
+                  Refund Policy
+                </a>
+              </li>
+              <li className='mb-2'>
+                <a href="/intellectual-property"
+                  className="footer-link flex items-center font-semibold transition-colors hover:text-indigo-400 duration-300"
+                  aria-label="Read our Intellectual Property Policy"
+
+                >
+                  Intellectual Property
+                </a>
+              </li>
+              <li className="mb-2">
+                <a href="/cybersecurity"
+                  className="footer-link flex items-center font-semibold transition-colors hover:text-indigo-400 duration-300"
+                  aria-label="Learn about our Cyber Security practices"
+
+                >
+                  Cyber Security
+                </a>
+              </li>
+
+            
             </ul>
           </div>
 
