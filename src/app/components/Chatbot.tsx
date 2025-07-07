@@ -19,7 +19,6 @@ interface ChatbotProps {
   chatError: string | null;
   isGeminiInitialized: boolean;
   chatMessagesEndRef: React.RefObject<HTMLDivElement>;
-  handleViewPolicy: (policy: string) => void;
 }
 
 const Chatbot: React.FC<ChatbotProps> = ({
@@ -32,9 +31,7 @@ const Chatbot: React.FC<ChatbotProps> = ({
   isChatLoading,
   chatError,
   isGeminiInitialized,
-  chatMessagesEndRef,
-  handleViewPolicy,
-  // Assuming this is passed down for policy viewing
+  chatMessagesEndRef
 }) => {
   return (
     <>
@@ -113,7 +110,7 @@ const Chatbot: React.FC<ChatbotProps> = ({
         <div className="px-3 pt-2 text-xs text-center text-slate-500">
           By using chat, you agree to our{' '}
           <button
-            onClick={() => handleViewPolicy('privacy-policy')}
+            onClick={() => window.open('/privacy-policy', '_blank')}
             className="underline transition-colors cursor-pointer hover:text-indigo-400"
             aria-label="View Privacy Policy"
           >

@@ -14,7 +14,6 @@ import {
   TeamSection,
   AIConceptTemplateSection,
   Footer,
-  PolicyPage,
   Chatbot,
   VideoModal
 } from './components';
@@ -47,22 +46,7 @@ interface ChatMessage {
 
 type OutputFormat = 'html' | 'react-tsx';
 
-interface PolicyLink {
-  id: string;
-  name: string;
-  url: string;
 
-}
-
-
-const policyLinksData: PolicyLink[] = [
-  { id: "privacy-policy", name: "Privacy Policy", url: "https://majestikmagik.com/privacy-policy" },
-  { id: "refund-policy", name: "Refund Policy", url: "https://majestikmagik.com/refund-policy" },
-  { id: "cookie-policy", name: "Cookie Policy", url: "https://majestikmagik.com/cookie-policy" },
-  { id: "intellectual-property-policy", name: "Intellectual Property Policy", url: "https://majestikmagik.com/intellectual-property-policy" },
-  { id: "cyber-security", name: "Cyber Security", url: "https://majestikmagik.com/cyber-security" },
-  { id: "terms-of-service", name: "Terms of Service", url: "https://majestikmagik.com/terms-of-service" },
-];
 
 
 // --- High-Tier Pricing Plans ---
@@ -633,11 +617,7 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
     }
   }
 
-  const handleViewPolicy = (policyId: string) => {
-    setCurrentPolicyPageId(policyId);
-    setIsMobileMenuOpen(false); // Close mobile menu if open
-    window.scrollTo(0, 0);
-  };
+
 
   const handleClosePolicyPage = () => {
     setCurrentPolicyPageId(null);
@@ -653,17 +633,9 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
         setIsMobileMenuOpen={setIsMobileMenuOpen}
         handleNavClick={handleNavClick} // Replace with your actual handleNavClick function
         navItems={navItems}
-        currentPolicyPageId={currentPolicyPageId}
-        handleClosePolicyPage={handleClosePolicyPage} />
+       />
 
-      {/* Keeps all policies on one page. */}
-      {currentPolicyPageId ? (
-        <PolicyPage
-          policyId={currentPolicyPageId}
-          policyLinks={policyLinksData}
-          onClose={() => setCurrentPolicyPageId(null)}
-        />
-      ) : (
+      
         <main>
           <HeroSection onWatchCommercial={() => setIsVideoModalOpen(true)} onGetStarted={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} />
 
@@ -690,9 +662,9 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
           />
           <TeamSection />
         </main>
-      )}
+      
 
-      <Footer policyLinks={policyLinksData} handleViewPolicy={handleViewPolicy} />
+      <Footer />
 
       {/* Chatbot is likely a fixed element */}
       <Chatbot
@@ -706,7 +678,7 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
         chatError={chatError}
         isGeminiInitialized={isGeminiInitialized}
         chatMessagesEndRef={chatMessagesEndRef as React.RefObject<HTMLDivElement>}
-        handleViewPolicy={handleViewPolicy}
+        
       />
       <VideoModal
         isOpen={isVideoModalOpen}
