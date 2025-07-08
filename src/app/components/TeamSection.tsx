@@ -22,7 +22,7 @@ const teamMembers: TeamMember[] = [
   },
   {
     name: "Amos Miller",
-    title: "AI Automation Specialist & Web Developer",
+    title: "AI & Automation Engineer",
     bio: "Amos crafts user interfaces that are not just functional but enchantingly beautiful. He believes good design is magic you can interact with. Master of Figma, AI Automation, and color theory. \"We can harness AI to build a better society, improve our quality of life, enhance work performance, and more.\"",
     imageUrl: "/img/0-amos.jpg",
     social: [
