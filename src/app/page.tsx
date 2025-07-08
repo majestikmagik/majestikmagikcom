@@ -398,7 +398,7 @@ const App = () => {
       if (!currentChat) {
         if (!geminiAi) throw new Error("Gemini AI client not available for chat.");
         currentChat = geminiAi.chats.create({
-          model: 'gemini-2.5-flash-preview-04-17',
+          model: 'gemini-1.5-pro',
           config: {
             systemInstruction: "You are a friendly and helpful AI assistant for Majestik Magik, a company specializing in AI-powered website design and digital systems solutions. Your goal is to answer user questions about Majestik Magik, its services (AI Concept Template Generator, Custom Web Development, SEO, Digital Marketing, Meet the Team, The Majestik Magik Coding Academy), and help them navigate the website. Be concise and informative. If asked about pricing or specific features not detailed, politely state that more information can be found by contacting Majestik Magik directly through the contact options on the website or by visiting the relevant page (like the Coding Academy page).",
           },
@@ -597,7 +597,7 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
       }
       const fullPrompt = `${systemPrompt}\n\n${userRequestPrompt}`;
       const response: GenerateContentResponse = await geminiAi.models.generateContent({
-        model: 'gemini-2.5-flash-preview-04-17',
+        model: 'gemini-1.5-pro',
         contents: fullPrompt,
       });
       if (!response || !response.text) {
