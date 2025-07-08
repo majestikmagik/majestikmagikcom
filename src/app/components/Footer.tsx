@@ -69,8 +69,8 @@ const Footer: React.FC = () => {
             <EmailIcon />
             <div>
               <p className="font-semibold text-slate-300">Email:</p>
-              <a href="mailto:jamil.matheny@majestikmagik.com" className="text-sm transition-colors hover:text-indigo-400">
-                jamil.matheny@majestikmagik.com
+              <a href="mailto:contact@majestikmagik.com" className="text-sm transition-colors hover:text-indigo-400">
+              contact@majestikmagik.com
               </a>
             </div>
           </div>
