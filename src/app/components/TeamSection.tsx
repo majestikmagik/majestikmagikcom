@@ -13,7 +13,7 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
   {
     name: "Jamil Matheny",
-    title: "Founder & Web Developer",
+    title: "Founder & Web Specialist",
     bio: "Jamil bridges the gap between fantastical ideas and tangible AI realities, ensuring every pixel aligns with the user\'s vision. \" Our vision is to empower individuals and businesses, with AI-powered tools, to turn their ideas into a reality. \"",
     imageUrl: "/img/0-jamil.jpg",
     social: [
