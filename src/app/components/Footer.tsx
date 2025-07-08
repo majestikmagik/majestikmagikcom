@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 // --- SVG Icons for the Footer ---
 const LocationIcon = () => (
@@ -70,7 +70,7 @@ const Footer: React.FC = () => {
             <div>
               <p className="font-semibold text-slate-300">Email:</p>
               <a href="mailto:contact@majestikmagik.com" className="text-sm transition-colors hover:text-indigo-400">
-              contact@majestikmagik.com
+                contact@majestikmagik.com
               </a>
             </div>
           </div>
@@ -151,7 +151,7 @@ const Footer: React.FC = () => {
                 </a>
               </li>
 
-            
+
             </ul>
           </div>
 
@@ -168,6 +168,10 @@ const Footer: React.FC = () => {
               <li>
                 <a href="https://github.com/majestikmagik" target="_blank" rel="noopener noreferrer" aria-label="Check out our GitHub profile" className="transition-colors duration-300 hover:text-indigo-400"><FontAwesomeIcon icon={faGithub} /></a>
               </li>
+              <li>
+                <a href="https://discord.gg/Bmz3cW9krQ" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord server" className="transition-colors duration-300 hover:text-indigo-400"><FontAwesomeIcon icon={faDiscord} /></a>
+              </li>
+
             </ul>
           </div>
         </div>
@@ -181,7 +185,7 @@ const Footer: React.FC = () => {
             {isClient && (
               <div className="trustpilot-widget transition-colors hover:text-indigo-400" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="66c36745eb620c5977db34ef" data-style-height="52px" data-style-width="100%">
                 <a href="https://www.trustpilot.com/review/majestikmagik.com" target="_blank" rel="noopener noreferrer">
-                 Review Us On Trustpilot
+                  Review Us On Trustpilot
                 </a>
               </div>
             )}
