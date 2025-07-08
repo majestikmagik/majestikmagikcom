@@ -1,13 +1,13 @@
 // app/layout.tsx
 
 import type { Metadata } from 'next';
-import { Montserrat } from 'next/font/google';
+import { Comme } from 'next/font/google';
 import Script from 'next/script';
 import CookieBanner from './components/CookieBanner';
 import './globals.css';
 
 // Initialize the Montserrat font for optimal performance
-const montserrat = Montserrat({
+const comme = Comme({
   subsets: ['latin'],
   display: 'swap',
 });
@@ -63,7 +63,7 @@ export default function RootLayout({
         - `bg-gradient...` provides the background from the original layout.
         - `text-slate-200` and `overflow-x-hidden` are from the index.html styles.
       */}
-       <body className={`${montserrat.className} bg-gradient-to-br from-slate-900 via-indigo-800 to-slate-900 text-slate-200 overflow-x-hidden`}>
+       <body className={`${comme.className} bg-gradient-to-br from-slate-900 via-indigo-800 to-slate-900 text-slate-200 overflow-x-hidden`}>
         {children}
         <CookieBanner />
         <Script

@@ -1,14 +1,7 @@
-/* 1. Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
-
-/* 2. Import Tailwind */
+/* Import Tailwind */
 @import 'tailwindcss';
 
 
-body {
-    font-family: 'Montserrat', sans-serif;
-    font-display: swap;
-}
 
 /* --- Scroll Animation Styles --- */
 .scroll-animate {
@@ -133,7 +126,7 @@ body {
 
 /* --- Code Block Styles (from index.html) --- */
 pre code.language-typescript {
-  font-family: 'Geist-Mono', Consolas, 'Liberation Mono', Menlo, Courier,
+  font-family: 'Noto Sans', Consolas, 'Liberation Mono', Menlo, Courier,
     monospace;
   white-space: pre-wrap; /* Since CSS 2.1 */
   white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
