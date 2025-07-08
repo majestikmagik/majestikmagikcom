@@ -597,7 +597,7 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
       }
       const fullPrompt = `${systemPrompt}\n\n${userRequestPrompt}`;
       const response: GenerateContentResponse = await geminiAi.models.generateContent({
-        model: 'gemini-1.5-pro',
+        model: 'gemini-2.5-flash-preview-04-17',
         contents: fullPrompt,
       });
       if (!response || !response.text) {
