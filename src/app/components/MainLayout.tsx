@@ -12,7 +12,7 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-  const navItems = ['Home', 'AI Web Templates', 'Services', 'Pricing', 'Team', 'Contact'];
+  const navItems = ['Home', 'Templates', 'Services', 'Pricing', 'Team', 'Contact'];
 
   // Get the current URL path
   const pathname = usePathname();
