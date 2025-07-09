@@ -228,7 +228,9 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
             <p className="max-w-xl mx-auto mt-2 text-slate-400 md:text-lg scroll-animate" style={{ transitionDelay: '0.2s' }}>
                 Click any template to see a live preview.
             </p>
+            <div className="scroll-animate animate-delay-300">
             <ImageMarquee />
+            </div>
         </div>
       </div>
     </section>
