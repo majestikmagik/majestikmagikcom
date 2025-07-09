@@ -63,7 +63,9 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
             <LocationIcon />
             <div>
               <p className="font-semibold text-slate-300">Address:</p>
-              <p className="text-sm">405 E. Laburnum Ave. Ste 3, Richmond, VA 23222</p>
+              <p className="text-sm mb-2">405 E. Laburnum Ave. Ste 3, Richmond, VA 23222 United States</p>
+              <p className="font-semibold text-slate-300"> Service Area:</p>
+              <p className="text-sm">Richmond, Henrico, Chesterfield, Midlothian, Short Pump, Glen Allen, and surrounding areas.</p>
             </div>
           </div>
           <div className="flex items-center space-x-4">
