@@ -1,17 +1,16 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-// FIX: Removed 'next/link' to resolve the build error. Using standard <a> tags instead.
-
+import Image from 'next/image';
 // --- Marquee Component ---
 // UPDATE: Now features interactive grab-and-scroll functionality.
 const ImageMarquee = () => {
   const templates = [
-    { name: 'Roofing Template', imgSrc: './img/roofing_template_001.png', url: '/templates/roofing/001' },
-    { name: 'Plumbing Template', imgSrc: './img/plumbing_template_001.png', url: '/templates/plumbing/001' },
-    { name: 'HVAC Template', imgSrc: './img/hvac_template_001.png', url: '/templates/hvac/001' },
-    { name: 'Electrician Template', imgSrc: './img/electrical_template_001.png', url: '/templates/electrician/001' },
-    { name: 'Restaurant Template', imgSrc: './img/restaurant_template_001.png', url: '/templates/restaurant/001' },
+    { name: 'Roofing Template', imgSrc: '/img/roofing_template_001.png', url: '/templates/roofing/001' },
+    { name: 'Plumbing Template', imgSrc: '/img/plumbing_template_001.png', url: '/templates/plumbing/001' },
+    { name: 'HVAC Template', imgSrc: '/img/hvac_template_001.png', url: '/templates/hvac/001' },
+    { name: 'Electrician Template', imgSrc: '/img/electrical_template_001.png', url: '/templates/electrician/001' },
+    { name: 'Restaurant Template', imgSrc: '/img/restaurant_template_001.png', url: '/templates/restaurant/001' },
   ];
 
   const marqueeItems = [...templates, ...templates];
@@ -72,7 +71,9 @@ const ImageMarquee = () => {
              }}
           >
             <div className="overflow-hidden rounded-lg shadow-lg">
-              <img
+              <Image
+                width={320}
+                height={180}
                 src={template.imgSrc}
                 alt={`${template.name} Website Template`}
                 className="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110 pointer-events-none"
