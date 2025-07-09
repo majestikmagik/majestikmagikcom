@@ -1,5 +1,16 @@
+/* 
+ * Globals
+ *
+ */
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Display:ital,wght@0,100..900;1,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&display=swap');
+
 /* Import Tailwind */
 @import 'tailwindcss';
+
+html, body {
+  font-family: 'Noto Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
 
 
 

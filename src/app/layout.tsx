@@ -1,18 +1,15 @@
-// app/layout.tsx
+// File: app/layout.tsx
+// FIX: This is now a clean Server Component that uses the new MainLayout client component.
+// This allows the metadata export to work correctly for SEO.
 
 import type { Metadata } from 'next';
-import { Comme } from 'next/font/google';
 import Script from 'next/script';
-import CookieBanner from './components/CookieBanner';
+import MainLayout from './components/MainLayout'; // Import the new client layout
 import './globals.css';
 
-// Initialize the Montserrat font for optimal performance
-const comme = Comme({
-  subsets: ['latin'],
-  display: 'swap',
-});
 
-// Consolidate all metadata from index.html
+
+// The metadata export now works correctly because this is a Server Component.
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.majestikmagik.com'),
   title: 'Majestik Magik - Crafting Digital Excellence With AI For Business Solutions - Richmond, Virginia Web Design, Web Development and AI Solutions Agency',
@@ -56,36 +53,30 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      
-      {/*
-        The <body> tag combines classes from both files:
-        - `montserrat.className` applies the Google Font globally.
-        - `bg-gradient...` provides the background from the original layout.
-        - `text-slate-200` and `overflow-x-hidden` are from the index.html styles.
-      */}
-       <body className={`${comme.className} bg-gradient-to-br from-slate-900 via-indigo-800 to-slate-900 text-slate-200 overflow-x-hidden`}>
-        {children}
-        <CookieBanner />
+      <body className="bg-gradient-to-br from-slate-900 via-indigo-800 to-slate-900 text-slate-200 overflow-x-hidden">
+        {/* Use the MainLayout Client Component to wrap the children and handle interactive elements */}
+        <MainLayout>
+          {children}
+        </MainLayout>
+        {/* Global scripts can remain here */}
         <Script
           strategy="afterInteractive"
           type="text/javascript"
           src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
         />
+        <Script
+          strategy="afterInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16649126006"
+        />
+        <Script id="google-tag-config" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16649126006');
+          `}
+        </Script>
       </body>
-
-      {/* Google tag (gtag.js) loaded optimally with next/script */}
-      <Script
-        strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=AW-16649126006"
-      />
-      <Script id="google-tag-config" strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'AW-16649126006');
-        `}
-      </Script>
     </html>
   );
 }

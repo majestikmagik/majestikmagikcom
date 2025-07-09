@@ -7,13 +7,11 @@ import { GoogleGenAI, GenerateContentResponse, Chat } from '@google/genai';
 import useMediaQuery from './hooks/useMediaQuery';
 
 import {
-  Header,
   HeroSection,
   ServicesSection,
   PricingSection,
   TeamSection,
   AIConceptTemplateSection,
-  Footer,
   Chatbot,
   VideoModal
 } from './components';
@@ -272,7 +270,7 @@ const App = () => {
   const isDesktopView = useMediaQuery('(min-width: 1280px)');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   // Define navigation items
-  const navItems = ['Home', 'AI Web Templates', 'Services', 'Pricing', 'Team', 'Contact'];
+
 
 
   useEffect(() => {
@@ -400,7 +398,7 @@ const App = () => {
         currentChat = geminiAi.chats.create({
           model: 'gemini-1.5-flash',
           config: {
-            systemInstruction: "You are a friendly and helpful AI assistant for Majestik Magik, a company specializing in AI-powered website design and digital systems solutions. Your goal is to answer user questions about Majestik Magik, its services (AI Concept Template Generator, Custom Web Development, SEO, Digital Marketing, Meet the Team, The Majestik Magik Coding Academy), and help them navigate the website. Be concise and informative. If asked about pricing or specific features not detailed, politely state that more information can be found by contacting Majestik Magik directly through the contact options on the website or by visiting the relevant page (like the Coding Academy page).",
+            systemInstruction: "You are a friendly and helpful AI assistant for Majestik Magik, a company specializing in AI-powered website design and digital systems solutions. Your goal is to answer user questions about Majestik Magik, its services (AI Concept Template Generator, Custom Web Development, SEO, Digital Marketing, Meet the Team, and help them navigate the website. Be concise and informative. We have an AI Concept Website Generator on the website - majestikmagik.com. If asked about the AI Concept Template Generator, politely state that more information can be found by visiting the relevant page. If asked about the pricing, politely state that more information can be found by visiting the relevant page. If a custom website inquiry is needed, politely state that an invoice may be issued for the service provided. If asked about pricing or specific features not detailed, politely state that more information can be found by contacting Majestik Magik directly through the contact options on the website or by visiting the relevant page.",
           },
         });
         setChatSession(currentChat);
@@ -628,12 +626,7 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
   // Add the return statement here
   return (
     <div>
-      <Header
-        isMobileMenuOpen={isMobileMenuOpen}
-        setIsMobileMenuOpen={setIsMobileMenuOpen}
-        handleNavClick={handleNavClick} // Replace with your actual handleNavClick function
-        navItems={navItems}
-       />
+  
 
       
         <main>
@@ -664,7 +657,7 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
         </main>
       
 
-      <Footer />
+
 
       {/* Chatbot is likely a fixed element */}
       <Chatbot

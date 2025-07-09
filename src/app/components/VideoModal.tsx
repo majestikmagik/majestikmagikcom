@@ -47,6 +47,7 @@ const VideoModal: React.FC<VideoModalProps> = ({ isOpen, onClose, videoSrc }) =>
           onClick={onClose}
           className="absolute top-2 right-2 text-white bg-black/50 hover:bg-black/80 cursor-pointer rounded-full p-2 z-10"
           aria-label="Close video player"
+          type="button"
         >
           <XMarkIcon className="w-6 h-6" />
         </button>

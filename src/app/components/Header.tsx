@@ -12,6 +12,20 @@ interface HeaderProps {
 
 }
 
+/*************  ✨ Windsurf Command ⭐  *************/
+/**
+ * Header component
+ *
+ * A responsive navigation header component that displays a logo and a set of 
+ * navigation items. It provides functionality to toggle a mobile menu and 
+ * changes appearance based on scroll position.
+ *
+ * Props:
+ * - `navItems`: An array of navigation items to be displayed in the header.
+ * - `isMobileMenuOpen`: A boolean indicating whether the mobile menu is open.
+ * - `setIsMobileMenuOpen`: A function to toggle the state of the mobile menu.
+
+/*******  c36544fb-1b78-4fcd-9064-e9b9bf91db6a  *******/
 const Header: React.FC<HeaderProps> = ({
   navItems,
   isMobileMenuOpen,
@@ -43,6 +57,7 @@ const Header: React.FC<HeaderProps> = ({
           onClick={() => document.getElementById('home')?.scrollIntoView({ behavior: 'smooth' })}
           className="flex items-center space-x-2 text-2xl text-white cursor-pointer"
           aria-label="Majestik Magik Home"
+          type="button"
         >
           <Image
             src="/img/logo_majestikmagik.webp"
@@ -69,12 +84,13 @@ const Header: React.FC<HeaderProps> = ({
         </nav>
 
         <div className="xl:hidden flex items-center">
-          <button
+           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-controls="mobile-menu"
-            aria-expanded={isMobileMenuOpen}
+            aria-expanded={isMobileMenuOpen ? "true" : "false"}
             className="text-slate-300 hover:text-indigo-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 p-1 rounded-md cursor-pointer"
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            type="button"
           >
             <span className="sr-only">{isMobileMenuOpen ? "Close menu" : "Open menu"}</span>
             {isMobileMenuOpen ? (

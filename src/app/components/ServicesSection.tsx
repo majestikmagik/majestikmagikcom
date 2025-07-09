@@ -67,7 +67,7 @@ const ServicesSection: React.FC = () => {
             >
               {service.icon}
               <h3 className="mb-2 text-xl font-semibold text-indigo-300">{service.title}</h3>
-              <p className="text-sm text-slate-400">{service.description}</p>
+              <p className="text-md text-slate-400">{service.description}</p>
             </div>
           ))}
         </div>
