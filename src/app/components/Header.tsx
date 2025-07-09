@@ -87,7 +87,6 @@ const Header: React.FC<HeaderProps> = ({
            <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-controls="mobile-menu"
-            aria-expanded={isMobileMenuOpen ? "true" : "false"}
             className="text-slate-300 hover:text-indigo-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500 p-1 rounded-md cursor-pointer"
             aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             type="button"
