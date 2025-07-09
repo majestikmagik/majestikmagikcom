@@ -5,45 +5,57 @@
   <!-- Homepage -->
   <url>
     <loc>https://majestikmagik.com/</loc>
-    <lastmod>2025-07-07</lastmod>
+    <lastmod>2025-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
-
+  <!-- About -->
+  <url>
+    <loc>https://majestikmagik.com/about/jamil-matheny</loc>
+    <lastmod>2025-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+   <url>
+    <loc>https://majestikmagik.com/about/amos-miller</loc>
+    <lastmod>2025-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url> 
   <!-- Policy Pages -->
   <url>
     <loc>https://majestikmagik.com/privacy-policy</loc>
-    <lastmod>2025-07-07</lastmod>
+    <lastmod>2025-07-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://majestikmagik.com/terms-of-service</loc>
-    <lastmod>2025-07-07</lastmod>
+    <lastmod>2025-07-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://majestikmagik.com/refund-policy</loc>
-    <lastmod>2025-07-07</lastmod>
+    <lastmod>2025-07-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://majestikmagik.com/cookie-policy</loc>
-    <lastmod>2025-07-07</lastmod>
+    <lastmod>2025-07-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://majestikmagik.com/intellectual-property</loc>
-    <lastmod>2025-07-07</lastmod>
+    <lastmod>2025-07-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://majestikmagik.com/cyber-security-policy</loc>
-    <lastmod>2025-07-07</lastmod>
+    <lastmod>2025-07-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
