@@ -22,20 +22,6 @@ import './globals.css';
 const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
 
 
-// --- USER ACTION REQUIRED ---
-// IMPORTANT: Replace these placeholder URLs with your ACTUAL Stripe Payment Link URLs
-// obtained from your Stripe Dashboard after creating them.
-const STRIPE_PAYMENT_LINK_HTML_URL = "https://checkout.majestikmagik.com/b/9B63cucaAe1velM4vJf7i0b"; // <--- EDIT THIS
-const STRIPE_PAYMENT_LINK_REACT_URL = "https://checkout.majestikmagik.com/b/aFadR8gqQg9D0uW0ftf7i0c"; // <--- EDIT THIS
-
-// --- Default Placeholder URLs for configuration check ---
-// These values represent unconfigured links. The system checks against these.
-const DEFAULT_PLACEHOLDER_STRIPE_PAYMENT_LINK_HTML_URL = "https://buy.stripe.com/YOUR_HTML_PAYMENT_LINK_ID";
-const DEFAULT_PLACEHOLDER_STRIPE_PAYMENT_LINK_REACT_URL = "https://buy.stripe.com/YOUR_REACT_PAYMENT_LINK_ID";
-
-const BACKEND_URL = process.env.NEXT_PUBLIC_BACKEND_URL || 'http://localhost:3000/'; // Assuming backend runs here
-
-
 interface ChatMessage {
   id: string;
   text: string | undefined;
@@ -250,9 +236,6 @@ const App = () => {
 
   const [currentPolicyPageId, setCurrentPolicyPageId] = useState<string | null>(null);
 
-  const [isProcessingPayment, setIsProcessingPayment] = useState<boolean>(false);
-  const [paymentError, setPaymentError] = useState<string | null>(null);
-
   // --- NEW STATE FOR PRICING TIER TOGGLE ---
   const [pricingTier, setPricingTier] = useState<'high' | 'low'>('high');
 
@@ -422,100 +405,7 @@ const App = () => {
     }
   };
 
-  // Define the function inside the component
-  const handleProceedToPayment = async () => {
-    if (!generatedCodeContent || !generatedOutputType) {
-      setConceptError("No generated content to proceed with payment.");
-      return;
-    }
-
-    // Check if Payment Link URLs are placeholders
-    if (generatedOutputType === 'html' && ((STRIPE_PAYMENT_LINK_HTML_URL as string) === DEFAULT_PLACEHOLDER_STRIPE_PAYMENT_LINK_HTML_URL || !STRIPE_PAYMENT_LINK_HTML_URL)) {
-      setPaymentError("HTML Payment Link is not configured. Please update STRIPE_PAYMENT_LINK_HTML_URL in index.tsx.");
-      return;
-    }
-    if (generatedOutputType === 'react-tsx' && ((STRIPE_PAYMENT_LINK_REACT_URL as string) === DEFAULT_PLACEHOLDER_STRIPE_PAYMENT_LINK_REACT_URL || !STRIPE_PAYMENT_LINK_REACT_URL)) {
-      setPaymentError("React TSX Payment Link is not configured. Please update STRIPE_PAYMENT_LINK_REACT_URL in index.tsx.");
-      return;
-    }
-
-    setConceptError(null);
-    setPaymentError(null);
-    setIsProcessingPayment(true);
-
-    try {
-      // 1. Store the AI code on the backend and get a contentId
-      const storeResponse = await fetch(`${BACKEND_URL}/store-ai-code`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          aiGeneratedCode: generatedCodeContent,
-          productType: generatedOutputType,
-        }),
-      });
-
-      if (!storeResponse.ok) {
-        let serverErrorMessage = `Server error: ${storeResponse.status} ${storeResponse.statusText || ''}.`;
-        if (storeResponse.status === 404) {
-          serverErrorMessage = `The backend service at ${BACKEND_URL} could not find the /store-ai-code endpoint (404 Not Found). This is a required step before redirecting to Stripe. Please ensure the backend service is correctly deployed and the '/store-ai-code' route is available and handling POST requests.`;
-          try {
-            const textError = await storeResponse.text();
-            if (textError && textError.trim()) {
-              serverErrorMessage += ` Additional server response: "${textError.substring(0, 200)}${textError.length > 200 ? '...' : ''}"`;
-            }
-          } catch {
-            // Silently ignore if can't read text body for 404, primary message is already set.
-          }
-        } else { // For other errors (500, 400, 401, 403 etc.)
-          try {
-            const errorData = await storeResponse.json();
-            serverErrorMessage = `Server error ${storeResponse.status}: ${errorData.message || errorData.error || JSON.stringify(errorData)}`;
-          } catch {
-            try {
-              const textError = await storeResponse.text();
-              serverErrorMessage = `Server returned a non-JSON error (status ${storeResponse.status} ${storeResponse.statusText || ''}) while storing code: "${textError.substring(0, 200)}${textError.length > 200 ? '...' : ''}".`;
-            } catch {
-              serverErrorMessage = `Server returned an unparseable error (status ${storeResponse.status} ${storeResponse.statusText || ''}) while storing code.`;
-            }
-          }
-        }
-        throw new Error(`Failed to store AI code. ${serverErrorMessage}`);
-      }
-
-      const { contentId } = await storeResponse.json();
-      if (!contentId) {
-        throw new Error('No contentId received from backend after storing code.');
-      }
-
-      // 2. Determine the correct Payment Link URL
-      let paymentLinkUrl = '';
-      if (generatedOutputType === 'html') {
-        paymentLinkUrl = STRIPE_PAYMENT_LINK_HTML_URL;
-      } else if (generatedOutputType === 'react-tsx') {
-        paymentLinkUrl = STRIPE_PAYMENT_LINK_REACT_URL;
-      } else {
-        throw new Error('Invalid product type for payment link.');
-      }
-
-      // 3. Append client_reference_id to the Payment Link URL
-      const finalPaymentUrl = `${paymentLinkUrl}?client_reference_id=${contentId}`;
-
-      // 4. Redirect the user to the Stripe Payment Link
-      window.location.href = finalPaymentUrl;
-
-    } catch (error: unknown) {
-      console.error('Error during payment process:', error);
-      let detailedMessage = `Payment failed: ${error instanceof Error ? error.message : 'An unknown error occurred'}`;
-      if (error instanceof Error && error.name === 'TypeError' && error.message.toLowerCase().includes('failed to fetch')) {
-        detailedMessage = `Payment failed: Could not connect to the server at ${BACKEND_URL}. Please verify the backend service is running and accessible.`;
-      }
-      setPaymentError(detailedMessage);
-      setIsProcessingPayment(false);
-    }
-  };
-
+  
 
 
 
@@ -531,7 +421,6 @@ const App = () => {
 
     setIsConceptLoading(true);
     setConceptError(null);
-    setPaymentError(null); // Clear previous payment errors
     setGeneratedCodeContent('');
     setGeneratedOutputType(null);
 
@@ -643,9 +532,6 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
             isConceptLoading={isConceptLoading}
             conceptError={conceptError}
             handleGenerateConceptPreview={handleGenerateConceptPreview}
-            handleProceedToPayment={handleProceedToPayment}
-            isProcessingPayment={isProcessingPayment}
-            paymentError={paymentError}
             isGeminiInitialized={isGeminiInitialized}
           />
           <ServicesSection />
