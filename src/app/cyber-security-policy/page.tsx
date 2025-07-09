@@ -2,12 +2,11 @@
 // FIX: Restructured the component to resolve naming conflicts and build errors.
 
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 
 // --- Import your shared components ---
-import Header from '../components/Header';
 import { ArrowLeftIcon } from '../components/Icons';
 
 
@@ -74,23 +73,10 @@ const CyberSecurityPolicyContent: React.FC = () => {
  * This is the component that Next.js will render for the page.
  */
 const CyberSecurityPolicyPage = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-    const navItems = ['Home', 'AI Web Templates', 'Services', 'Pricing', 'Team', 'Contact'];
-    
-    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault();
-        setIsMobileMenuOpen(false);
-    };
 
     return (
         <div className="flex flex-col min-h-screen bg-slate-900">
-            <Header
-                isMobileMenuOpen={isMobileMenuOpen}
-                setIsMobileMenuOpen={setIsMobileMenuOpen}
-                handleNavClick={handleNavClick}
-                navItems={navItems}
-            />
-
+    
             <main className="flex-grow py-16 md:py-24">
                 <div className="container mx-auto px-6">
                     <Link

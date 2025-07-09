@@ -40,6 +40,7 @@ const Chatbot: React.FC<ChatbotProps> = ({
         className="fixed bottom-6 right-6 bg-gradient-to-br from-indigo-600 to-purple-700 hover:from-indigo-500 hover:to-purple-600 text-white p-4 rounded-full shadow-2xl transform hover:scale-110 transition-all duration-300 cursor-pointer z-50 focus:outline-none focus:ring-4 focus:ring-indigo-400 focus:ring-opacity-50"
         aria-label={isChatOpen ? "Close chat" : "Open chat assistant"}
         disabled={!isGeminiInitialized && chatMessages.length === 0}
+        type="button"
       >
         {isChatOpen ? <XMarkIcon className="w-8 h-8" /> : <Image src="/img/headphones-with-microphone.svg" alt="Support icon" className="w-8 h-8 filter brightness-0 invert" loading="lazy"
           width={10}
@@ -62,6 +63,7 @@ const Chatbot: React.FC<ChatbotProps> = ({
             onClick={handleToggleChat}
             className="transition-colors text-slate-400 hover:text-slate-200"
             aria-label="Close chat window"
+            type="button"
           >
             <XMarkIcon className="cursor-pointer w-6 h-6" />
           </button>
@@ -113,6 +115,7 @@ const Chatbot: React.FC<ChatbotProps> = ({
             onClick={() => window.open('/privacy-policy', '_blank')}
             className="underline transition-colors cursor-pointer hover:text-indigo-400"
             aria-label="View Privacy Policy"
+            type="button"
           >
             Privacy Policy
           </button>

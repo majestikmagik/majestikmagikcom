@@ -2,12 +2,12 @@
 // This file creates a dedicated, standalone page for your Terms of Service.
 
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 
 // --- Import your shared components ---
-import Header from '../components/Header';
+
 import { ArrowLeftIcon } from '../components/Icons';
 
 
@@ -175,24 +175,10 @@ const TermsOfServiceContent = () => {
  * The main page component that wraps the content with a layout.
  */
 const TermsOfServicePage = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-    const navItems = ['Home', 'AI Web Templates', 'Services', 'Pricing', 'Team', 'Contact'];
-    
-    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault();
-        setIsMobileMenuOpen(false);
-    };
-
+  
     return (
         <div className="flex flex-col min-h-screen bg-slate-900">
-            <Header
-                isMobileMenuOpen={isMobileMenuOpen}
-                setIsMobileMenuOpen={setIsMobileMenuOpen}
-                handleNavClick={handleNavClick}
-                navItems={navItems}
-            />
-
-            <main className="flex-grow py-16 md:py-24">
+              <main className="flex-grow py-16 md:py-24">
                 <div className="container mx-auto px-6">
                     <Link
                         href="/"
@@ -208,8 +194,6 @@ const TermsOfServicePage = () => {
                     </article>
                 </div>
             </main>
-            
-            {/* Footer component has been removed as per the request. */}
         </div>
     );
 };

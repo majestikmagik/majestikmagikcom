@@ -61,6 +61,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
             className="shadow-md btn-primary-gradient flex items-center justify-center w-50 mt-auto text-center text-slate-100 cursor-pointer bg-indigo-600 rounded-full hover:bg-indigo-800 py-3.5 px-3 font-semibold duration-300 transition-transform transform hover:scale-105 scroll-animate"
             aria-label="View our pricing plans"
             style={{ transitionDelay: '0.4s' }}
+            type="button"
           >
             <Image src="/img/sparkles.svg" className="lazy-logo w-6 h-6 mr-2 filter brightness-0 invert" alt="Sparkles icon" loading="lazy" width={24} height={24} />
             Get Started
@@ -71,6 +72,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
             className="flex items-center font-semibold text-white border border-white cursor-pointer py-3 px-6 rounded-full ease-in-out hover:bg-white hover:text-slate-900 transition-colors duration-300 scroll-animate"
             aria-label="Watch Commercial"
             style={{ transitionDelay: '0.2s' }}
+            type="button"
           >
             <PlayCircleIcon className="w-5 h-5 mr-2" />  Watch Commercial
           </button>

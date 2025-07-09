@@ -2,32 +2,15 @@
 // This file creates a dedicated, standalone page for your Refund Policy.
 
 'use client';
-import React, { useState } from 'react';
+
+import React from 'react';
 import Link from 'next/link';
 
 // --- Import your shared components ---
-// These paths assume this page is at /app/refund-policy/page.tsx
-// and your components are in /app/components/
-import { Header } from '../components';
+
 import { ArrowLeftIcon } from '../components/Icons';
 
-// --- SEO Metadata for this specific page ---
-// Note: In Next.js App Router, this should ideally be an exported 'metadata' object.
-// However, since we are in a client component, we'll manage the title dynamically if needed,
-// but for static pages, this is often handled in a parent layout or the static export.
-// For simplicity and to match the privacy policy structure, we'll define it here conceptually.
-/*
-export const metadata: Metadata = {
-  title: 'Refund Policy | Majestik Magik',
-  description: 'Review the refund policy for digital products and services offered by Majestik Magik.',
-};
-*/
 
-
-/**
- * Content Component for the Refund Policy
- * This encapsulates the policy text for better organization.
- */
 const RefundPolicyContent = () => {
   return (
     <div className="text-slate-300 leading-relaxed space-y-4">
@@ -92,40 +75,28 @@ const RefundPolicyContent = () => {
  * The main page component that wraps the content with a layout.
  */
 const RefundPolicyPage = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-  const navItems = ['Home', 'AI Web Templates', 'Services', 'Pricing', 'Team', 'Contact'];
-
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    setIsMobileMenuOpen(false);
-  };
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-900">
-      <Header
-        isMobileMenuOpen={isMobileMenuOpen}
-        setIsMobileMenuOpen={setIsMobileMenuOpen}
-        handleNavClick={handleNavClick}
-        navItems={navItems}
-      />
+    <>
+      <div className="flex flex-col min-h-screen bg-slate-900">
+        <main className="flex-grow py-16 md:py-24">
+          <div className="container mx-auto px-6">
+            <Link
+              href="/"
+              className="mb-8 inline-flex items-center text-indigo-400 hover:text-indigo-300 transition-colors group text-sm"
+              aria-label="Back to main site"
+            >
+              <ArrowLeftIcon className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" />
+              Back to Home
+            </Link>
 
-      <main className="flex-grow py-16 md:py-24">
-        <div className="container mx-auto px-6">
-          <Link
-            href="/"
-            className="mb-8 inline-flex items-center text-indigo-400 hover:text-indigo-300 transition-colors group text-sm"
-            aria-label="Back to main site"
-          >
-            <ArrowLeftIcon className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" />
-            Back to Home
-          </Link>
-
-          <article className="bg-slate-800 p-6 md:p-10 rounded-xl shadow-2xl">
-            <RefundPolicyContent />
-          </article>
-        </div>
-      </main>
-    </div>
+            <article className="bg-slate-800 p-6 md:p-10 rounded-xl shadow-2xl">
+              <RefundPolicyContent />
+            </article>
+          </div>
+        </main>
+      </div>
+    </>
   );
 };
 

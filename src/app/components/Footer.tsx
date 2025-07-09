@@ -36,8 +36,12 @@ const LanguageIcon = () => (
 
 
 
+// Define the type for the props the Footer component will accept
+interface FooterProps {
+  isAlwaysVisible?: boolean;
+}
 
-const Footer: React.FC = () => {
+const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
@@ -45,13 +49,17 @@ const Footer: React.FC = () => {
     setIsClient(true);
   }, []);
 
+  
   return (
     <footer id="contact" aria-labelledby="contact-heading" className="bg-slate-800  text-slate-400">
       <div className="container px-6 py-12 mx-auto">
 
         {/* Top Contact Bar */}
-        <div id="contact-info" className="scroll-animate mx-auto grid grid-cols-2 gap-6 mb-10 md:flex-row lg:grid-cols-3 justify-items-center" style={{ transitionDelay: '0.2s' }}>
-          <div className="flex items-center space-x-4">
+        <div 
+          className={`mx-auto grid grid-cols-2 gap-6 mb-10 md:flex-row lg:grid-cols-3 justify-items-center ${isAlwaysVisible ? 'is-visible' : ''}`} 
+          
+        >
+           <div className="flex items-center space-x-4">
             <LocationIcon />
             <div>
               <p className="font-semibold text-slate-300">Address:</p>
@@ -82,7 +90,7 @@ const Footer: React.FC = () => {
         <div className="mx-auto grid grid-cols-2 gap-8 lg:grid-col-2 justify-items-center">
 
 
-          <div className="scroll-animate md:text-left" style={{ transitionDelay: '0.4s' }}>
+          <div className="md:text-left">
             <h3 className="mb-4 font-bold tracking-wider text-slate-300 uppercase">Quick Links</h3>
             <ul className="space-y-2">
 
@@ -156,7 +164,7 @@ const Footer: React.FC = () => {
           </div>
 
 
-          <div className="scroll-animate md:text-left" style={{ transitionDelay: '0.2s' }}>
+          <div className="md:text-left">
             <h3 className="mb-4 font-bold tracking-wider text-slate-300 uppercase">Social Media</h3>
             <ul className="space-x-6 flex items-center justify-center text-xl text-slate-400">
               <li>

@@ -2,12 +2,10 @@
 // This file creates a dedicated, standalone page for your Intellectual Property Policy.
 
 'use client';
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 // --- Import your shared components ---
-// Note: Footer has been removed as requested.
-import Header from '../components/Header';
 import { ArrowLeftIcon } from '../components/Icons';
 
 
@@ -139,23 +137,10 @@ const IntellectualPropertyContent = () => {
  * The main page component that wraps the content with a layout.
  */
 const IntellectualPropertyPage = () => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
-    const navItems = ['Home', 'AI Web Templates', 'Services', 'Pricing', 'Team', 'Contact'];
-    
-    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault();
-        setIsMobileMenuOpen(false);
-    };
 
     return (
         <div className="flex flex-col min-h-screen bg-slate-900">
-            <Header
-                isMobileMenuOpen={isMobileMenuOpen}
-                setIsMobileMenuOpen={setIsMobileMenuOpen}
-                handleNavClick={handleNavClick}
-                navItems={navItems}
-            />
-
+           
             <main className="flex-grow py-16 md:py-24">
                 <div className="container mx-auto px-6">
                     <Link

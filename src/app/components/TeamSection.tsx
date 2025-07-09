@@ -1,12 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import { GithubIcon } from './Icons'; // Assuming GithubIcon is exported from Icons.tsx
 
 interface TeamMember {
   name: string;
+  email: string;
   title: string;
   bio: string;
   imageUrl: string;
+  url: string;
   social: { name: string; url: string; icon: React.ReactElement }[];
 }
 
@@ -14,8 +17,10 @@ const teamMembers: TeamMember[] = [
   {
     name: "Jamil Matheny",
     title: "Founder & Web Specialist",
-    bio: "Jamil bridges the gap between fantastical ideas and tangible AI realities, ensuring every pixel aligns with the user\'s vision. \" Our vision is to empower individuals and businesses, with AI-powered tools, to turn their ideas into a reality. \"",
+    email: "jamil.matheny@majestikmagik.com",
+    bio: "Jamil Matheny is the Founder of Majestik Magik, a digital solutions agency born from a lifelong passion for technology and a deep-seated desire to help businesses achieve their goals. He leads the company with a core mission: to create effective, purpose-driven websites that solve real-world business challenges.",
     imageUrl: "/img/0-jamil.jpg",
+    url: "/about/jamil-matheny",
     social: [
       { name: "GitHub", url: "https://github.com/jmathtech", icon: <GithubIcon className="w-5 h-5" /> },
     ]
@@ -23,8 +28,10 @@ const teamMembers: TeamMember[] = [
   {
     name: "Amos Miller",
     title: "AI & Automation Engineer",
-    bio: "Amos crafts user interfaces that are not just functional but enchantingly beautiful. He believes good design is magic you can interact with. Master of Figma, AI Automation, and color theory. \"We can harness AI to build a better society, improve our quality of life, enhance work performance, and more.\"",
+    email: "amos.miller@majestikmagik.com",
+    bio: "As an AI & Automation Engineer at Majestik Magik, Amos Miller is dedicated to architecting intelligent systems that are scalable, efficient, and user-friendly. He specializes in bridging the gap between cutting-edge artificial intelligence and practical automation, creating solutions that empower businesses and bring complex ideas to life.",
     imageUrl: "/img/0-amos.jpg",
+    url: "/about/amos-miller",
     social: [
       { name: "GitHub", url: "https://github.com/amos0312", icon: <GithubIcon className="w-5 h-5" /> },
     ]
@@ -55,7 +62,7 @@ const TeamSection: React.FC = () => {
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
-              className="flex flex-col items-center p-6 text-center transition-transform team-card-hover-animate  duration-300 transform bg-slate-800 rounded-xl shadow-xl hover:shadow-indigo-500/30 hover:-translate-y-1 h-full hover:scale-105 scroll-animate"
+              className="flex flex-col items-center p-6 transition-transform team-card-hover-animate  duration-300 transform bg-slate-800 rounded-xl shadow-xl hover:shadow-indigo-500/30 hover:-translate-y-1 h-full hover:scale-105 scroll-animate"
               style={{ transitionDelay: `${0.2 + index * 0.15}s` }}
             >
               <Image
@@ -68,7 +75,10 @@ const TeamSection: React.FC = () => {
               />
               <h3 className="mb-1 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-blue-600">{member.name}</h3>
               <p className="mb-3 font-semibold text-indigo-300">{member.title}</p>
-              <p className="flex-grow px-2 mb-4 text-sm text-slate-400">{member.bio}</p>
+              <p className="mb-4 text-sm font-semibold text-slate-400">{member.email}</p>
+              <p className="flex-grow px-2 mb-4 text-sm text-slate-400">{member.bio}
+                <Link href={member.url} className="transition-colors duration-300 font-bold text-indigo-300 hover:text-indigo-500 mx-2"> Read More</Link>
+              </p>
               <div className="flex mt-auto space-x-4">
                 {member.social.map(socialLink => (
                   <a

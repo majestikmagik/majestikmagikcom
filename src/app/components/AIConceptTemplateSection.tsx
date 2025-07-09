@@ -83,6 +83,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
               disabled={isConceptLoading || !isGeminiInitialized}
               className="flex items-center justify-center w-60 px-6 py-3 mt-4 font-semibold text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-indigo-600 hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed scroll-animate"
               aria-live="polite"
+              type="button"
             >
               {isConceptLoading ? (
                 <>
@@ -164,6 +165,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
               onClick={handleDownloadHtml}
               className="flex items-center justify-end px-6 py-3 mt-4 cursor-pointer font-semibold text-white transition-all duration-300 rounded-md shadow-md bg-green-600 hover:bg-green-500 disabled:bg-slate-600 disabled:cursor-not-allowed"
               aria-label="Download HTML Template"
+              type="button"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
