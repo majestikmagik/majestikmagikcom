@@ -7,8 +7,7 @@
     <head>
       <title>Majestik Magik - XML Sitemap</title>
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta charset="UTF-8">
-      <link rel="icon" href="/img/logo_majestikmagik.png" type="image/png">
+      <link rel="icon" href="/img/logo_majestikmagik.png" type="image/png" />
       <style type="text/css">
         body {
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
