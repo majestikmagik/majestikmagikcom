@@ -7,30 +7,30 @@ import React, { useState } from 'react';
 // No need for external libraries.
 
 const WrenchIcon = ({ className }: { className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-    <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 21.5a9.5 9.5 0 110-19 9.5 9.5 0 010 19z" />
-    <path d="M16.5 8.75a.75.75 0 00-1.5 0V10h-1.75a.75.75 0 000 1.5H15v1.25a.75.75 0 001.5 0V11.5h1.75a.75.75 0 000-1.5H16.5V8.75zM8.5 14.25a.75.75 0 00-1.5 0V15.5H5.25a.75.75 0 000 1.5H7v1.25a.75.75 0 001.5 0V16.5h1.75a.75.75 0 000-1.5H8.5v-1.25z" />
-    <path d="M12.38 5.47a.75.75 0 00-1.06-1.06l-6 6a.75.75 0 001.06 1.06l6-6z" />
-  </svg>
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 21.5a9.5 9.5 0 110-19 9.5 9.5 0 010 19z" />
+        <path d="M16.5 8.75a.75.75 0 00-1.5 0V10h-1.75a.75.75 0 000 1.5H15v1.25a.75.75 0 001.5 0V11.5h1.75a.75.75 0 000-1.5H16.5V8.75zM8.5 14.25a.75.75 0 00-1.5 0V15.5H5.25a.75.75 0 000 1.5H7v1.25a.75.75 0 001.5 0V16.5h1.75a.75.75 0 000-1.5H8.5v-1.25z" />
+        <path d="M12.38 5.47a.75.75 0 00-1.06-1.06l-6 6a.75.75 0 001.06 1.06l6-6z" />
+    </svg>
 );
 
 const PhoneIcon = ({ className }: { className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-    <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.292-.072.431l4.218 5.565a.43.43 0 00.431.072l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C6.852 22.5 1.5 17.148 1.5 8.25V6h1.5V4.5z" clipRule="evenodd" />
-  </svg>
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path fillRule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.292-.072.431l4.218 5.565a.43.43 0 00.431.072l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C6.852 22.5 1.5 17.148 1.5 8.25V6h1.5V4.5z" clipRule="evenodd" />
+    </svg>
 );
 
 const ClockIcon = ({ className }: { className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-    <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clipRule="evenodd" />
-  </svg>
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path fillRule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clipRule="evenodd" />
+    </svg>
 );
 
 const MapPinIcon = ({ className }: { className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-    <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a2.25 2.25 0 002.16-2.16l.041-.071.015-.028a.76.76 0 000-.723l-.016-.028-.04-.071a2.25 2.25 0 00-2.16-2.16l-.071-.041-.028-.015a.76.76 0 00-.723 0l-.028.015-.07.041a2.25 2.25 0 00-2.16 2.16l-.04.071-.016.028a.76.76 0 000 .723l.016.028.04.071a2.25 2.25 0 002.16 2.16zM12 18a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z" clipRule="evenodd" />
-    <path fillRule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3.342a.75.75 0 00.2.5l3.36 3.188a.75.75 0 001.08 0l3.36-3.188a.75.75 0 00.2-.5V6.75A5.25 5.25 0 0012 1.5zM12 2.25a4.5 4.5 0 014.5 4.5v3.013l-3.88 3.68a.75.75 0 01-1.08 0L7.5 9.763V6.75a4.5 4.5 0 014.5-4.5z" clipRule="evenodd" />
-  </svg>
+    <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a2.25 2.25 0 002.16-2.16l.041-.071.015-.028a.76.76 0 000-.723l-.016-.028-.04-.071a2.25 2.25 0 00-2.16-2.16l-.071-.041-.028-.015a.76.76 0 00-.723 0l-.028.015-.07.041a2.25 2.25 0 00-2.16 2.16l-.04.071-.016.028a.76.76 0 000 .723l.016.028.04.071a2.25 2.25 0 002.16 2.16zM12 18a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z" clipRule="evenodd" />
+        <path fillRule="evenodd" d="M12 1.5a5.25 5.25 0 00-5.25 5.25v3.342a.75.75 0 00.2.5l3.36 3.188a.75.75 0 001.08 0l3.36-3.188a.75.75 0 00.2-.5V6.75A5.25 5.25 0 0012 1.5zM12 2.25a4.5 4.5 0 014.5 4.5v3.013l-3.88 3.68a.75.75 0 01-1.08 0L7.5 9.763V6.75a4.5 4.5 0 014.5-4.5z" clipRule="evenodd" />
+    </svg>
 );
 
 const StarIcon = ({ className }: { className?: string }) => (
@@ -48,12 +48,12 @@ export default function App() {
     }
     // State for the mobile menu
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    
+
     // State for the contact form
     const [formStatus, setFormStatus] = useState<FormStatus | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
-    const handleSubmit = async (event: React.FormEvent <HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         setIsSubmitting(true);
         // In a real app, you would handle form submission here,
@@ -117,9 +117,8 @@ export default function App() {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex items-center justify-between h-20">
                         {/* Logo */}
-                         <a href="#" className="flex items-center space-x-3">
+                        <a href="#" className="flex items-center space-x-3">
                             <img src={companyInfo.logoUrl} alt="Thomas & Son Plumbing Logo" className="h-20 w-auto md:h-18" />
-                            <span className="text-xl sm:text-2xl font-bold text-white tracking-tight hidden md:block">{companyInfo.name}</span>
                         </a>
 
                         {/* Desktop Navigation */}
@@ -130,7 +129,7 @@ export default function App() {
                                 </a>
                             ))}
                         </nav>
-                        
+
                         {/* Call to Action Button */}
                         <a href={companyInfo.phoneHref} className="hidden md:flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700 transition-transform duration-300 hover:scale-105">
                             Call Now
@@ -161,7 +160,7 @@ export default function App() {
                                 </a>
                             ))}
                         </div>
-                         <div className="pt-4 pb-3 border-t border-gray-700">
+                        <div className="pt-4 pb-3 border-t border-gray-700">
                             <div className="flex items-center justify-center px-5">
                                 <a href={companyInfo.phoneHref} className="w-full text-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-red-600 hover:bg-red-700">
                                     Call Now: {companyInfo.phone}
@@ -187,10 +186,10 @@ export default function App() {
                         <source src="../../../img/thomasandsonplumbing.webm" type="video/webm" />
                         Your browser does not support the video tag.
                     </video>
-                    
+
                     {/* Dark Overlay */}
                     <div className="absolute inset-0 bg-black/70 z-10"></div>
-                    
+
                     {/* Content */}
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-20">
                         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight">
@@ -232,7 +231,7 @@ export default function App() {
                         </div>
                     </div>
                 </section>
-                
+
                 {/* --- About Us Section --- */}
                 <section id="about" className="py-20 sm:py-24 bg-black">
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -277,7 +276,7 @@ export default function App() {
                     <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                         <div className="text-center">
                             <h2 className="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">What Our Customers Are Saying</h2>
-                             <div className="mt-4 flex justify-center items-center">
+                            <div className="mt-4 flex justify-center items-center">
                                 <span className="text-yellow-400 font-bold text-xl mr-2">4.6</span>
                                 <div className="flex">
                                     {[...Array(4)].map((_, i) => <StarIcon key={i} className="h-6 w-6 text-yellow-400" />)}
