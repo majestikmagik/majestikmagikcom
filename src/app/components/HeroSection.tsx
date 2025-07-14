@@ -50,7 +50,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
     <section id="home" aria-labelledby="home-heading" className="py-20 md:py-32 bg-transparent">
       <div className="container px-6 mx-auto text-center">
         <h1 className="mb-6 text-5xl text-white font-bold scroll-animate md:text-7xl">
-          Let Us Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600"><br />Your Digital Empire</span>
+          Let Us Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-purple-600 to-blue-600"><br />Your Digital Empire</span>
         </h1>
         <p className="max-w-2xl mx-auto mb-10 text-lg font-semibold text-slate-400 md:text-xl scroll-animate" style={{ transitionDelay: '0.1s' }}>
          We specialize in fusing innovative AI with human-led creative strategy to deliver powerful, custom-built solutions that achieve your goals.
