@@ -6,6 +6,7 @@ import { GithubIcon } from './Icons'; // Assuming GithubIcon is exported from Ic
 interface TeamMember {
   name: string;
   email: string;
+  emailUrl: string;
   title: string;
   bio: string;
   imageUrl: string;
@@ -18,6 +19,7 @@ const teamMembers: TeamMember[] = [
     name: "Jamil Matheny",
     title: "Founder & Web Specialist",
     email: "jamil.matheny@majestikmagik.com",
+    emailUrl: "mailto:jamil.matheny@majestikmagik.com",
     bio: "Jamil Matheny is the Founder of Majestik Magik, a digital solutions agency born from a lifelong passion for technology and a deep-seated desire to help businesses achieve their goals. He leads the company with a core mission: to create effective, purpose-driven websites that solve real-world business challenges.",
     imageUrl: "/img/jamil_matheny.jpg",
     url: "/about/jamil-matheny",
@@ -29,6 +31,7 @@ const teamMembers: TeamMember[] = [
     name: "Amos Miller",
     title: "AI & Automation Engineer",
     email: "amos.miller@majestikmagik.com",
+    emailUrl: "mailto:amos.miller@majestikmagik.com",
     bio: "As an AI & Automation Engineer at Majestik Magik, Amos Miller is dedicated to architecting intelligent systems that are scalable, efficient, and user-friendly. He specializes in bridging the gap between cutting-edge artificial intelligence and practical automation, creating solutions that empower businesses and bring complex ideas to life.",
     imageUrl: "/img/0-amos.jpg",
     url: "/about/amos-miller",
@@ -75,7 +78,7 @@ const TeamSection: React.FC = () => {
               />
               <h3 className="mb-1 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">{member.name}</h3>
               <p className="mb-3 font-semibold text-indigo-300">{member.title}</p>
-              <p className="mb-4 text-sm font-semibold text-slate-400">{member.email}</p>
+              <p className="mb-4 text-sm font-semibold text-slate-400"><a href={member.emailUrl}>{member.email}</a></p>
               <p className="flex-grow px-2 mb-4 text-sm text-slate-400">{member.bio}
                 <Link href={member.url} className="transition-colors duration-300 font-bold text-indigo-300 hover:text-indigo-500 mx-2"> Read More</Link>
               </p>
