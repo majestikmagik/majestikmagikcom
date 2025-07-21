@@ -203,7 +203,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
                 srcDoc={generatedCodeContent}
                 title="AI Generated Concept Template (HTML)"
                 className="w-full h-[600px] border-0"
-                sandbox="allow-scripts"
+                sandbox="allow-scripts" 
               ></iframe>
             </div>
             <div className="text-right mt-4">
