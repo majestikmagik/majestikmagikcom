@@ -27,18 +27,6 @@ const teamMembers: TeamMember[] = [
       { name: "GitHub", url: "https://github.com/jmathtech", icon: <GithubIcon className="w-5 h-5" /> },
     ]
   },
-  {
-    name: "Amos Miller",
-    title: "AI & Automation Engineer",
-    email: "amos.miller@majestikmagik.com",
-    emailUrl: "mailto:amos.miller@majestikmagik.com",
-    bio: "As an AI & Automation Engineer at Majestik Magik, Amos Miller is dedicated to architecting intelligent systems that are scalable, efficient, and user-friendly. He specializes in bridging the gap between cutting-edge artificial intelligence and practical automation, creating solutions that empower businesses and bring complex ideas to life.",
-    imageUrl: "/img/0-amos.jpg",
-    url: "/about/amos-miller",
-    social: [
-      { name: "GitHub", url: "https://github.com/amos0312", icon: <GithubIcon className="w-5 h-5" /> },
-    ]
-  }
 ];
 
 const TeamSection: React.FC = () => {
@@ -55,13 +43,13 @@ const TeamSection: React.FC = () => {
               alt="Majestik Magik team icon"
               loading="lazy"
             />
-            Meet Our Tech Wizards
+            Meet the Team
           </h2>
           <p className="max-w-xl mx-auto font-semibold text-slate-400 md:text-xl scroll-animate" style={{ transitionDelay: '0.3s' }}>
             The creative minds and technical wizards turning your digital dreams into reality.
           </p>
         </div>
-        <div className="grid max-w-4xl gap-10 mx-auto md:grid-cols-2 lg:gap-16 scroll-animate">
+        <div className="grid max-w-xl gap-10 mx-auto md:grid-cols-1 lg:gap-16 scroll-animate">
           {teamMembers.map((member, index) => (
             <div
               key={member.name}
