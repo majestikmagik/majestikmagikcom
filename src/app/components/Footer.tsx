@@ -190,7 +190,7 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
       <div className="bg-slate-900">
         <div className="container px-6 py-4 mx-auto border-t border-slate-800">
           <div className="flex flex-col items-center justify-between text-sm md:flex-row">
-            <p className="mb-4 text-center md:mb-0 md:text-left">&copy; 2025 Majestik Magik. All rights reserved.</p>
+            <p className="mb-4 text-center md:mb-0 md:text-left">&copy; {new Date().getFullYear()} Majestik Magik, Inc. All rights reserved.</p>
             {isClient && (
               <div className="trustpilot-widget transition-colors hover:text-indigo-400" data-locale="en-US" data-template-id="56278e9abfbbba0bdcd568bc" data-businessunit-id="66c36745eb620c5977db34ef" data-style-height="52px" data-style-width="100%">
                 <a href="https://www.trustpilot.com/review/majestikmagik.com" target="_blank" rel="noopener noreferrer">
