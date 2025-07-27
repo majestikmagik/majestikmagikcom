@@ -34,21 +34,7 @@ const videoData = [
         title: "Wordpress - Editing A Post",
         description: "Take the next step in managing your WordPress site. This video guides you through the process of editing a post, covering how to change text and headlines, replace images, update categories and tags, and publish your revisions.",
         playlistTitle: "Module 2: Editing A Post"
-    },
-    {
-        id: 3,
-        src: "https://www.w3schools.com/html/mov_bbb.mp4",
-        title: "Mastering Card Control",
-        description: "A deep dive into the most essential card handling techniques, including shuffles, cuts, and controls.",
-        playlistTitle: "Module 3: Mastering Card Control"
-    },
-    {
-        id: 4,
-        src: "https://www.w3schools.com/tags/movie.mp4",
-        title: "Stage Presence & Showmanship",
-        description: "It's not just about the trick, it's about the performance. This module teaches you how to captivate and command an audience.",
-        playlistTitle: "Module 4: Stage Presence"
-    }
+    },    
 ];
 
 
