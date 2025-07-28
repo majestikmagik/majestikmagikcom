@@ -111,7 +111,8 @@ const LabsContent = () => {
                             <div className="absolute w-3 h-3 bg-green-500 rounded-full mt-1.5 -left-1.5 border border-slate-900"></div>
                             <time className="mb-1 text-sm font-normal leading-none text-green-400">Q3 2025 - COMPLETE</time>
                             <h3 className="text-lg font-semibold text-slate-100">Company Formation & Prototyping</h3>
-                            <p className="text-base font-normal text-slate-400"><strong>July 25, 2025:</strong> Majestik Magik, Inc. officially incorporated as a Delaware C-Corp. Developed a high-fidelity, interactive prototype of the Insight MD platform.</p>
+                            <p className="text-base font-normal text-slate-400"><strong>July 25, 2025:</strong> Majestik Magik, Inc. officially incorporated as a Delaware C-Corp. The company is now in a position to begin the development of the Insight MD platform.</p>
+                            <p className="text-base font-normal text-slate-400">- Completed initial high-fidelity prototype of the Insight MD platform prior to incorporating. (<em>See gallery above</em>)</p>
                         </li>
                         <li className="mb-10 ml-4">
                             <div className="absolute w-3 h-3 bg-indigo-500 rounded-full mt-1.5 -left-1.5 border border-slate-900"></div>
