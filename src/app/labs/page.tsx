@@ -38,7 +38,7 @@ const LabsContent = () => {
             {/* --- HERO SECTION --- */}
             <div>
                 <p className="text-indigo-400 font-semibold mb-2">PROJECT: INSIGHT MD</p>
-                <h1 className="text-4xl md:text-5xl font-bold text-slate-100 mb-4">Creating a future where no cancer diagnosis comes too late.</h1>
+                <h1 className="text-4xl md:text-6xl font-bold text-slate-100 mb-4">Creating a future where no cancer diagnosis comes too late.</h1>
                 <p className="text-lg text-slate-400">
                     Majestik Magik Labs is the research and development heart of our company. Our flagship project, Insight MD, is an AI-powered software platform designed to empower radiologists in the fight against cancer. This is our mission.
                 </p>
@@ -143,6 +143,24 @@ const App = () => {
 
     return (
         <div className="flex flex-col min-h-screen bg-slate-900 font-sans">
+            {/* Header Video Section */}
+            <div className="relative w-full overflow-hidden" style={{ aspectRatio: '16 / 5' }}>
+                <video
+                    className="absolute top-0 left-0 w-full h-full object-cover"
+                    src="/videos/majestikmagik_labs_mritest.mp4" // Placeholder video URL
+                    autoPlay
+                    loop
+                    muted
+                    playsInline // Important for mobile autoplay
+                    preload="auto"
+                >
+                    Your browser does not support the video tag.
+                </video>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent flex flex-col justify-end items-center text-center p-8">
+                    <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg mb-2">Majestik Magik Labs</h1>
+                    <p className="text-xl md:text-2xl text-indigo-300 drop-shadow-md">presents Insight MD</p>
+                </div>
+            </div>
             <main className="flex-grow py-16 md:py-24">
                 <div className="container mx-auto px-4 md:px-6 max-w-8xl">                    
                     <Link
