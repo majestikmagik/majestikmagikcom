@@ -29,7 +29,7 @@ export const LabsSection = () => {
                 <source src="/videos/majestikmagik_labs_mritest.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
-            <div className="absolute inset-0 bg-slate-900/80 z-10"></div>
+            <div className="absolute inset-0 bg-slate-950/90 z-10"></div>
             <div className="container relative px-6 mx-auto z-20">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="order-2 md:order-1">
