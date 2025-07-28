@@ -10,6 +10,7 @@ import {
   HeroSection,
   ServicesSection,
   PricingSection,
+  LabsSection,
   TeamSection,
   AIConceptTemplateSection,
   Chatbot,
@@ -542,9 +543,9 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
             setPricingTier={setPricingTier}
             handleNavClick={handleNavClick} // Replace with your actual handleNavClick function
           />
+          <LabsSection />
           <TeamSection />
-        </main>
-      
+        </main>    
 
 
 

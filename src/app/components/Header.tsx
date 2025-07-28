@@ -11,21 +11,8 @@ interface HeaderProps {
   handleNavClick: (e: React.MouseEvent<HTMLAnchorElement>, item: string) => void;
 
 }
-
-/*************  ✨ Windsurf Command ⭐  *************/
-/**
- * Header component
- *
- * A responsive navigation header component that displays a logo and a set of 
- * navigation items. It provides functionality to toggle a mobile menu and 
- * changes appearance based on scroll position.
- *
- * Props:
- * - `navItems`: An array of navigation items to be displayed in the header.
- * - `isMobileMenuOpen`: A boolean indicating whether the mobile menu is open.
- * - `setIsMobileMenuOpen`: A function to toggle the state of the mobile menu.
-
-/*******  c36544fb-1b78-4fcd-9064-e9b9bf91db6a  *******/
+// --- Header Component ---
+// This component is designed to be sticky and responsive, adapting to scroll position and mobile view.
 const Header: React.FC<HeaderProps> = ({
   navItems,
   isMobileMenuOpen,

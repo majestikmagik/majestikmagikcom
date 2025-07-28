@@ -53,7 +53,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
           Let Us Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-purple-600 to-blue-600"><br />Your Digital Empire</span>
         </h1>
         <p className="max-w-2xl mx-auto mb-10 text-lg font-semibold text-slate-400 md:text-xl scroll-animate" style={{ transitionDelay: '0.1s' }}>
-        We Build Intelligent Websites and AI Solutions to Grow Your Business.
+        We build intelligent websites and AI solutions to grow your business.
         </p>
         <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
           <button
