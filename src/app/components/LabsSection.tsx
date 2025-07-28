@@ -17,8 +17,20 @@ const ArrowRightIcon : React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 // This section is designed to showcase your R&D work on the homepage.
 export const LabsSection = () => {
     return (
-        <section id="labs" aria-labelledby="labs-heading" className="py-16 md:py-24 bg-slate-800">
-            <div className="container px-6 mx-auto">
+         <section id="labs" aria-labelledby="labs-heading" className="relative py-16 md:py-24 overflow-hidden">
+            {/* Video Background */}
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute top-0 left-0 w-full h-full object-cover z-0"
+            >
+                <source src="/videos/majestikmagik_labs_mritest.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+            <div className="absolute inset-0 bg-slate-900/80 z-10"></div>
+            <div className="container relative px-6 mx-auto z-20">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="order-2 md:order-1">
                         <p className="text-sm font-bold uppercase tracking-wider text-indigo-400 mb-2">From the Labs</p>
@@ -50,6 +62,7 @@ export const LabsSection = () => {
                     </div>
                 </div>
             </div>
+           
         </section>
     );
 };
