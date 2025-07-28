@@ -566,7 +566,7 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
       <VideoModal
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}
-        videoSrc="/img/MajestikMagik_commercial_final.webm"
+        videoSrc="/img/MajestikMagik_commercial_final.mp4"
       />
     </div>
   );
