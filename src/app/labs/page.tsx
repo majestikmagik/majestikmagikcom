@@ -111,13 +111,17 @@ const LabsContent = () => {
                             <div className="absolute w-3 h-3 bg-green-500 rounded-full mt-1.5 -left-1.5 border border-slate-900"></div>
                             <time className="mb-1 text-sm font-normal leading-none text-green-400">Q3 2025 - COMPLETE</time>
                             <h3 className="text-lg font-semibold text-slate-100">Company Formation & Prototyping</h3>
-                            <p className="text-base font-normal text-slate-400">Majestik Magik, Inc. officially incorporated as a Delaware C-Corp. Developed a high-fidelity, interactive prototype of the Insight MD platform.</p>
+                            <p className="text-base font-normal text-slate-400"><strong>July 25, 2025:</strong> Majestik Magik, Inc. officially incorporated as a Delaware C-Corp. Developed a high-fidelity, interactive prototype of the Insight MD platform.</p>
                         </li>
                         <li className="mb-10 ml-4">
                             <div className="absolute w-3 h-3 bg-indigo-500 rounded-full mt-1.5 -left-1.5 border border-slate-900"></div>
                             <time className="mb-1 text-sm font-normal animate-flash leading-none text-indigo-400">Q4 2025 - IN PROGRESS</time>
                             <h3 className="text-lg font-semibold text-slate-100">SBIR Grant & Clinical Partnership</h3>
-                            <p className="text-base font-normal text-slate-400">Preparing a Phase I SBIR grant proposal to the National Cancer Institute (NCI) and establishing a foundational research partnership with VCU Health.</p>
+                            <p className="text-base font-normal text-slate-400">Preparing a Phase I SBIR grant proposal to the National Cancer Institute (NCI) and establishing a foundational research partnership with VCU Health Department of Radiology.</p>
+                            <p className="mt-4"><strong>July 28, 2025</strong></p>
+                            <ul className="text-base font-normal text-slate-400">- Secured cloud credits from the Google Cloud Startup Program for the development of the Insight MD platform. </ul>
+                            <ul className="text-base font-normal text-slate-400">- Sent email proposal to VCU Health Department of Radiology for clinical partnership.</ul>
+
                         </li>
                         <li className="ml-4">
                             <div className="absolute w-3 h-3 bg-slate-700 rounded-full mt-1.5 -left-1.5 border border-slate-900"></div>
