@@ -171,7 +171,7 @@ const App = () => {
                         <ArrowLeftIcon className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" />
                         Back to majestikmagik.com
                     </Link>
-                    <article className="bg-slate-800 py-12 px-6 md:px-12  rounded-xl shadow-2xl border border-slate-700">
+                    <article className="bg-slate-800 py-12 px-6 md:px-12 mb-20 rounded-xl shadow-2xl border border-slate-700">
                         <LabsContent />
                     </article>
                 </div>
