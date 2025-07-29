@@ -47,8 +47,9 @@ const partners = [
 
 const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStarted }) => {
   return (
-    <section id="home" aria-labelledby="home-heading" className="py-20 md:py-32 bg-transparent">
-      <div className="container px-6 mx-auto text-center">
+    <section id="home" aria-labelledby="home-heading" className="relative py-20 md:py-32 overflow-hidden">
+        <div className="absolute inset-0 bg-transparent z-10"></div>
+      <div className="container relative px-6 mx-auto text-center z-20">
         <h1 className="mb-6 text-5xl text-white font-bold scroll-animate md:text-7xl">
           Let Us Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-purple-600 to-blue-600"><br />Your Digital Empire</span>
         </h1>

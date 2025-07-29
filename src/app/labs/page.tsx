@@ -144,7 +144,7 @@ const App = () => {
     return (
         <div className="flex flex-col min-h-screen bg-slate-900 font-sans">
             {/* Header Video Section */}
-            <div className="relative w-full overflow-hidden" style={{ aspectRatio: '16 / 5' }}>
+            <div className="relative w-full overflow-hidden" style={{ aspectRatio: '12 / 5' }}>
                 <video
                     className="absolute top-0 left-0 w-full h-full object-cover"
                     src="/videos/majestikmagik_labs_mritest.mp4" // Placeholder video URL
@@ -156,12 +156,12 @@ const App = () => {
                 >
                     Your browser does not support the video tag.
                 </video>
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent flex flex-col justify-end items-center text-center p-8">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent flex flex-col justify-end items-center text-center p-10">
                     <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-lg mb-2">Majestik Magik Labs</h1>
                     <p className="text-xl md:text-2xl text-indigo-300 drop-shadow-md">presents Insight MD</p>
                 </div>
             </div>
-            <main className="flex-grow py-16 md:py-24">
+            <main className="flex-grow">
                 <div className="container mx-auto px-4 md:px-6 max-w-8xl">                    
                     <Link
                         href="/"
@@ -171,7 +171,7 @@ const App = () => {
                         <ArrowLeftIcon className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" />
                         Back to majestikmagik.com
                     </Link>
-                    <article className="bg-slate-800 p-6 md:p-12 rounded-xl shadow-2xl border border-slate-700">
+                    <article className="bg-slate-800 py-12 px-6 md:px-12  rounded-xl shadow-2xl border border-slate-700">
                         <LabsContent />
                     </article>
                 </div>
