@@ -51,7 +51,7 @@ const VideoTrainingContent: React.FC = () => {
     const [currentVideo, setCurrentVideo] = useState(videoData[0]);
     const videoRef = useRef<HTMLVideoElement>(null);
 
-    // Effect to handle changing the video source and playing it
+    // Effect to handle changing the video source and plays it when a new video is selected
     useEffect(() => {
         if (videoRef.current && currentVideo) {
             videoRef.current.load();
