@@ -35,13 +35,6 @@ const videoData = [
         description: "Take the next step in managing your WordPress site. This video guides you through the process of editing a post, covering how to change text and headlines, replace images, update categories and tags, and publish your revisions.",
         playlistTitle: "Module 2: Editing A Post"
     },    
-    {
-        id: 3,
-        src: "../videos/wordpress/WordPress_Tutorial_03.mp4",
-        title: "Wordpress - Adding Media & Images",
-        description: "Enhance your posts with media! This module teaches you how to add images and other media files to your WordPress posts, making your content more engaging and visually appealing.",
-        playlistTitle: "Module 3: Adding Media & Images"
-    },  
 ];
 
 
