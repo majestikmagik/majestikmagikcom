@@ -23,14 +23,14 @@ const PlayIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 const videoData = [
     {
         id: 1,
-        src: "/videos/wordpress/Wordpress_Tutorial_01.mp4",
+        src: "/videos/wordpress/WordPress_Tutorial_01.mp4",
         title: "Wordpress - Introduction & Adding A New Post",
         description: "Welcome to your WordPress training! This introductory module provides a tour of the WordPress dashboard and walks you through the essential first step: creating and publishing a new post.",
         playlistTitle: "Module 1: Introduction & Adding A New Post"
     },
     {
         id: 2,
-        src: "/videos/wordpress/Wordpress_Tutorial_02.mp4",
+        src: "/videos/wordpress/WordPress_Tutorial_02.mp4",
         title: "Wordpress - Editing A Post",
         description: "Take the next step in managing your WordPress site. This video guides you through the process of editing a post, covering how to change text and headlines, replace images, update categories and tags, and publish your revisions.",
         playlistTitle: "Module 2: Editing A Post"
