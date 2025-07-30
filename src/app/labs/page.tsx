@@ -120,7 +120,7 @@ const LabsContent = () => {
                             <h3 className="text-lg font-semibold text-slate-100">SBIR Grant & Clinical Partnership</h3>
                             <p className="text-base font-normal text-slate-400">Preparing a Phase I SBIR grant proposal to the National Cancer Institute (NCI) and establishing a foundational research partnership with VCU Health Department of Radiology.</p>
                             <p className="mt-4"><strong>July 28, 2025</strong></p>
-                            <ul className="text-base font-normal text-slate-400">- Secured and approved $2,000 in cloud credits from the Google Cloud Startup Program for the development of the Insight MD platform. </ul>
+                            <ul className="text-base font-normal text-slate-400">- Secured and approved $2,000 in cloud credits from the <a href="https://cloud.google.com/startup">Google Cloud Startup Program</a> for the development of the Insight MD platform. </ul>
                             <p className="mt-4"><strong>July 29, 2025</strong></p>
                             <ul className="text-base font-normal text-slate-400">- Awaiting approval for $5,000 in cloud credits from the AWS Startup program for development of the Insight MD platform. </ul>
                             <ul className="text-base font-normal text-slate-400">- Awaiting approval for SAM.gov entity registration. </ul>                            
