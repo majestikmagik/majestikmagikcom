@@ -40,7 +40,7 @@ const LabsContent = () => {
                 <p className="text-indigo-400 font-semibold mb-2">PROJECT: INSIGHT MD</p>
                 <h1 className="text-4xl md:text-6xl font-bold text-slate-100 mb-4">Creating a future where no cancer diagnosis comes too late.</h1>
                 <p className="text-lg text-slate-400">
-                    Majestik Magik Labs is the research and development heart of our company. Our flagship project, Insight MD, is an AI-powered software platform designed to empower radiologists in the fight against cancer. This is our mission.
+                    Majestik Magik Labs is the research and development heart of our company. Our flagship project, Insight MD, is an AI-powered software platform designed to empower radiologists in the fight against cancer. Insight MD is positioned to be the only radiologist-first, AI-powered co-pilot platform. This is our mission.
                 </p>
             </div>
 
