@@ -14,20 +14,20 @@ const ArrowLeftIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 );
 
 const BrainCircuitIcon: React.FC<React.SVGProps<SVGSVGElement>> = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 14 14"><g fill="none" stroke="#808af7" strokeLinecap="round" strokeLinejoin="round"><path d="M4.62 1.438A2.38 2.38 0 0 1 7 3.818v6.47a2.724 2.724 0 1 1-5.439-.228C.994 9.45.636 8.26.636 7.265c0-1.354.665-2.67 1.617-3.189A2.38 2.38 0 0 1 4.62 1.438"/><path d="M3.511 5.694c-.35-.08-1.141-.599-1.26-1.611M4.97 8.365C6.398 8.205 6.963 6.699 7 6.086M2.29 8.632c-.356.28-.64.917-.731 1.427M9.38 1.438A2.38 2.38 0 0 0 7 3.818v6.47a2.724 2.724 0 1 0 5.439-.228c.567-.61.924-1.8.924-2.795c0-1.354-.664-2.67-1.617-3.189A2.38 2.38 0 0 0 9.38 1.438"/><path d="M10.489 5.694c.35-.08 1.141-.599 1.26-1.611M9.03 8.365C7.602 8.205 7.037 6.699 7 6.086m4.71 2.546c.356.28.64.917.731 1.427"/></g></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 14 14"><g fill="none" stroke="#808af7" strokeLinecap="round" strokeLinejoin="round"><path d="M4.62 1.438A2.38 2.38 0 0 1 7 3.818v6.47a2.724 2.724 0 1 1-5.439-.228C.994 9.45.636 8.26.636 7.265c0-1.354.665-2.67 1.617-3.189A2.38 2.38 0 0 1 4.62 1.438" /><path d="M3.511 5.694c-.35-.08-1.141-.599-1.26-1.611M4.97 8.365C6.398 8.205 6.963 6.699 7 6.086M2.29 8.632c-.356.28-.64.917-.731 1.427M9.38 1.438A2.38 2.38 0 0 0 7 3.818v6.47a2.724 2.724 0 1 0 5.439-.228c.567-.61.924-1.8.924-2.795c0-1.354-.664-2.67-1.617-3.189A2.38 2.38 0 0 0 9.38 1.438" /><path d="M10.489 5.694c.35-.08 1.141-.599 1.26-1.611M9.03 8.365C7.602 8.205 7.037 6.699 7 6.086m4.71 2.546c.356.28.64.917.731 1.427" /></g></svg>
 );
 
 const WorkflowIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <path d="M12 20V10"/>
-        <path d="M18 20V4"/>
-        <path d="M6 20V16"/>
+        <path d="M12 20V10" />
+        <path d="M18 20V4" />
+        <path d="M6 20V16" />
     </svg>
 );
 
 const MessageSquareIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
     </svg>
 );
 
@@ -98,15 +98,14 @@ const LabsContent = () => {
                     <Image src="/img/insightmd_03.png" alt="Prototype 3" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" />
                     <Image src="/img/insightmd_04.png" alt="Prototype 4" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" />
                 </div>
-                 <p className="text-center text-xs text-slate-500 mt-2">High-fidelity prototypes of the Insight MD platform.</p>
+                <p className="text-center text-xs text-slate-500 mt-2">High-fidelity prototypes of the Insight MD platform.</p>
             </div>
-
 
             {/* --- ROADMAP SECTION --- */}
             <div>
                 <h2 className="text-3xl font-bold text-center text-slate-100 mb-10">Our Journey & Roadmap</h2>
                 <div className="max-w-4xl mx-auto">
-                    <ol className="relative border-l border-slate-700">                  
+                    <ol className="relative border-l border-slate-700">
                         <li className="mb-10 ml-4">
                             <div className="absolute w-3 h-3 bg-green-500 rounded-full mt-1.5 -left-1.5 border border-slate-900"></div>
                             <time className="mb-1 text-sm font-normal leading-none text-green-400">Q3 2025 - COMPLETE</time>
@@ -122,10 +121,11 @@ const LabsContent = () => {
                             <p className="mt-4"><strong>July 28, 2025</strong></p>
                             <ul className="text-base font-normal text-slate-400">- Secured and approved $2,000 in cloud credits from the <a href="https://cloud.google.com/startup" className="hover:text-indigo-400" target="_blank">Google Cloud Startup Program</a> for the development of the Insight MD platform. </ul>
                             <p className="mt-4"><strong>July 29, 2025</strong></p>
-                            <ul className="text-base font-normal text-slate-400">- Awaiting approval for $5,000 in cloud credits from the AWS Startup program for development of the Insight MD platform. </ul>
-                            <ul className="text-base font-normal text-slate-400">- Awaiting approval for SAM.gov entity registration. </ul>                            
+                            <ul className="text-base font-normal text-slate-400">- Awaiting confirmation for $5,000 in cloud credits from the AWS Startup program for development of the Insight MD platform. </ul>
+                            <ul className="text-base font-normal text-slate-400">- Awaiting confirmation for SAM.gov entity registration. </ul>
                             <ul className="text-base font-normal text-slate-400">- Sending email proposals to potential clinical partners. <b><a href="/data/research_sbir/A_Clinician-Centric_AI_Co-Pilot_for_Enhanced_Grading_and_Detection_of_Prostate_Cancer_on_MRI.pdf" className="hover:text-indigo-400" target="_blank">[DOWNLOAD PDF]</a></b>  </ul>
-
+                            <p className="mt-4"><strong>July 30, 2025</strong></p>
+                            <ul className="text-base font-normal text-slate-400">- Awaiting confirmation on AWS Build with Llama application. </ul>
                         </li>
                         <li className="ml-4">
                             <div className="absolute w-3 h-3 bg-slate-700 rounded-full mt-1.5 -left-1.5 border border-slate-900"></div>
@@ -135,6 +135,16 @@ const LabsContent = () => {
                         </li>
                     </ol>
                 </div>
+            </div>
+
+            {/* --- CLOUD PARTNERSHIP SECTION --- */}
+            <div className="bg-slate-950/50 py-12 px-6 rounded-xl mt-12 border border-slate-700 shadow">
+                <h2 className="text-center text-2xl font-bold text-slate-100 mb-6">Cloud Infrastructure Partners</h2>
+                <div className="flex flex-wrap justify-center items-center gap-8">
+                   
+                    <a href="https://cloud.google.com/startup" target="_blank"><Image src="/img/gcp-logo.png" alt="Google Cloud" width={258} height={159} /></a>
+                </div>
+                <p className="text-center text-sm text-slate-400 mt-4">Insight MD is powered by world-class compute partnerships for scalable and secure AI development.</p>
             </div>
         </div>
     );
@@ -165,7 +175,7 @@ const App = () => {
                 </div>
             </div>
             <main className="flex-grow">
-                <div className="container mx-auto px-4 md:px-6 max-w-8xl">                    
+                <div className="container mx-auto px-4 md:px-6 max-w-8xl">
                     <Link
                         href="/"
                         className="mb-8 inline-flex items-center text-indigo-400 hover:text-indigo-300 transition-colors group text-sm"
@@ -178,7 +188,7 @@ const App = () => {
                         <LabsContent />
                     </article>
                 </div>
-            </main>            
+            </main>
         </div>
     );
 };
