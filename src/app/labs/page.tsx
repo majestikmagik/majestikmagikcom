@@ -93,12 +93,12 @@ const LabsContent = () => {
             <div>
                 <h2 className="text-3xl font-bold text-center text-slate-100 mb-10">From Vision to Reality</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Image src="/img/insightmd_01.png" alt="Prototype 1" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" />
-                    <Image src="/img/insightmd_02.png" alt="Prototype 2" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" />
-                    <Image src="/img/insightmd_03.png" alt="Prototype 3" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" />
-                    <Image src="/img/insightmd_04.png" alt="Prototype 4" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" />
+                   <Link href="/img/insightmd_01.png"> <Image src="/img/insightmd_01.png" alt="Prototype 1" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" /></Link>
+                   <Link href="/img/insightmd_02.png"> <Image src="/img/insightmd_02.png" alt="Prototype 2" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" /></Link>
+                   <Link href="/img/insightmd_03.png"> <Image src="/img/insightmd_03.png" alt="Prototype 3" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" /></Link>
+                   <Link href="/img/insightmd_04.png"> <Image src="/img/insightmd_04.png" alt="Prototype 4" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" /></Link>
                 </div>
-                <p className="text-center text-xs text-slate-500 mt-2">High-fidelity prototypes of the Insight MD platform.</p>
+                <p className="text-center text-xs text-slate-500 mt-2 font-bold">NOTE: THIS IS FICTITIOUS PATIENT DATA – FOR DEMONSTRATION PURPOSES ONLY. High-fidelity prototypes of the Insight MD platform.</p>
             </div>
 
             {/* --- ROADMAP SECTION --- */}
@@ -119,13 +119,13 @@ const LabsContent = () => {
                             <h3 className="text-lg font-semibold text-slate-100">SBIR Grant & Clinical Partnership</h3>
                             <p className="text-base font-normal text-slate-400">Preparing a Phase I SBIR grant proposal to the National Cancer Institute (NCI) and establishing a foundational research partnership with a clinical partner.</p>
                             <p className="mt-4"><strong>July 28, 2025</strong></p>
-                            <ul className="text-base font-normal text-slate-400">- Secured and approved $2,000 in cloud credits from the <a href="https://cloud.google.com/startup" className="hover:text-indigo-400" target="_blank">Google Cloud Startup Program</a> for the development of the Insight MD platform. </ul>
+                            <ul className="text-base font-normal text-slate-400">- Secured and approved $2,000 in cloud credits from the <a href="https://cloud.google.com/startup" className="hover:text-indigo-400 ease-in-out duration-300" target="_blank">Google Cloud Startup Program</a> for the development of the Insight MD platform. </ul>
                             <p className="mt-4"><strong>July 29, 2025</strong></p>
-                            <ul className="text-base font-normal text-slate-400">- Awaiting confirmation for $5,000 in cloud credits from the AWS Startup program for development of the Insight MD platform. </ul>
+                            <ul className="text-base font-normal text-slate-400">- Awaiting confirmation for $5,000 in cloud credits from the <a href="https://aws.amazon.com/startups/" className="hover:text-indigo-400 ease-in-out duration-300" target="_blank">AWS Startup Program</a> for development of the Insight MD platform. </ul>
                             <ul className="text-base font-normal text-slate-400">- Awaiting confirmation for SAM.gov entity registration. </ul>
-                            <ul className="text-base font-normal text-slate-400">- Sending email proposals to potential clinical partners. <b><a href="/data/research_sbir/A_Clinician-Centric_AI_Co-Pilot_for_Enhanced_Grading_and_Detection_of_Prostate_Cancer_on_MRI.pdf" className="hover:text-indigo-400" target="_blank">[DOWNLOAD PDF]</a></b>  </ul>
+                            <ul className="text-base font-normal text-slate-400">- Sending email proposals to potential clinical partners. <b><a href="/data/research_sbir/A_Clinician-Centric_AI_Co-Pilot_for_Enhanced_Grading_and_Detection_of_Prostate_Cancer_on_MRI.pdf" className="hover:text-indigo-400 ease-in-out duration-300" target="_blank">[DOWNLOAD PDF]</a></b>  </ul>
                             <p className="mt-4"><strong>July 30, 2025</strong></p>
-                            <ul className="text-base font-normal text-slate-400">- Awaiting confirmation on AWS Build with Llama application. </ul>
+                            <ul className="text-base font-normal text-slate-400">- Awaiting confirmation on <a href="https://aws.amazon.com/startups/lp/llama-for-aws-startups?trk=5c641b85-cb9f-49e9-9b6b-2356ed253060&sc_channel=el" className="hover:text-indigo-400 ease-in-out duration-300" target="_blank">AWS Build with Llama</a> application. </ul>
                         </li>
                         <li className="ml-4">
                             <div className="absolute w-3 h-3 bg-slate-700 rounded-full mt-1.5 -left-1.5 border border-slate-900"></div>
@@ -144,7 +144,7 @@ const LabsContent = () => {
                    
                     <a href="https://cloud.google.com/startup" target="_blank"><Image src="/img/gcp-logo.png" alt="Google Cloud" width={258} height={159} /></a>
                 </div>
-                <p className="text-center text-sm text-slate-400 mt-4">Insight MD is powered by world-class compute partnerships for scalable and secure AI development.</p>
+                <p className="text-center text-sm text-slate-400 mt-4">Insight MD is powered by world-class compute partnerships for scalable and secure HIPAA compliant cloud-based AI development.</p>
             </div>
         </div>
     );
