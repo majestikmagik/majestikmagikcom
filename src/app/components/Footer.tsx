@@ -165,9 +165,9 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
 
 
           {/* Right column: Social + Partners grouped */}
-          <div className="w-full md:text-left flex flex-col items-center lg:items-start space-y-8">
+          <div className="md:text-left flex flex-col items-center lg:items-start space-y-8">
             {/* Social Media */}
-            <div className="w-full">
+            <div>
               <h3 className="mb-4 font-bold tracking-wider text-slate-300 uppercase">Social Media</h3>
               <ul className="space-x-6 flex items-center justify-center lg:justify-start text-xl text-slate-400">
                 <li>
