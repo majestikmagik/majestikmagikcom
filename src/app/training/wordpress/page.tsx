@@ -42,6 +42,13 @@ const videoData = [
         description: "Enhance your posts with media! This module teaches you how to add images and other media files to your WordPress posts, making your content more engaging and visually appealing.",
         playlistTitle: "Module 3: Adding Media & Images"
     },  
+       {
+        id: 4,
+        src: "/videos/wordpress/WordPress_Tutorial_04.mp4",
+        title: "Wordpress - Comments & Moderation",
+        description: "Manage your community effectively! This video covers how to handle comments on your WordPress posts, including approving, replying to, and moderating comments to foster a positive environment.",
+        playlistTitle: "Module 4: Comments & Moderation"
+    },  
 ];
 
 
