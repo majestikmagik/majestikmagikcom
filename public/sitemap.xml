@@ -16,12 +16,27 @@
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-   <url>
-    <loc>https://majestikmagik.com/about/amos-miller</loc>
-    <lastmod>2025-07-08</lastmod>
-    <changefreq>monthly</changefreq>
+  <!-- Services -->
+  <url>
+  <loc>https://majestikmagik.com/community</loc>
+    <lastmod>2025-07-25</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-  </url> 
+  </url>
+  <url>
+    <loc>https://majestikmagik.com/labs</loc>
+    <lastmod>2025-07-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    </url>
+
+  <!-- Training Videos -->
+  <url>
+    <loc>https://majestikmagik.com/training/wordpress/</loc>
+    <lastmod>2025-07-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   <!-- Templates -->
   <url>
     <loc>https://majestikmagik.com/templates/electrical/001</loc>

@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebook, faInstagram, faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
-
+import Image from 'next/image';
 // --- SVG Icons for the Footer ---
 const LocationIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5 text-slate-400">
@@ -49,17 +49,17 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
     setIsClient(true);
   }, []);
 
-  
+
   return (
     <footer id="contact" aria-labelledby="contact-heading" className="bg-slate-800  text-slate-400">
-      <div className="container px-6 py-12 mx-auto">
+      <div className="container px-6 py-12 mx-auto w-full">
 
         {/* Top Contact Bar */}
-        <div 
-          className={`mx-auto grid grid-cols-2 gap-6 mb-10 md:flex-row lg:grid-cols-3 justify-items-center ${isAlwaysVisible ? 'is-visible' : ''}`} 
-          
+        <div
+          className={`mx-auto grid grid-cols-2 gap-6 mb-10 md:flex-row lg:grid-cols-3 justify-items-center ${isAlwaysVisible ? 'is-visible' : ''}`}
+
         >
-           <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-4">
             <LocationIcon />
             <div>
               <p className="font-semibold text-slate-300">Address:</p>
@@ -88,10 +88,9 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
         <div className="border-t border-slate-800 my-8"></div>
 
         {/* Main Links Grid */}
-        <div className="mx-auto grid grid-cols-2 gap-8 lg:grid-col-2 justify-items-center">
+       <div className="grid grid-cols-2 gap-8 md:grid-cols-2 xl:grid-cols-2 justify-items-center">
 
-
-          <div className="md:text-left">
+          <div className="md:text-left flex flex-col items-center lg:items-start space-y-8">
             <h3 className="mb-4 font-bold tracking-wider text-slate-300 uppercase">Quick Links</h3>
             <ul className="space-y-2">
 
@@ -165,24 +164,58 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
           </div>
 
 
-          <div className="md:text-left">
-            <h3 className="mb-4 font-bold tracking-wider text-slate-300 uppercase">Social Media</h3>
-            <ul className="space-x-6 flex items-center justify-center text-xl text-slate-400">
-              <li>
-                <a href="https://www.facebook.com/majestikmagik/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="transition-colors duration-300 hover:text-indigo-400"><FontAwesomeIcon icon={faFacebook} /></a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/majestikmagik/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="transition-colors duration-300 hover:text-indigo-400"><FontAwesomeIcon icon={faInstagram} /></a>
-              </li>
-              <li>
-                <a href="https://github.com/majestikmagik" target="_blank" rel="noopener noreferrer" aria-label="Check out our GitHub profile" className="transition-colors duration-300 hover:text-indigo-400"><FontAwesomeIcon icon={faGithub} /></a>
-              </li>
-              <li>
-                <a href="https://discord.gg/Bmz3cW9krQ" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord server" className="transition-colors duration-300 hover:text-indigo-400"><FontAwesomeIcon icon={faDiscord} /></a>
-              </li>
+          {/* Right column: Social + Partners grouped */}
+          <div className="w-full md:text-left flex flex-col items-center lg:items-start space-y-8">
+            {/* Social Media */}
+            <div className="w-full">
+              <h3 className="mb-4 font-bold tracking-wider text-slate-300 uppercase">Social Media</h3>
+              <ul className="space-x-6 flex items-center justify-center lg:justify-start text-xl text-slate-400">
+                <li>
+                  <a href="https://www.facebook.com/majestikmagik/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook" className="transition-colors duration-300 hover:text-indigo-400">
+                    <FontAwesomeIcon icon={faFacebook} />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/majestikmagik/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="transition-colors duration-300 hover:text-indigo-400">
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/majestikmagik" target="_blank" rel="noopener noreferrer" aria-label="Check out our GitHub profile" className="transition-colors duration-300 hover:text-indigo-400">
+                    <FontAwesomeIcon icon={faGithub} />
+                  </a>
+                </li>
+                <li>
+                  <a href="https://discord.gg/Bmz3cW9krQ" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord server" className="transition-colors duration-300 hover:text-indigo-400">
+                    <FontAwesomeIcon icon={faDiscord} />
+                  </a>
+                </li>
+              </ul>
+            </div>
 
-            </ul>
+            {/* Partners */}
+            <div className="w-full">
+              <h3 className="mb-4 font-bold tracking-wider text-slate-300 uppercase">Partners</h3>
+              <ul className="flex flex-wrap justify-center lg:justify-start gap-6">
+                <Image
+                  src="/img/partners/wpengine_member-badge.png"
+                  alt="WP Engine Agency Partner"
+                  width={112}
+                  height={56}
+                  className="h-24 w-auto opacity-90 hover:opacity-100 grayscale hover:grayscale-0 transition"
+                />
+
+                <Image
+                  src="/img/partners/gcp-logo.png"
+                  alt="Google Cloud Startup Program"
+                  width={112} height={56}
+                  className="h-24 w-auto opacity-90 hover:opacity-100 grayscale hover:grayscale-0 transition"
+                />
+                {/* Add more partner badges as <li> items or additional <Image> components */}
+              </ul>
+            </div>
           </div>
+
         </div>
       </div>
 

@@ -144,7 +144,7 @@ const LabsContent = () => {
                 <h2 className="text-center text-2xl font-bold text-slate-100 mb-6">Cloud Infrastructure Partners</h2>
                 <div className="flex flex-wrap justify-center items-center gap-8">
                    
-                    <a href="https://cloud.google.com/startup" target="_blank"><Image src="/img/gcp-logo.png" alt="Google Cloud" width={258} height={159} /></a>
+                    <a href="https://cloud.google.com/startup" target="_blank"><Image src="/img/partners/gcp-logo.png" alt="Google Cloud" width={258} height={159} /></a>
                 </div>
                 <p className="text-center text-sm text-slate-400 mt-4">Insight MD is powered by world-class compute partnerships for scalable and secure HIPAA compliant cloud-based AI development.</p>
             </div>
