@@ -208,8 +208,8 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
                 <Image
                   src="/img/partners/gcp-logo.png"
                   alt="Google Cloud Startup Program"
-                  width={112} height={56}
-                  className="h-24 w-auto opacity-90 hover:opacity-100 grayscale hover:grayscale-0 transition"
+                  width={212} height={156}
+                  className="h-28 w-auto opacity-90 hover:opacity-100 grayscale hover:grayscale-0 transition"
                 />
                 {/* Add more partner badges as <li> items or additional <Image> components */}
               </ul>
