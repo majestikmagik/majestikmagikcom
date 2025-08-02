@@ -93,9 +93,9 @@ const LabsContent = () => {
             <div>
                 <h2 className="text-3xl font-bold text-center text-slate-100 mb-10">From Vision to Reality</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <Link href="/img/insightmd_01.png"> <Image src="/img/insightmd_01.png" alt="Prototype 1" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" /></Link>
-                    <Link href="/img/insightmd_02.png"> <Image src="/img/insightmd_02.png" alt="Prototype 2" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" /></Link>
                     <Link href="/img/insightmd_03.png"> <Image src="/img/insightmd_03.png" alt="Prototype 3" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" /></Link>
+                    <Link href="/img/insightmd_02.png"> <Image src="/img/insightmd_02.png" alt="Prototype 2" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" /></Link>
+                    <Link href="/img/insightmd_01.png"> <Image src="/img/insightmd_01.png" alt="Prototype 1" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" /></Link>
                     <Link href="/img/insightmd_04.png"> <Image src="/img/insightmd_04.png" alt="Prototype 4" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" /></Link>
                 </div>
                 <p className="text-center text-xs text-slate-500 mt-2 font-bold">Disclaimer: All medical imaging data displayed in this demonstration is sourced from <a href="https://www.cancerimagingarchive.net/" className="hover:text-indigo-400 duration-300 ease-in-out" aria-label="The Cancer Imaging Archive" target="_blank">The Cancer Imaging Archive (TCIA)</a>, which provides de-identified datasets in the public domain for research and educational purposes. The MRI scan shown here is fictitious and contains no protected health information (PHI).
