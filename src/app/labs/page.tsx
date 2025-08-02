@@ -98,13 +98,8 @@ const LabsContent = () => {
                     <Link href="/img/insightmd_03.png"> <Image src="/img/insightmd_03.png" alt="Prototype 3" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" /></Link>
                     <Link href="/img/insightmd_04.png"> <Image src="/img/insightmd_04.png" alt="Prototype 4" width={1000} height={1000} className="w-full h-auto rounded-lg shadow" /></Link>
                 </div>
-                <p className="text-center text-xs text-slate-500 mt-2 font-bold">Disclaimer: All medical imaging data displayed in this demonstration is sourced from <a href="https://www.cancerimagingarchive.net/" className="hover:text-indigo-400 duration-300 ease-in-out" aria-label="The Cancer Imaging Archive" target="_blank">The Cancer Imaging Archive (TCIA)</a>, which provides de-identified datasets in the public domain for research and educational purposes. The MRI scan shown here is fictitious and contains no protected health information (PHI).</p>
-
-                    <p className="text-center text-xs text-slate-500 mt-2 font-bold">The dataset was processed using 3D Slicer to prepare a realistic presentation of a prostate MRI in a PACS-style viewer for demonstration purposes only.
-                    </p>
-                    <p className="text-center text-xs text-slate-500 mt-2 font-bold">Any patient details visible in the images are synthetic and do not correspond to any real individual.
-                    </p>
-                    <p className="text-center text-xs text-slate-500 mt-2 font-bold">This demo is intended solely to illustrate software functionality and is not intended for clinical use. The Insight MD platform is still in development and is not yet ready for clinical use.</p>
+                <p className="text-center text-xs text-slate-500 mt-2 font-bold">Disclaimer: All medical imaging data displayed in this demonstration is sourced from <a href="https://www.cancerimagingarchive.net/" className="hover:text-indigo-400 duration-300 ease-in-out" aria-label="The Cancer Imaging Archive" target="_blank">The Cancer Imaging Archive (TCIA)</a>, which provides de-identified datasets in the public domain for research and educational purposes. The MRI scan shown here is fictitious and contains no protected health information (PHI).
+                    The dataset was processed using 3D Slicer to prepare a realistic presentation of a prostate MRI in a PACS-style viewer for demonstration purposes only. Any patient details visible in the images are synthetic and do not correspond to any real individual. This demo is intended solely to illustrate software functionality and is not intended for clinical use. The Insight MD platform is still in development and is not yet ready for clinical use.</p>
                        </div>
 
             {/* --- ROADMAP SECTION --- */}
