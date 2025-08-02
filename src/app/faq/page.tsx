@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useMemo, useState, useEffect } from 'react';
 import Link from 'next/link';
 
 const ArrowLeftIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -15,10 +15,10 @@ const ArrowLeftIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
 
 // FAQ questions
 const faqs = [
-   {
+  {
     question: 'What services does Majestik Magik offer?',
     answer:
-      'Custom web design & development (React/Next.js/WordPress), eCommerce, SEO, analytics, CRM tools, AI integrations, and ongoing support/maintenance.',
+      'Custom web design & development (React/Next.js/WordPress), eCommerce, SEO, analytics, CRM tools, AI integrations, and ongoing support/maintenance for professional services, e-commerce, and small businesses. We work with industries such as manufacturing, healthcare, professional services, HVAC, plumbing, roofing, etc to deliver high-quality digital and AI solutions.',
   },
   {
     question: 'How do I request a quote?',
@@ -169,6 +169,20 @@ const faqs = [
 
 const FAQPage = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [query, setQuery] = useState('');
+
+  // Reset any open panel when the search changes (keeps UX tidy)
+  useEffect(() => {
+    setOpenIndex(null);
+  }, [query]);
+
+  const filteredFaqs = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (!q) return faqs;
+    return faqs.filter(({ question, answer }) =>
+      (question + ' ' + answer).toLowerCase().includes(q)
+    );
+  }, [query]);
 
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -189,28 +203,68 @@ const FAQPage = () => {
 
           <div className="bg-slate-800 p-6 md:p-10 rounded-xl shadow-2xl">
             <h1 className="text-3xl md:text-4xl font-bold mb-6 text-slate-100">Frequently Asked Questions</h1>
-            <div className="space-y-4">
-              {faqs.map((faq, index) => (
-                <div
-                  key={index}
-                  className="border border-slate-700 rounded-lg overflow-hidden transition-all duration-300"
-                >
+
+            {/* Search Bar */}
+            <div className="mb-6">
+              <label htmlFor="faq-search" className="sr-only">Search FAQs</label>
+              <div className="relative">
+                <input
+                  id="faq-search"
+                  type="text"
+                  value={query}
+                  onChange={(e) => setQuery(e.target.value)}
+                  placeholder="Search FAQs (e.g., SEO, refunds, WordPress)…"
+                  className="w-full rounded-md bg-slate-700/40 border border-slate-600 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500/30 outline-none px-4 py-3 text-slate-200 placeholder-slate-400"
+                  aria-describedby="faq-search-help"
+                />
+                {query && (
                   <button
-                    onClick={() => toggle(index)}
-                    className="w-full text-left px-5 py-4 bg-slate-700/30 hover:bg-slate-700/50 text-lg font-medium flex justify-between items-center"
+                    type="button"
+                    onClick={() => setQuery('')}
+                    aria-label="Clear search"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-200"
                   >
-                    {faq.question}
-                    <span className={`ml-4 transform transition-transform ${openIndex === index ? 'rotate-90' : ''}`}>
-                      ▶
-                    </span>
+                    ×
                   </button>
-                  {openIndex === index && (
-                    <div className="px-5 py-4 bg-slate-800 text-slate-400 border-t border-slate-700">
-                      {faq.answer}
-                    </div>
-                  )}
+                )}
+              </div>
+              <div id="faq-search-help" className="mt-2 text-sm text-slate-400">
+                {filteredFaqs.length} result{filteredFaqs.length === 1 ? '' : 's'}
+                {query ? ` for “${query}”` : ''}
+              </div>
+            </div>
+
+            {/* FAQ List */}
+            <div className="space-y-4">
+              {filteredFaqs.length === 0 ? (
+                <div className="rounded-lg border border-slate-700 bg-slate-800 p-5 text-slate-400">
+                  No results. Try different keywords like <em>SEO</em>, <em>refund</em>, <em>training</em>, or <em>hosting</em>.
                 </div>
-              ))}
+              ) : (
+                filteredFaqs.map((faq, index) => (
+                  <div key={`${faq.question}-${index}`} className="border border-slate-700 rounded-lg overflow-hidden">
+                    <button
+                      onClick={() => toggle(index)}
+                      className="w-full text-left px-5 py-4 bg-slate-700/30 hover:bg-slate-700/50 text-lg font-medium flex justify-between items-center"
+                      aria-expanded={openIndex === index}
+                      aria-controls={`faq-panel-${index}`}
+                    >
+                      {faq.question}
+                      <span className={`ml-4 transform transition-transform ${openIndex === index ? 'rotate-90' : ''}`}>
+                        ▶
+                      </span>
+                    </button>
+                    {openIndex === index && (
+                      <div
+                        id={`faq-panel-${index}`}
+                        className="px-5 py-4 bg-slate-800 text-slate-400 border-t border-slate-700"
+                      >
+                        {faq.answer}
+                      </div>
+                    )}
+                  </div>
+                ))
+              )}
             </div>
           </div>
         </div>
