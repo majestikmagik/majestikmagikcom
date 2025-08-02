@@ -159,6 +159,15 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
                 </a>
               </li>
 
+              <li className="mb-2">
+                <a href="/faq"
+                  className="footer-link flex items-center font-semibold transition-colors hover:text-indigo-400 duration-300"
+                  aria-label="FAQ"
+
+                >
+                  FAQ
+                </a>
+              </li>
 
             </ul>
           </div>
