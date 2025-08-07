@@ -66,7 +66,7 @@ const pricingPlans = [
     price: "$700",
     buttonText: "Buy Now",
     highlight: false,
-    url: "https://buy.stripe.com/eVqdR83E41eJdhI4vJf7i01",
+    url: "https://buy.stripe.com/6oU9ATd8y5KC1hs11ddEs00",
   },
   {
     name: "Magik Weaver",
@@ -99,7 +99,7 @@ const pricingPlans = [
     price: "$2,200",
     buttonText: "Buy Now",
     highlight: true,
-    url: "https://buy.stripe.com/00w5kCeiI6z32D49Q3f7i02",
+    url: "https://buy.stripe.com/3cI00j4C24Gy0dobFRdEs01",
   },
   {
     name: "Grand Architect",
@@ -132,7 +132,7 @@ const pricingPlans = [
     price: "$6,000",
     buttonText: "Buy Now",
     highlight: false,
-    url: "https://buy.stripe.com/8x2fZg6QgaPj4Lcgerf7i03",
+    url: "https://buy.stripe.com/00w4gz5G6c90d0a6lxdEs02",
   },
 ];
 
