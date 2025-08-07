@@ -205,7 +205,7 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
             {/* Partners */}
             <div className="w-full">
               <h3 className="mb-4 font-bold tracking-wider text-slate-300 uppercase">Partners</h3>
-              <ul className="flex flex-wrap justify-center lg:justify-start gap-6">
+              <ul className="flex items-center justify-center lg:justify-start gap-8">
                 <Image
                   src="/img/partners/wpengine_member-badge.png"
                   alt="WP Engine Agency Partner"
@@ -219,6 +219,13 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
                   alt="Google Cloud Startup Program"
                   width={212} height={156}
                   className="h-28 w-auto opacity-90 hover:opacity-100 grayscale hover:grayscale-0 transition"
+                />
+
+                <Image
+                  src="/img/partners/aws-activate-logo_white.webp"
+                  alt="AWS Activate Startup"
+                  width={212} height={156}
+                  className="h-10 w-auto opacity-90 hover:opacity-100 grayscale hover:grayscale-0 transition"
                 />
                 {/* Add more partner badges as <li> items or additional <Image> components */}
               </ul>

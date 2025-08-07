@@ -131,6 +131,7 @@ const LabsContent = () => {
                             <ul className="text-base font-normal text-slate-400">- Received confirmation on UEI application from SAM.gov! </ul>
                             <p className="mt-4"><strong>August 6, 2025</strong></p>
                             <ul className="text-base font-normal text-slate-400">- Confirmed meeting on Tuesday 8/12 with a potential clinical partner from the University of Chicago. </ul>
+                            <ul className="text-base font-normal text-slate-400">- Received AWS Activate credits for $5,000 in cloud credits for the development of the Insight MD platform. </ul>
                         </li>
                         <li className="ml-4">
                             <div className="absolute w-3 h-3 bg-slate-700 rounded-full mt-1.5 -left-1.5 border border-slate-900"></div>
@@ -148,6 +149,7 @@ const LabsContent = () => {
                 <div className="flex flex-wrap justify-center items-center gap-8">
 
                     <a href="https://cloud.google.com/startup" target="_blank"><Image src="/img/partners/gcp-logo.png" alt="Google Cloud" width={258} height={159} /></a>
+                    <a href="https://aws.amazon.com/startup" target="_blank"><Image src="/img/partners/aws-activate-logo_white.webp" alt="AWS Activate Startup" width={258} height={159} /></a>
                 </div>
                 <p className="text-center text-sm text-slate-400 mt-4">Insight MD is powered by world-class compute partnerships for scalable and secure HIPAA compliant cloud-based AI development.</p>
             </div>
