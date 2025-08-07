@@ -130,7 +130,7 @@ const LabsContent = () => {
                             <p className="mt-4"><strong>July 31, 2025</strong></p>
                             <ul className="text-base font-normal text-slate-400">- Received confirmation on UEI application from SAM.gov! </ul>
                             <p className="mt-4"><strong>August 6, 2025</strong></p>
-                            <ul className="text-base font-normal text-slate-400">- Confirmed meeting on Tuesday 8/12 with a potential clinical partner from the University of Chicago. </ul>
+                            <ul className="text-base font-normal text-slate-400">- Confirmed meeting on Tuesday 8/12 with a potential clinical partner from the <a href="https://research.uchicago.edu/" className="hover:text-indigo-400 ease-in-out duration-300" target="_blank">University of Chicago</a>. </ul>
                             <ul className="text-base font-normal text-slate-400">- Received AWS Activate credits for $5,000 in cloud credits for the development of the Insight MD platform. </ul>
                         </li>
                         <li className="ml-4">
