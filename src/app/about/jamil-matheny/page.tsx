@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowLeftIcon } from '../../components/Icons';
 
 const JamilMathenyContent: React.FC = () => {
@@ -9,6 +10,7 @@ const JamilMathenyContent: React.FC = () => {
         <div className="text-slate-300 leading-relaxed space-y-4">
             <h1 className="text-3xl md:text-4xl font-bold text-slate-100 mb-1">Jamil Matheny, Founder & CEO</h1>
             <p className="text-sm text-slate-400 mb-4">About the Founder</p>
+            <Image src="/img/jamil_matheny_img.jpg" alt="Jamil Matheny" width={150} height={150} className="float-left mr-4 mb-4 rounded-lg md:w-1/5" />
             <p>Jamil Matheny is the Founder & CEO of Majestik Magik, Inc., a digital solutions agency born from a lifelong passion for technology and a deep-seated desire to help businesses achieve their goals. He leads the company with a core mission: to create effective, purpose-driven websites that solve real-world business challenges.</p>
             <p>A Virginia native, Jamil&apos;s fascination with technology began at an early age. Mentored by a neighbor who worked in IT, he gained a foundational understanding of computer hardware components. This interest grew through various school clubs and after-school programs, and his journey into programming was sparked by the creative possibilities of early web platforms like Myspace and Yahoo Geocities.</p>
             <p>With a natural knack for building—a hobby that has ranged from model cars and soldering to art—Jamil applied this same constructive mindset to his professional ambitions. As a largely self-taught programmer, he complemented his university studies by channeling his coding knowledge into a deep dive into business and entrepreneurship. Fueled by countless books on business and personal development, he worked numerous jobs over the years to analyze different operational models with the dream of one day creating his own company. This unique blend of practical technical skill and dedicated business study forms the bedrock of Majestik Magik&apos;s philosophy.</p>
