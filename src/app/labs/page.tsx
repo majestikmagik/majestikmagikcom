@@ -118,7 +118,7 @@ const LabsContent = () => {
                             <div className="absolute w-3 h-3 bg-indigo-500 rounded-full mt-1.5 -left-1.5 border border-slate-900"></div>
                             <time className="mb-1 text-sm font-normal animate-flash leading-none text-indigo-400">Q4 2025 - IN PROGRESS</time>
                             <h3 className="text-lg font-semibold text-slate-100">SBIR Grant & Clinical Collaboration</h3>
-                            <p className="text-base font-normal text-slate-400">Preparing a Phase I SBIR grant proposal to the National Cancer Institute (NCI) and establishing a foundational research collaboration with a clinical partner.</p>
+                            <p className="text-base font-normal text-slate-400">Preparing a Phase I SBIR grant proposal to the National Institutes of Health (NIH) and establishing a foundational research collaboration with a clinical partner.</p>
                             <p className="mt-4"><strong>July 28, 2025</strong></p>
                             <ul className="text-base font-normal text-slate-400">- Secured and approved $2,000 in cloud credits from the <a href="https://cloud.google.com/startup" className="hover:text-indigo-400 ease-in-out duration-300" target="_blank">Google Cloud Startup Program</a> for the development of the Insight MD platform. </ul>
                             <p className="mt-4"><strong>July 29, 2025</strong></p>
