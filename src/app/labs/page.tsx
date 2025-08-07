@@ -149,7 +149,7 @@ const LabsContent = () => {
                 <div className="flex flex-wrap justify-center items-center gap-8">
 
                     <a href="https://cloud.google.com/startup" target="_blank"><Image src="/img/partners/gcp-logo.png" alt="Google Cloud" width={258} height={159} /></a>
-                    <a href="https://aws.amazon.com/startup" target="_blank"><Image src="/img/partners/aws-activate-logo_white.webp" alt="AWS Activate Startup" width={258} height={159} /></a>
+                    <a href="https://aws.amazon.com/startups" target="_blank"><Image src="/img/partners/aws-activate-logo_white.webp" alt="AWS Activate Startup" width={258} height={159} /></a>
                 </div>
                 <p className="text-center text-sm text-slate-400 mt-4">Insight MD is powered by world-class compute partnerships for scalable and secure HIPAA compliant cloud-based AI development.</p>
             </div>
