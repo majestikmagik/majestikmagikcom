@@ -179,7 +179,7 @@ const lowTierPricingPlans = [
       "SEO Optimization: On-Page SEO (for all 3 pages)",
       "Mobile Optimization: Included",
       "Social Media: Basic Links/Icons",
-      "Analytics Setup: Google Analytics Setup",      
+      "Analytics Setup: Google Analytics Setup",
       "Features: Contact Form, Social Media Links",
       "Technology Stack: Wordpress, Drupal or Shopify Store Setup",
       "Revisions: Unlimited Rounds of Content & Layout Edits",
@@ -225,6 +225,7 @@ const lowTierPricingPlans = [
 
 
 const App = () => {
+
   const [geminiAi, setGeminiAi] = useState<GoogleGenAI | null>(null);
   const [isGeminiInitialized, setIsGeminiInitialized] = useState<boolean>(false);
 
@@ -406,7 +407,7 @@ const App = () => {
     }
   };
 
-  
+
 
 
 
@@ -425,59 +426,12 @@ const App = () => {
     setGeneratedCodeContent('');
     setGeneratedOutputType(null);
 
-    let systemPrompt = `You are an AI Concept Template Generator. This is a free service.
-The user wants a conceptual template based on their description.
-Keep all links clickable but not linked to anything using only an <a> tag no href (e.g. <a href="#">Link</a> or for buttons <button type="button">Button</button>). If using <a> tags for button-like behavior, add onclick="event.preventDefault();"
-Use modern, clean design principles.
-Do not use navigation links going back to the Majestik Magik website. Keep the buttons anchor links blank.
-Use placeholder text and images (e.g., using https://placehold.co/ for images, like https://placehold.co/400x300?text=Concept+Placeholder).
-Focus on delivering a clear, simple, and functional concept that the user can quickly understand or adapt.
-Since this is a free concept generator, the output should be less comprehensive than a full website preview. It's more like a "starter idea" or a "block template".
-For example, if the user asks for "a hero section for a startup", generate only that hero section. If they ask for "a product card layout", generate a few example cards in a responsive grid. If "a simple contact form structure", generate the HTML form elements with basic styling.
-Make it clean and functional. Use semantic HTML5 tags where appropriate.
-Tailor the actual output to the user's specific prompt.
-Your entire response must be ONLY the code block. Do not include any surrounding text, explanations, or markdown fences like \\\`\\\`\\\`language ... \\\`\\\`\\\`. Just the raw code.`;
+    let systemPrompt = `You are an AI Concept Template Generator. This is a free service.\nThe user wants a conceptual template based on their description.\nKeep all links clickable but not linked to anything using only an <a> tag no href (e.g. <a href=\"#\">Link</a> or for buttons <button type=\"button\">Button</button>). If using <a> tags for button-like behavior, add onclick=\"event.preventDefault();\"\nUse modern, clean design principles.\nDo not use navigation links going back to the Majestik Magik website. Keep the buttons anchor links blank.\nUse placeholder text and images (e.g., using https://placehold.co/ for images, like https://placehold.co/400x300?text=Concept+Placeholder).\nFocus on delivering a clear, simple, and functional concept that the user can quickly understand or adapt.\nSince this is a free concept generator, the output should be less comprehensive than a full website preview. It's more like a \"starter idea\" or a \"block template\".\nFor example, if the user asks for \"a hero section for a startup\", generate only that hero section. If they ask for \"a product card layout\", generate a few example cards in a responsive grid. If \"a simple contact form structure\", generate the HTML form elements with basic styling.\nMake it clean and functional. Use semantic HTML5 tags where appropriate.\nTailor the actual output to the user's specific prompt.\nYour entire response must be ONLY the code block. Do not include any surrounding text, explanations, or markdown fences like \\\`\\\`\\\`language ... \\\`\\\`\\\`. Just the raw code.`
 
     if (outputFormat === 'html') {
-      systemPrompt += `
-Generate a single, self-contained HTML file that provides a *modern conceptual layout* or a *single key section* as a template.
-The HTML should include embedded CSS for structure and styling within a <style> tag in the <head>. 
-For clickable elements like buttons or links that should not navigate, use <button type="button">...</button> or <a href="#" onclick="event.preventDefault();">...</a>.
-If a full page or navigation is implied for mobile, you can include a simple hamburger menu structure (visuals can be basic ASCII or placeholders, actual icon images are not required for the HTML preview logic). Any mobile view/media queries should be within the embedded <style> tag.
-The output must be ONLY the HTML code, starting with <!DOCTYPE html> and ending with </html>.
-The body tag should include oncontextmenu="event.preventDefault(); return false;" to prevent inspect element on right click in the iframe.`;
+      systemPrompt += `\nGenerate a single, self-contained HTML file that provides a *modern conceptual layout* or a *single key section* as a template.\nThe HTML should include embedded CSS for structure and styling within a <style> tag in the <head>. \nFor clickable elements like buttons or links that should not navigate, use <button type=\"button\">...</button> or <a href=\"#\" onclick=\"event.preventDefault();\">...</a>.\nIf a full page or navigation is implied for mobile, you can include a simple hamburger menu structure (visuals can be basic ASCII or placeholders, actual icon images are not required for the HTML preview logic). Any mobile view/media queries should be within the embedded <style> tag.\nThe output must be ONLY the HTML code, starting with <!DOCTYPE html> and ending with </html>.\nThe body tag should include oncontextmenu=\"event.preventDefault(); return false;\" to prevent inspect element on right click in the iframe.`
     } else if (outputFormat === 'react-tsx') {
-      systemPrompt += `
-Generate a single React functional component using TypeScript (TSX syntax). Name the component 'GeneratedConcept'.
-The component must be self-contained. All necessary React imports (like useState, useEffect) should be included if used, but DO NOT import 'React' itself like 'import React from "react";' as it will be globally available in the preview environment.
-Styles should be embedded using inline JSX style objects (e.g., style={{ color: 'blue' }}) for simplicity.
-If the concept is more complex and implies multiple elements, structure it within the single 'GeneratedConcept' component.
-For clickable elements like buttons or links that should not navigate, use <button type="button">...</button> or <a href="#" onClick={(e) => e.preventDefault()}>...</a>.
-The output must be ONLY the TSX code for the component itself. It should not be wrapped in markdown fences.
-Example structure (do not include the 'import React from "react";' line):
-\`\`\`tsx
-// import React, { useState, useEffect } from 'react'; <--- DO NOT INCLUDE THIS LINE
-
-// Define any interfaces or types needed by the component here, if any.
-// interface GeneratedConceptProps { /* ... */ }
-
-const GeneratedConcept: React.FC<any> = (props) => { // Use 'any' for props if not specified
-  // Component logic and JSX. For example:
-  // const [count, setCount] = React.useState(0);
-  return (
-    <div style={{ padding: '10px', border: '1px solid gray' }}>
-      <h1 style={{ color: 'navy' }}>AI Generated React Concept</h1>
-      <p>This is a preview of a React component.</p>
-      <img src="https://placehold.co/100x50?text=React+IMG" alt="Placeholder" />
-      <button type="button" onClick={() => alert('Button clicked!')}>Click Me</button>
-      <a href="#" onClick={(e) => { e.preventDefault(); alert('Link clicked!'); }}>Example Link</a>
-    </div>
-  );
-};
-
-// Do NOT include 'export default GeneratedConcept;'
-\`\`\`
-Ensure your response is ONLY the TSX code block (the component definition) as shown in the example, without any markdown fences or 'export default'. The component will be named 'GeneratedConcept'.`;
+      systemPrompt += `\nGenerate a single React functional component using TypeScript (TSX syntax). Name the component 'GeneratedConcept'.\nThe component must be self-contained. All necessary React imports (like useState, useEffect) should be included if used, but DO NOT import 'React' itself like 'import React from \"react\";' as it will be globally available in the preview environment.\nStyles should be embedded using inline JSX style objects (e.g., style={{ color: 'blue' }}) for simplicity.\nIf the concept is more complex and implies multiple elements, structure it within the single 'GeneratedConcept' component.\nFor clickable elements like buttons or links that should not navigate, use <button type=\"button\"></button> or <a href=\"#\" onClick={(e) => e.preventDefault()}></a>.\nThe output must be ONLY the TSX code for the component itself. It should not be wrapped in markdown fences.\nExample structure (do not include the 'import React from \"react\";' line):\n\\\`\\\`\\\`tsx\n// import React, { useState, useEffect } from 'react'; <--- DO NOT INCLUDE THIS LINE\n\n// Define any interfaces or types needed by the component here, if any.\n// interface GeneratedConceptProps { /* ... */ }\n\nconst GeneratedConcept: React.FC<any> = (props) => { // Use 'any' for props if not specified\n  // Component logic and JSX. For example:\n  // const [count, setCount] = React.useState(0);\n  return (\n    <div style={{ padding: '10px', border: '1px solid gray' }}>\n      <h1 style={{ color: 'navy' }}>AI Generated React Concept</h1>\n      <p>This is a preview of a React component.</p>\n      <img src=\"https://placehold.co/100x50?text=React+IMG\" alt=\"Placeholder\" />\n      <button type=\"button\" onClick={() => alert('Button clicked!')}>Click Me</button>\n      <a href=\"#\" onClick={(e) => { e.preventDefault(); alert('Link clicked!'); }}>Example Link</a>\n    </div>\n  );\n};\n\n// Do NOT include 'export default GeneratedConcept;'\n\\\`\\\`\\\`\nEnsure your response is ONLY the TSX code block (the component definition) as shown in the example, without any markdown fences or 'export default'. The component will be named 'GeneratedConcept'.`;
     }
 
     const userRequestPrompt = `User request: "${conceptUserPrompt}"`;
@@ -519,33 +473,31 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
   // Add the return statement here
   return (
     <div>
-  
 
-      
-        <main>
-          <HeroSection onWatchCommercial={() => setIsVideoModalOpen(true)} onGetStarted={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} />
+      <main>
+        <HeroSection onWatchCommercial={() => setIsVideoModalOpen(true)} onGetStarted={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} />
 
-          <AIConceptTemplateSection
-            conceptUserPrompt={conceptUserPrompt}
-            setConceptUserPrompt={setConceptUserPrompt}
-            generatedCodeContent={generatedCodeContent}
-            generatedOutputType={generatedOutputType}
-            isConceptLoading={isConceptLoading}
-            conceptError={conceptError}
-            handleGenerateConceptPreview={handleGenerateConceptPreview}
-            isGeminiInitialized={isGeminiInitialized}
-          />
-          <ServicesSection />
-          <PricingSection
-            pricingPlans={pricingTier === 'high' ? pricingPlans : lowTierPricingPlans}
-            lowTierPricingPlans={lowTierPricingPlans}
-            pricingTier={pricingTier}
-            setPricingTier={setPricingTier}
-            handleNavClick={handleNavClick} // Replace with your actual handleNavClick function
-          />
-          <LabsSection />
-          <TeamSection />
-        </main>    
+        <AIConceptTemplateSection
+          conceptUserPrompt={conceptUserPrompt}
+          setConceptUserPrompt={setConceptUserPrompt}
+          generatedCodeContent={generatedCodeContent}
+          generatedOutputType={generatedOutputType}
+          isConceptLoading={isConceptLoading}
+          conceptError={conceptError}
+          handleGenerateConceptPreview={handleGenerateConceptPreview}
+          isGeminiInitialized={isGeminiInitialized}
+        />
+        <ServicesSection />
+        <PricingSection
+          pricingPlans={pricingTier === 'high' ? pricingPlans : lowTierPricingPlans}
+          lowTierPricingPlans={lowTierPricingPlans}
+          pricingTier={pricingTier}
+          setPricingTier={setPricingTier}
+          handleNavClick={handleNavClick} // Replace with your actual handleNavClick function
+        />
+        <LabsSection />
+        <TeamSection />
+      </main>
 
 
 
@@ -561,7 +513,7 @@ Ensure your response is ONLY the TSX code block (the component definition) as sh
         chatError={chatError}
         isGeminiInitialized={isGeminiInitialized}
         chatMessagesEndRef={chatMessagesEndRef as React.RefObject<HTMLDivElement>}
-        
+
       />
       <VideoModal
         isOpen={isVideoModalOpen}

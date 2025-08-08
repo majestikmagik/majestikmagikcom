@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 // --- SVG Icon Components ---
 const ArrowLeftIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -64,11 +65,12 @@ const DirectoryContent: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {businessData.map((business) => (
                     <div key={business.id} className="bg-slate-900/50 rounded-lg shadow-lg overflow-hidden flex flex-col">
-                        <img 
+                        <Image 
                             src={business.imageUrl} 
                             alt={`${business.name} logo`} 
                             className="w-full h-48 object-cover"
-                            onError={(e) => { e.currentTarget.src = 'https://placehold.co/600x400/1e293b/475569?text=Image'; }}
+                            width={600}
+                            height={400}
                         />
                         <div className="p-6 flex flex-col flex-grow">
                             <h2 className="text-xl font-bold text-slate-100 mb-2">{business.name}</h2>
@@ -116,3 +118,4 @@ const CommunityDirectoryPage = () => {
 };
 
 export default CommunityDirectoryPage;
+

@@ -5,6 +5,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 // --- Helper Icon Components ---
 const BoltIcon = ({ className }: { className?: string }) => (
@@ -159,7 +160,7 @@ export default function ElectricianWebsitePage() {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col md:flex-row items-center gap-12">
                     <div className="md:w-1/2">
-                        <img src="https://placehold.co/600x400/1E293B/FBBF24?text=Safe+%26+Secure&font=montserrat" alt="Electrician ensuring a safe and secure installation" className="rounded-lg shadow-2xl" />
+                        <Image src="https://placehold.co/600x400/1E293B/FBBF24?text=Safe+%26+Secure&font=montserrat" alt="Electrician ensuring a safe and secure installation" className="rounded-lg shadow-2xl" width={600} height={400} />
                     </div>
                     <div className="md:w-1/2">
                         <h2 className="text-4xl font-bold text-slate-900 mb-4">Safety and Precision in Every Job</h2>
