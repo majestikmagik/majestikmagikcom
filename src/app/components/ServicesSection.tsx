@@ -53,7 +53,7 @@ const ServicesSection: React.FC = () => {
         <div className="mb-12 text-center">
           <h2 id="services-heading" className="mb-4 text-3xl text-slate-100 font-bold scroll-animate md:text-4xl">Our Magical Services</h2>
           <p className="max-w-xl mx-auto font-semibold text-slate-400 md:text-xl scroll-animate" style={{ transitionDelay: '0.3s' }}>
-            We offer a variety of solutions that seems like magic in every digital solution we craft.
+            We blend creativity, technology, and a touch of magic to deliver results that amaze and inspire.
           </p>
         </div>
 

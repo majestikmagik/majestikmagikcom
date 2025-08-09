@@ -48,26 +48,26 @@ const partners = [
 const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStarted }) => {
   return (
     <section id="home" aria-labelledby="home-heading" className="relative py-20 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-transparent z-10"></div>
+      <div className="absolute inset-0 bg-transparent z-10"></div>
       <div className="container relative px-6 mx-auto text-center z-20">
         <h1 className="mb-6 text-5xl text-white font-bold scroll-animate md:text-7xl">
-          Let Us Build <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-purple-600 to-blue-600"><br />Your Digital Empire</span>
+          Launch Your AI-Powered Website<span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-purple-600 to-blue-600"><br />in 30 Days or Less</span>
         </h1>
         <p className="max-w-2xl mx-auto mb-10 text-lg font-semibold text-slate-400 md:text-xl scroll-animate" style={{ transitionDelay: '0.1s' }}>
-        We build intelligent websites and AI solutions to grow your business.
+          We design high-performance websites with built-in AI tools that help you capture more leads, close more sales, and rank higher on Google — all in under 30 days, for a fraction of big agency costs.
         </p>
         <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
           <button
             onClick={onGetStarted}
-            className="shadow-md btn-primary-gradient flex items-center justify-center w-50 mt-auto text-center text-slate-100 cursor-pointer bg-indigo-600 rounded-full hover:bg-indigo-800 py-3.5 px-3 font-semibold duration-300 transition-transform transform hover:scale-105 scroll-animate"
+            className="shadow-md btn-primary-gradient flex items-center justify-center w-70 mt-auto text-center text-slate-100 cursor-pointer bg-indigo-600 rounded-full hover:bg-indigo-800 py-3.5 px-3 font-semibold duration-300 transition-transform transform hover:scale-105 scroll-animate"
             aria-label="View our pricing plans"
             style={{ transitionDelay: '0.4s' }}
             type="button"
           >
             <Image src="/img/sparkles.svg" className="lazy-logo w-6 h-6 mr-2 filter brightness-0 invert" alt="Sparkles icon" loading="lazy" width={24} height={24} />
-            Get Started
+            Show Me My New Site Design
           </button>
-          
+
           <button
             onClick={onWatchCommercial}
             className="flex items-center font-semibold text-white border border-white cursor-pointer py-3 px-6 rounded-full ease-in-out hover:bg-white hover:text-slate-900 transition-colors duration-300 scroll-animate"
@@ -77,25 +77,25 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
           >
             <PlayCircleIcon className="w-5 h-5 mr-2" />  Watch Commercial
           </button>
-        </div>        
+        </div>
         {/* Companies Partner Banner */}
-        <p className="text-sm text-slate-500 mt-40 mb-4 scroll-animate">Trusted by brands</p>
-          <div className="scrolling-logos-wrapper scroll-animate">
-            <div className="scrolling-logos-container">
-              {[...partners, ...partners, ...partners].map((partner, index) => ( // Duplicate for seamless scroll
-                <a
-                  key={`${partner.id}-${index}`}
-                  href={partner.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Visit ${partner.id}`}
-                  className="flex items-center justify-center flex-shrink-0 mr-8 sm:mr-12 last:mr-0" // Added Tailwind classes for spacing
-                >
-                  {partner.content}
-                </a>
-              ))}
-            </div>
+        <p className="text-sm text-slate-500 mt-40 mb-4 scroll-animate">Trusted by businesses in Richmond, VA and beyond</p>
+        <div className="scrolling-logos-wrapper scroll-animate">
+          <div className="scrolling-logos-container">
+            {[...partners, ...partners, ...partners].map((partner, index) => ( // Duplicate for seamless scroll
+              <a
+                key={`${partner.id}-${index}`}
+                href={partner.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${partner.id}`}
+                className="flex items-center justify-center flex-shrink-0 mr-8 sm:mr-12 last:mr-0" // Added Tailwind classes for spacing
+              >
+                {partner.content}
+              </a>
+            ))}
           </div>
+        </div>
       </div>
     </section>
   );

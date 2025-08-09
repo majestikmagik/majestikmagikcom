@@ -34,10 +34,10 @@ const PricingSection: React.FC<PricingSectionProps> = ({
       <div className="container px-6 mx-auto">
         <div className="mb-12 text-center">
           <h2 id="pricing-plans-heading" className="mb-4 text-3xl font-bold text-slate-100 scroll-animate md:text-4xl">
-            Choose Your Magical Plan
+            Choose A Plan
           </h2>
           <p className="max-w-2xl mx-auto font-semibold text-slate-400 md:text-xl scroll-animate" style={{ transitionDelay: '0.3s' }}>
-            We offer transparent pricing for projects of all sizes. Select a plan type below to find the perfect fit for your vision and budget.
+            Turn your mockup into a fully functional site — hosted, optimized, and maintained by us.
           </p>
         </div>
 

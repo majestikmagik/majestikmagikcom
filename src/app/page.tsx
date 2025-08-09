@@ -475,7 +475,7 @@ const App = () => {
     <div>
 
       <main>
-        <HeroSection onWatchCommercial={() => setIsVideoModalOpen(true)} onGetStarted={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} />
+        <HeroSection onWatchCommercial={() => setIsVideoModalOpen(true)} onGetStarted={() => document.getElementById('templates')?.scrollIntoView({ behavior: 'smooth' })} />
 
         <AIConceptTemplateSection
           conceptUserPrompt={conceptUserPrompt}

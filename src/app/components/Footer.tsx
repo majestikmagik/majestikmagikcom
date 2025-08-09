@@ -62,7 +62,7 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
             <PhoneIcon />
             <div>
               <p className="font-semibold text-slate-300">Phone:</p>
-              <p className="text-sm">(804) 362-7561</p>
+              <p className="text-sm"><a href="tel:8043627561" className="text-sm transition-colors hover:text-indigo-400">(804) 362-7561</a></p>
             </div>
           </div>
           <div className="flex items-center mx-auto space-x-4">
