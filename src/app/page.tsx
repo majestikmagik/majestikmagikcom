@@ -127,7 +127,7 @@ const pricingPlans = [
       "Content Support: 5 Hours / month",
       "Email & Phone Support",
       "Site Maintenance: $600.00 per month - features Post Launch Support, Security Updates, and Performance Monitoring",
-      "Estimated Timeline: 12-30+ days",
+      "Estimated Timeline: 12-30 days",
     ],
     price: "$6,000",
     buttonText: "Buy Now",
