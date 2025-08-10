@@ -134,7 +134,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
     >
       <div className="container px-6 mx-auto">
         {/* Section Header */}
-        <div className="mb-12 text-center">
+        <div className="mb-12 text-center scroll-animate">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-100">
             AI Website Templates
           </h2>

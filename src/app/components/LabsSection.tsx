@@ -31,7 +31,7 @@ export const LabsSection = () => {
             </video>
             <div className="absolute inset-0 bg-slate-950/90 z-10"></div>
             <div className="container relative px-6 mx-auto z-20">
-                <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div className="grid md:grid-cols-2 gap-12 items-center scroll-animate">
                     <div className="order-2 md:order-1">
                         <p className="text-sm font-bold uppercase tracking-wider text-indigo-400 mb-2">From the Labs</p>
                         <h2 id="labs-heading" className="text-3xl md:text-4xl font-bold text-slate-100 mb-4">
