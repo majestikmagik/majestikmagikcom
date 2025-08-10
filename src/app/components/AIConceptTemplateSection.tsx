@@ -165,7 +165,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
             className="w-full p-3 transition-colors duration-300 border rounded-md bg-slate-700 text-slate-200 border-slate-600 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 placeholder-slate-500"
             aria-label="Describe your desired concept template"
           />
-          <div className="flex justify-center gap-8">
+          <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
             <button
               onClick={handleGenerateConceptPreview}
               disabled={isConceptLoading || !isGeminiInitialized}
