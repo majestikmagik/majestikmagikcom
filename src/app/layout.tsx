@@ -18,9 +18,9 @@ export const metadata: Metadata = {
   authors: [{ name: 'Majestik Magik' }],
   manifest: '/site.webmanifest',
   icons: {
-    icon: '/img/logo_majestikmagik.png',
-    shortcut: '/img/logo_majestikmagik.png',
-    apple: '/img/logo_majestikmagik.png',
+    icon: '/img/majestikmagik_logo_indigo.png',
+    shortcut: '/img/majestikmagik_logo_indigo.png',
+    apple: '/img/majestikmagik_logo_indigo.png',
   },
   openGraph: {
     title: 'Majestik Magik - Crafting Digital Excellence With AI For Business Solutions',
