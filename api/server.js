@@ -28,7 +28,7 @@ const transport = nodemailer.createTransport({
 const EmailSchema = z.object({ email: z.string().email(), source: z.string().optional() });
 
 // POST /api/subscribe
-app.post("/api/subscribe", async (req, res) => {
+app.post(`${process.env.NEXT_PUBLIC_NEWSLETTER_API_URL}/api/subscribe`, async (req, res) => {
   try {
     const parse = EmailSchema.safeParse(req.body);
     if (!parse.success) return res.status(400).json({ ok: false, error: "Invalid email" });
@@ -52,7 +52,7 @@ app.post("/api/subscribe", async (req, res) => {
       [email, source ?? "popup", referer, userAgent, verifyToken]
     );
 
-    const verifyUrl = `${process.env.API_BASE_URL}/api/subscribe/verify?token=${verifyToken}`;
+    const verifyUrl = `${process.env.NEXT_PUBLIC_NEWSLETTER_API_URL}/api/subscribe/verify?token=${verifyToken}`;
     await transport.sendMail({
       to: email,
       from: process.env.EMAIL_FROM,
@@ -68,7 +68,7 @@ app.post("/api/subscribe", async (req, res) => {
 });
 
 // GET /api/subscribe/verify
-app.get("/api/subscribe/verify", async (req, res) => {
+app.get(`${process.env.NEXT_PUBLIC_NEWSLETTER_API_URL}/api/subscribe/verify`, async (req, res) => {
   try {
     const token = req.query.token;
     if (!token) return res.redirect(303, `${process.env.SITE_ORIGIN}/?sub=invalid`);
