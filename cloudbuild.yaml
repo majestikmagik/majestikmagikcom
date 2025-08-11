@@ -1,7 +1,7 @@
 substitutions:
   _FRONTEND_REGION: us-central1
   _BACKEND_REGION: us-east4
-  _REPO: majestikmagik
+  _REPO: majestikmagikcom
   _FRONTEND_SERVICE: majestikmagikcom
   _BACKEND_SERVICE: majestikmagik-api
 
