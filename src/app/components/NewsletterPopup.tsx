@@ -61,7 +61,7 @@ export default function NewsletterPopup() {
         </button>
         <h2 className="text-xl font-bold">Launch Your AI-Powered Website in 30 Days!</h2>
         <p className="mt-1 text-sm text-white-600">
-          Join our newsletter for exclusive tech tips and insights from Majestik Magik.
+          Join our newsletter for the latest exclusive tech tips and insights from Majestik Magik.
         </p>
         <form onSubmit={onSubmit} className="mt-4 space-y-3">
           <label className="block">
