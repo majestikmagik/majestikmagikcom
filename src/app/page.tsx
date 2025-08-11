@@ -479,7 +479,7 @@ const App = () => {
 
       <main>
         <HeroSection onWatchCommercial={() => setIsVideoModalOpen(true)} onGetStarted={() => document.getElementById('templates')?.scrollIntoView({ behavior: 'smooth' })} />
-
+        <ServicesSection />
         <AIConceptTemplateSection
           conceptUserPrompt={conceptUserPrompt}
           setConceptUserPrompt={setConceptUserPrompt}
@@ -489,8 +489,7 @@ const App = () => {
           conceptError={conceptError}
           handleGenerateConceptPreview={handleGenerateConceptPreview}
           isGeminiInitialized={isGeminiInitialized}
-        />
-        <ServicesSection />
+        />        
         <PricingSection
           pricingPlans={pricingTier === 'high' ? pricingPlans : lowTierPricingPlans}
           lowTierPricingPlans={lowTierPricingPlans}
