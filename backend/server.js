@@ -7,9 +7,8 @@ import { getPgClient } from "./db.js";
 const app = express();
 app.disable("x-powered-by");
 app.set("trust proxy", 1);
-app.use(express.json());
 
-// --- CORS ---
+// ---- CORS MUST COME FIRST ----
 const ALLOWED_ORIGINS = [
   "https://majestikmagik.com",
   "https://www.majestikmagik.com",
@@ -24,30 +23,22 @@ app.use((req, res, next) => {
     if (origin) res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
 
-    // Echo requested headers so preflight always matches
     const reqHdrs = req.headers["access-control-request-headers"];
-    res.setHeader(
-      "Access-Control-Allow-Headers",
-      reqHdrs || "Content-Type, Authorization"
-    );
-
-    // Optional if you ever use credentials: 'include'
+    res.setHeader("Access-Control-Allow-Headers", reqHdrs || "Content-Type, Authorization");
     res.setHeader("Access-Control-Allow-Credentials", "true");
-
-    // Help caches & CDNs
-    res.setHeader("Vary", "Origin, Access-Control-Request-Headers");
     res.setHeader("Access-Control-Max-Age", "86400");
+    res.setHeader("Vary", "Origin, Access-Control-Request-Headers");
   }
 
-  if (req.method === "OPTIONS") return res.sendStatus(204);
+  if (req.method === "OPTIONS") return res.sendStatus(204); // preflight short-circuit
   next();
 });
 
-// Now body parser
+// Now parse JSON
 app.use(express.json());
 
 // --- Required envs ---
-const required = ["SITE_ORIGIN","SMTP_HOST","SMTP_USER","SMTP_PASS","EMAIL_FROM","NEWSLETTER_API_PUBLIC_BASE"];
+const required = ["SITE_ORIGIN", "SMTP_HOST", "SMTP_USER", "SMTP_PASS", "EMAIL_FROM", "NEWSLETTER_API_PUBLIC_BASE"];
 for (const key of required) {
   if (!process.env[key]) console.warn(`[startup] Missing env ${key}`);
 }
