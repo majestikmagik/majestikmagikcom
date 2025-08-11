@@ -1,0 +1,32 @@
+substitutions:
+  _REGION: us-central1
+  _REPO: majestikmagik         # your Artifact Registry repo name
+  _FRONTEND_SERVICE: majestikmagik-web
+  _BACKEND_SERVICE: majestikmagik-api
+
+steps:
+  # Build FRONTEND
+  - name: gcr.io/cloud-builders/docker
+    dir: frontend
+    args:
+      - build
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_FRONTEND_SERVICE}:$COMMIT_SHA
+      - -f
+      - Dockerfile
+      - .
+
+  # Build BACKEND
+  - name: gcr.io/cloud-builders/docker
+    dir: backend
+    args:
+      - build
+      - -t
+      - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_BACKEND_SERVICE}:$COMMIT_SHA
+      - -f
+      - Dockerfile
+      - .
+
+images:
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_FRONTEND_SERVICE}:$COMMIT_SHA
+  - ${_REGION}-docker.pkg.dev/$PROJECT_ID/${_REPO}/${_BACKEND_SERVICE}:$COMMIT_SHA
