@@ -7,17 +7,27 @@ import { getPgClient } from "./db.js";
 const app = express();
 app.use(express.json());
 
-// CORS for your site
-const ORIGIN = process.env.SITE_ORIGIN; // e.g. https://www.majestikmagik.com
+// --- CORS ---
+const ALLOWED_ORIGINS = [
+  "https://majestikmagik.com",
+  "https://www.majestikmagik.com",
+  // add dev origin if needed:
+  "http://localhost:3000"
+];
+
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", ORIGIN);
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.setHeader("Access-Control-Allow-Methods", "POST, GET, OPTIONS");
+  const origin = req.headers.origin;
+  if (!origin || ALLOWED_ORIGINS.includes(origin)) {
+    if (origin) res.setHeader("Access-Control-Allow-Origin", origin);
+    res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.setHeader("Vary", "Origin");
+  }
   if (req.method === "OPTIONS") return res.status(204).end();
   next();
 });
 
-// SMTP transport (Hostinger)
+// --- SMTP transport (Hostinger) ---
 const transport = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT || 465),
@@ -25,15 +35,24 @@ const transport = nodemailer.createTransport({
   auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
 });
 
-const EmailSchema = z.object({ email: z.string().email(), source: z.string().optional() });
+const EmailSchema = z.object({
+  email: z.string().email(),
+  source: z.string().optional()
+});
+
+// Base used for verify link in email (this should be the **API** origin)
+const API_PUBLIC_BASE =
+  process.env.NEWSLETTER_API_PUBLIC_BASE || "https://newsletter-api-XXXX.run.app";
+
+// -------------------- Routes --------------------
 
 // POST /api/subscribe
-app.post(`${process.env.NEXT_PUBLIC_NEWSLETTER_API_URL}/api/subscribe`, async (req, res) => {
+app.post("/api/subscribe", async (req, res) => {
   try {
-    const parse = EmailSchema.safeParse(req.body);
-    if (!parse.success) return res.status(400).json({ ok: false, error: "Invalid email" });
-    const { email, source } = parse.data;
+    const parsed = EmailSchema.safeParse(req.body);
+    if (!parsed.success) return res.status(400).json({ ok: false, error: "Invalid email" });
 
+    const { email, source } = parsed.data;
     const verifyToken = crypto.randomBytes(24).toString("hex");
     const referer = req.get("referer") || null;
     const userAgent = req.get("user-agent") || null;
@@ -52,7 +71,7 @@ app.post(`${process.env.NEXT_PUBLIC_NEWSLETTER_API_URL}/api/subscribe`, async (r
       [email, source ?? "popup", referer, userAgent, verifyToken]
     );
 
-    const verifyUrl = `${process.env.NEXT_PUBLIC_NEWSLETTER_API_URL}/api/subscribe/verify?token=${verifyToken}`;
+    const verifyUrl = `${API_PUBLIC_BASE}/api/subscribe/verify?token=${verifyToken}`;
     await transport.sendMail({
       to: email,
       from: process.env.EMAIL_FROM,
@@ -68,16 +87,19 @@ app.post(`${process.env.NEXT_PUBLIC_NEWSLETTER_API_URL}/api/subscribe`, async (r
 });
 
 // GET /api/subscribe/verify
-app.get(`${process.env.NEXT_PUBLIC_NEWSLETTER_API_URL}/api/subscribe/verify`, async (req, res) => {
+app.get("/api/subscribe/verify", async (req, res) => {
   try {
     const token = req.query.token;
     if (!token) return res.redirect(303, `${process.env.SITE_ORIGIN}/?sub=invalid`);
+
     const db = await getPgClient();
     const { rowCount } = await db.query(
-      `UPDATE app.subscribers SET status='subscribed', verified_at=now(), updated_at=now()
+      `UPDATE app.subscribers
+       SET status='subscribed', verified_at=now(), updated_at=now()
        WHERE verify_token=$1 AND status='pending'`,
       [token]
     );
+
     res.redirect(303, `${process.env.SITE_ORIGIN}/?sub=${rowCount ? "ok" : "invalid"}`);
   } catch (e) {
     console.error(e);
@@ -87,5 +109,6 @@ app.get(`${process.env.NEXT_PUBLIC_NEWSLETTER_API_URL}/api/subscribe/verify`, as
 
 // Health
 app.get("/", (_req, res) => res.send("ok"));
+
 const port = process.env.PORT || 8080;
 app.listen(port, () => console.log(`listening on ${port}`));
