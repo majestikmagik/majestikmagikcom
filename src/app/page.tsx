@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { GoogleGenAI, GenerateContentResponse, Chat } from '@google/genai';
-import NewsletterPopup from "./components/NewsletterPopup";
+// import NewsletterPopup from "./components/NewsletterPopup";
 
 // Import custom hook
 import useMediaQuery from './hooks/useMediaQuery';
@@ -474,7 +474,7 @@ const App = () => {
   // Add the return statement here
   return (
     <>
-    <NewsletterPopup/>
+    {/* <NewsletterPopup/> */}
     <div>
 
       <main>
