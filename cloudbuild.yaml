@@ -7,7 +7,7 @@ substitutions:
 
 steps:
   - name: gcr.io/cloud-builders/docker
-    dir: frontend
+    dir: .
     args:
       - build
       - -t

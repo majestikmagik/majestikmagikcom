@@ -5,44 +5,58 @@ import { z } from "zod";
 import { getPgClient } from "./db.js";
 
 const app = express();
+app.disable("x-powered-by");
+app.set("trust proxy", 1);
 app.use(express.json());
 
 // --- CORS ---
 const ALLOWED_ORIGINS = [
   "https://majestikmagik.com",
   "https://www.majestikmagik.com",
-  // add dev origin if needed:
   "http://localhost:3000"
 ];
-
 app.use((req, res, next) => {
   const origin = req.headers.origin;
   if (!origin || ALLOWED_ORIGINS.includes(origin)) {
     if (origin) res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+    res.setHeader("Access-Control-Max-Age", "86400");
     res.setHeader("Vary", "Origin");
   }
   if (req.method === "OPTIONS") return res.status(204).end();
   next();
 });
 
-// --- SMTP transport (Hostinger) ---
+// --- Required envs ---
+const required = ["SITE_ORIGIN","SMTP_HOST","SMTP_USER","SMTP_PASS","EMAIL_FROM","NEWSLETTER_API_PUBLIC_BASE"];
+for (const key of required) {
+  if (!process.env[key]) console.warn(`[startup] Missing env ${key}`);
+}
+
+// --- SMTP transport ---
 const transport = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT || 465),
-  secure: String(process.env.SMTP_SECURE) === "true",
+  secure: String(process.env.SMTP_SECURE ?? "true") === "true",
   auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
 });
 
-const EmailSchema = z.object({
-  email: z.string().email(),
-  source: z.string().optional()
-});
+// --- Config / utils ---
+const EmailSchema = z.object({ email: z.string().email(), source: z.string().optional() });
 
-// Base used for verify link in email (this should be the **API** origin)
-const API_PUBLIC_BASE =
-  process.env.NEWSLETTER_API_PUBLIC_BASE || "https://newsletter-api-XXXX.run.app";
+// Normalize base (no trailing slash)
+const API_PUBLIC_BASE = String(process.env.NEWSLETTER_API_PUBLIC_BASE || "").replace(/\/+$/, "");
+if (!API_PUBLIC_BASE) {
+  console.error("[startup] NEWSLETTER_API_PUBLIC_BASE is required");
+  process.exit(1);
+}
+
+// Get a stable, non-reversible hash of client IP (optional)
+function hashIp(ip) {
+  if (!ip) return null;
+  return crypto.createHash("sha256").update(ip).digest("hex");
+}
 
 // -------------------- Routes --------------------
 
@@ -57,18 +71,24 @@ app.post("/api/subscribe", async (req, res) => {
     const referer = req.get("referer") || null;
     const userAgent = req.get("user-agent") || null;
 
+    // derive client IP from Cloud Run proxy chain
+    const fwd = req.headers["x-forwarded-for"];
+    const clientIp = Array.isArray(fwd) ? fwd[0] : (fwd?.split(",")[0]?.trim() || req.socket.remoteAddress || null);
+    const ipHash = hashIp(clientIp);
+
     const db = await getPgClient();
     await db.query(
       `INSERT INTO app.subscribers (email, status, source, referer, user_agent, ip_hash, verify_token)
-       VALUES ($1,'pending',$2,$3,$4,NULL,$5)
+       VALUES ($1,'pending',$2,$3,$4,$5,$6)
        ON CONFLICT (email) DO UPDATE SET
          status='pending',
          source = COALESCE(EXCLUDED.source, app.subscribers.source),
          referer = EXCLUDED.referer,
          user_agent = EXCLUDED.user_agent,
+         ip_hash = COALESCE(app.subscribers.ip_hash, EXCLUDED.ip_hash),
          verify_token = EXCLUDED.verify_token,
          updated_at = now()`,
-      [email, source ?? "popup", referer, userAgent, verifyToken]
+      [email, source ?? "popup", referer, userAgent, ipHash, verifyToken]
     );
 
     const verifyUrl = `${API_PUBLIC_BASE}/api/subscribe/verify?token=${verifyToken}`;
