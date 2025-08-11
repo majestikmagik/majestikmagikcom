@@ -4,6 +4,7 @@ substitutions:
   _REPO: majestikmagikcom
   _FRONTEND_SERVICE: majestikmagikcom
   _BACKEND_SERVICE: majestikmagik-api
+  _NEWSLETTER_API_URL: https://newsletter-api-845744218342.us-east4.run.app
 
 steps:
   - name: gcr.io/cloud-builders/docker
