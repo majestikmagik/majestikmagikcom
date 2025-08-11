@@ -74,3 +74,5 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "Server error" }, { status: 500 });
   }
 }
+export const runtime = "edge"; // Use edge runtime for better performance
+export const dynamic = "force-dynamic"; // Ensure this route is always fresh
