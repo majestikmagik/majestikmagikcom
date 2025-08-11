@@ -27,7 +27,7 @@ export default function NewsletterPopup() {
     setLoading(true);
     setMsg(null);
     try {
-      const r = await fetch("/api/subscribe", {
+      const r = await fetch(`${process.env.NEXT_PUBLIC_NEWSLETTER_API_URL}/api/subscribe`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, source: "popup" }),

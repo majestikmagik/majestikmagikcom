@@ -1,6 +1,6 @@
 // app/api/subscribe/verify/route.ts
 import { NextResponse } from "next/server";
-import { getPgClient } from "../../../lib/db";
+import { getPgClient } from "../../../src/app/lib/db";
 
 export const runtime = "nodejs";
 

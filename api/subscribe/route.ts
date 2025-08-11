@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import crypto from "crypto";
 import nodemailer from "nodemailer";
-import { getPgClient } from "../../lib/db";
+import { getPgClient } from "../../src/app/lib/db";
 
 const EmailSchema = z.object({
   email: z.string().email(),
@@ -54,7 +54,7 @@ export async function POST(req: Request) {
       [email, source, referer, userAgent, verifyToken]
     );
 
-    const base = process.env.APP_BASE_URL!;
+    const base = process.env.NEXT_PUBLIC_NEWSLETTER_API_URL!;
     const link = `${base}/api/subscribe/verify?token=${verifyToken}`;
 
     await transport.sendMail({
@@ -74,4 +74,4 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "Server error" }, { status: 500 });
   }
 }
-export const runtime = "nodejs"
+export const runtime = "nodejs";
