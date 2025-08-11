@@ -1,4 +1,4 @@
-// lib/db.ts
+// ./db.ts
 import { Client } from "pg";
 import { Connector, AuthTypes, IpAddressTypes } from "@google-cloud/cloud-sql-connector";
 
