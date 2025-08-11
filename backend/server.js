@@ -13,20 +13,38 @@ app.use(express.json());
 const ALLOWED_ORIGINS = [
   "https://majestikmagik.com",
   "https://www.majestikmagik.com",
-  "http://localhost:3000"
+  "http://localhost:3000",
 ];
+
 app.use((req, res, next) => {
   const origin = req.headers.origin;
-  if (!origin || ALLOWED_ORIGINS.includes(origin)) {
+  const allowed = !origin || ALLOWED_ORIGINS.includes(origin);
+
+  if (allowed) {
     if (origin) res.setHeader("Access-Control-Allow-Origin", origin);
     res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+
+    // Echo requested headers so preflight always matches
+    const reqHdrs = req.headers["access-control-request-headers"];
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      reqHdrs || "Content-Type, Authorization"
+    );
+
+    // Optional if you ever use credentials: 'include'
+    res.setHeader("Access-Control-Allow-Credentials", "true");
+
+    // Help caches & CDNs
+    res.setHeader("Vary", "Origin, Access-Control-Request-Headers");
     res.setHeader("Access-Control-Max-Age", "86400");
-    res.setHeader("Vary", "Origin");
   }
-  if (req.method === "OPTIONS") return res.status(204).end();
+
+  if (req.method === "OPTIONS") return res.sendStatus(204);
   next();
 });
+
+// Now body parser
+app.use(express.json());
 
 // --- Required envs ---
 const required = ["SITE_ORIGIN","SMTP_HOST","SMTP_USER","SMTP_PASS","EMAIL_FROM","NEWSLETTER_API_PUBLIC_BASE"];
