@@ -1,16 +1,17 @@
+# backend/Dockerfile
 FROM node:20-alpine
 WORKDIR /app
 
-# Install only prod deps
-COPY package.json package-lock.json* ./
-RUN npm ci --omit=dev
+# Helpful runtime libs
+RUN apk add --no-cache libc6-compat
+
+# Install prod deps (works even if you don't have package-lock.json)
+COPY package*.json ./
+RUN npm install --omit=dev
 
 # Copy source
 COPY . .
 
 ENV NODE_ENV=production
-# Cloud Run provides $PORT; make sure server.js uses it
-# const PORT = process.env.PORT || 8080
 EXPOSE 8080
-
-CMD ["npm", "start"]
+CMD ["npm","start"]
