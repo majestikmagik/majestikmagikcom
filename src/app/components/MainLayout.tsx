@@ -50,6 +50,7 @@ export default function MainLayout({
 
       <main>
         {children}
+        
       </main>
       
       {/* The 'isPolicyPage' variable is passed as the 'isAlwaysVisible' prop */}
