@@ -13,6 +13,7 @@ import {
   PricingSection,
   LabsSection,
   TeamSection,
+  TestimonialsSection,
   AIConceptTemplateSection,
   Chatbot,
   VideoModal
@@ -499,6 +500,7 @@ const App = () => {
         />
         <LabsSection />
         <TeamSection />
+        <TestimonialsSection />
       </main>
 
 

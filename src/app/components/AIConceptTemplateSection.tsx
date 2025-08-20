@@ -190,7 +190,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
                   className="flex items-center justify-center w-80 px-6 py-3 mt-4 font-semibold text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-green-600 hover:bg-green-500"
                   type="button"
                 >
-                  Like it? See Pricing & Build It Live
+                  See it? Like it? Build It!
                 </button>
               </a>
           </div>
