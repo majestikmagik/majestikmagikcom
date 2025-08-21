@@ -76,7 +76,7 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', 'AW-16649126006');
           `}
-        </Script>        
+        </Script>
 
         <Script id="mailerlite-universal" strategy="afterInteractive">
           {`(function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
@@ -85,6 +85,34 @@ export default function RootLayout({
     (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
     ml('account', '1747571');`}
         </Script>
+
+
+        {/* Facebook Pixel Code */}
+        <Script id="fb-pixel" strategy="afterInteractive">
+          {`
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod ?
+      n.callMethod.apply(n, arguments) : n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '2550379602025185');
+    fbq('track', 'PageView');
+  `}
+        </Script>
+
+        <noscript>
+          <img
+            alt="Facebook Pixel"
+            height="1"
+            width="1"
+            style={{ display: 'none' }}
+            src="https://www.facebook.com/tr?id=2550379602025185&ev=PageView&noscript=1"
+          />
+        </noscript>
+
 
 
       </body>
