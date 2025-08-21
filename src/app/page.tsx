@@ -522,7 +522,7 @@ const App = () => {
       <VideoModal
         isOpen={isVideoModalOpen}
         onClose={() => setIsVideoModalOpen(false)}
-        videoSrc="/img/MajestikMagik_commercial_final.mp4"
+        videoSrc="/videos/MajestikMagik-Ad-Website.mp4"
       />
     </div>
     </>
