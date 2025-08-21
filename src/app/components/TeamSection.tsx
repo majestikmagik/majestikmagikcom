@@ -65,8 +65,9 @@ const TeamSection: React.FC = () => {
                 loading="lazy"
               />
               <h3 className="mb-1 text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600">{member.name}</h3>
-              <p className="mb-3 font-semibold text-indigo-300">{member.title}</p>
+              <p className="mb-3 font-semibold text-indigo-300">{member.title}</p>              
               <p className="mb-4 text-sm font-semibold text-slate-400 hover:text-indigo-500"><a href={member.emailUrl}>{member.email}</a></p>
+              <Image src="/img/my_signature.png" alt="Jamil Matheny Signature" width={150} height={100} className="mb-4 invert" />
               <p className="flex-grow px-2 mb-4 text-sm text-slate-400">{member.bio}
                 <Link href={member.url} className="transition-colors duration-300 font-bold text-indigo-300 hover:text-indigo-500 mx-2"> Read More</Link>
               </p>
