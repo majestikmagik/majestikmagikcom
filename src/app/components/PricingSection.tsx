@@ -103,7 +103,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({
                   <strong className="font-semibold text-slate-100">Best For:</strong> {plan.bestFor}
                 </p>
 
-                <ul className="flex-grow mb-8 space-y-2 text-lg text-slate-300">
+                <ul className="mb-8 space-y-2 text-lg text-slate-300">
                   {(plan.whatYouGet || []).map((feature, i) => (
                     <li key={i} className="flex items-start">
                       <CheckCircleIcon className="flex-shrink-0 w-5 h-5 mt-0.5 mr-2 text-indigo-400" />
@@ -125,14 +125,6 @@ const PricingSection: React.FC<PricingSectionProps> = ({
                   )}
                 </ul>
 
-                <ul>
-                  {/* Timeline */}
-                  {plan.timeline && (
-                    <p className="mb-4 text-lg text-slate-300">
-                      <strong className="text-slate-100">Timeline:</strong> {plan.timeline}
-                    </p>
-                  )}
-                </ul>
                 {/* Investment / Pricing Breakdown */}
                 {plan.investment && (
                   <div className="mb-6 text-lg text-slate-300">
@@ -172,20 +164,32 @@ const PricingSection: React.FC<PricingSectionProps> = ({
                   </div>
                 )}
 
-                <div className="my-6 text-2xl font-extrabold text-center text-white">
-                  {plan.price}
-                </div>
-                <a
-                  href={plan.url}
-                  {...(plan.url.startsWith('#')
-                    ? { onClick: (e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, plan.url) }
-                    : { target: "_blank", rel: "noopener noreferrer" }
+                {/* Wrapper for bottom-aligned content */}
+                <div className="mt-auto">
+                  {/* Timeline */}
+                  {plan.timeline && (
+                    <div className="pt-6 mt-6 border-t border-slate-700">
+                      <p className="text-lg text-center text-slate-300">
+                        <strong className="text-slate-100">Timeline:</strong> {plan.timeline}
+                      </p>
+                    </div>
                   )}
-                  className="flex items-center justify-center w-full mt-auto text-center text-white bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-500 py-3 px-5 font-semibold transition-colors duration-300"
-                >
-                  <CreditCardIcon className="w-5 h-5 mr-2 text-white" />
-                  {plan.buttonText}
-                </a>
+
+                  <div className="my-6 text-2xl font-extrabold text-center text-white">
+                    {plan.price}
+                  </div>
+                  <a
+                    href={plan.url}
+                    {...(plan.url.startsWith('#')
+                      ? { onClick: (e: React.MouseEvent<HTMLAnchorElement>) => handleNavClick(e, plan.url) }
+                      : { target: "_blank", rel: "noopener noreferrer" }
+                    )}
+                    className="flex items-center justify-center w-full text-center text-white bg-indigo-600 rounded-lg shadow-md hover:bg-indigo-500 py-3 px-5 font-semibold transition-colors duration-300"
+                  >
+                    <CreditCardIcon className="w-5 h-5 mr-2 text-white" />
+                    {plan.buttonText}
+                  </a>
+                </div>
               </div>
             </div>
           ))}
