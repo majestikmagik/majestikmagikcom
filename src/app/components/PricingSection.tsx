@@ -49,7 +49,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({
 
   return (
     <section id="pricing" aria-labelledby="pricing-plans-heading" className="py-16 md:py-24 bg-slate-950">
-      <div className="container px-6 mx-auto">
+      <div className="container px-6 mb-20 mx-auto">
         <div className="mb-20 text-center">
           <h2 id="pricing-plans-heading" className="mb-10 text-3xl font-bold text-slate-100 scroll-animate md:text-4xl">
             Turn Vision into Profit: Your Path to a High-Performance, Managed Website
@@ -67,7 +67,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({
         </div>
 
         <div className="flex justify-center mt-20 mb-20 scroll-animate">
-          <div className="inline-flex rounded-md shadow-sm bg-slate-700/50" role="group">
+          <div className="inline-flex rounded-md shadow-sm mb-10 bg-slate-700/50" role="group">
             <button
               type="button"
               onClick={() => setPricingTier('high')}
