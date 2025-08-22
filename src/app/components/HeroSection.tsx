@@ -50,10 +50,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
     <section id="home" aria-labelledby="home-heading" className="relative py-20 md:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-transparent z-10"></div>
       <div className="container relative px-6 mx-auto text-center z-20">
-        <h1 className="mb-10 text-6xl text-white font-semibold scroll-animate md:text-8xl">
+        <h1 className="mb-8 text-6xl text-white font-semibold scroll-animate md:text-8xl">
           Unlock Exponential Growth <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-purple-600 to-blue-600"><br />Your AI-Powered Website Delivered Within 30 Days</span>
         </h1>
-        <p className="max-w-5xl mx-auto mb-18 text-lg text-slate-200 md:text-xl scroll-animate" style={{ transitionDelay: '0.1s' }}>
+        <p className="max-w-5xl mx-auto mb-12 text-lg text-slate-200 md:text-xl scroll-animate" style={{ transitionDelay: '0.1s' }}>
           Stop leaving money on the table. We build high-performance websites, engineered with cutting-edge AI tools, to transform your online presence into a <b>lead-generating, sales-closing machine.</b> Get big agency results and Google dominance, without the big agency price tag.
         </p>
         <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">

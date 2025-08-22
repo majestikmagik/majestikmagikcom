@@ -75,7 +75,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({
               className={`px-6 py-3 text-md font-semibold rounded-l-lg border border-transparent focus:z-10 focus:ring-2 focus:ring-indigo-500 cursor-pointer transition-all duration-200
                 ${pricingTier === 'high' ? 'bg-indigo-600 text-white shadow-lg' : 'text-slate-300 hover:bg-slate-600'}`}
             >
-             ⚡Accelerate Your Growth
+              ⚡Accelerate Your Growth
             </button>
             <button
               type="button"
@@ -124,26 +124,15 @@ const PricingSection: React.FC<PricingSectionProps> = ({
                     </div>
                   )}
                 </ul>
+
                 <ul>
-                  {plan.subscription && (
-                    <div className="mb-6 text-lg text-slate-300">
-                      <p className="font-semibold text-slate-100 mb-1">Subscription Includes:</p>
-                      <ul className="list-disc list-inside space-y-1">
-                        {plan.subscription.map((item, index) => (
-                          <li key={index} dangerouslySetInnerHTML={{ __html: item }} />
-                        ))}
-                      </ul>
-                    </div>
+                  {/* Timeline */}
+                  {plan.timeline && (
+                    <p className="mb-4 text-lg text-slate-300">
+                      <strong className="text-slate-100">Timeline:</strong> {plan.timeline}
+                    </p>
                   )}
                 </ul>
-
-                {/* Timeline */}
-                {plan.timeline && (
-                  <p className="mb-4 text-lg text-slate-300">
-                    <strong className="text-slate-100">Timeline:</strong> {plan.timeline}
-                  </p>
-                )}
-
                 {/* Investment / Pricing Breakdown */}
                 {plan.investment && (
                   <div className="mb-6 text-lg text-slate-300">
@@ -200,7 +189,7 @@ const PricingSection: React.FC<PricingSectionProps> = ({
               </div>
             </div>
           ))}
-        </div>     
+        </div>
       </div>
     </section>
   );
