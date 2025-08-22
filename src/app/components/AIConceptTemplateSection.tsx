@@ -135,14 +135,14 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
       <div className="container px-6 mx-auto">
         {/* Section Header */}
         <div className="mb-12 text-left max-w-6xl mx-auto scroll-animate">
-          <h2 className="text-3xl md:text-4xl text-center font-extrabold text-slate-100">
+          <h1 className="text-3xl md:text-4xl text-center font-extrabold text-slate-100">
             From Idea to Income: Rapid AI Website Templates for Instant Validation & Launch
-          </h2>
+          </h1>
           <p className="mt-4 text-slate-400 text-center md:text-lg">
             Stop getting bogged down in endless mockups and design cycles. Start validating your vision and launching faster than ever. Our AI Website Templates transform your concepts into tangible, responsive reality in seconds. Simply describe any page or section (hero, pricing, features, contact, etc.), and our AI instantly generates a clean, production-ready HTML concept. Preview, refine, download, and accelerate your path to market with confidence.
           </p>
 
-          <ul className="mt-6 grid gap-2 text-slate-400 text-sm md:text-base">
+          <ul className="mt-6 grid gap-2 text-slate-400 text-lg md:text-base">
             <li>⚡ <span className="text-slate-300">Rapid Validation:</span> Get instant, high-fidelity concepts for landing pages or individual sections. Test ideas, gather feedback, and iterate at lightning speed – saving weeks of development time and thousands in design costs.</li>
             <li>🧩 <span className="text-slate-300">Strategic Flexibility:</span> Tweak your prompts and regenerate until your vision perfectly aligns with your market strategy. Make informed decisions faster.</li>
             <li>📦 <span className="text-slate-300">Actionable & Practical:</span> Export your concept as clean HTML immediately. Use it for internal review, stakeholder presentations, or as a direct blueprint for your next project. Ready to upgrade to a full build when your strategy demands it.</li>
