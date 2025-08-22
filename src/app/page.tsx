@@ -91,7 +91,8 @@ const pricingPlans = [
       }
     ],
     buttonText: "Launch My Business Now!",
-    url: "https://buy.stripe.com/6oU9ATd8y5KC1hs11ddEs00"
+    url: "https://buy.stripe.com/6oU9ATd8y5KC1hs11ddEs00",
+    highlight: false
   },
   {
     name: "✨ Magik Weaver: Your Digital Growth Engine",
@@ -202,7 +203,8 @@ const pricingPlans = [
       }
     ],
     "buttonText": "Build My Digital Empire",
-    "url": "https://buy.stripe.com/00w4gz5G6c90d0a6lxdEs02"
+    "url": "https://buy.stripe.com/00w4gz5G6c90d0a6lxdEs02",
+    "highlight": false
   }
 ];
 

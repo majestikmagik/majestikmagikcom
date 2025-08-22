@@ -48,7 +48,17 @@ const partners = [
 const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStarted }) => {
   return (
     <section id="home" aria-labelledby="home-heading" className="relative py-20 md:py-32 overflow-hidden">
-      <div className="absolute inset-0 bg-transparent z-10"></div>
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute top-0 left-0 w-full h-full object-cover z-0"
+      >
+        <source src="/videos/majestikmagik_backdrop_uhd_2560_1440_24fps.webm" type="video/webm" />
+        Your browser does not support the video tag.
+      </video>
+      <div className="absolute inset-0 bg-indigo-950/90 z-10"></div>
       <div className="container relative px-6 mx-auto text-center z-20">
         <h1 className="mb-8 text-6xl text-white font-semibold scroll-animate md:text-8xl">
           Unlock Exponential Growth <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-purple-600 to-blue-600"><br />Your AI-Powered Website Delivered Within 30 Days</span>

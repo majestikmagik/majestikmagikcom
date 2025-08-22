@@ -53,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gradient-to-br from-slate-900 via-indigo-800 to-slate-900 text-slate-200 overflow-x-hidden">
+      <body className="bg-transparent bg-gradient-to-br from-slate-900 via-indigo-800 to-slate-900 text-slate-200 overflow-x-hidden">
         {/* Use the MainLayout Client Component to wrap the children and handle interactive elements */}
         <MainLayout>
           {children}
