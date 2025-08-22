@@ -134,27 +134,27 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
     >
       <div className="container px-6 mx-auto">
         {/* Section Header */}
-        <div className="mb-12 text-center scroll-animate">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-100">
-            AI Website Templates
+        <div className="mb-12 text-left max-w-6xl mx-auto scroll-animate">
+          <h2 className="text-3xl md:text-4xl text-center font-extrabold text-slate-100">
+            From Idea to Income: Rapid AI Website Templates for Instant Validation & Launch
           </h2>
-          <p className="mt-4 text-slate-400 md:text-lg">
-            Turn an idea into a working mockup in seconds. Describe a page or section
-            (hero, pricing, features, contact, etc.) and our AI will generate a clean,
-            responsive HTML concept you can preview, download, and build on.
+          <p className="mt-4 text-slate-400 text-center md:text-lg">
+            Stop getting bogged down in endless mockups and design cycles. Start validating your vision and launching faster than ever. Our AI Website Templates transform your concepts into tangible, responsive reality in seconds. Simply describe any page or section (hero, pricing, features, contact, etc.), and our AI instantly generates a clean, production-ready HTML concept. Preview, refine, download, and accelerate your path to market with confidence.
           </p>
 
           <ul className="mt-6 grid gap-2 text-slate-400 text-sm md:text-base">
-            <li>⚡ <span className="text-slate-300">Fast:</span> instant concepts for landing pages or individual sections</li>
-            <li>🧩 <span className="text-slate-300">Flexible:</span> tweak your prompt and regenerate until it fits</li>
-            <li>📦 <span className="text-slate-300">Practical:</span> export as HTML; upgrade to a full build when you’re ready</li>
-            <li>🔗 <span className="text-slate-300">Need more?</span> We handle custom design, APIs, and databases</li>
+            <li>⚡ <span className="text-slate-300">Rapid Validation:</span> Get instant, high-fidelity concepts for landing pages or individual sections. Test ideas, gather feedback, and iterate at lightning speed – saving weeks of development time and thousands in design costs.</li>
+            <li>🧩 <span className="text-slate-300">Strategic Flexibility:</span> Tweak your prompts and regenerate until your vision perfectly aligns with your market strategy. Make informed decisions faster.</li>
+            <li>📦 <span className="text-slate-300">Actionable & Practical:</span> Export your concept as clean HTML immediately. Use it for internal review, stakeholder presentations, or as a direct blueprint for your next project. Ready to upgrade to a full build when your strategy demands it.</li>
+            <li>🔗 <span className="text-slate-300">Need more?</span> We&apos;re ready to engineer your full custom design, complex APIs, and robust databases to scale your success.</li>
           </ul>
         </div>
 
+
+
         {/* Input and Buttons */}
         <div
-          className="max-w-4xl p-6 mx-auto rounded-xl shadow-2xl md:p-8 bg-slate-800 scroll-animate"
+          className="max-w-6xl p-6 mx-auto rounded-xl shadow-2xl md:p-8 bg-slate-800 scroll-animate"
           style={{ transitionDelay: '0.3s' }}
         >
           <textarea
@@ -169,7 +169,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
             <button
               onClick={handleGenerateConceptPreview}
               disabled={isConceptLoading || !isGeminiInitialized}
-              className="flex items-center justify-center w-60 px-6 py-3 mt-4 font-semibold text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-indigo-600 hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed"
+              className="flex items-center justify-center w-80 px-6 py-3 mt-4 font-semibold text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-indigo-600 hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed"
               aria-live="polite"
               type="button"
             >
@@ -181,18 +181,18 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
               ) : (
                 <>
                   <svg className="w-5 h-5 mr-3 -ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4.5 2.25M12 18h.01"></path></svg>
-                  Generate
+                  Create My AI Concept
                 </>
               )}
             </button>
-             <a href="#pricing">
-                <button
-                  className="flex items-center justify-center w-80 px-6 py-3 mt-4 font-semibold text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-green-600 hover:bg-green-500"
-                  type="button"
-                >
-                  See it? Like it? Build It!
-                </button>
-              </a>
+            <a href="#pricing">
+              <button
+                className="flex items-center justify-center w-80 px-6 py-3 mt-4 font-semibold text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-green-600 hover:bg-green-500"
+                type="button"
+              >
+                Build My Revenue Engine
+              </button>
+            </a>
           </div>
         </div>
 
@@ -218,7 +218,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
               ></iframe>
             </div>
             <div className="text-right mt-4">
-              <p className="font-bold">Your design is ready! Like what you see?</p>
+              <p className="font-bold">Your design is ready! Download now!</p>
               <button
                 onClick={handleDownloadHtml}
                 className="inline-flex items-center justify-center px-4 py-2 font-semibold text-white transition-all duration-300 rounded-md shadow-md bg-green-600 hover:bg-green-500 disabled:bg-slate-600 cursor-pointer disabled:cursor-not-allowed"
@@ -227,18 +227,21 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
                 Download HTML
-              </button>              
+              </button>
             </div>
           </div>
         )}
 
         {/* --- IMAGE MARQUEE SECTION --- */}
-        <div className="mt-24 text-center">
+        <div className="mt-24 text-center max-w-6xl mx-auto">
           <h3 className="text-2xl text-slate-200 font-bold md:text-3xl scroll-animate">
-            Explore Our Pre-Built Templates
+            Launch Faster, Convert Smarter: Explore Our Pre-Optimized AI Website Templates
           </h3>
-          <p className="max-w-xl mx-auto mt-2 text-slate-400 md:text-lg scroll-animate" style={{ transitionDelay: '0.2s' }}>
-            Click any template to see a live preview.
+          <p className="mx-auto mt-2 text-slate-400 md:text-lg scroll-animate" style={{ transitionDelay: '0.2s' }}>
+            Stop building from scratch or waiting weeks for designs. Start with a proven foundation that&apos;s ready to generate leads.</p>
+          <p className="mx-auto mt-2 text-slate-400 md:text-lg scroll-animate" style={{ transitionDelay: '0.2s' }}>Our expertly designed, AI-optimized pre-built templates offer an instant solution for a polished, high-performance online presence. Each template is engineered for conversions and speed, giving you a powerful head start.</p>
+
+          <p className="mx-auto mt-2 text-slate-400 md:text-lg scroll-animate" style={{ transitionDelay: '0.2s' }}>  [Click any template below to see a live preview and visualize your next revenue engine.]
           </p>
           <div className="scroll-animate animate-delay-300">
             <ImageMarquee />

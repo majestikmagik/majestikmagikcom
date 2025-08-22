@@ -50,11 +50,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
     <section id="home" aria-labelledby="home-heading" className="relative py-20 md:py-32 overflow-hidden">
       <div className="absolute inset-0 bg-transparent z-10"></div>
       <div className="container relative px-6 mx-auto text-center z-20">
-        <h1 className="mb-6 text-6xl text-white font-semibold scroll-animate md:text-8xl">
-          Launch Your New <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-purple-600 to-blue-600"><br />AI-Powered Website Fast</span>
+        <h1 className="mb-10 text-6xl text-white font-semibold scroll-animate md:text-8xl">
+          Unlock Exponential Growth <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-purple-600 to-blue-600"><br />Your AI-Powered Website Delivered Within 30 Days</span>
         </h1>
-        <p className="max-w-2xl mx-auto mb-10 text-lg font-semibold text-slate-400 md:text-xl scroll-animate" style={{ transitionDelay: '0.1s' }}>
-          We design high-performance websites with built-in AI tools that help you capture more leads, close more sales, and rank higher on Google — all in under 30 days, for a fraction of big agency costs.
+        <p className="max-w-5xl mx-auto mb-18 text-lg text-slate-200 md:text-xl scroll-animate" style={{ transitionDelay: '0.1s' }}>
+          Stop leaving money on the table. We build high-performance websites, engineered with cutting-edge AI tools, to transform your online presence into a <b>lead-generating, sales-closing machine.</b> Get big agency results and Google dominance, without the big agency price tag.
         </p>
         <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
           <button
@@ -65,7 +65,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
             type="button"
           >
             <Image src="/img/sparkles.svg" className="lazy-logo w-6 h-6 mr-2 filter brightness-0 invert" alt="Sparkles icon" loading="lazy" width={24} height={24} />
-            Design My Website
+            Build My Revenue Engine
           </button>
 
           <button
@@ -75,11 +75,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
             style={{ transitionDelay: '0.2s' }}
             type="button"
           >
-            <PlayCircleIcon className="w-5 h-5 mr-2" />  Watch Our Ad
+            <PlayCircleIcon className="w-5 h-5 mr-2" />  See How It Works
           </button>
         </div>
         {/* Companies Partner Banner */}
-        <p className="text-sm text-slate-500 mt-40 mb-4 scroll-animate">Trusted by businesses in Richmond, VA and beyond</p>
+        <p className="text-sm text-slate-500 mt-30 mb-4 scroll-animate">Trusted by businesses in Richmond, VA and beyond</p>
         <div className="scrolling-logos-wrapper scroll-animate">
           <div className="scrolling-logos-container">
             {[...partners, ...partners, ...partners].map((partner, index) => ( // Duplicate for seamless scroll

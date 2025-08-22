@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { GoogleGenAI, GenerateContentResponse, Chat } from '@google/genai';
-// import NewsletterPopup from "./components/NewsletterPopup";
+
 
 // Import custom hook
 import useMediaQuery from './hooks/useMediaQuery';
@@ -39,103 +39,171 @@ type OutputFormat = 'html' | 'react-tsx';
 // --- High-Tier Pricing Plans ---
 const pricingPlans = [
   {
-    name: "Starter Spark",
-    description: "Ideal for launching a basic online presence. Get a simple, responsive website (up to 3 sections) with essential features like a contact form, basic SEO, and analytics to get you started.",
-    bestFor: "Simple Landing Pages, Small Businesses",
-    features: [
-      "Custom Website Design: Up to 3 Sections",
-      "Responsive Design: Included",
-      "Secure CDN / Cloudflare Integration: Included",
-      "AWS / Google Cloud Integration: Included (Instance fees may apply outside of scope)",
-      "Content Integration: Basic Text & Images",
-      "SEO Optimization: Included On-Page & Technical",
-      "Mobile Optimization: Included",
-      "Social Media Integration: Basic Icons",
-      "Analytics Setup: Basic Google Analytics",
-      "CMS Integration: Headless CMS (Sanity.IO, Contentful, etc.)",
-      "Technology Framework: React, Next.js, TypeScript",
-      "E-commerce Ready: Optional (Simple Setup)",
-      "Revisions: 1 Round",
-      "AI Chatbot (Optional)",
-      "Initial Consultation: Included",
-      "Software & Security Updates",
-      "24/7 Performance & Uptime Monitoring",
-      "Critical Issue Email Support",
-      "Site Maintenance: $80.00 per month - features Post Launch Support, Security Updates, and Performance Monitoring",
-      "Estimated Timeline: 3-10+ days",
-
+    name: "🚀 The Local Launchpad: Get Your Business Online, FAST!",
+    tagline: "Professional Web Presence in Days, Not Weeks. Zero Tech Headaches.",
+    description: "Imagine launching your local business online with a stunning, high-converting website – not in months, but in days. The Local Launchpad is your turnkey solution designed specifically for service providers, consultants, solo entrepreneurs, and small brick-and-mortar shops who need to establish instant credibility, attract more customers, and work smarter, not harder.",
+    bestFor: "Perfect for: Service Providers, Consultants, Solo Entrepreneurs, Small Brick-and-Mortar Shops, and anyone needing a professional online presence without the fuss or massive upfront cost.",
+    coreBenefits: [
+      "Instant Credibility & Trust: Ditch the DIY look. Launch with a professionally designed site that positions you as a leader in your local market.",
+      "Attract More Customers 24/7: Your business becomes findable online, converting visitors into leads and inquiries around the clock—even while you sleep!",
+      "Zero Tech Stress, Maximum Focus: We handle everything. From design to hosting to security, you can focus 100% on serving your clients and growing your business.",
+      "Lightning-Fast Launch: Get online in 5-10 business days. Stop waiting, start selling.",
+      "Affordable & Transparent: Get big-agency quality without the big-agency price tag. Clear, upfront costs with no hidden fees."
     ],
-    price: "$700",
-    buttonText: "Buy Now",
-    highlight: false,
-    url: "https://buy.stripe.com/6oU9ATd8y5KC1hs11ddEs00",
+    whatYouGet: [
+      "Custom 3-Page Website: Home, About, and Contact pages, designed to perfectly match your brand and clearly communicate your value.",
+      "Mobile-First Design: Your site will look and perform flawlessly on any device—phones, tablets, and desktops.",
+      "High-Speed Hosting & SSL Security: Blazing fast, secure cloud hosting with an SSL certificate included for visitor trust.",
+      "Content Integration: We load your provided images and text, so your site is ready to go live.",
+      "Local SEO Foundation: On-page SEO optimization and Google Maps integration to ensure local customers find you easily.",
+      "Social Media Connections: Seamless integration with your key platforms (Facebook, Instagram, LinkedIn).",
+      "Google Analytics Setup: Track visitor traffic and behavior to make informed business decisions.",
+      "Personalized Strategy Session: A dedicated call to align your website with your specific business goals.",
+      "One Round of Revisions: We'll fine-tune your site to ensure you're absolutely thrilled with the final result."
+    ],
+    timeline: "5–10 Business Days from Content Submission",
+    investment: {
+      setupFee: "$700 (One-Time Setup Fee)",
+      monthlyPlan: {
+        name: "Your 'Worry-Free Growth' Plan",
+        price: "$80/month",
+        includes: [
+          "🔐 Proactive Security & Monitoring: We keep your site safe from threats, 24/7.",
+          "🚀 Performance Optimization: Your site stays fast, reliable, and always online.",
+          "🛠️ Hands-Free Maintenance & Updates: We handle the tech so you don't have to.",
+          "💬 Ongoing Support: Minor content changes & Q&A when you need it."
+        ]
+      }
+    },
+    optionalAddOns: [
+      {
+        name: "🛒 E-commerce Ready Add-On",
+        description: "Add simple selling functionality like a product page or 'Buy Now' buttons—perfect if you're ready to sell directly from your site.",
+         
+      },
+      {
+        name: "🤖 24/7 AI Chatbot Integration",
+        description: "Engage site visitors with an AI assistant that answers FAQs, captures leads, and keeps people engaged—even after hours!",       
+      },
+      {
+        name: "📝 CMS Access (Sanity.io, Contentful)",
+        description: "Want to update content or run a blog yourself without coding? Get access to a simple, intuitive content management system.",
+      }
+    ],
+    buttonText: "Launch My Business Now!",
+    url: "https://buy.stripe.com/6oU9ATd8y5KC1hs11ddEs00"
   },
   {
-    name: "Magik Weaver",
-    description: "Perfect for growing businesses needing a more engaging online presence. Includes a modern, responsive website (up to 7 sections), comprehensive API & content integration, enhanced SEO, social media integration, and basic e-commerce capabilities.",
-    bestFor: "Growing Businesses, Custom Features",
-    features: [
-      "Custom Website Design: Modern, Up to 7 Sections",
-      "Responsive Design: Included",
-      "Secure CDN / Cloudflare Integration: Included",
-      "AWS / Google Cloud Integration: Included (Instance fees may apply outside of scope)",
-      "Content Integration: Comprehensive Content Integration",
-      "SEO Optimization: Enhanced On-Page & Technical",
-      "Mobile Optimization: Included",
-      "Social Media Integration: Enhanced Integration",
-      "Analytics Setup: Advanced Analytics & Tracking",
-      "CMS Integration: Headless CMS (Sanity.IO, Contentful, etc.)",
-      "Technology Framework: React, Next.js, TypeScript",
-      "E-commerce Integration: Shopify or WooCommerce (Up to 10 Products)",
-      "Custom Features: Up to 3 Basic Features",
-      "Revisions: 3 Rounds",
-      "AI Chatbot / Agent (Optional)",
-      "Initial Consultation: Included",
-      "Monthly Analytics: Basic Summary Report",
-      "Ongoing SEO: Keyword Rank Monitoring",
-      "Content Support: 2 Hours per month",
-      "Email & Phone Support",
-      "Site Maintenance: $250.00 per month - features Post Launch Support, Security Updates, and Performance Monitoring",
-      "Estimated Timeline: 7-20+ days",
+    name: "✨ Magik Weaver: Your Digital Growth Engine",
+    tagline: "STOP building a website. START building a digital asset that drives revenue.",
+    description: "The Magik Weaver package is designed for ambitious founders who are past the basic brochure site and ready to transform their online presence into a high-performance lead generation and sales machine.",
+    bestFor: "Growing businesses that want to dominate their niche with a scalable, high-converting, and strategically-built website that functions as a digital growth engine.",
+    coreBenefits: [
+      "Conversion-Driven Design: Not just a pretty face — your site is built to convert visitors into leads and customers.",
+      "Built for Growth: Your platform scales with your business using enterprise-level tech.",
+      "Strategic Execution: We’re not just designers; we’re growth partners focused on your success.",
+      "Performance + Security: Fast load times, built-in security, and bulletproof infrastructure.",
+      "Advanced Integrations: SEO, social media, analytics, CMS — fully integrated from the start."
     ],
-    price: "$2,200",
-    buttonText: "Buy Now",
+    whatYouGet: [
+      "Custom Design (Up to 7 Sections): A unique and modern layout that reflects your brand and drives user action.",
+      "Fully Responsive & Mobile Optimized: Seamless experience across all devices.",
+      "Enterprise Hosting (AWS/GCP) + CDN (Cloudflare): Lightning-fast, secure, and scalable infrastructure.",
+      "Built with React, Next.js, TypeScript: Cutting-edge tech stack ensures long-term flexibility and performance.",
+      "API & Content Integration: Connects smoothly with your tools and content sources.",
+      "Advanced SEO Implementation: Technical and on-page strategies to boost your rankings from day one.",
+      "Social Media Integration: Drive more traffic and engagement from your social platforms.",
+      "Analytics & Conversion Tracking: Set up to monitor KPIs and user behavior effectively.",
+      "Headless CMS (Sanity.io or Contentful): Easily manage and update your site content.",
+      "E-Commerce Integration (Shopify/WooCommerce): Sell up to 10 products with a robust storefront.",
+      "Up to 3 Basic Custom Features: Tailored features that give you a competitive edge.",
+      "Optional AI Chatbot: Convert visitors into leads around the clock with AI assistance.",
+      "Initial Consultation + Strategy: Align the website with your business goals from the beginning.",
+      "3 Rounds of Revisions: We work with you until it's perfect.",
+      "Dedicated Email & Phone Support: For peace of mind throughout the project."
+    ],
+    timeline: "10–25 Business Days from Content Submission",
+    investment: {
+      setupFee: "$2,200 (One-Time Build)",
+      monthlyPlan: {
+        name: "Ongoing Performance & Security Partnership",
+        price: "$250/month",
+        includes: [
+          "🛡️ Post-Launch Support: Peace of mind with continued technical help.",
+          "🔐 Security Updates: Ongoing protection against threats.",
+          "⚡ Performance Monitoring & Optimization: Keep your site fast and reliable.",
+          "📈 Monthly Analytics Summary: Get insights into traffic and performance.",
+          "📊 Keyword Rank Monitoring: Track SEO improvements and opportunities.",
+          "✍️ Content Updates (2 Hours/Month): Keep your content fresh and effective."
+        ]
+      }
+    },
+    optionalAddOns: [
+      {
+        name: "🤖 AI Chatbot / Agent",
+        description: "Engage visitors and capture leads 24/7 using an AI-powered assistant.",
+        price: "Included if selected during build phase"
+      }
+    ],
     highlight: true,
-    url: "https://buy.stripe.com/3cI00j4C24Gy0dobFRdEs01",
+    buttonText: "Build My Growth Engine",
+    url: "https://buy.stripe.com/3cI00j4C24Gy0dobFRdEs01"
   },
   {
-    name: "Grand Architect",
-    description: "For complex projects and businesses requiring a fully customized and scalable online solution. Offers a bespoke, responsive website with unlimited sections, advanced content management options (including Headless CMS), in-depth SEO strategy, full social media integration, and ongoing priority support.",
-    bestFor: "Complex Projects, Ongoing Support",
-    features: [
-      "Custom Website Design: Bespoke, Unlimited Sections",
-      "Responsive Design: Included",
-      "AWS / Google Cloud Integration: Included (Instance fees may apply outside of scope)",
-      "Content Integration: Advanced Content Migration & Setup",
-      "SEO Optimization: Advanced SEO Strategy & Implementation",
-      "Mobile Optimization: Included",
-      "Contact Form: Included",
-      "Social Media Integration: Full Platform Integration",
-      "Analytics Setup: Custom Reporting & Insights",
-      "CMS Integration: Headless CMS (Sanity.IO, Contentful, etc.)",
-      "Technology Framework: React, Next.js, TypeScript",
-      "E-commerce Integration: Shopify or WooCommerce (Up to 10 Products)",
-      "Custom Features: Unlimited & Complex Features",
-      "Revisions: Unlimited Small Revisions",
-      "AI Chatbot / Agent (Optional)",
-      "Initial Consultation: Included",
-      "Monthly Analytics: Custom KPI Dashboard & Insights",
-      "Ongoing SEO: Proactive Strategy & Content Gap Analysis",
-      "Content Support: 5 Hours / month",
-      "Email & Phone Support",
-      "Site Maintenance: $600.00 per month - features Post Launch Support, Security Updates, and Performance Monitoring",
-      "Estimated Timeline: 12-30 days",
+    "name": "🏛️ Grand Architect: Your Ultimate Digital Empire Blueprint",
+    "tagline": "Build the future of your business. Unleash a limitless digital ecosystem.",
+    "description": "Stop letting digital limitations hold back your empire. Start building the future of your business with an unparalleled, fully customized digital solution. The Grand Architect package is for the visionary founder with complex demands and an insatiable appetite for market leadership.",
+    "bestFor": "This is your definitive solution if you lead a high-growth enterprise with intricate operational and customer engagement needs. You require bespoke, fully integrated digital platform, uncompromising performance, and long-term strategic partner.",
+    "coreBenefits": [
+      "Limitless Customization & Scale: No design limits. No tech constraints. Just performance.",
+      "Proactive AI-Driven SEO: A long-term search dominance strategy — not just optimization.",
+      "Enterprise-Ready Infrastructure: Unshakeable reliability. Global scalability. Instant performance.",
+      "Intelligent Reporting: Custom dashboards, KPIs, and insights to fuel decision-making.",
+      "Dedicated Growth Partner: From strategy to support, you’re never left guessing."
     ],
-    price: "$6,000",
-    buttonText: "Buy Now",
-    highlight: false,
-    url: "https://buy.stripe.com/00w4gz5G6c90d0a6lxdEs02",
-  },
+    "whatYouGet": [
+      "Custom-Engineered Website (Unlimited Sections): A fully tailored, high-converting experience built to scale.",
+      "Enterprise Infrastructure (AWS / GCP): Blazing fast load times, global uptime, and seamless growth.",
+      "Advanced Headless CMS (Sanity.IO, Contentful): Take full control of your content workflows.",
+      "AI-Powered SEO & Content Strategy: Constantly adapting to rank, capture traffic, and convert.",
+      "Custom Analytics & KPI Dashboards: Deep insights. Smarter decisions. Better outcomes.",
+      "Unlimited Complex Features: From CRM, ERP, and proprietary tools — we’ll engineer it.",
+      "Optional AI Chatbot/Agent: Convert more with intelligent 24/7 lead capture.",
+      "Advanced Content Migration: Seamless, optimized transition of your existing content.",
+      "Social Media Integration: Amplify every move with built-in channel connectivity.",
+      "Robust E-commerce (Shopify/WooCommerce): Launch your store, ready for serious sales.",
+      "Initial Strategic Consultation: Define goals and map a winning digital strategy.",
+      "Unlimited Small Revisions: Continuous adaptation to your evolving business.",
+      "Priority Support: Direct phone & email access — no delays, no gatekeepers."
+    ],
+    "timeline": "12–30 Business Days from Content Submission",
+    "investment": {
+      "setupFee": "$6,000 (One-Time Build)",
+      "monthlyPlan": {
+        "name": "Ongoing Digital Empire Management",
+        "price": "$600/month",
+        "includes": [
+          "📈 Monthly Strategic Reporting & Insights: Understand growth levers and next steps.",
+          "🔐 Advanced Security Monitoring & Updates: Protect your platform at the enterprise level.",
+          "⚡ Continuous Performance Optimization: Never miss a lead due to slow speed or bugs.",
+          "📊 Custom KPI Dashboards: Real-time metrics that matter most to your business.",
+          "📚 Ongoing SEO + Content Gap Analysis: Proactive strategies to stay ahead of competitors.",
+          "✍️ Content Support (5 Hours/Month): Keep your platform dynamic, relevant, and converting.",
+          "📞 Direct Email & Phone Support: Instant help when it matters most.",
+          "🛠️ Post-Launch Platform Evolution: Ongoing enhancements and new feature rollouts."
+        ]
+      }
+    },
+    "optionalAddOns": [
+      {
+        "name": "🤖 AI Chatbot / Agent",
+        "description": "Deploy an intelligent lead-generating assistant that works 24/7 to engage, inform, and convert.",
+        "price": "Included if selected during onboarding"
+      }
+    ],
+    "buttonText": "Build My Digital Empire",
+    "url": "https://buy.stripe.com/00w4gz5G6c90d0a6lxdEs02"
+  }
 ];
 
 // --- NEW Low-Tier Pricing Plans Data ---
@@ -475,56 +543,95 @@ const App = () => {
   // Add the return statement here
   return (
     <>
-    {/* <NewsletterPopup/> */}
-    <div>
+      <div>
 
-      <main>
-        <HeroSection onWatchCommercial={() => setIsVideoModalOpen(true)} onGetStarted={() => document.getElementById('templates')?.scrollIntoView({ behavior: 'smooth' })} />
-        <ServicesSection />
-        <AIConceptTemplateSection
-          conceptUserPrompt={conceptUserPrompt}
-          setConceptUserPrompt={setConceptUserPrompt}
-          generatedCodeContent={generatedCodeContent}
-          generatedOutputType={generatedOutputType}
-          isConceptLoading={isConceptLoading}
-          conceptError={conceptError}
-          handleGenerateConceptPreview={handleGenerateConceptPreview}
+        <main>
+          <HeroSection onWatchCommercial={() => setIsVideoModalOpen(true)} onGetStarted={() => document.getElementById('templates')?.scrollIntoView({ behavior: 'smooth' })} />
+          <ServicesSection />
+          <AIConceptTemplateSection
+            conceptUserPrompt={conceptUserPrompt}
+            setConceptUserPrompt={setConceptUserPrompt}
+            generatedCodeContent={generatedCodeContent}
+            generatedOutputType={generatedOutputType}
+            isConceptLoading={isConceptLoading}
+            conceptError={conceptError}
+            handleGenerateConceptPreview={handleGenerateConceptPreview}
+            isGeminiInitialized={isGeminiInitialized}
+          />
+          <PricingSection
+            pricingPlans={
+              pricingTier === 'high'
+                ? pricingPlans.map(plan => ({
+                  name: plan.name,
+                  description: plan.description,
+                  bestFor: plan.bestFor,
+                  features: plan.whatYouGet || [],
+                  whatYouGet: plan.whatYouGet?.filter(feature => feature !== undefined) || [],
+                  benefits: plan.coreBenefits || [],
+                  price:
+                    plan.investment?.setupFee && plan.investment?.monthlyPlan?.price
+                      ? `${plan.investment.setupFee} + ${plan.investment.monthlyPlan.price}`
+                      : '',
+                  buttonText: plan.buttonText,
+                  url: plan.url,
+                  highlight: plan.highlight || false,
+                  timeline : plan.timeline || '',
+                  investment: plan.investment
+                    ? {
+                      setupFee: plan.investment.setupFee,
+                      monthlyPlan: plan.investment.monthlyPlan || {
+                        name: '',
+                        price: '',
+                        includes: [],
+                      },
+                    }
+                    : {
+                      setupFee: '',
+                      monthlyFee: '',
+                      monthlyPlan: {
+                        name: '',
+                        price: '',
+                        includes: [],
+                      },
+                    },
+                  optionalAddOns: plan.optionalAddOns || [],
+                }))
+                : []
+            }
+            lowTierPricingPlans={pricingTier === 'low' ? lowTierPricingPlans : []}
+            pricingTier={pricingTier}
+            setPricingTier={setPricingTier}
+            handleNavClick={handleNavClick}
+          />
+
+
+          <LabsSection />
+          <TeamSection />
+          <TestimonialsSection />
+        </main>
+
+
+
+        {/* Chatbot is likely a fixed element */}
+        <Chatbot
+          isChatOpen={isChatOpen}
+          handleToggleChat={handleToggleChat} // Correct prop name
+          chatMessages={chatMessages}
+          chatInput={chatInput}
+          handleChatInputChange={handleChatInputChange}
+          handleSendChatMessage={handleSendChatMessage}
+          isChatLoading={isChatLoading}
+          chatError={chatError}
           isGeminiInitialized={isGeminiInitialized}
-        />        
-        <PricingSection
-          pricingPlans={pricingTier === 'high' ? pricingPlans : lowTierPricingPlans}
-          lowTierPricingPlans={lowTierPricingPlans}
-          pricingTier={pricingTier}
-          setPricingTier={setPricingTier}
-          handleNavClick={handleNavClick} // Replace with your actual handleNavClick function
+          chatMessagesEndRef={chatMessagesEndRef as React.RefObject<HTMLDivElement>}
+
         />
-        <LabsSection />
-        <TeamSection />
-        <TestimonialsSection />
-      </main>
-
-
-
-      {/* Chatbot is likely a fixed element */}
-      <Chatbot
-        isChatOpen={isChatOpen}
-        handleToggleChat={handleToggleChat} // Correct prop name
-        chatMessages={chatMessages}
-        chatInput={chatInput}
-        handleChatInputChange={handleChatInputChange}
-        handleSendChatMessage={handleSendChatMessage}
-        isChatLoading={isChatLoading}
-        chatError={chatError}
-        isGeminiInitialized={isGeminiInitialized}
-        chatMessagesEndRef={chatMessagesEndRef as React.RefObject<HTMLDivElement>}
-
-      />
-      <VideoModal
-        isOpen={isVideoModalOpen}
-        onClose={() => setIsVideoModalOpen(false)}
-        videoSrc="/videos/MajestikMagik-Ad-Website.mp4"
-      />
-    </div>
+        <VideoModal
+          isOpen={isVideoModalOpen}
+          onClose={() => setIsVideoModalOpen(false)}
+          videoSrc="/videos/MajestikMagik-Ad-Website.mp4"
+        />
+      </div>
     </>
   );
 };
