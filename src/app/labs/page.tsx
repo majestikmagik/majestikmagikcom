@@ -122,7 +122,7 @@ const LabsContent = () => {
                             <p className="mt-4"><strong>July 29, 2025</strong></p>
                             <ul className="text-base font-normal text-slate-400">- Awaiting confirmation for $5,000 in cloud credits from the <a href="https://aws.amazon.com/startups/" className="hover:text-indigo-400 ease-in-out duration-300" target="_blank">AWS Startup Program</a> for development of the Insight MD platform. </ul>
                             <ul className="text-base font-normal text-slate-400">- Awaiting confirmation for SAM.gov entity registration. </ul>
-                            <ul className="text-base font-normal text-slate-400">- Sending email proposals to potential clinical partners. <b><a href="/data/research_sbir/A_Clinician-Centric_AI_Co-Pilot_for_Enhanced_Grading_and_Detection_of_Prostate_Cancer_on_MRI.pdf" className="hover:text-indigo-400 ease-in-out duration-300" target="_blank">[DOWNLOAD PDF]</a></b>  </ul>
+                            <ul className="text-base font-normal text-slate-400">- Sending email proposals to potential clinical partners.  </ul>
                             <p className="mt-4"><strong>July 30, 2025</strong></p>
                             <ul className="text-base font-normal text-slate-400">- Awaiting confirmation on <a href="https://aws.amazon.com/startups/lp/llama-for-aws-startups?trk=5c641b85-cb9f-49e9-9b6b-2356ed253060&sc_channel=el" className="hover:text-indigo-400 ease-in-out duration-300" target="_blank">AWS Build with Llama</a> application. </ul>
                             <p className="mt-4"><strong>July 31, 2025</strong></p>
