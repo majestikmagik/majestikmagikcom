@@ -127,9 +127,10 @@ const LabsContent = () => {
                             <ul className="text-base font-normal text-slate-400">- Awaiting confirmation on <a href="https://aws.amazon.com/startups/lp/llama-for-aws-startups?trk=5c641b85-cb9f-49e9-9b6b-2356ed253060&sc_channel=el" className="hover:text-indigo-400 ease-in-out duration-300" target="_blank">AWS Build with Llama</a> application. </ul>
                             <p className="mt-4"><strong>July 31, 2025</strong></p>
                             <ul className="text-base font-normal text-slate-400">- Received confirmation on UEI application from SAM.gov! </ul>
-                            <p className="mt-4"><strong>August 6, 2025</strong></p>
-                            <ul className="text-base font-normal text-slate-400">- Confirmed meeting on Tuesday 8/12 with a potential clinical partner from the <a href="https://research.uchicago.edu/" className="hover:text-indigo-400 ease-in-out duration-300" target="_blank">University of Chicago</a>. </ul>
+                            <p className="mt-4"><strong>August 6, 2025</strong></p>                            
                             <ul className="text-base font-normal text-slate-400">- Received AWS Activate credits for $5,000 in cloud credits for the development of the Insight MD platform. </ul>
+                            <p className="mt-4"><strong>August 22, 2025</strong></p>
+                            <ul className="text-base font-normal text-slate-400">- Deployed first AI test model. </ul>
                         </li>
                         <li className="ml-4">
                             <div className="absolute w-3 h-3 bg-slate-700 rounded-full mt-1.5 -left-1.5 border border-slate-900"></div>
