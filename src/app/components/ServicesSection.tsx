@@ -53,7 +53,7 @@ const ServicesSection: React.FC = () => {
         <div className="mb-12 text-center max-w-6xl mx-auto scroll-animate">
           <h1 id="services-heading" className="mb-4 text-3xl text-slate-100 font-bold scroll-animate md:text-4xl">Unleash Your Digital Magik: Services Engineered for Growth</h1>
           <p className="mx-auto text-slate-400 md:text-xl scroll-animate" style={{ transitionDelay: '0.3s' }}>
-            Stop settling for an &quot;online presence.&quot; We don&apos;t just build websites; we engineer <b>revenue-generating platforms</b>. Fusing cutting-edge AI, strategic design, and relentless execution, our services are specifically designed to <b>capture more leads, accelerate sales, and establish your market dominance</b>. Experience the difference of a truly intelligent online presence that drives your bottom line.
+            We don&apos;t just build websites; we engineer <b>revenue-generating platforms</b>. Fusing artificial intelligence with strategic design, and relentless execution, our services are specifically designed to <b>capture more leads, accelerate sales, and establish your market dominance</b>. Experience the difference of a truly intelligent online presence that drives your bottom line.
           </p>
         </div>
 
