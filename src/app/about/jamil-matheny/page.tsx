@@ -16,12 +16,10 @@ const JamilMathenyContent: React.FC = () => {
                 <Image
                     src="/img/344705572_03be87188e_b.jpg"
                     alt="Jamil Matheny featured in the Richmond Times-Dispatch"
-                    width={250}
-                    height={350}
+                    width={150}
+                    height={250}
                     className="float-right ml-4 mb-4 rounded-lg shadow-lg md:w-1/3"
                 />
-                <p>Resilient and adaptive, Jamil has also built businesses outside of tech, from a photography brand (Jamil Images, LLC) to a solo cleaning business. Each venture sharpened his eye for detail, client service, and operational discipline. Even while facing setbacks in manual labor jobs like FedEx and Amazon, he turned challenges into lessons that strengthened his resolve to pursue entrepreneurship full time.</p>
-                <p>These experiences—paired with his deep love of learning, his strong family values, and his role as a father—fuel his drive to build Majestik Magik into a trusted partner for businesses. His vision extends beyond web design: through AI innovation and healthcare projects like InsightMD, Jamil is determined to create impact-driven solutions that make a difference in people&apos;s lives. His philosophy is simple but powerful: &quot;I don&apos;t chase. I align. The win is already mine.&quot;</p>
             </div>
         </div>
     );
