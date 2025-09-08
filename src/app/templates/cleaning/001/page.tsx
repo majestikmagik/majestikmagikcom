@@ -176,13 +176,17 @@ export default function CleaningServicesTemplatePage() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://placehold.co/1920x900/0f172a/ffffff.jpg?text=Fresh+Home,+Happy+You')] bg-cover bg-center opacity-20"/>
+          <div className="absolute inset-0  bg-cover bg-center opacity-10"/>
+          <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover z-0">
+            <source src="/img/4145662-hd_1920_1080_25fps.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="container mx-auto px-6 py-16 md:py-24 relative">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900">
+              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-200">
                 Sparkling homes, <span className="text-emerald-600">zero hassle</span>
               </h1>
-              <p className="mt-4 text-lg text-slate-700">Flat‑rate pricing, eco‑friendly supplies, and vetted pros. Book in under a minute.</p>
+              <p className="mt-4 text-lg text-slate-200">Flat‑rate pricing, eco‑friendly supplies, and vetted pros. Book in under a minute.</p>
             </div>
 
             {/* Quick CTA bar */}
@@ -429,7 +433,7 @@ function BookingSection({ selectedService }: { selectedService: ServiceKey }) {
 //  const svc = SERVICES.find(s => s.key === serviceKey)!;
 
   return (
-    <section id="booking" className="py-16 bg-white">
+    <section id="booking" className="py-16 bg-white">       
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {/* Calculator */}
