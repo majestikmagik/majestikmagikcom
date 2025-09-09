@@ -45,7 +45,7 @@ const pricingPlans = [
     whatYouGet: ["Website Hosting", "Mobile-Friendly Design", "1 Update / Month"],
     timeline: "5–10 business days from content submission",
     investment: {
-      setupFee: "$99",
+      setupFee: "One-time $99 Launch Fee",
       monthlyPlan: {
         name: "Basic Plan",
         price: "$25/mo",
@@ -68,7 +68,7 @@ const pricingPlans = [
     whatYouGet: ["Everything in Basic", "3 Updates / Month", "Basic SEO Optimization"],
     timeline: "7–15 business days from content submission",
     investment: {
-      setupFee: "$99",
+      setupFee: "One-time $99 Launch Fee",
       monthlyPlan: {
         name: "Standard Plan",
         price: "$50/mo",
@@ -76,7 +76,7 @@ const pricingPlans = [
       }
     },
     optionalAddOns: [],
-    buttonText: "Most Popular",
+    buttonText: "Scale My Business",
     url: "https://buy.stripe.com/3cI00j4C24Gy0dobFRdEs01",
     highlight: true
   },
@@ -101,7 +101,7 @@ const pricingPlans = [
     ],
     timeline: "10–20 business days from content submission",
     investment: {
-      setupFee: "$99",
+      setupFee: "One-time $99 Launch Fee",
       monthlyPlan: {
         name: "Premium Plan",
         price: "$100/mo",

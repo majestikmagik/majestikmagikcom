@@ -46,7 +46,10 @@ const PricingSection: React.FC<PricingSectionProps> = ({
             Worry-Free Website Care Plans
           </h1>
           <p className="mt-4 font-semibold text-slate-400 md:text-xl scroll-animate" style={{ transitionDelay: '0.2s' }}>
-            Keep your site secure, fast, and up-to-date with our monthly care plans. No long-term contracts, just peace of mind.
+            Keep your site secure, fast, and up-to-date with our monthly care plans. Cancel Anytime. No Long-Term Commitment.
+          </p>
+          <p className="mt-4 text-md text-slate-500 scroll-animate" style={{ transitionDelay: '0.3s' }}>
+            Trusted by 20+ local businesses in Richmond
           </p>
         </div>
 
