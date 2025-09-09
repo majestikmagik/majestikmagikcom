@@ -279,7 +279,7 @@ function Masonry({ shots }: { shots: Shot[] }) {
       <AnimatePresence>
         {open && (
           <motion.div initial={{ opacity:0 }} animate={{ opacity:1 }} exit={{ opacity:0 }} className="fixed inset-0 z-[60] bg-black/80 backdrop-blur flex items-center justify-center p-4" onClick={()=>setOpen(false)}>
-            <motion.div initial={{ scale:0.98, opacity:0 }} animate={{ scale:1, opacity:1 }} exit={{ scale:0.98, opacity:0 }} transition={{ type:'spring', stiffness:120 }} className="relative max-w-5xl w-full" onClick={(e: React.MouseEvent<HTMLDivElement>)=>e.stopPropagation()}>
+            <motion.div initial={{ scale:0.98, opacity:0 }} animate={{ scale:1, opacity:1 }} exit={{ scale:0.98, opacity:0 }} transition={{ type:'spring', stiffness:120 }} className="relative max-w-5xl w-full" onClick={(e)=>e.stopPropagation()}>
               <Image src={shots[index].src} alt={shots[index].title} width={shots[index].w} height={shots[index].h} className="w-full h-auto rounded-xl object-contain bg-black" />
               <div className="mt-3 flex items-center justify-between text-white text-sm">
                 <span>{shots[index].title}</span>

@@ -33,266 +33,91 @@ interface ChatMessage {
 
 type OutputFormat = 'html' | 'react-tsx';
 
-
-
-
-// --- High-Tier Pricing Plans ---
 const pricingPlans = [
   {
-    name: "🚀 The Local Launchpad: Get Your Business Online, FAST!",
-    tagline: "Professional Web Presence in Days, Not Weeks. Zero Tech Headaches.",
-    description: "Imagine launching your local business online with a stunning, high-converting website – not in months, but in days. The Local Launchpad is your turnkey solution designed specifically for service providers, consultants, solo entrepreneurs, and small brick-and-mortar shops who need to establish instant credibility, attract more customers, and work smarter, not harder.",
-    bestFor: "Perfect for: Service Providers, Consultants, Solo Entrepreneurs, Small Brick-and-Mortar Shops, and anyone needing a professional online presence without the fuss or massive upfront cost.",
-    coreBenefits: [
-      "Instant Credibility & Trust: Ditch the DIY look. Launch with a professionally designed site that positions you as a leader in your local market.",
-      "Attract More Customers 24/7: Your business becomes findable online, converting visitors into leads and inquiries around the clock—even while you sleep!",
-      "Zero Tech Stress, Maximum Focus: We handle everything. From design to hosting to security, you can focus 100% on serving your clients and growing your business.",
-      "Lightning-Fast Launch: Get online in 5-10 business days. Stop waiting, start selling.",
-      "Affordable & Transparent: Get big-agency quality without the big-agency price tag. Clear, upfront costs with no hidden fees."
-    ],
-    whatYouGet: [
-      "Custom 3-Page Website: Home, About, and Contact pages, designed to perfectly match your brand and clearly communicate your value.",
-      "Mobile-First Design: Your site will look and perform flawlessly on any device—phones, tablets, and desktops.",
-      "High-Speed Hosting & SSL Security: Blazing fast, secure cloud hosting with an SSL certificate included for visitor trust.",
-      "Content Integration: We load your provided images and text, so your site is ready to go live.",
-      "Local SEO Foundation: On-page SEO optimization and Google Maps integration to ensure local customers find you easily.",
-      "Social Media Connections: Seamless integration with your key platforms (Facebook, Instagram, LinkedIn).",
-      "Google Analytics Setup: Track visitor traffic and behavior to make informed business decisions.",
-      "Personalized Strategy Session: A dedicated call to align your website with your specific business goals.",
-      "One Round of Revisions: We'll fine-tune your site to ensure you're absolutely thrilled with the final result."
-    ],
-    timeline: "5–10 Business Days from Content Submission",
+    name: "Basic",
+    tagline: "Professional web presence without the fuss.",
+    description:
+      "Launch a clean, mobile-friendly site with hosting handled for you.",
+    bestFor:
+      "Solo entrepreneurs and small local businesses needing a simple, credible site.",
+    coreBenefits: ["Website Hosting", "Mobile-Friendly Design", "1 Update / Month"],
+    whatYouGet: ["Website Hosting", "Mobile-Friendly Design", "1 Update / Month"],
+    timeline: "5–10 business days from content submission",
     investment: {
-      setupFee: "$700 (One-Time Setup Fee)",
+      setupFee: "$99",
       monthlyPlan: {
-        name: "Your 'Worry-Free Growth' Plan",
-        price: "$80/month",
-        includes: [
-          "🔐 Proactive Security & Monitoring: We keep your site safe from threats, 24/7.",
-          "🚀 Performance Optimization: Your site stays fast, reliable, and always online.",
-          "🛠️ Hands-Free Maintenance & Updates: We handle the tech so you don't have to.",
-          "💬 Ongoing Support: Minor content changes & Q&A when you need it."
-        ]
+        name: "Basic Plan",
+        price: "$25/mo",
+        includes: ["Website Hosting", "Mobile-Friendly Design", "1 Update / Month"]
       }
     },
-    optionalAddOns: [
-      {
-        name: "🛒 E-commerce Ready Add-On",
-        description: "Add simple selling functionality like a product page or 'Buy Now' buttons—perfect if you're ready to sell directly from your site.",
-         
-      },
-      {
-        name: "🤖 24/7 AI Chatbot Integration",
-        description: "Engage site visitors with an AI assistant that answers FAQs, captures leads, and keeps people engaged—even after hours!",       
-      },
-      {
-        name: "📝 CMS Access (Sanity.io, Contentful)",
-        description: "Want to update content or run a blog yourself without coding? Get access to a simple, intuitive content management system.",
-      }
-    ],
-    buttonText: "Launch My Business Now!",
+    optionalAddOns: [],
+    buttonText: "Get Started",
     url: "https://buy.stripe.com/6oU9ATd8y5KC1hs11ddEs00",
     highlight: false
   },
   {
-    name: "✨ Magik Weaver: Your Digital Growth Engine",
-    tagline: "STOP building a website. START building a digital asset that drives revenue.",
-    description: "The Magik Weaver package is designed for ambitious founders who are past the basic brochure site and ready to transform their online presence into a high-performance lead generation and sales machine.",
-    bestFor: "Growing businesses that want to dominate their niche with a scalable, high-converting, and strategically-built website that functions as a digital growth engine.",
+    name: "Standard",
+    tagline: "Most Popular — performance and essentials covered.",
+    description:
+      "Step up to ongoing enhancements and foundational SEO to help customers find you.",
+    bestFor:
+      "Growing businesses that want regular updates and basic SEO support.",
+    coreBenefits: ["Everything in Basic", "3 Updates / Month", "Basic SEO Optimization"],
+    whatYouGet: ["Everything in Basic", "3 Updates / Month", "Basic SEO Optimization"],
+    timeline: "7–15 business days from content submission",
+    investment: {
+      setupFee: "$99",
+      monthlyPlan: {
+        name: "Standard Plan",
+        price: "$50/mo",
+        includes: ["Everything in Basic", "3 Updates / Month", "Basic SEO Optimization"]
+      }
+    },
+    optionalAddOns: [],
+    buttonText: "Most Popular",
+    url: "https://buy.stripe.com/3cI00j4C24Gy0dobFRdEs01",
+    highlight: true
+  },
+  {
+    name: "Premium",
+    tagline: "Advanced growth, analytics, and priority support.",
+    description:
+      "Unlock unlimited updates, advanced SEO, and priority support for serious growth.",
+    bestFor:
+      "Businesses ready to scale with continuous improvements and deeper insights.",
     coreBenefits: [
-      "Conversion-Driven Design: Not just a pretty face — your site is built to convert visitors into leads and customers.",
-      "Built for Growth: Your platform scales with your business using enterprise-level tech.",
-      "Strategic Execution: We’re not just designers; we’re growth partners focused on your success.",
-      "Performance + Security: Fast load times, built-in security, and bulletproof infrastructure.",
-      "Advanced Integrations: SEO, social media, analytics, CMS — fully integrated from the start."
+      "Everything in Standard",
+      "Unlimited Updates",
+      "Advanced SEO + Analytics",
+      "Priority Support"
     ],
     whatYouGet: [
-      "Custom Design (Up to 7 Sections): A unique and modern layout that reflects your brand and drives user action.",
-      "Fully Responsive & Mobile Optimized: Seamless experience across all devices.",
-      "Enterprise Hosting (AWS/GCP) + CDN (Cloudflare): Lightning-fast, secure, and scalable infrastructure.",
-      "Built with React, Next.js, TypeScript: Cutting-edge tech stack ensures long-term flexibility and performance.",
-      "API & Content Integration: Connects smoothly with your tools and content sources.",
-      "Advanced SEO Implementation: Technical and on-page strategies to boost your rankings from day one.",
-      "Social Media Integration: Drive more traffic and engagement from your social platforms.",
-      "Analytics & Conversion Tracking: Set up to monitor KPIs and user behavior effectively.",
-      "Headless CMS (Sanity.io or Contentful): Easily manage and update your site content.",
-      "E-Commerce Integration (Shopify/WooCommerce): Sell up to 10 products with a robust storefront.",
-      "Up to 3 Basic Custom Features: Tailored features that give you a competitive edge.",
-      "Optional AI Chatbot: Convert visitors into leads around the clock with AI assistance.",
-      "Initial Consultation + Strategy: Align the website with your business goals from the beginning.",
-      "3 Rounds of Revisions: We work with you until it's perfect.",
-      "Dedicated Email & Phone Support: For peace of mind throughout the project."
+      "Everything in Standard",
+      "Unlimited Updates",
+      "Advanced SEO + Analytics",
+      "Priority Support"
     ],
-    timeline: "10–25 Business Days from Content Submission",
+    timeline: "10–20 business days from content submission",
     investment: {
-      setupFee: "$2,200 (One-Time Build)",
+      setupFee: "$99",
       monthlyPlan: {
-        name: "Ongoing Performance & Security Partnership",
-        price: "$250/month",
+        name: "Premium Plan",
+        price: "$100/mo",
         includes: [
-          "🛡️ Post-Launch Support: Peace of mind with continued technical help.",
-          "🔐 Security Updates: Ongoing protection against threats.",
-          "⚡ Performance Monitoring & Optimization: Keep your site fast and reliable.",
-          "📈 Monthly Analytics Summary: Get insights into traffic and performance.",
-          "📊 Keyword Rank Monitoring: Track SEO improvements and opportunities.",
-          "✍️ Content Updates (2 Hours/Month): Keep your content fresh and effective."
+          "Everything in Standard",
+          "Unlimited Updates",
+          "Advanced SEO + Analytics",
+          "Priority Support"
         ]
       }
     },
-    optionalAddOns: [
-      {
-        name: "🤖 AI Chatbot / Agent",
-        description: "Engage visitors and capture leads 24/7 using an AI-powered assistant.",
-        price: "Included if selected during build phase"
-      }
-    ],
-    highlight: true,
-    buttonText: "Build My Growth Engine",
-    url: "https://buy.stripe.com/3cI00j4C24Gy0dobFRdEs01"
-  },
-  {
-    "name": "🏛️ Grand Architect: Your Ultimate Digital Empire Blueprint",
-    "tagline": "Build the future of your business. Unleash a limitless digital ecosystem.",
-    "description": "Stop letting digital limitations hold back your empire. Start building the future of your business with an unparalleled, fully customized digital solution. The Grand Architect package is for the visionary founder with complex demands and an insatiable appetite for market leadership.",
-    "bestFor": "This is your definitive solution if you lead a high-growth enterprise with intricate operational and customer engagement needs. You require bespoke, fully integrated digital platform, uncompromising performance, and long-term strategic partner.",
-    "coreBenefits": [
-      "Limitless Customization & Scale: No design limits. No tech constraints. Just performance.",
-      "Proactive AI-Driven SEO: A long-term search dominance strategy — not just optimization.",
-      "Enterprise-Ready Infrastructure: Unshakeable reliability. Global scalability. Instant performance.",
-      "Intelligent Reporting: Custom dashboards, KPIs, and insights to fuel decision-making.",
-      "Dedicated Growth Partner: From strategy to support, you’re never left guessing."
-    ],
-    "whatYouGet": [
-      "Custom-Engineered Website (Unlimited Sections): A fully tailored, high-converting experience built to scale.",
-      "Enterprise Infrastructure (AWS / GCP): Blazing fast load times, global uptime, and seamless growth.",
-      "Advanced Headless CMS (Sanity.IO, Contentful): Take full control of your content workflows.",
-      "AI-Powered SEO & Content Strategy: Constantly adapting to rank, capture traffic, and convert.",
-      "Custom Analytics & KPI Dashboards: Deep insights. Smarter decisions. Better outcomes.",
-      "Unlimited Complex Features: From CRM, ERP, and proprietary tools — we’ll engineer it.",
-      "Optional AI Chatbot/Agent: Convert more with intelligent 24/7 lead capture.",
-      "Advanced Content Migration: Seamless, optimized transition of your existing content.",
-      "Social Media Integration: Amplify every move with built-in channel connectivity.",
-      "Robust E-commerce (Shopify/WooCommerce): Launch your store, ready for serious sales.",
-      "Initial Strategic Consultation: Define goals and map a winning digital strategy.",
-      "Unlimited Small Revisions: Continuous adaptation to your evolving business.",
-      "Priority Support: Direct phone & email access — no delays, no gatekeepers."
-    ],
-    "timeline": "12–30 Business Days from Content Submission",
-    "investment": {
-      "setupFee": "$6,000 (One-Time Build)",
-      "monthlyPlan": {
-        "name": "Ongoing Digital Empire Management",
-        "price": "$600/month",
-        "includes": [
-          "📈 Monthly Strategic Reporting & Insights: Understand growth levers and next steps.",
-          "🔐 Advanced Security Monitoring & Updates: Protect your platform at the enterprise level.",
-          "⚡ Continuous Performance Optimization: Never miss a lead due to slow speed or bugs.",
-          "📊 Custom KPI Dashboards: Real-time metrics that matter most to your business.",
-          "📚 Ongoing SEO + Content Gap Analysis: Proactive strategies to stay ahead of competitors.",
-          "✍️ Content Support (5 Hours/Month): Keep your platform dynamic, relevant, and converting.",
-          "📞 Direct Email & Phone Support: Instant help when it matters most.",
-          "🛠️ Post-Launch Platform Evolution: Ongoing enhancements and new feature rollouts."
-        ]
-      }
-    },
-    "optionalAddOns": [
-      {
-        "name": "🤖 AI Chatbot / Agent",
-        "description": "Deploy an intelligent lead-generating assistant that works 24/7 to engage, inform, and convert.",
-        "price": "Included if selected during onboarding"
-      }
-    ],
-    "buttonText": "Build My Digital Empire",
-    "url": "https://buy.stripe.com/00w4gz5G6c90d0a6lxdEs02",
-    "highlight": false
+    optionalAddOns: [],
+    buttonText: "Go Premium",
+    url: "https://buy.stripe.com/00w4gz5G6c90d0a6lxdEs02",
+    highlight: false
   }
-];
-
-// --- NEW Low-Tier Pricing Plans Data ---
-const lowTierPricingPlans = [
-  {
-    name: "Static Spark",
-    description: "The ultimate entry-level package, designed to get a professional online presence live as quickly and affordably as possible. It's a digital business card.",
-    bestFor: "Freelancers, event promotions, or new businesses needing a simple, professional landing page.",
-    features: [
-      "Website Design: Single-Page Premium Template Customization",
-      "Sections: Up to 4 sections on the single page",
-      "Responsive Design: Included",
-      "Initial Consultation: Included",
-      "Mobile Optimization: Included",
-      "Content Integration: Your Provided Text & Images",
-      "SEO Optimization: On-Page SEO",
-      "Mobile Optimization: Included",
-      "Social Media: Basic Links/Icons",
-      "Analytics Setup: Google Analytics Setup",
-      "Technology Stack: Wordpress, Drupal or Shopify Store Setup",
-      "Revisions: 1 Round of Content Swaps (before launch)",
-      "Ongoing SEO: Proactive Strategy & Content Gap Analysis",
-      "Email & Phone Support",
-      "Essential Site Care Plan - $50 per month - features Post Launch Support, Security Updates, and Performance Monitoring",
-      "Estimated Timeline: 1-3 days",
-    ],
-    price: "$250",
-    buttonText: "Buy Now",
-    highlight: false,
-    url: "https://buy.stripe.com/4gM4gy8Yo3mR1z05zNf7i0d",
-  },
-  {
-    name: "Ignition Kit",
-    description: "This package is the 'standard' small business website. It expands on the Static Spark by offering separate pages for key information, creating a more complete and traditional user experience.",
-    bestFor: "Small businesses, restaurants, or contractors needing a foundational web presence.",
-    features: [
-      "Website Design: Multi-Page Premium Template Customization",
-      "Pages: Up to 3 Pages (e.g., Home, About, Contact)",
-      "Responsive Design: Included",
-      "Initial Consultation: Included",
-      "Mobile Optimization: Included",
-      "Content Integration: Your Provided Text & Images",
-      "SEO Optimization: On-Page SEO (for all 3 pages)",
-      "Mobile Optimization: Included",
-      "Social Media: Basic Links/Icons",
-      "Analytics Setup: Google Analytics Setup",
-      "Features: Contact Form, Social Media Links",
-      "Technology Stack: Wordpress, Drupal or Shopify Store Setup",
-      "Revisions: Unlimited Rounds of Content & Layout Edits",
-      "Ongoing SEO: Proactive Strategy & Content Gap Analysis",
-      "Email & Phone Support",
-      "Essential Site Care Plan - $50 per month - features Post Launch Support, Security Updates, and Performance Monitoring",
-      "Estimated Timeline: 3-7 days",
-    ],
-    price: "$500",
-    buttonText: "Buy Now",
-    highlight: true,
-    url: "https://buy.stripe.com/eVqbJ0caA8Hb2D4aU7f7i0e",
-  },
-  {
-    name: "Voltage Pack",
-    description: "The most comprehensive low-cost package. It offers more pages and features, including a simple blog setup, making it ideal for businesses focused on content marketing without the maintenance overhead of a traditional CMS.",
-    bestFor: "Consultants, creatives, or established businesses wanting a larger static site with a blog.",
-    features: [
-      "Website Design: Multi-Page Template with More Branding",
-      "Pages: Up to 5 Pages (e.g., Home, About, Contact)",
-      "Responsive Design: Included",
-      "Mobile Optimization: Included",
-      "Content Integration: Your Provided Text & Images",
-      "SEO Optimization: On-Page SEO (for all 3 pages)",
-      "Social Media: Basic Links/Icons",
-      "SEO Optimization: Enhanced On-Page SEO",
-      "Features: Includes Photo Gallery & Static Blog Setup",
-      "Analytics Setup: Google Analytics Setup",
-      "Technology Stack: Wordpress, Drupal or Shopify Store Setup",
-      "Revisions: Unlimited Rounds of Content & Layout Edits",
-      "Initial Consultation: Included",
-      "Ongoing SEO: Proactive Strategy & Content Gap Analysis",
-      "Email & Phone Support",
-      "Essential Site Care Plan - $50 per month - features Post Launch Support, Security Updates, and Performance Monitoring",
-      "Estimated Timeline: 5-10 days",
-    ],
-    price: "$650",
-    buttonText: "Buy Now",
-    highlight: false,
-    url: "https://buy.stripe.com/4gM5kC7Uk4qV5PgbYbf7i0f",
-  },
 ];
 
 
@@ -309,9 +134,6 @@ const App = () => {
   const [conceptError, setConceptError] = useState<string | null>(null);
 
   const [currentPolicyPageId, setCurrentPolicyPageId] = useState<string | null>(null);
-
-  // --- NEW STATE FOR PRICING TIER TOGGLE ---
-  const [pricingTier, setPricingTier] = useState<'high' | 'low'>('high');
 
   // Video Modal State
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
@@ -388,7 +210,7 @@ const App = () => {
     }, { threshold: 0.1 });
     animatedElements.forEach(el => observer.observe(el));
     return () => animatedElements.forEach(el => { if (observer && el) observer.unobserve(el); });
-  }, [currentPolicyPageId, pricingTier]); // Re-run if policy page changes
+  }, [currentPolicyPageId]); // Re-run if policy page changes
 
   useEffect(() => {
     chatMessagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -561,51 +383,27 @@ const App = () => {
             isGeminiInitialized={isGeminiInitialized}
           />
           <PricingSection
-            pricingPlans={
-              pricingTier === 'high'
-                ? pricingPlans.map(plan => ({
-                  name: plan.name,
-                  description: plan.description,
-                  bestFor: plan.bestFor,
-                  features: plan.whatYouGet || [],
-                  whatYouGet: plan.whatYouGet?.filter(feature => feature !== undefined) || [],
-                  benefits: plan.coreBenefits || [],
-                  price:
-                    plan.investment?.setupFee && plan.investment?.monthlyPlan?.price
-                      ? `${plan.investment.setupFee} + ${plan.investment.monthlyPlan.price}`
-                      : '',
-                  buttonText: plan.buttonText,
-                  url: plan.url,
-                  highlight: plan.highlight || false,
-                  timeline : plan.timeline || '',
-                  investment: plan.investment
-                    ? {
-                      setupFee: plan.investment.setupFee,
-                      monthlyPlan: plan.investment.monthlyPlan || {
-                        name: '',
-                        price: '',
-                        includes: [],
-                      },
-                    }
-                    : {
-                      setupFee: '',
-                      monthlyFee: '',
-                      monthlyPlan: {
-                        name: '',
-                        price: '',
-                        includes: [],
-                      },
-                    },
-                  optionalAddOns: plan.optionalAddOns || [],
-                }))
-                : []
-            }
-            lowTierPricingPlans={pricingTier === 'low' ? lowTierPricingPlans : []}
-            pricingTier={pricingTier}
-            setPricingTier={setPricingTier}
+            pricingPlans={pricingPlans.map(plan => ({
+              name: plan.name,
+              tagline: plan.tagline,
+              description: plan.description,
+              bestFor: plan.bestFor,
+              features: [], // This property is not used in the component but is in the interface.
+              whatYouGet: plan.whatYouGet || [],
+              coreBenefits: plan.coreBenefits || [],
+              price:
+                plan.investment?.setupFee && plan.investment?.monthlyPlan?.price
+                  ? `${plan.investment.setupFee} + ${plan.investment.monthlyPlan.price}`
+                  : '',
+              buttonText: plan.buttonText,
+              url: plan.url,
+              highlight: plan.highlight || false,
+              timeline: plan.timeline || '',
+              investment: plan.investment,
+              optionalAddOns: plan.optionalAddOns || [],
+            }))}
             handleNavClick={handleNavClick}
           />
-
 
           <LabsSection />
           <TeamSection />
