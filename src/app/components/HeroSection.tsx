@@ -61,10 +61,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
       <div className="absolute inset-0 bg-indigo-950/90 z-10"></div>
       <div className="container relative px-6 mx-auto text-center z-20">
         <h1 className="mb-8 text-6xl text-white font-semibold scroll-animate md:text-8xl">
-         From Idea to <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-purple-600 to-blue-600"><br />AI-Powered Website in 30 Days or Less</span>
+          From Idea to{" "}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-purple-600 to-teal-600">
+            <br />AI-Powered Website in 30 Days or Less
+          </span>
         </h1>
-        <p className="max-w-5xl mx-auto mb-12 text-lg text-slate-200 md:text-xl scroll-animate" style={{ transitionDelay: '0.1s' }}>
-          We build AI-powered websites that attract more customers, close more sales, and rank on Google — all in 30 days or less.
+        <p
+          className="max-w-5xl mx-auto mb-12 text-lg text-slate-200 md:text-xl scroll-animate"
+          style={{ transitionDelay: "0.1s" }}
+        >
+          We build AI-powered websites that attract more customers, close more sales,
+          and rank on Google — all in 30 days or less. <br />
+          <span className="font-semibold text-teal-400">
+            Get started today with just a $99 setup fee.
+          </span>
         </p>
         <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
           <button
