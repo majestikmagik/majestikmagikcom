@@ -11,6 +11,7 @@ const ImageMarquee = () => {
     { name: 'HVAC Template', imgSrc: '/img/hvac_template_001.png', url: '/templates/hvac/001' },
     { name: 'Electrical Template', imgSrc: '/img/electrical_template_001.png', url: '/templates/electrical/001' },
     { name: 'Restaurant Template', imgSrc: '/img/restaurant_template_001.png', url: '/templates/restaurant/001' },
+    
   ];
 
   const marqueeItems = [...templates, ...templates];

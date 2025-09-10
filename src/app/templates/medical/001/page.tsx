@@ -7,25 +7,25 @@ import Image from 'next/image';
 // Icons (Lucide-like SVG)
 // =============================
 const StethoscopeIcon = ({ className }: { className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4v6a6 6 0 1 0 12 0V4"/><path d="M18 8a2 2 0 0 1 2 2v6a4 4 0 0 1-4 4h-1"/><path d="M10 22h2"/></svg>
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4v6a6 6 0 1 0 12 0V4" /><path d="M18 8a2 2 0 0 1 2 2v6a4 4 0 0 1-4 4h-1" /><path d="M10 22h2" /></svg>
 );
 const ToothIcon = ({ className }: { className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22c1-2 1-4 3-4s2 2 3 4c2-5 3-9 3-12a7 7 0 0 0-14 0c0 3 1 7 3 12 1-2 1-4 3-4s2 2 3 4"/></svg>
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22c1-2 1-4 3-4s2 2 3 4c2-5 3-9 3-12a7 7 0 0 0-14 0c0 3 1 7 3 12 1-2 1-4 3-4s2 2 3 4" /></svg>
 );
 const CalendarIcon = ({ className }: { className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
 );
 const PhoneIcon = ({ className }: { className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M2.5 5.5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 1.7l.3 1.8a2 2 0 0 1-.5 1.7l-1.1 1.1a14 14 0 0 0 6 6l1.1-1.1a2 2 0 0 1 1.7-.5l1.8.3a2 2 0 0 1 1.7 2v2a2 2 0 0 1-2 2h-.5A18.5 18.5 0 0 1 2.5 6v-.5Z"/></svg>
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M2.5 5.5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 1.7l.3 1.8a2 2 0 0 1-.5 1.7l-1.1 1.1a14 14 0 0 0 6 6l1.1-1.1a2 2 0 0 1 1.7-.5l1.8.3a2 2 0 0 1 1.7 2v2a2 2 0 0 1-2 2h-.5A18.5 18.5 0 0 1 2.5 6v-.5Z" /></svg>
 );
 const MailIcon = ({ className }: { className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m3 6 9 7 9-7"/></svg>
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="16" rx="2" /><path d="m3 6 9 7 9-7" /></svg>
 );
 const MapPinIcon = ({ className }: { className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 10A8.84 8.84 0 1 1 4 10c0 6.63 8 12 8 12s8-5.37 8.84-12Z"/><circle cx="12" cy="10" r="3"/></svg>
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 10A8.84 8.84 0 1 1 4 10c0 6.63 8 12 8 12s8-5.37 8.84-12Z" /><circle cx="12" cy="10" r="3" /></svg>
 );
 const StarIcon = ({ className }: { className?: string }) => (
-  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2"><path d="M12 2 15.09 8.26 22 9.27 17 14.14l1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2Z"/></svg>
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="2"><path d="M12 2 15.09 8.26 22 9.27 17 14.14l1.18 6.88L12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2Z" /></svg>
 );
 
 // =============================
@@ -116,10 +116,10 @@ export default function MedicalDentalTemplatePage() {
             <a href="#contact" className="hover:text-sky-600">Contact</a>
           </nav>
           <div className="hidden md:flex items-center gap-3">
-            <a href="#appointments" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold hover:bg-black"><CalendarIcon className="w-5 h-5"/>Book</a>
+            <a href="#appointments" className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold hover:bg-black"><CalendarIcon className="w-5 h-5" />Book</a>
           </div>
           <button className="md:hidden" onClick={() => setMobileOpen(v => !v)} aria-label="Menu">
-            <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2"><path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" /></svg>
           </button>
         </div>
         {mobileOpen && (
@@ -137,7 +137,11 @@ export default function MedicalDentalTemplatePage() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://placehold.co/1920x900/0f172a/ffffff.jpg?text=Compassionate+Medical+%26+Dental+Care')] bg-cover bg-center opacity-20"/>
+          <div className="absolute inset-0 bg-cover bg-center opacity-10" />
+          <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover z-0">
+            <source src="/img/4121618-hd_1920_1080_25fps.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="container mx-auto px-6 py-16 md:py-24 relative">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900">
@@ -147,8 +151,8 @@ export default function MedicalDentalTemplatePage() {
             </div>
 
             <div className="mt-8 bg-white rounded-2xl shadow-xl border border-slate-200 p-4 md:p-6 flex flex-col sm:flex-row gap-3">
-              <a href="#appointments" className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-sky-600 text-white font-semibold hover:bg-sky-700"><CalendarIcon className="w-5 h-5 mr-2"/> Book Appointment</a>
-              <a href="tel:8045554100" className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-slate-300 hover:border-sky-500"><PhoneIcon className="w-5 h-5 mr-2"/> (804) 555‑4100</a>
+              <a href="#appointments" className="inline-flex items-center justify-center px-5 py-3 rounded-xl bg-sky-600 text-white font-semibold hover:bg-sky-700"><CalendarIcon className="w-5 h-5 mr-2" /> Book Appointment</a>
+              <a href="tel:8045554100" className="inline-flex items-center justify-center px-5 py-3 rounded-xl border border-slate-300 hover:border-sky-500"><PhoneIcon className="w-5 h-5 mr-2" /> (804) 555‑4100</a>
             </div>
           </div>
         </section>
@@ -186,7 +190,7 @@ export default function MedicalDentalTemplatePage() {
               {SERVICES.map(s => (
                 <div key={s.id} className="bg-white p-6 rounded-2xl shadow ring-1 ring-slate-200">
                   <div className="inline-flex p-3 rounded-xl bg-sky-50 text-sky-700 mb-4">
-                    {s.icon === 'medical' ? <StethoscopeIcon className="w-6 h-6"/> : <ToothIcon className="w-6 h-6"/>}
+                    {s.icon === 'medical' ? <StethoscopeIcon className="w-6 h-6" /> : <ToothIcon className="w-6 h-6" />}
                   </div>
                   <h3 className="text-lg font-bold text-slate-900">{s.name}</h3>
                   <p className="text-sm text-slate-700 mt-2">{s.description}</p>
@@ -206,7 +210,7 @@ export default function MedicalDentalTemplatePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {DOCTORS.map(d => (
                 <div key={d.id} className="bg-slate-50 rounded-2xl shadow ring-1 ring-slate-200 overflow-hidden">
-                  <Image src={d.photo} alt={d.name} width={600} height={400} className="h-56 w-full object-cover"/>
+                  <Image src={d.photo} alt={d.name} width={600} height={400} className="h-56 w-full object-cover" />
                   <div className="p-5">
                     <div className="flex items-center justify-between">
                       <div>
@@ -214,14 +218,14 @@ export default function MedicalDentalTemplatePage() {
                         <p className="text-sm text-slate-600">{d.specialty}</p>
                       </div>
                       <div className="flex items-center gap-1 text-amber-400" title={`${d.rating} out of 5`}>
-                        <StarIcon className="w-5 h-5"/>
+                        <StarIcon className="w-5 h-5" />
                         <span className="text-slate-800 font-semibold">{d.rating.toFixed(1)}</span>
                       </div>
                     </div>
                     <p className="mt-3 text-sm text-slate-700">{d.bio}</p>
                     <div className="mt-4 flex items-center gap-3 text-sm">
-                      <a href={`tel:${d.phone.replace(/[^0-9]/g, '')}`} className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-300 hover:border-sky-500"><PhoneIcon className="w-4 h-4"/>{d.phone}</a>
-                      <a href={`mailto:${d.email}`} className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-300 hover:border-sky-500"><MailIcon className="w-4 h-4"/> Email</a>
+                      <a href={`tel:${d.phone.replace(/[^0-9]/g, '')}`} className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-300 hover:border-sky-500"><PhoneIcon className="w-4 h-4" />{d.phone}</a>
+                      <a href={`mailto:${d.email}`} className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-300 hover:border-sky-500"><MailIcon className="w-4 h-4" /> Email</a>
                     </div>
                     <div className="mt-4">
                       <button onClick={() => { setSelectedDoctor(d); setBookingOpen(true); }} className="px-4 py-2 rounded-xl bg-sky-600 text-white font-semibold hover:bg-sky-700">Book with {d.name.split(' ')[0]}</button>
@@ -238,7 +242,7 @@ export default function MedicalDentalTemplatePage() {
           <div className="container mx-auto px-6 py-10">
             <h3 className="text-lg font-bold text-slate-900 mb-4">We accept most major plans</h3>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-6 items-center">
-              {['Aetna','Cigna','BCBS','United','Medicare'].map(name => (
+              {['Aetna', 'Cigna', 'BCBS', 'United', 'Medicare'].map(name => (
                 <div key={name} className="flex items-center justify-center p-4 rounded-xl border border-slate-200 bg-slate-50">
                   <Image src={`https://placehold.co/220x80/ffffff/0f172a.jpg?text=${encodeURIComponent(name)}`} alt={`${name} logo`} width={220} height={80} />
                 </div>
@@ -256,7 +260,7 @@ export default function MedicalDentalTemplatePage() {
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
               <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow">
-                <h3 className="text-xl font-extrabold text-slate-900 flex items-center gap-2"><MapPinIcon className="w-5 h-5 text-sky-600"/> Richmond Clinic</h3>
+                <h3 className="text-xl font-extrabold text-slate-900 flex items-center gap-2"><MapPinIcon className="w-5 h-5 text-sky-600" /> Richmond Clinic</h3>
                 <p className="text-sm text-slate-600 mt-1">123 Wellness Way, Richmond, VA</p>
                 <ul className="mt-4 text-sm text-slate-700 space-y-1">
                   <li>Mon–Fri: 8 AM – 6 PM</li>
@@ -264,8 +268,8 @@ export default function MedicalDentalTemplatePage() {
                   <li>Sun: Closed</li>
                 </ul>
                 <div className="mt-4 flex items-center gap-3 text-sm">
-                  <a href="tel:8045554100" className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-300 hover:border-sky-500"><PhoneIcon className="w-4 h-4"/>(804) 555‑4100</a>
-                  <a href="mailto:hello@rivercitycare.com" className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-300 hover:border-sky-500"><MailIcon className="w-4 h-4"/> Email</a>
+                  <a href="tel:8045554100" className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-300 hover:border-sky-500"><PhoneIcon className="w-4 h-4" />(804) 555‑4100</a>
+                  <a href="mailto:hello@rivercitycare.com" className="inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-slate-300 hover:border-sky-500"><MailIcon className="w-4 h-4" /> Email</a>
                 </div>
               </div>
               <div className="rounded-2xl overflow-hidden shadow ring-1 ring-slate-200">
@@ -360,7 +364,7 @@ function AppointmentSection({ doctor, clearDoctor }: { open: boolean; setOpen: (
 
           {doctor && (
             <div className="mt-4 p-4 rounded-xl bg-white border border-slate-200 flex items-center gap-4">
-              <Image src={doctor.photo} alt={doctor.name} width={80} height={80} className="rounded-lg object-cover"/>
+              <Image src={doctor.photo} alt={doctor.name} width={80} height={80} className="rounded-lg object-cover" />
               <div>
                 <p className="font-semibold text-slate-900">Preferred provider:</p>
                 <p className="text-slate-700 text-sm">{doctor.name} • {doctor.specialty}</p>
