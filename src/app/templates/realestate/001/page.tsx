@@ -246,13 +246,17 @@ export default function RealEstateTemplatePage() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://placehold.co/1920x900/0f172a/ffffff?text=Your+Next+Home+Awaits')] bg-cover bg-center opacity-20"/>
+          <div className="absolute inset-0  bg-cover bg-center opacity-20"/>
+           <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover z-0">
+            <source src="/img/7646757-hd_1920_1080_25fps.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="container mx-auto px-6 py-16 md:py-24 relative">
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900">
                 Find your next <span className="text-indigo-600">home</span> in Richmond
               </h1>
-              <p className="mt-4 text-lg text-slate-700">Property listings, expert agents, and neighborhood insights — all in one place.</p>
+              <p className="mt-4 text-lg text-slate-200">Property listings, expert agents, and neighborhood insights — all in one place.</p>
             </div>
 
             {/* Search Bar */}

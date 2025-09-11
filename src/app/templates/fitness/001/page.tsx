@@ -148,13 +148,17 @@ export default function FitnessStudiosTemplatePage() {
       <main>
         {/* Hero */}
         <section className="relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://placehold.co/1920x900/0f172a/ffffff.jpg?text=Train+Smarter,+Feel+Stronger')] bg-cover bg-center opacity-20"/>
+          <div className="absolute inset-0 bg-cover bg-center opacity-20"/>
+          <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover z-0">
+            <source src="/img/6389575-hd_1920_1080_25fps.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
           <div className="container mx-auto px-6 py-16 md:py-24 relative">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-900">
+              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-slate-400">
                 Clean, modern training for <span className="text-emerald-600">real results</span>
               </h1>
-              <p className="mt-4 text-lg text-slate-700">Small-group classes, 1:1 coaching, and flexible memberships in Richmond.</p>
+              <p className="mt-4 text-lg text-slate-200">Small-group classes, 1:1 coaching, and flexible memberships in Richmond.</p>
             </div>
 
             {/* Filters */}
