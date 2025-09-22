@@ -20,6 +20,7 @@ import {
 } from './components';
 
 import './globals.css';
+import ComparisonChart from './components/ComparisonChart';
 
 
 const GEMINI_API_KEY = process.env.NEXT_PUBLIC_GEMINI_API_KEY;
@@ -394,6 +395,7 @@ const App = () => {
             handleGenerateConceptPreview={handleGenerateConceptPreview}
             isGeminiInitialized={isGeminiInitialized}
           />
+          <ComparisonChart />
           <PricingSection
             pricingPlans={pricingPlans.map(plan => ({
               name: plan.name,
