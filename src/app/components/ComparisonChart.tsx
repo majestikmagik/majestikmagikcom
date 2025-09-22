@@ -18,7 +18,7 @@ const rows: Row[] = [
   { label: "Automated Monthly Backups",           mm: true,  wix: false, ss: false },
   { label: "SEO Optimization",                    mm: "Basic → Advanced (by plan)", wix: "Basic tools", ss: "Basic tools" },
   { label: "Analytics & Monthly Report",          mm: "Standard/Premium", wix: "Limited", ss: "Limited" },
-  { label: "Priority Support (human, local)",     mm: true,  wix: "Chat/Forum", ss: "Email" },
+  { label: "Priority Support (human, local, AI chatbot)",     mm: true,  wix: "Chat/Forum", ss: "Email" },
   { label: "E-commerce Support",                  mm: "Premium", wix: "Add-on fees", ss: "Add-on fees" },
   { label: "Quarterly Strategy Call",             mm: "Premium", wix: false, ss: false },
   { label: "Transparent Pricing",                 mm: "$25–$100/mo + $99 setup", wix: "Add-ons & upsells", ss: "Add-ons & upsells" },
