@@ -48,14 +48,14 @@ const ComparisonChart: React.FC = () => {
     <section className="bg-slate-900 py-16 md:py-24">
       <div className="container mx-auto px-6">
         <div className="mx-auto mb-10 max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-100">Why Choose Majestik Magik</h2>
-          <p className="mt-3 text-slate-400">
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-100 scroll-animate">Why Choose Majestik Magik</h2>
+          <p className="mt-3 text-slate-400 scroll-animate" style={{ transitionDelay: "0.2s" }}>
             Compare our managed, growth-focused care plans against DIY site builders.
           </p>
         </div>
 
         {/* Mobile: stacked cards */}
-        <div className="grid gap-6 md:hidden">
+        <div className="grid gap-6 md:hidden scroll-animate" style={{ transitionDelay: "0.4s" }}>
           {rows.map((r) => (
             <div key={r.label} className="rounded-2xl bg-slate-800/70 p-5 shadow-xl ring-1 ring-slate-700">
               <div className="mb-2 flex items-start justify-between">
@@ -81,7 +81,7 @@ const ComparisonChart: React.FC = () => {
         </div>
 
         {/* Desktop: table */}
-        <div className="hidden md:block overflow-hidden rounded-2xl ring-1 ring-slate-700 shadow-2xl">
+        <div className="hidden md:block overflow-hidden rounded-2xl ring-1 ring-slate-700 shadow-2xl scroll-animate" style={{ transitionDelay: "0.6s" }}>
           <table className="min-w-full divide-y divide-slate-700 bg-slate-800/60">
             <thead className="bg-slate-800/80">
               <tr>
