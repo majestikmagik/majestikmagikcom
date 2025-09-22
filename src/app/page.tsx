@@ -49,7 +49,7 @@ const pricingPlans = [
       monthlyPlan: {
         name: "Basic Plan",
         price: "$25/mo",
-        includes: ["Website Hosting", "Mobile-Friendly Design", "1 Update / Month"]
+        includes: ["Website Hosting", "Mobile-Friendly Design", "1 Update / Month", "Security Monitoring & Updates", "Monthly Backups", "SEO Optimization", "Priority Support"]
       }
     },
     optionalAddOns: [],
@@ -65,14 +65,14 @@ const pricingPlans = [
     bestFor:
       "Growing businesses that want regular updates and basic SEO support.",
     coreBenefits: ["Everything in Basic", "3 Updates / Month", "Basic SEO Optimization"],
-    whatYouGet: ["Everything in Basic", "3 Updates / Month", "Basic SEO Optimization"],
+    whatYouGet: ["Everything in Basic", "3 Updates / Month", "Basic SEO Optimization", "Speed & Performance Monitoring", "Malware & Hack Protection", "Content Updates (text/images)", "Monthly Performance Report"],
     timeline: "7–15 business days from content submission",
     investment: {
       setupFee: "One-time $99 Launch Fee",
       monthlyPlan: {
         name: "Standard Plan",
         price: "$50/mo",
-        includes: ["Everything in Basic", "3 Updates / Month", "Basic SEO Optimization"]
+        includes: ["Everything in Basic", "3 Updates / Month", "Basic SEO Optimization", "Speed & Performance Monitoring", "Malware & Hack Protection", "Content Updates (text/images)", "Monthly Performance Report"]
       }
     },
     optionalAddOns: [],
@@ -91,13 +91,21 @@ const pricingPlans = [
       "Everything in Standard",
       "Unlimited Updates",
       "Advanced SEO + Analytics",
-      "Priority Support"
+      "Priority Support",
+      "Conversion Tracking (leads, sales, calls)",
+      "Priority 24/7 Support (fastest response)",
+      "E-commerce Support (if applicable)",
+      "Quarterly Strategy Call (review + improvements)"
     ],
     whatYouGet: [
       "Everything in Standard",
       "Unlimited Updates",
       "Advanced SEO + Analytics",
-      "Priority Support"
+      "Priority Support",
+      "Conversion Tracking (leads, sales, calls)",
+      "Priority 24/7 Support (fastest response)",
+      "E-commerce Support (if applicable)",
+      "Quarterly Strategy Call (review + improvements)"
     ],
     timeline: "10–20 business days from content submission",
     investment: {
@@ -109,7 +117,11 @@ const pricingPlans = [
           "Everything in Standard",
           "Unlimited Updates",
           "Advanced SEO + Analytics",
-          "Priority Support"
+          "Priority Support",
+          "Conversion Tracking (leads, sales, calls)",
+          "Priority 24/7 Support (fastest response)",
+          "E-commerce Support (if applicable)",
+          "Quarterly Strategy Call (review + improvements)"
         ]
       }
     },
