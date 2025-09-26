@@ -12,7 +12,7 @@ const TestimonialsSection = () => {
     {
       name: 'Parris Gainer',
       image: '/img/parrisgainer.webp',
-      testimonial: 'Listed as a Google Review.',
+      testimonial: '"Thanks for your ongoing assistance."',
       stars: 5,
     },
   ];
