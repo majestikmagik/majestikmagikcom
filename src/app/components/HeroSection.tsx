@@ -61,17 +61,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
       <div className="absolute inset-0 bg-indigo-950/90 z-10"></div>
       <div className="container relative px-6 mx-auto text-center z-20">
         <h1 className="mb-8 text-6xl text-white font-semibold scroll-animate md:text-8xl">
-          From Idea to{" "}
+          Smarter Websites{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-purple-600 to-teal-600">
-            <br />AI-Powered Website in 30 Days or Less
+            <br />That Attract, Convert & Rank in 30 Days.
           </span>
         </h1>
         <p
           className="max-w-5xl mx-auto mb-12 text-lg text-slate-200 md:text-xl scroll-animate"
           style={{ transitionDelay: "0.1s" }}
         >
-          We build AI-powered websites that attract more customers, close more sales,
-          and rank on Google — all in 30 days or less. <br />
+          Turn clicks into customers with an AI-driven website built to rank and convert — live in 30 days. <br />
           <span className="font-semibold text-teal-400">
             Get started today with just a $99 setup fee.
           </span>
@@ -79,13 +78,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
         <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
           <button
             onClick={onGetStarted}
-            className="shadow-md btn-primary-gradient flex items-center justify-center w-70 mt-auto text-center text-slate-100 cursor-pointer bg-indigo-600 rounded-full hover:bg-indigo-800 py-3.5 px-3 font-semibold duration-300 transition-transform transform hover:scale-105 scroll-animate"
+            className="shadow-md btn-primary-gradient flex items-center justify-center w-50 mt-auto text-center text-slate-100 cursor-pointer bg-indigo-600 rounded-full hover:bg-indigo-800 py-3.5 px-3 font-semibold duration-300 transition-transform transform hover:scale-105 scroll-animate"
             aria-label="View our pricing plans"
             style={{ transitionDelay: '0.4s' }}
             type="button"
           >
             <Image src="/img/sparkles.svg" className="lazy-logo w-6 h-6 mr-2 filter brightness-0 invert" alt="Sparkles icon" loading="lazy" width={24} height={24} />
-            Build My Revenue Engine
+            Get Started
           </button>
 
           <button
