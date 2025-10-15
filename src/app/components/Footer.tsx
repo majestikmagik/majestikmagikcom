@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faInstagram, faGithub, faDiscord } from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faInstagram, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 // --- SVG Icons for the Footer ---
 const LocationIcon = () => (
@@ -186,8 +186,8 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
                   </a>
                 </li>
                 <li>
-                  <a href="https://discord.gg/Bmz3cW9krQ" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord server" className="transition-colors duration-300 hover:text-indigo-400">
-                    <FontAwesomeIcon icon={faDiscord} />
+                  <a href="https://www.linkedin.com/company/majestikmagik/" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn" className="transition-colors duration-300 hover:text-indigo-400">
+                    <FontAwesomeIcon icon={faLinkedin} />
                   </a>
                 </li>
               </ul>
