@@ -81,7 +81,7 @@ const TestimonialsSection = () => {
     <section id="testimonials" className="py-20 bg-slate-950">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12 scroll-animate">
-          What Our Clients Say
+          What Do The Clients Say
         </h2>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -103,10 +103,7 @@ const TestimonialsSection = () => {
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-white">{t.name}</h3>
-                  <div
-                    className="flex items-center gap-1"
-                    aria-label={`${t.stars} out of 5 stars`}
-                  >
+                  <div className="flex items-center gap-1" aria-label={`${t.stars} out of 5 stars`}>
                     {[1, 2, 3, 4, 5].map((n) => (
                       <Star key={n} filled={n <= t.stars} />
                     ))}
@@ -134,6 +131,18 @@ const TestimonialsSection = () => {
               </div>
             </article>
           ))}
+        </div>
+
+        {/* CTA Button */}
+        <div className="text-center mt-12">
+          <a
+            href="https://www.homeaglow.com/jamilmat" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg shadow-md transition-colors duration-300"
+          >
+            See more reviews on Homeaglow →
+          </a>
         </div>
       </div>
     </section>
