@@ -35,7 +35,7 @@ const TestimonialsSection = () => {
       name: 'Parris Gainer',
       image: '/img/parrisgainer.webp',
       testimonial:
-        'Thanks for your ongoing assistance. The SEO and updates look great!',
+        'Majestik Magik didn’t just build a website — they built a platform that empowers my voice and mission.',
       stars: 5,
       source: 'Majestik Magik Client',
     },
