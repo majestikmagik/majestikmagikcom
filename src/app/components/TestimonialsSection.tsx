@@ -141,7 +141,7 @@ const TestimonialsSection = () => {
             rel="noopener noreferrer"
             className="inline-block px-8 py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold rounded-lg shadow-md transition-colors duration-300"
           >
-            See more reviews on Homeaglow →
+            See more reviews →
           </a>
         </div>
       </div>

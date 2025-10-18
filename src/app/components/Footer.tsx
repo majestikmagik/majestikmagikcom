@@ -79,7 +79,7 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
         <div className="border-t border-slate-800 my-8"></div>
 
         {/* Main Links Grid */}
-       <div className="grid grid-cols-2 gap-8 md:grid-cols-2 xl:grid-cols-2 justify-items-center">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-2 xl:grid-cols-2 justify-items-center">
 
           <div className="md:text-left flex flex-col items-center lg:items-start space-y-8">
             <h3 className="mb-4 font-bold tracking-wider text-slate-300 uppercase">Quick Links</h3>
@@ -227,44 +227,44 @@ const Footer: React.FC<FooterProps> = ({ isAlwaysVisible }) => {
       </div>
 
       {/* Bottom Copyright Bar */}
-      
-<div className="bg-slate-900">
-  <div className="container px-6 py-4 mx-auto border-t border-slate-800">
-    <div className="flex flex-col items-center justify-between text-sm md:flex-row">
-      <p className="mb-4 text-center md:mb-0 md:text-left">
-        &copy; {new Date().getFullYear()} Majestik Magik, Inc. All rights reserved.
-      </p>
 
-      {isClient && (
-        <div className="text-center md:text-right">
-          <div
-            className="trustpilot-widget transition-colors hover:text-indigo-400"
-            data-locale="en-US"
-            data-template-id="56278e9abfbbba0bdcd568bc"
-            data-businessunit-id="66c36745eb620c5977db34ef"
-            data-style-height="52px"
-            data-style-width="100%"
-          >
-            <a
-              href="https://www.trustpilot.com/review/majestikmagik.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Review Us On Trustpilot
-            </a>
-          </div>
+      <div className="bg-slate-900">
+        <div className="container px-6 py-4 mx-auto border-t border-slate-800">
+          <div className="flex flex-col items-center justify-between text-sm md:flex-row">
+            <p className="mb-4 text-center md:mb-0 md:text-left">
+              &copy; {new Date().getFullYear()} Majestik Magik, Inc. All rights reserved.
+            </p>
 
-          {/* 5-Star Review Snippet */}
-          <div className="mt-2 text-indigo-300">
-            ★★★★★ <span className="text-slate-300">“Majestik Magik didn’t just build a website — they built a platform that empowers my voice and mission.”</span>
-            <br />
-            <span className="text-slate-400 text-xs">– Parris Gainer on Trustpilot</span>
+            {isClient && (
+              <div className="text-center md:text-right">
+                <div
+                  className="trustpilot-widget transition-colors hover:text-indigo-400"
+                  data-locale="en-US"
+                  data-template-id="56278e9abfbbba0bdcd568bc"
+                  data-businessunit-id="66c36745eb620c5977db34ef"
+                  data-style-height="52px"
+                  data-style-width="100%"
+                >
+                  <a
+                    href="https://www.trustpilot.com/review/majestikmagik.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Review Us On Trustpilot
+                  </a>
+                </div>
+
+                {/* 5-Star Review Snippet */}
+                <div className="mt-2 text-indigo-300">
+                  ★★★★★ <span className="text-slate-300">“Majestik Magik didn’t just build a website — they built a platform that empowers my voice and mission.”</span>
+                  <br />
+                  <span className="text-slate-400 text-xs">– Parris Gainer on Trustpilot</span>
+                </div>
+              </div>
+            )}
           </div>
         </div>
-      )}
-    </div>
-  </div>
-</div>
+      </div>
 
     </footer>
   );
