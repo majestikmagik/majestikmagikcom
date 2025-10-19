@@ -81,7 +81,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
             type="button"
           >
             <Image src="/img/sparkles.svg" className="lazy-logo w-6 h-6 mr-2 filter brightness-0 invert" alt="Sparkles icon" loading="lazy" width={24} height={24} />
-            Get Started
+            Book Your Fix Today
           </button>
 
           <button
