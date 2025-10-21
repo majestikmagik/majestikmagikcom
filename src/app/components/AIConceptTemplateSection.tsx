@@ -63,10 +63,10 @@ const ImageMarquee = () => {
         onMouseMove={handleMouseMove}
       >
         {marqueeItems.map((template, index) => (
-          <a href={template.url} key={index} className="flex-shrink-0 mx-4 my-14 w-64 md:w-80 group pointer-events-auto"
+          <a href={template.url} key={index} className="flex-shrink-0 mx-4 my-14 w-64 md:w-60 group pointer-events-auto"
             onClick={(e) => {
               // Prevent navigation if the user was dragging
-              if (Math.abs(marqueeRef.current!.scrollLeft - scrollLeft) > 5) {
+              if (Math.abs(marqueeRef.current!.scrollLeft - scrollLeft) > 2) {
                 e.preventDefault();
               }
             }}
@@ -139,15 +139,14 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
           <h1 className="text-3xl md:text-4xl text-center font-extrabold text-slate-100">
             From Idea to Income: Rapid AI Website Templates for Instant Validation & Launch
           </h1>
-          <p className="mt-4 text-slate-400 text-center md:text-lg">
-            Stop getting bogged down in endless mockups and design cycles. Start validating your vision and launching faster than ever. Our AI Website Templates transform your concepts into tangible, responsive reality in seconds. Simply describe any page or section (hero, pricing, features, contact, etc.), and our AI instantly generates a clean, production-ready HTML concept. Preview, refine, download, and accelerate your path to market with confidence.
+          <p className="mt-4 text-slate-400 text-lg md:text-lg">
+            Stop waiting. Start earning. Just describe what you want — a hero, pricing section, or entire landing page — and our AI instantly builds a clean, production-ready concept you can preview, refine, and launch today.
           </p>
 
           <ul className="mt-6 grid gap-2 text-slate-400 text-lg md:text-base">
-            <li>⚡ <span className="text-slate-300">Rapid Validation:</span> Get instant, high-fidelity concepts for landing pages or individual sections. Test ideas, gather feedback, and iterate at lightning speed – saving weeks of development time and thousands in design costs.</li>
-            <li>🧩 <span className="text-slate-300">Strategic Flexibility:</span> Tweak your prompts and regenerate until your vision perfectly aligns with your market strategy. Make informed decisions faster.</li>
-            <li>📦 <span className="text-slate-300">Actionable & Practical:</span> Export your concept as clean HTML immediately. Use it for internal review, stakeholder presentations, or as a direct blueprint for your next project. Ready to upgrade to a full build when your strategy demands it.</li>
-            <li>🔗 <span className="text-slate-300">Need more?</span> We&apos;re ready to engineer your full custom design, complex APIs, and robust databases to scale your success.</li>
+            <li>⚡ <span className="text-slate-300">Instant Results:</span> Turn any idea into a live, test-ready concept in seconds.</li>
+            <li>🧩 <span className="text-slate-300">Limitless Flexibility:</span> Regenerate and tweak until it&apos;s perfect for your market.</li>
+            <li>🚀 <span className="text-slate-300">Built to Launch:</span> Download clean HTML and go live faster than ever.</li> 
           </ul>
         </div>
 
@@ -162,7 +161,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
             value={conceptUserPrompt}
             onChange={(e) => setConceptUserPrompt(e.target.value)}
             placeholder="e.g., 'A simple hero section for a tech startup', 'A 3-column feature list', 'A basic product card design'"
-            rows={4}
+            rows={8}
             className="w-full p-3 transition-colors duration-300 border rounded-md bg-slate-700 text-slate-200 border-slate-600 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 placeholder-slate-500"
             aria-label="Describe your desired concept template"
           />
@@ -237,9 +236,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
         <div className="mt-24 text-center max-w-6xl mx-auto">
           <h3 className="text-2xl text-slate-200 font-bold md:text-3xl scroll-animate">
             Launch Faster, Convert Smarter: Explore Our Pre-Optimized AI Website Templates
-          </h3>
-          <p className="mx-auto mt-2 text-slate-400 md:text-lg scroll-animate" style={{ transitionDelay: '0.2s' }}>
-            Stop building from scratch or waiting weeks for designs. Start with a proven foundation that&apos;s ready to generate leads.</p>
+          </h3>          
           <p className="mx-auto mt-2 text-slate-400 md:text-lg scroll-animate" style={{ transitionDelay: '0.2s' }}>Our expertly designed, AI-optimized pre-built templates offer an instant solution for a polished, high-performance online presence. Each template is engineered for conversions and speed, giving you a powerful head start.</p>
 
           <p className="mx-auto mt-2 text-slate-400 md:text-lg scroll-animate" style={{ transitionDelay: '0.2s' }}>  [Click any template below to see a live preview and visualize your next revenue engine.]

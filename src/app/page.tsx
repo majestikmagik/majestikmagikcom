@@ -9,7 +9,6 @@ import useMediaQuery from './hooks/useMediaQuery';
 
 import {
   HeroSection,
-  ServicesSection,
   PricingSection,
   LabsSection,
   TeamSection,
@@ -384,7 +383,6 @@ const App = () => {
 
         <main>
           <HeroSection onWatchCommercial={() => setIsVideoModalOpen(true)} onGetStarted={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} />
-          <ServicesSection />
           <AIConceptTemplateSection
             conceptUserPrompt={conceptUserPrompt}
             setConceptUserPrompt={setConceptUserPrompt}
