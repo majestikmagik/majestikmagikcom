@@ -5,11 +5,10 @@ import Image from 'next/image';
 import { Bars3Icon, XMarkIcon } from './Icons'; // Assuming Icons.tsx is in the same directory
 
 interface HeaderProps {
-  navItems: string[];
+  navItems: { name: string; url: string; external?: boolean }[];
   isMobileMenuOpen: boolean;
   setIsMobileMenuOpen: (isOpen: boolean) => void;
-  handleNavClick: (e: React.MouseEvent<HTMLAnchorElement>, item: string) => void;
-
+  handleNavClick: (e: React.MouseEvent<HTMLAnchorElement>, item: { name: string; url: string; external?: boolean }) => void;
 }
 // --- Header Component ---
 // This component is designed to be sticky and responsive, adapting to scroll position and mobile view.
@@ -60,12 +59,13 @@ const Header: React.FC<HeaderProps> = ({
         <nav className="hidden xl:flex items-center space-x-8">
           {navItems.map((item) => (
             <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/\.\s*/g, '-')}`}
+              key={item.name}
+              href={item.url}
               className="text-slate-300 hover:text-white transition-colors font-semibold duration-600 ease-in-out text-sm md:text-base"
               onClick={(e) => handleNavClick(e, item)}
+              {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             >
-              {item}
+              {item.name}
             </a>
           ))}
         </nav>
@@ -93,12 +93,13 @@ const Header: React.FC<HeaderProps> = ({
           <div className="px-2 pt-2 pb-3 space-y-3 sm:px-3">
             {navItems.map((item) => (
               <a
-                key={`mobile-${item}`}
-                href={`#${item.toLowerCase().replace(/\.\s*\s+/g, '-')}`}
+                key={`mobile-${item.name}`}
+                href={item.url}
                 className="block rounded-md px-3 py-2 text-base font-semibold text-slate-300 hover:bg-slate-700 hover:text-indigo-400 transition-colors duration-300"
                 onClick={(e) => handleNavClick(e, item)}
+                {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
               >
-                {item}
+                {item.name}
               </a>
             ))}
           </div>
