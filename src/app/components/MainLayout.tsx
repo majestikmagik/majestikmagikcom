@@ -16,11 +16,10 @@ export default function MainLayout({
     { name: 'Home', url: '/#home' },
     { name: 'Templates', url: '/#templates' },
     { name: 'Pricing', url: '/#pricing' },
-    { name: 'Labs', url: '/#labs' },
+    { name: 'Shop', url: '/#shop' },
     { name: 'Team', url: '/#team' },
     { name: 'Testimonials', url: '/#testimonials' },
-    { name: 'Contact', url: '/#contact' },
-    { name: 'Shop', url: 'https://majestikmagik.printful.me/', external: true },
+    { name: 'Contact', url: '/#contact' }   
   ];
 
   // Get the current URL path

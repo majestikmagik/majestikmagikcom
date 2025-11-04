@@ -10,7 +10,7 @@ import useMediaQuery from './hooks/useMediaQuery';
 import {
   HeroSection,
   PricingSection,
-  LabsSection,
+  ShopSection,
   TeamSection,
   TestimonialsSection,
   AIConceptTemplateSection,
@@ -417,7 +417,7 @@ const App = () => {
             handleNavClick={handleNavClick}
           />
 
-          <LabsSection />
+          <ShopSection />
           <TeamSection />
           <TestimonialsSection />
         </main>
