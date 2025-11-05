@@ -137,7 +137,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
         {/* Section Header */}
         <div className="mb-12 text-left max-w-6xl mx-auto scroll-animate">
           <h1 className="text-3xl md:text-4xl text-center font-extrabold text-slate-100">
-            From Idea to Income: Rapid AI Website Templates for Instant Validation & Launch
+            From Idea to Results: Rapid AI Website Templates for Instant Validation & Launch
           </h1>
           <p className="mt-4 text-slate-400 text-lg md:text-lg">
             Stop waiting. Start earning. Just describe what you want — a hero, pricing section, or entire landing page — and our AI instantly builds a clean, production-ready concept you can preview, refine, and launch today.
