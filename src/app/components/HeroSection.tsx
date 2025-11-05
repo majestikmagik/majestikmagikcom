@@ -73,10 +73,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
           className="max-w-5xl mx-auto mb-4 md:mb-6 text-lg md:text-xl text-slate-200 scroll-animate"
           style={{ transitionDelay: "0.1s" }}
         >
-          We don’t do cookie-cutter websites. We build growth engines designed to dominate your niche. 
-          Get same-day fixes for website errors, SEO bugs, and slow speeds. We repair
-          WordPress, Shopify, and Figma websites fast — optimized for speed, mobile, and
-          search rankings.
+          AI-powered websites engineered to build your presence, ship your vision fast, and scale your growth. At Majestik Magik, we turn ideas into momentum.
         </p>
 
         {/* Accessibility helper to reinforce long-tail terms without cluttering UI */}
