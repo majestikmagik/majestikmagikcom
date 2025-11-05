@@ -62,9 +62,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
       <div className="container relative px-6 mx-auto text-center z-20">
         {/* SEO-optimized H1 */}
         <h1 className="mb-6 md:mb-8 text-6xl md:text-6xl lg:text-9xl text-white font-semibold scroll-animate">
-          Build.{" "}
           <span className="text-transparent bg-clip-text animate-gradient-x">
-            Ship. Scale.
+            Build. Ship. Scale.
           </span>
         </h1>
 
