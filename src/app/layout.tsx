@@ -12,8 +12,8 @@ import './globals.css';
 // The metadata export now works correctly because this is a Server Component.
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.majestikmagik.com'),
-  title: 'Majestik Magik: AI Websites - Leads, Sales, SEO in 30 Days | Richmond, VA',
-  description: 'Stop settling. Majestik Magik engineers AI-powered websites & solutions that drive leads, accelerate sales, and dominate Google. Custom web development, AI integration, and specialized industrial design in Richmond, VA. Launch in under 30 days. Get a free consultation!',
+  title: 'Majestik Magik | AI Website Design for Small Businesses in Richmond VA – Get Leads, Sales & SEO Results Fast',
+  description: 'Boost your business with Majestik Magik — Richmond’s AI-powered web design and marketing agency. We build custom AI websites that generate leads, improve SEO rankings, and convert traffic into sales — all in under 30 days. Get expert web design, local SEO, and digital strategy tailored to your industry.',
   authors: [{ name: 'Majestik Magik' }],
   manifest: '/site.webmanifest',
   icons: {
@@ -22,8 +22,8 @@ export const metadata: Metadata = {
     apple: '/img/majestikmagik_logo_indigo.png',
   },
   openGraph: {
-    title: 'Majestik Magik: AI Websites - Leads, Sales, SEO in 30 Days | Richmond, VA',
-    description: 'Stop settling. Majestik Magik engineers AI-powered websites & solutions that drive leads, accelerate sales, and dominate Google. Custom web development, AI integration, and specialized industrial design in Richmond, VA. Launch in under 30 days. Get a free consultation!',
+    title: 'Majestik Magik | AI Website Design for Small Businesses in Richmond VA – Get Leads, Sales & SEO Results Fast',
+    description: 'Boost your business with Majestik Magik — Richmond’s AI-powered web design and marketing agency. We build custom AI websites that generate leads, improve SEO rankings, and convert traffic into sales — all in under 30 days. Get expert web design, local SEO, and digital strategy tailored to your industry.',
     url: 'https://www.majestikmagik.com',
     siteName: 'Majestik Magik',
     images: [
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Majestik Magik: AI Websites - Leads, Sales, SEO in 30 Days | Richmond, VA',
-    description: 'Stop settling. Majestik Magik engineers AI-powered websites & solutions that drive leads, accelerate sales, and dominate Google. Custom web development, AI integration, and specialized industrial design in Richmond, VA. Launch in under 30 days. Get a free consultation!',
+    title: 'Majestik Magik | AI Website Design for Small Businesses in Richmond VA – Get Leads, Sales & SEO Results Fast',
+    description: 'Boost your business with Majestik Magik — Richmond’s AI-powered web design and marketing agency. We build custom AI websites that generate leads, improve SEO rankings, and convert traffic into sales — all in under 30 days. Get expert web design, local SEO, and digital strategy tailored to your industry.',
     images: ['/img/screenshot_mm.png'], // Relative to the public folder
   },
 };
@@ -127,6 +127,38 @@ export default function RootLayout({
             }
           })}
         </Script>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ProfessionalService",
+            "name": "Majestik Magik — Same-Day Website Fixes",
+            "image": "https://majestikmagik.com/img/og-hero.jpg",
+            "@id": "https://majestikmagik.com/quick-fixes",
+            "url": "https://majestikmagik.com",
+            "telephone": "+1-804-362-7561",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Richmond",
+              "addressRegion": "VA",
+              "postalCode": "23222",
+              "addressCountry": "US"
+            },
+            "areaServed": {
+              "@type": "City",
+              "name": "Richmond"
+            },
+            "serviceType": [
+              "Same-day website fixes",
+              "WordPress repair",
+              "Shopify bug fixes",
+              "Webflow updates",
+              "Website speed optimization",
+              "Technical SEO fixes"
+            ]
+          })
+        }} />
+
 
 
       </body>
