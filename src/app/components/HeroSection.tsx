@@ -61,10 +61,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
       <div className="absolute inset-0 bg-indigo-950/90 z-10"></div>
       <div className="container relative px-6 mx-auto text-center z-20">
         {/* SEO-optimized H1 */}
-        <h1 className="mb-6 md:mb-8 text-5xl md:text-7xl lg:text-8xl text-white font-semibold scroll-animate">
-          Fast Website Fixes in Richmond, VA{" "}
+        <h1 className="mb-6 md:mb-8 text-8xl md:text-6xl lg:text-8xl text-white font-semibold scroll-animate">
+          Fix.{" "}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 via-purple-600 to-teal-600">
-            — WordPress, Shopify & Figma Experts
+            Launch. Dominate.
           </span>
         </h1>
 
