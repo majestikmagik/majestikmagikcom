@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { PlayCircleIcon } from './Icons'; // Assuming Icons.tsx is in the same directory
 
 interface HeroSectionProps {
   onWatchCommercial: () => void;
@@ -45,7 +44,7 @@ const partners = [
   }
 ];
 
-const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStarted }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
   return (
     <section id="home" aria-labelledby="home-heading" className="relative py-20 md:py-32 overflow-hidden">
       <video
@@ -85,7 +84,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
         <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
           <button
             onClick={onGetStarted}
-            className="shadow-md btn-primary-gradient flex items-center justify-center w-50 mt-auto text-center text-slate-100 cursor-pointer bg-indigo-600 rounded-full hover:bg-indigo-800 py-3.5 px-3 font-semibold duration-300 transition-transform transform hover:scale-105 scroll-animate"
+            className="shadow-md btn-primary-gradient border-4 border-indigo-500 flex items-center justify-center w-50 mt-auto text-center text-slate-100 cursor-pointer bg-indigo-600 rounded-full hover:bg-indigo-800 py-3.5 px-3 font-semibold duration-300 transition-transform transform hover:scale-105 scroll-animate"
             aria-label="Book same-day website fixes"
             style={{ transitionDelay: "0.4s" }}
             type="button"
@@ -101,15 +100,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onWatchCommercial, onGetStart
             Book Today
           </button>
 
-          <button
-            onClick={onWatchCommercial}
-            className="flex items-center font-semibold text-white border border-white cursor-pointer py-3 px-6 rounded-full ease-in-out hover:bg-white hover:text-slate-900 transition-colors duration-300 scroll-animate"
-            aria-label="Watch how our website fix service works"
-            style={{ transitionDelay: "0.2s" }}
-            type="button"
-          >
-            <PlayCircleIcon className="w-5 h-5 mr-2" /> See How It Works
-          </button>
+          
         </div>
 
         {/* Companies Partner Banner */}
