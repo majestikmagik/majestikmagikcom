@@ -12,7 +12,7 @@ import './globals.css';
 // The metadata export now works correctly because this is a Server Component.
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.majestikmagik.com'),
-  title: 'Majestik Magik | AI Website Design for Small Businesses in Richmond VA and nationwide – Get Leads, Sales & SEO Results Fast',
+  title: 'Majestik Magik | Helping Small Businesses Build Powerful Websites that Attract Customers',
   description: 'Boost your business with Majestik Magik — Richmond’s AI-powered web design and marketing agency. We build custom AI websites that generate leads, improve SEO rankings, and convert traffic into sales — all in under 30 days. Get expert web design, local SEO, and digital strategy tailored to your industry.',
   authors: [{ name: 'Majestik Magik' }],
   manifest: '/site.webmanifest',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     apple: '/img/majestikmagik_logo_indigo.png',
   },
   openGraph: {
-    title: 'Majestik Magik | AI Website Design for Small Businesses in Richmond VA and nationwide – Get Leads, Sales & SEO Results Fast',
+    title: 'Majestik Magik | Helping Small Businesses Build Powerful Websites that Attract Customers',
     description: 'Boost your business with Majestik Magik — Richmond’s AI-powered web design and marketing agency. We build custom AI websites that generate leads, improve SEO rankings, and convert traffic into sales — all in under 30 days. Get expert web design, local SEO, and digital strategy tailored to your industry.',
     url: 'https://www.majestikmagik.com',
     siteName: 'Majestik Magik',
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Majestik Magik | AI Website Design for Small Businesses in Richmond VA and nationwide – Get Leads, Sales & SEO Results Fast',
+    title: 'Majestik Magik | Helping Small Businesses Build Powerful Websites that Attract Customers',
     description: 'Boost your business with Majestik Magik — Richmond’s AI-powered web design and marketing agency. We build custom AI websites that generate leads, improve SEO rankings, and convert traffic into sales — all in under 30 days. Get expert web design, local SEO, and digital strategy tailored to your industry.',
     images: ['/img/screenshot_mm.png'], // Relative to the public folder
   },
