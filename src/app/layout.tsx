@@ -132,7 +132,7 @@ export default function RootLayout({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "ProfessionalService",
-            "name": "Majestik Magik — Same-Day Website Fixes",
+            "name": "Majestik Magik",
             "image": "https://majestikmagik.com/img/og-hero.jpg",
             "@id": "https://majestikmagik.com/quick-fixes",
             "url": "https://majestikmagik.com",
