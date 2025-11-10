@@ -71,7 +71,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
           className="max-w-5xl mx-auto mb-4 md:mb-6 text-lg md:text-xl text-slate-200 scroll-animate"
           style={{ transitionDelay: "0.1s" }}
         >
-          AI-powered websites engineered to build your presence, ship your vision fast, and scale your growth. At Majestik Magik, we turn ideas into momentum.
+          Helping small businesses build powerful websites that attract customers.
         </p>
 
         {/* Accessibility helper to reinforce long-tail terms without cluttering UI */}

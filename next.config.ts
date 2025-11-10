@@ -2,15 +2,6 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: 'standalone',
-  /* config options here */
-   domains: [
-      "placehold.co",
-      "images.pexels.com",
-      "seeklogo.com",
-      "upload.wikimedia.org",
-      "www.svgrepo.com",
-      "avatars.githubusercontent.com",
-    ],
   images: {
     remotePatterns: [
       { protocol: 'https', hostname: 'seeklogo.com' },

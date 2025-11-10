@@ -137,17 +137,12 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
         {/* Section Header */}
         <div className="mb-12 text-left max-w-6xl mx-auto scroll-animate">
           <h1 className="text-3xl md:text-4xl text-center font-extrabold text-slate-100">
-            From Idea to Results: Rapid AI Website Templates for Instant Validation & Launch
+            From Idea to Results: AI Website Templates
           </h1>
           <p className="mt-4 text-slate-400 text-lg md:text-lg">
-            Stop waiting. Start earning. Just describe what you want — a hero, pricing section, or entire landing page — and our AI instantly builds a clean, production-ready concept you can preview, refine, and launch today.
+            Just describe what you want — a hero, pricing section, or entire landing page — and our AI instantly builds a clean, production-ready concept you can preview, refine, and launch today.
           </p>
-
-          <ul className="mt-6 grid gap-2 text-slate-400 text-lg md:text-base">
-            <li>⚡ <span className="text-slate-300">Instant Results:</span> Turn any idea into a live, test-ready concept in seconds.</li>
-            <li>🧩 <span className="text-slate-300">Limitless Flexibility:</span> Regenerate and tweak until it&apos;s perfect for your market.</li>
-            <li>🚀 <span className="text-slate-300">Built to Launch:</span> Download clean HTML and go live faster than ever.</li> 
-          </ul>
+          
         </div>
 
 
@@ -235,10 +230,8 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
         {/* --- IMAGE MARQUEE SECTION --- */}
         <div className="mt-24 text-center max-w-6xl mx-auto">
           <h3 className="text-2xl text-slate-200 font-bold md:text-3xl scroll-animate">
-            Launch Faster, Convert Smarter: Explore Our Pre-Optimized AI Website Templates
-          </h3>          
-          <p className="mx-auto mt-2 text-slate-400 md:text-lg scroll-animate" style={{ transitionDelay: '0.2s' }}>Our expertly designed, AI-optimized pre-built templates offer an instant solution for a polished, high-performance online presence. Each template is engineered for conversions and speed, giving you a powerful head start.</p>
-
+            Explore Our Pre-Optimized AI Website Templates
+          </h3>         
           <p className="mx-auto mt-2 text-slate-400 md:text-lg scroll-animate" style={{ transitionDelay: '0.2s' }}>  [Click any template below to see a live preview and visualize your next revenue engine.]
           </p>
           <div className="scroll-animate animate-delay-300">
