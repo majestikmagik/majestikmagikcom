@@ -62,11 +62,11 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section id="home" aria-labelledby="home-heading" className="relative py-20 md:py-32 overflow-hidden">
       
-      {/* Slate-950 background overlay */}
+      {/* Deep blue to slate-950 circular gradient overlay */}
       <div 
         className="absolute inset-0 z-10"
         style={{
-          background: 'rgba(15, 23, 42, 1)',
+          background: 'radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.8) 0%, rgba(15, 23, 42, 0.95) 70%)',
         }}
       ></div>
       <div className="container relative px-6 mx-auto text-center z-20">
