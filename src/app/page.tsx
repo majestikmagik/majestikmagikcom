@@ -391,11 +391,10 @@ const App = () => {
             isConceptLoading={isConceptLoading}
             isGeminiInitialized={isGeminiInitialized}
             conceptError={conceptError}
-          />
-          <AIConceptTemplateSection
             generatedCodeContent={generatedCodeContent}
             generatedOutputType={generatedOutputType}
           />
+          <AIConceptTemplateSection />
           <ComparisonChart />
           <PricingSection
             pricingPlans={pricingPlans.map(plan => ({

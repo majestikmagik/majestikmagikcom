@@ -12,6 +12,8 @@ interface HeroSectionProps {
   isConceptLoading: boolean;
   isGeminiInitialized: boolean;
   conceptError: string | null;
+  generatedCodeContent: string;
+  generatedOutputType: 'html' | 'react-tsx' | null;
 }
 
 const partners = [
@@ -50,15 +52,17 @@ const partners = [
   }
 ];
 
-const HeroSection: React.FC<HeroSectionProps> = ({ 
- 
+const HeroSection: React.FC<HeroSectionProps> = ({  
   conceptUserPrompt,
   setConceptUserPrompt,
   handleGenerateConceptPreview,
   isConceptLoading,
   isGeminiInitialized,
-  conceptError
+  conceptError,
+  generatedCodeContent,
+  generatedOutputType
 }) => {
+  const [isPreviewModalOpen, setIsPreviewModalOpen] = React.useState(false);
   return (
     <section id="home" aria-labelledby="home-heading" className="relative py-20 md:py-32 overflow-hidden">
       
@@ -128,10 +132,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </button>
             <a href="#pricing">
               <button
-                className="flex items-center justify-center w-80 px-6 py-3 font-semibold border-4 border-indigo-500 text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-indigo-600 hover:bg-indigo-800"
+                className="flex items-center justify-center w-80 px-6 py-3 font-semibold border-4 border-teal-500 text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-teal-600 hover:bg-teal-800"
                 type="button"
               >
-                Build My Revenue Engine
+                View Pricing
               </button>
             </a>
           </div>
@@ -142,7 +146,84 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               Error: {conceptError}
             </p>
           )}
+
+          {/* Show modal trigger button when content is generated */}
+          {generatedCodeContent && generatedOutputType && (
+            <div className="mt-4 text-center">
+              <button
+                onClick={() => setIsPreviewModalOpen(true)}
+                className="inline-flex items-center justify-center px-6 py-3 font-semibold text-white transition-all duration-300 rounded-md shadow-md bg-teal-600 hover:bg-teal-500"
+                type="button"
+              >
+                View Your Design Preview
+              </button>
+            </div>
+          )}
         </div>
+
+        {/* Modal for Generated Content Preview */}
+        {isPreviewModalOpen && generatedCodeContent && generatedOutputType && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+            <div className="relative bg-slate-900 rounded-xl shadow-2xl max-w-4xl w-full max-h-screen overflow-auto">
+              {/* Close Button */}
+              <button
+                onClick={() => setIsPreviewModalOpen(false)}
+                className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors"
+                aria-label="Close modal"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+
+              {/* Modal Content */}
+              <div className="p-8">
+                <h2 className="text-2xl font-bold text-white mb-4">Your AI Generated Concept</h2>
+                
+                {/* Preview */}
+                <div className="overflow-hidden border rounded-md shadow-inner bg-slate-800 border-slate-700 mb-6">
+                  <iframe
+                    srcDoc={generatedCodeContent}
+                    title="AI Generated Concept Template"
+                    className="w-full h-[600px] border-0"
+                    sandbox="allow-scripts"
+                  ></iframe>
+                </div>
+
+                {/* Download Button */}
+                <div className="flex gap-4 justify-end">
+                  <button
+                    onClick={() => setIsPreviewModalOpen(false)}
+                    className="px-4 py-2 font-semibold text-white bg-slate-700 hover:bg-slate-600 rounded-md transition-colors"
+                    type="button"
+                  >
+                    Close
+                  </button>
+                  <button
+                    onClick={() => {
+                      if (generatedOutputType === 'html') {
+                        const blob = new Blob([generatedCodeContent], { type: 'text/html' });
+                        const href = URL.createObjectURL(blob);
+                        const link = document.createElement('a');
+                        link.href = href;
+                        link.download = 'majestik-magik-concept.html';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        URL.revokeObjectURL(href);
+                      }
+                    }}
+                    className="inline-flex items-center justify-center px-4 py-2 font-semibold text-white bg-green-600 hover:bg-green-500 rounded-md transition-colors"
+                    type="button"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+                    Download HTML
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
 
         {/* Companies Partner Banner */}
         <p className="text-sm text-slate-500 mt-30 mb-4 scroll-animate">

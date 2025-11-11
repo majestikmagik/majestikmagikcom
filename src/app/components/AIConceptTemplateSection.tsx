@@ -92,27 +92,7 @@ const ImageMarquee = () => {
 
 // --- Main Section Component ---
 
-interface AIConceptTemplateSectionProps {
-  generatedCodeContent: string;
-  generatedOutputType: 'html' | 'react-tsx' | null;
-}
-
-const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
-  generatedCodeContent,
-  generatedOutputType,
-}) => {
-  const handleDownloadHtml = () => {
-    if (!generatedCodeContent || generatedOutputType !== 'html') return;
-    const blob = new Blob([generatedCodeContent], { type: 'text/html' });
-    const href = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = href;
-    link.download = 'majestik-magik-concept.html';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(href);
-  };
+const AIConceptTemplateSection: React.FC = () => {
 
   return (
     <section
@@ -122,35 +102,6 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
     >
       <div className="container px-6 mx-auto">
         
-        {/* Generated Content Preview */}
-        {generatedCodeContent && generatedOutputType && (
-          <div className="mt-8 max-w-4xl mx-auto">
-            <h3 className="mb-3 text-xl font-semibold text-teal-400 scroll-animate">
-              AI Generated Concept Preview:
-            </h3>
-            <div className="overflow-hidden border rounded-md shadow-inner bg-slate-900 border-slate-700">
-              <iframe
-                srcDoc={generatedCodeContent}
-                title="AI Generated Concept Template (HTML)"
-                className="w-full h-[600px] border-0"
-                sandbox="allow-scripts"
-              ></iframe>
-            </div>
-            <div className="text-right mt-4">
-              <p className="font-bold">Your design is ready! Download now!</p>
-              <button
-                onClick={handleDownloadHtml}
-                className="inline-flex items-center justify-center px-4 py-2 font-semibold text-white transition-all duration-300 rounded-md shadow-md bg-green-600 hover:bg-green-500 disabled:bg-slate-600 cursor-pointer disabled:cursor-not-allowed"
-                aria-label="Download HTML Template"
-                type="button"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
-                Download HTML
-              </button>
-            </div>
-          </div>
-        )}
-
         {/* --- IMAGE MARQUEE SECTION --- */}
         <div className="mt-2 text-center max-w-6xl mx-auto">
           <h3 className="text-2xl text-slate-200 font-bold md:text-3xl scroll-animate">
