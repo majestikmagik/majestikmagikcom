@@ -11,7 +11,6 @@ const ImageMarquee = () => {
     { name: 'HVAC Template', imgSrc: '/img/hvac_template_001.png', url: '/templates/hvac/001' },
     { name: 'Electrical Template', imgSrc: '/img/electrical_template_001.png', url: '/templates/electrical/001' },
     { name: 'Restaurant Template', imgSrc: '/img/restaurant_template_001.png', url: '/templates/restaurant/001' },
-    
   ];
 
   const marqueeItems = [...templates, ...templates];
@@ -94,25 +93,13 @@ const ImageMarquee = () => {
 // --- Main Section Component ---
 
 interface AIConceptTemplateSectionProps {
-  conceptUserPrompt: string;
-  setConceptUserPrompt: (prompt: string) => void;
-  handleGenerateConceptPreview: () => void;
-  isConceptLoading: boolean;
-  conceptError: string | null;
   generatedCodeContent: string;
   generatedOutputType: 'html' | 'react-tsx' | null;
-  isGeminiInitialized: boolean;
 }
 
 const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
-  conceptUserPrompt,
-  setConceptUserPrompt,
-  handleGenerateConceptPreview,
-  isConceptLoading,
-  conceptError,
   generatedCodeContent,
   generatedOutputType,
-  isGeminiInitialized,
 }) => {
   const handleDownloadHtml = () => {
     if (!generatedCodeContent || generatedOutputType !== 'html') return;
@@ -134,70 +121,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
       className="py-24 md:py-28 bg-slate-950"
     >
       <div className="container px-6 mx-auto">
-        {/* Section Header */}
-        <div className="mb-12 text-left max-w-6xl mx-auto scroll-animate">
-          <h1 className="text-3xl md:text-4xl text-center font-extrabold text-slate-100">
-            From Idea to Results: AI Website Templates
-          </h1>
-          <p className="mt-4 text-slate-400 text-lg md:text-lg">
-            Just describe what you want — a hero, pricing section, or entire landing page — and our AI instantly builds a clean, production-ready concept you can preview, refine, and launch today.
-          </p>
-          
-        </div>
-
-
-
-        {/* Input and Buttons */}
-        <div
-          className="max-w-6xl p-6 mx-auto rounded-xl shadow-2xl md:p-8 bg-slate-800 scroll-animate"
-          style={{ transitionDelay: '0.3s' }}
-        >
-          <textarea
-            value={conceptUserPrompt}
-            onChange={(e) => setConceptUserPrompt(e.target.value)}
-            placeholder="e.g., 'A simple hero section for a tech startup', 'A 3-column feature list', 'A basic product card design'"
-            rows={8}
-            className="w-full p-3 transition-colors duration-300 border rounded-md bg-slate-700 text-slate-200 border-slate-600 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 placeholder-slate-500"
-            aria-label="Describe your desired concept template"
-          />
-          <div className="flex flex-col items-center justify-center gap-4 md:flex-row">
-            <button
-              onClick={handleGenerateConceptPreview}
-              disabled={isConceptLoading || !isGeminiInitialized}
-              className="flex items-center justify-center w-80 px-6 py-3 mt-4 font-semibold text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-indigo-600 hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed"
-              aria-live="polite"
-              type="button"
-            >
-              {isConceptLoading ? (
-                <>
-                  <svg className="w-5 h-5 mr-3 -ml-1 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                  Generating...
-                </>
-              ) : (
-                <>
-                  <svg className="w-5 h-5 mr-3 -ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4.5 2.25M12 18h.01"></path></svg>
-                  Create My AI Concept
-                </>
-              )}
-            </button>
-            <a href="#pricing">
-              <button
-                className="flex items-center justify-center w-80 px-6 py-3 mt-4 font-semibold text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-green-600 hover:bg-green-500"
-                type="button"
-              >
-                Build My Revenue Engine
-              </button>
-            </a>
-          </div>
-        </div>
-
-        {/* Warning/Error Messages */}
-        {conceptError && (
-          <p className="p-3 mt-4 text-sm text-red-400 rounded-md bg-red-900/30 text-center max-w-4xl mx-auto" role="alert">
-            Error: {conceptError}
-          </p>
-        )}
-
+        
         {/* Generated Content Preview */}
         {generatedCodeContent && generatedOutputType && (
           <div className="mt-8 max-w-4xl mx-auto">
@@ -228,7 +152,7 @@ const AIConceptTemplateSection: React.FC<AIConceptTemplateSectionProps> = ({
         )}
 
         {/* --- IMAGE MARQUEE SECTION --- */}
-        <div className="mt-24 text-center max-w-6xl mx-auto">
+        <div className="mt-2 text-center max-w-6xl mx-auto">
           <h3 className="text-2xl text-slate-200 font-bold md:text-3xl scroll-animate">
             Explore Our Pre-Optimized AI Website Templates
           </h3>         

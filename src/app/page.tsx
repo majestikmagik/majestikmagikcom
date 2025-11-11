@@ -382,16 +382,19 @@ const App = () => {
       <div>
 
         <main>
-          <HeroSection onWatchCommercial={() => setIsVideoModalOpen(true)} onGetStarted={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })} />
-          <AIConceptTemplateSection
+          <HeroSection 
+            onWatchCommercial={() => setIsVideoModalOpen(true)} 
+            onGetStarted={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
             conceptUserPrompt={conceptUserPrompt}
             setConceptUserPrompt={setConceptUserPrompt}
+            handleGenerateConceptPreview={handleGenerateConceptPreview}
+            isConceptLoading={isConceptLoading}
+            isGeminiInitialized={isGeminiInitialized}
+            conceptError={conceptError}
+          />
+          <AIConceptTemplateSection
             generatedCodeContent={generatedCodeContent}
             generatedOutputType={generatedOutputType}
-            isConceptLoading={isConceptLoading}
-            conceptError={conceptError}
-            handleGenerateConceptPreview={handleGenerateConceptPreview}
-            isGeminiInitialized={isGeminiInitialized}
           />
           <ComparisonChart />
           <PricingSection

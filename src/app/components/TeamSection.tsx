@@ -43,10 +43,10 @@ const TeamSection: React.FC = () => {
               alt="Majestik Magik team icon"
               loading="lazy"
             />
-            Meet the Team
+            Meet the Founder
           </h2>
           <p className="max-w-xl mx-auto font-semibold text-slate-400 md:text-xl scroll-animate" style={{ transitionDelay: '0.3s' }}>
-            The creative minds and technical wizards turning your digital dreams into reality.
+            The creative mind and tech wizard turning your digital dreams into reality.
           </p>
         </div>
         <div className="grid max-w-xl gap-10 mx-auto md:grid-cols-1 lg:gap-16 scroll-animate">

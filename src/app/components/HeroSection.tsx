@@ -6,6 +6,12 @@ import Image from 'next/image';
 interface HeroSectionProps {
   onWatchCommercial: () => void;
   onGetStarted: () => void;
+  conceptUserPrompt: string;
+  setConceptUserPrompt: (prompt: string) => void;
+  handleGenerateConceptPreview: () => void;
+  isConceptLoading: boolean;
+  isGeminiInitialized: boolean;
+  conceptError: string | null;
 }
 
 const partners = [
@@ -44,20 +50,25 @@ const partners = [
   }
 ];
 
-const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
+const HeroSection: React.FC<HeroSectionProps> = ({ 
+ 
+  conceptUserPrompt,
+  setConceptUserPrompt,
+  handleGenerateConceptPreview,
+  isConceptLoading,
+  isGeminiInitialized,
+  conceptError
+}) => {
   return (
     <section id="home" aria-labelledby="home-heading" className="relative py-20 md:py-32 overflow-hidden">
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute top-0 left-0 w-full h-full object-cover z-0"
-      >
-        <source src="/videos/majestikmagik_backdrop_uhd_2560_1440_24fps.webm" type="video/webm" />
-        Your browser does not support the video tag.
-      </video>
-      <div className="absolute inset-0 bg-indigo-950/90 z-10"></div>
+      
+      {/* Slate-950 background overlay */}
+      <div 
+        className="absolute inset-0 z-10"
+        style={{
+          background: 'rgba(15, 23, 42, 1)',
+        }}
+      ></div>
       <div className="container relative px-6 mx-auto text-center z-20">
         {/* SEO-optimized H1 */}
         <h1 className="mb-6 md:mb-8 text-6xl md:text-6xl lg:text-9xl text-white font-semibold scroll-animate">
@@ -81,26 +92,56 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => {
           quick updates, speed optimization, technical SEO fixes.
         </p>
 
-        <div className="flex flex-col items-center justify-center space-y-4 md:flex-row md:space-x-4 md:space-y-0">
-          <button
-            onClick={onGetStarted}
-            className="shadow-md btn-primary-gradient border-4 border-indigo-500 flex items-center justify-center w-50 mt-auto text-center text-slate-100 cursor-pointer bg-indigo-600 rounded-full hover:bg-indigo-800 py-3.5 px-3 font-semibold duration-300 transition-transform transform hover:scale-105 scroll-animate"
-            aria-label="Book same-day website fixes"
-            style={{ transitionDelay: "0.4s" }}
-            type="button"
-          >
-            <Image
-              src="/img/sparkles.svg"
-              className="lazy-logo w-6 h-6 mr-2 filter brightness-0 invert"
-              alt="Sparkles icon"
-              loading="lazy"
-              width={24}
-              height={24}
-            />
-            Book Today
-          </button>
 
-          
+        {/* AI Concept Input and Buttons */}
+        <div
+          className="max-w-6xl p-6 mx-auto rounded-xl shadow-2xl md:p-8 bg-slate-800/80 scroll-animate mt-12"
+          style={{ transitionDelay: '0.5s' }}
+        >
+          <textarea
+            value={conceptUserPrompt}
+            onChange={(e) => setConceptUserPrompt(e.target.value)}
+            placeholder="e.g., 'A simple hero section for a tech startup', 'A 3-column feature list', 'A basic product card design'"
+            rows={6}
+            className="w-full p-3 transition-colors duration-300 border rounded-md bg-slate-700 text-slate-200 border-slate-600 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 placeholder-slate-500"
+            aria-label="Describe your desired concept template"
+          />
+          <div className="flex flex-col items-center justify-center gap-4 md:flex-row mt-4">
+            <button
+              onClick={handleGenerateConceptPreview}
+              disabled={isConceptLoading || !isGeminiInitialized}
+              className="flex items-center justify-center w-80 px-6 py-3 font-semibold text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-indigo-600 hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed"
+              aria-live="polite"
+              type="button"
+            >
+              {isConceptLoading ? (
+                <>
+                  <svg className="w-5 h-5 mr-3 -ml-1 text-white animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                  Generating...
+                </>
+              ) : (
+                <>
+                  <svg className="w-5 h-5 mr-3 -ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4.5 2.25M12 18h.01"></path></svg>
+                  Create My AI Concept
+                </>
+              )}
+            </button>
+            <a href="#pricing">
+              <button
+                className="flex items-center justify-center w-80 px-6 py-3 font-semibold border-4 border-indigo-500 text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-indigo-600 hover:bg-indigo-800"
+                type="button"
+              >
+                Build My Revenue Engine
+              </button>
+            </a>
+          </div>
+
+          {/* Error Message */}
+          {conceptError && (
+            <p className="p-3 mt-4 text-sm text-red-400 rounded-md bg-red-900/30 text-center max-w-2xl mx-auto" role="alert">
+              Error: {conceptError}
+            </p>
+          )}
         </div>
 
         {/* Companies Partner Banner */}
