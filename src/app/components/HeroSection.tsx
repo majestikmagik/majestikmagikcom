@@ -81,8 +81,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const [charIndex, setCharIndex] = React.useState(0);
   const [isDeleting, setIsDeleting] = React.useState(false);
   const [hasSavedVersion, setHasSavedVersion] = React.useState(false);
-  const [editPrompt, setEditPrompt] = React.useState('');
-  const [isEditingCode, setIsEditingCode] = React.useState(false);
   const [currentCode, setCurrentCode] = React.useState(generatedCodeContent);
 
   React.useEffect(() => {
@@ -282,7 +280,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* Modal for Generated Content Preview */}
         {isPreviewModalOpen && generatedCodeContent && generatedOutputType && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-4">
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-4">
             <div className="relative bg-slate-900 rounded-xl shadow-2xl max-w-6xl w-full max-h-screen overflow-auto">
               {/* Close Button */}
               <button
@@ -326,7 +324,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                     </div>
                     <button
                       onClick={handleSaveToLocalStorage}
-                      className="px-3 py-1 text-sm font-semibold text-white bg-amber-600 hover:bg-amber-500 rounded transition-colors"
+                      className="px-3 py-1 text-sm font-semibold text-white bg-amber-600 hover:bg-amber-500 cursor-pointer rounded transition-colors"
                       title="Save to browser storage for later"
                       type="button"
                     >
@@ -335,50 +333,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                     {hasSavedVersion && (
                       <button
                         onClick={handleClearLocalStorage}
-                        className="px-3 py-1 text-sm font-semibold text-white bg-red-600 hover:bg-red-500 rounded transition-colors"
+                        className="px-3 py-1 text-sm font-semibold text-white bg-red-600 hover:bg-red-500 cursor-pointer rounded transition-colors"
                         title="Clear saved version"
                         type="button"
                       >
                         🗑️ Clear Saved
                       </button>
                     )}
-                  </div>
-
-                  {/* AI Editing Section */}
-                  <div className="border border-slate-600 rounded-lg p-4 bg-slate-800">
-                    <h3 className="text-white font-semibold mb-2">✨ Refine Your Design with AI</h3>
-                    <textarea
-                      value={editPrompt}
-                      onChange={(e) => setEditPrompt(e.target.value)}
-                      placeholder="e.g., 'Add a dark theme toggle', 'Make the buttons larger', 'Change colors to blue and gold'"
-                      className="w-full p-2 bg-slate-700 text-white placeholder-slate-400 rounded border border-slate-600 text-sm mb-2"
-                      rows={3}
-                    />
-                    <button
-                      onClick={async () => {
-                        if (!editPrompt.trim()) {
-                          alert('Please describe what changes you want');
-                          return;
-                        }
-                        setIsEditingCode(true);
-                        try {
-                          // This would require passing Gemini AI to the component
-                          // For now, we'll show a placeholder message
-                          alert('🔄 AI refinement feature coming soon!\n\nYour request: ' + editPrompt);
-                          setEditPrompt('');
-                        } catch (error) {
-                          console.error('Edit failed:', error);
-                          alert('Failed to refine design');
-                        } finally {
-                          setIsEditingCode(false);
-                        }
-                      }}
-                      disabled={isEditingCode || !editPrompt.trim()}
-                      className="w-full px-3 py-2 font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 disabled:bg-gray-600 disabled:cursor-not-allowed rounded transition-colors"
-                      type="button"
-                    >
-                      {isEditingCode ? '🔄 Refining...' : '✨ Refine with AI'}
-                    </button>
                   </div>
 
                   {/* Action Buttons */}
