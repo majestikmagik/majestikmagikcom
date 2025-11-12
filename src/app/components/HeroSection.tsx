@@ -145,7 +145,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             onChange={(e) => setConceptUserPrompt(e.target.value)}
             placeholder={placeholderText}
             rows={6}
-            className="w-full p-3 transition-colors duration-300 border rounded-md bg-slate-700 text-slate-200 border-slate-600 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 placeholder-slate-500"
+            className="w-full p-3 transition-colors duration-300 ease-in-out bg-slate-700 text-slate-200 placeholder-slate-500 scroll-animate"
+            style={{
+              border: '2px solid',
+              borderImage: 'linear-gradient(135deg, #4f46e5 0%, #2563eb 50%, #14b8a6 100%) 1',
+              boxShadow: 'inset 0 0 0 0px rgba(0,0,0,0), 0 0 20px rgba(79, 70, 229, 0.3), 0 0 40px rgba(37, 99, 235, 0.2), 0 0 60px rgba(20, 184, 166, 0.1)',
+            }}
             aria-label="Describe your desired concept template"
           />
           <div className="flex flex-col items-center justify-center gap-4 md:flex-row mt-4">
