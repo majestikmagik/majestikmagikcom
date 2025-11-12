@@ -519,14 +519,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               <div className="flex gap-4 justify-end">
                 <button
                   onClick={() => setShowClearConfirmModal(false)}
-                  className="px-4 py-2 font-semibold text-white bg-slate-700 hover:bg-slate-600 rounded-md transition-colors"
+                  className="px-4 py-2 font-semibold text-white bg-slate-700 hover:bg-slate-600 cursor-pointer rounded-md transition-colors"
                   type="button"
                 >
                   Cancel
                 </button>
                 <button
                   onClick={confirmClearLocalStorage}
-                  className="px-4 py-2 font-semibold text-white bg-red-600 hover:bg-red-500 rounded-md transition-colors"
+                  className="px-4 py-2 font-semibold text-white bg-red-600 hover:bg-red-500 cursor-pointer rounded-md transition-colors"
                   type="button"
                 >
                   Clear App
