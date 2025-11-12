@@ -139,7 +139,7 @@ const App = () => {
   const [isGeminiInitialized, setIsGeminiInitialized] = useState<boolean>(false);
 
   const [conceptUserPrompt, setConceptUserPrompt] = useState<string>('');
-  const [outputFormat] = useState<OutputFormat>('html');
+  const [outputFormat, setOutputFormat] = useState<OutputFormat>('react-tsx');
   const [generatedCodeContent, setGeneratedCodeContent] = useState<string>('');
   const [generatedOutputType, setGeneratedOutputType] = useState<OutputFormat | null>(null);
   const [isConceptLoading, setIsConceptLoading] = useState<boolean>(false);
@@ -390,6 +390,8 @@ const App = () => {
             conceptError={conceptError}
             generatedCodeContent={generatedCodeContent}
             generatedOutputType={generatedOutputType}
+            outputFormat={outputFormat}
+            setOutputFormat={setOutputFormat}
           />
           <AIConceptTemplateSection />
           <ComparisonChart />
