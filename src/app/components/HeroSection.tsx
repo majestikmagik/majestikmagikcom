@@ -53,14 +53,14 @@ const partners = [
 ];
 
 const PLACEHOLDER_PROMPTS = [
-  "A landing page for my cleaning business.",
-  "An AI-powered portfolio site.",
-  "A hero section for a tech startup.",
-  "A 3-column feature list.",
-  "A modern product card design.",
-  "A booking system for my salon.",
-  "A testimonials section with reviews.",
-  "A pricing table for my services.",
+  "A complete project management dashboard with task tracking and analytics.",
+  "A full-featured e-commerce product catalog with filtering and cart.",
+  "A SaaS application with user authentication and subscription management.",
+  "A real-estate property listing platform with search and booking.",
+  "A restaurant reservation system with menu browsing and bookings.",
+  "A fitness tracking dashboard with workout history and progress analytics.",
+  "A content management system with rich text editor and media management.",
+  "A community forum application with user profiles and discussion threads.",
 ];
 
 const HeroSection: React.FC<HeroSectionProps> = ({  
