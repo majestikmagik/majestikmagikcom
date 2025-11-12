@@ -331,12 +331,35 @@ const App = () => {
       return;
     }
 
+    // Content safety guardrail: Check for requests involving children's images
+    const lowerPrompt = conceptUserPrompt.toLowerCase();
+
+    const childRegex = /\b(child(ren)?|kid(s)?|toddler(s)?|baby|babies|infant(s)?)\b/i;
+    if (childRegex.test(lowerPrompt) && (lowerPrompt.includes('image') || lowerPrompt.includes('picture'))) {
+      setConceptError('⚠️ Safety Policy: We cannot generate or display images of minors. Please use an adult placeholder.');
+      return;
+    }
+
+    const childrenImageKeywords = [
+      'child', 'children', 'kid', 'kids', 'toddler', 'baby', 'babies', 'infant', 'infants',
+      'young child', 'little boy', 'little girl', 'boy picture', 'girl picture',
+      'profile picture of child', 'profile pic of kid', 'child avatar', 'kids avatar',
+      'profile image child', 'profile image kid', 'generate child image', 'generate kid image'
+    ];
+
+    const hasChildrenImageRequest = childrenImageKeywords.some(keyword => lowerPrompt.includes(keyword));
+
+    if (hasChildrenImageRequest && (lowerPrompt.includes('image') || lowerPrompt.includes('picture') || lowerPrompt.includes('profile') || lowerPrompt.includes('avatar') || lowerPrompt.includes('photo') || lowerPrompt.includes('generate'))) {
+      setConceptError('⚠️ Safety Policy: We cannot generate images of children. Please request profile pictures with adult subjects, abstract patterns, initials, or icons instead.');
+      return;
+    }
+
     setIsConceptLoading(true);
     setConceptError(null);
     setGeneratedCodeContent('');
     setGeneratedOutputType(null);
 
-    const systemPrompt = `You are an Expert Full-Stack Application Generator. Generate production-ready, full-featured applications using React/Next.js with TypeScript.\n\nCore Principles:\n1. ARCHITECTURE: Use modern, scalable patterns (component composition, custom hooks, context for state management)\n2. BEST PRACTICES: Implement proper error handling, loading states, accessibility (ARIA labels, semantic HTML)\n3. STYLING: Use Tailwind CSS with a professional color scheme (dark/light theme support)\n4. PERFORMANCE: Optimize with proper memoization, lazy loading, and efficient state management\n5. RESPONSIVENESS: Mobile-first design that works on all devices\n6. TYPE SAFETY: Full TypeScript with proper interfaces and type definitions\n7. USER EXPERIENCE: Smooth animations, transitions, intuitive interactions\n8. CODE QUALITY: Clean, well-organized, commented where necessary\n\nDeliverables Structure:\n- Custom hooks for reusable logic\n- Utility functions for common operations\n- Proper component composition and separation\n- Complete styling with Tailwind CSS\n- Form validation and error handling\n- Loading and empty states\n- Accessibility compliance\n- Mobile and desktop responsiveness\n\nGenerate a complete, functional application that demonstrates expert-level development practices. The output should be a fully working React/TSX component that can be directly integrated into a Next.js application.\n\nYour entire response must be ONLY the code. Do not include markdown fences, explanations, or surrounding text.`
+    const systemPrompt = `You are an Expert Full-Stack Application Generator. Generate production-ready, full-featured applications using React/Next.js with TypeScript.\n\nCore Principles:\n1. ARCHITECTURE: Use modern, scalable patterns (component composition, custom hooks, context for state management)\n2. BEST PRACTICES: Implement proper error handling, loading states, accessibility (ARIA labels, semantic HTML)\n3. STYLING: Use Tailwind CSS with a professional color scheme (dark/light theme support)\n4. PERFORMANCE: Optimize with proper memoization, lazy loading, and efficient state management\n5. RESPONSIVENESS: Mobile-first design that works on all devices\n6. TYPE SAFETY: Full TypeScript with proper interfaces and type definitions\n7. USER EXPERIENCE: Smooth animations, transitions, intuitive interactions\n8. CODE QUALITY: Clean, well-organized, commented where necessary\n\n⚠️ CRITICAL CONTENT SAFETY GUIDELINES:\n- NEVER generate, reference, or include images, illustrations, or visual representations of children (minors under 18)\n- NEVER create profile picture generators that could generate children's images\n- NEVER include UI that would display or generate images of minors\n- If user asks for profile pictures, user avatars, or images in profile sections, use:\n  * Abstract geometric patterns\n  * Adult-focused stock photo placeholders\n  * Initials/monograms\n  * Icons or symbols\n  * Generic adult silhouettes only\n- If the concept involves images, explicitly exclude any possibility of generating or displaying children\n\nDeliverables Structure:\n- Custom hooks for reusable logic\n- Utility functions for common operations\n- Proper component composition and separation\n- Complete styling with Tailwind CSS\n- Form validation and error handling\n- Loading and empty states\n- Accessibility compliance\n- Mobile and desktop responsiveness\n\nGenerate a complete, functional application that demonstrates expert-level development practices. The output should be a fully working React/TSX component that can be directly integrated into a Next.js application.\n\nYour entire response must be ONLY the code. Do not include markdown fences, explanations, or surrounding text.`
 
     // Always generate HTML for preview display
     const previewSystemPrompt = systemPrompt + `\nGenerate a single, self-contained HTML file that provides a modern conceptual layout or a single key section as a template.\nThe HTML should include embedded CSS for structure and styling within a <style> tag in the <head>. \nFor clickable elements like buttons or links that should not navigate, use <button type=\"button\">...</button> or <a href=\"#\" onclick=\"event.preventDefault();\">...</a>.\nIf a full page or navigation is implied for mobile, you can include a simple hamburger menu structure (visuals can be basic ASCII or placeholders, actual icon images are not required for the HTML preview logic). Any mobile view/media queries should be within the embedded <style> tag.\nThe output must be ONLY the HTML code, starting with <!DOCTYPE html> and ending with </html>.\nThe body tag should include oncontextmenu=\"event.preventDefault(); return false;\" to prevent inspect element on right click in the iframe.`
@@ -375,8 +398,8 @@ const App = () => {
       <div>
 
         <main>
-          <HeroSection 
-            onWatchCommercial={() => setIsVideoModalOpen(true)} 
+          <HeroSection
+            onWatchCommercial={() => setIsVideoModalOpen(true)}
             onGetStarted={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
             conceptUserPrompt={conceptUserPrompt}
             setConceptUserPrompt={setConceptUserPrompt}
