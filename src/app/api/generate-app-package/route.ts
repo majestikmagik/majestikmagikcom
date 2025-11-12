@@ -1,6 +1,8 @@
 import { NextRequest, NextResponse } from 'next/server';
 import JSZip from 'jszip';
 
+export const runtime = 'nodejs';
+
 export async function POST(req: NextRequest) {
   try {
     const { appDescription, databaseType } = await req.json();
