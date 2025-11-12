@@ -82,6 +82,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const [isDeleting, setIsDeleting] = React.useState(false);
   const [hasSavedVersion, setHasSavedVersion] = React.useState(false);
   const [currentCode, setCurrentCode] = React.useState(generatedCodeContent);
+  const [showNotification, setShowNotification] = React.useState<'saving' | 'loading' | 'cleared' | null>(null);
 
   React.useEffect(() => {
     const currentPrompt = PLACEHOLDER_PROMPTS[promptIndex];
@@ -129,7 +130,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       };
       localStorage.setItem('majestik-magik-app', JSON.stringify(appData));
       setHasSavedVersion(true);
-      alert('✓ App saved to browser storage!');
+      setShowNotification('saving');
+      setTimeout(() => setShowNotification(null), 3000);
     }
   };
 
@@ -143,7 +145,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           setCurrentCode(appData.code);
           setConceptUserPrompt(appData.prompt);
           setIsPreviewModalOpen(true);
-          alert('✓ App loaded from browser storage!');
+          setShowNotification('loading');
+          setTimeout(() => setShowNotification(null), 3000);
         } catch {
           alert('Error loading saved app');
         }
@@ -156,7 +159,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({
     if (typeof window !== 'undefined' && confirm('Clear saved app?')) {
       localStorage.removeItem('majestik-magik-app');
       setHasSavedVersion(false);
-      alert('✓ Saved app cleared');
+      setShowNotification('cleared');
+      setTimeout(() => setShowNotification(null), 3000);
     }
   };
   return (
@@ -448,6 +452,55 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             ))}
           </div>
         </div>
+
+        {/* Notification Modal */}
+        {showNotification && (
+          <div className="fixed inset-0 z-[8888] flex items-center justify-center pointer-events-none">
+            <div className="bg-slate-900 border-2 border-green-500 rounded-lg shadow-2xl p-8 max-w-sm mx-4 pointer-events-auto animate-in fade-in zoom-in duration-300">
+              <div className="flex items-center gap-4">
+                {showNotification === 'saving' && (
+                  <>
+                    <div className="flex-shrink-0">
+                      <svg className="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">App Saved!</h3>
+                      <p className="text-sm text-slate-300">Your app has been saved to browser storage.</p>
+                    </div>
+                  </>
+                )}
+                {showNotification === 'loading' && (
+                  <>
+                    <div className="flex-shrink-0">
+                      <svg className="w-8 h-8 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">App Loaded!</h3>
+                      <p className="text-sm text-slate-300">Your saved app has been restored.</p>
+                    </div>
+                  </>
+                )}
+                {showNotification === 'cleared' && (
+                  <>
+                    <div className="flex-shrink-0">
+                      <svg className="w-8 h-8 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-white">Cleared!</h3>
+                      <p className="text-sm text-slate-300">Your saved app has been removed.</p>
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   );
