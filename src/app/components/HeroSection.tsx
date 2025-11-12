@@ -52,6 +52,17 @@ const partners = [
   }
 ];
 
+const PLACEHOLDER_PROMPTS = [
+  "A landing page for my cleaning business.",
+  "An AI-powered portfolio site.",
+  "A hero section for a tech startup.",
+  "A 3-column feature list.",
+  "A modern product card design.",
+  "A booking system for my salon.",
+  "A testimonials section with reviews.",
+  "A pricing table for my services.",
+];
+
 const HeroSection: React.FC<HeroSectionProps> = ({  
   conceptUserPrompt,
   setConceptUserPrompt,
@@ -63,6 +74,33 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   generatedOutputType
 }) => {
   const [isPreviewModalOpen, setIsPreviewModalOpen] = React.useState(false);
+  const [placeholderText, setPlaceholderText] = React.useState('');
+  const [promptIndex, setPromptIndex] = React.useState(0);
+  const [charIndex, setCharIndex] = React.useState(0);
+  const [isDeleting, setIsDeleting] = React.useState(false);
+
+  React.useEffect(() => {
+    const currentPrompt = PLACEHOLDER_PROMPTS[promptIndex];
+    const speed = isDeleting ? 30 : 50;
+    
+    const timer = setTimeout(() => {
+      if (!isDeleting && charIndex < currentPrompt.length) {
+        setPlaceholderText(currentPrompt.substring(0, charIndex + 1));
+        setCharIndex(charIndex + 1);
+      } else if (isDeleting && charIndex > 0) {
+        setPlaceholderText(currentPrompt.substring(0, charIndex - 1));
+        setCharIndex(charIndex - 1);
+      } else if (!isDeleting && charIndex === currentPrompt.length) {
+        // Wait before starting to delete
+        setTimeout(() => setIsDeleting(true), 2000);
+      } else if (isDeleting && charIndex === 0) {
+        setIsDeleting(false);
+        setPromptIndex((prev) => (prev + 1) % PLACEHOLDER_PROMPTS.length);
+      }
+    }, speed);
+
+    return () => clearTimeout(timer);
+  }, [charIndex, isDeleting, promptIndex]);
   return (
     <section id="home" aria-labelledby="home-heading" className="relative py-20 md:py-32 overflow-hidden">
       
@@ -105,7 +143,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           <textarea
             value={conceptUserPrompt}
             onChange={(e) => setConceptUserPrompt(e.target.value)}
-            placeholder="e.g., 'A simple hero section for a tech startup', 'A 3-column feature list', 'A basic product card design'"
+            placeholder={placeholderText}
             rows={6}
             className="w-full p-3 transition-colors duration-300 border rounded-md bg-slate-700 text-slate-200 border-slate-600 focus:ring-2 focus:ring-teal-500 focus:border-teal-500 placeholder-slate-500"
             aria-label="Describe your desired concept template"
