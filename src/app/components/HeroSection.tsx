@@ -306,7 +306,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               </button>
 
               {/* Modal Content */}
-              <div className="p-8">
+              <div className="p-2">
                 <h2 className="text-2xl font-bold text-white mb-4">Your AI Generated Concept</h2>
 
                 {/* Preview */}
@@ -316,6 +316,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                     title="AI Generated Concept Template"
                     className="w-full h-[600px] border-0"
                     sandbox="allow-scripts"
+                    allowFullScreen
                   ></iframe>
                 </div>
 
