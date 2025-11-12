@@ -314,12 +314,12 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
               {/* Modal Content */}
               <div className="p-2">
-                <h2 className="text-2xl font-bold text-white mb-4">Your AI Generated Concept</h2>
+                <h2 className="text-2xl font-bold text-white mb-4">Your AI Generated Concept Template</h2>
 
                 {/* Preview */}
                 <div className="overflow-hidden border rounded-md shadow-inner bg-slate-800 border-slate-700 mb-6">
                   <iframe
-                    srcDoc={generatedCodeContent}
+                    srcDoc={currentCode}
                     title="AI Generated Concept Template"
                     className="w-full h-[600px] border-0"
                     sandbox="allow-scripts"
