@@ -14,8 +14,6 @@ interface HeroSectionProps {
   conceptError: string | null;
   generatedCodeContent: string;
   generatedOutputType: 'html' | 'react-tsx' | null;
-  outputFormat: 'html' | 'react-tsx';
-  setOutputFormat: (format: 'html' | 'react-tsx') => void;
 }
 
 const partners = [
@@ -74,8 +72,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   conceptError,
   generatedCodeContent,
   generatedOutputType,
-  outputFormat,
-  setOutputFormat,
 }) => {
   const [isPreviewModalOpen, setIsPreviewModalOpen] = React.useState(false);
   const [databaseType, setDatabaseType] = React.useState<'postgresql' | 'mysql'>('postgresql');
@@ -246,20 +242,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   ></iframe>
                 </div>
 
-                {/* Download Button */}
+                {/* Download Options */}
                 <div className="flex flex-col gap-4 justify-end">
                   <div className="flex gap-4 justify-end">
-                    <div className="flex gap-2">
-                      <label className="text-white text-sm font-semibold">App Type:</label>
-                      <select
-                        value={outputFormat}
-                        onChange={(e) => setOutputFormat(e.target.value as 'html' | 'react-tsx')}
-                        className="px-3 py-1 bg-slate-700 text-white rounded border border-slate-600"
-                      >
-                        <option value="html">HTML Template</option>
-                        <option value="react-tsx">React/Next.js</option>
-                      </select>
-                    </div>
                     <div className="flex gap-2">
                       <label className="text-white text-sm font-semibold">Database:</label>
                       <select
@@ -280,81 +265,76 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                     >
                       Close
                     </button>
-                    {generatedOutputType === 'html' && (
-                      <button
-                        onClick={() => {
-                          if (generatedOutputType === 'html') {
-                            const blob = new Blob([generatedCodeContent], { type: 'text/html' });
-                            const href = URL.createObjectURL(blob);
-                            const link = document.createElement('a');
-                            link.href = href;
-                            link.download = 'majestik-magik-concept.html';
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
-                            URL.revokeObjectURL(href);
-                          }
-                        }}
-                        className="inline-flex items-center justify-center px-4 py-2 font-semibold cursor-pointer text-white bg-blue-600 hover:bg-blue-500 rounded-md transition-colors"
-                        type="button"
-                      >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
-                        Download HTML Template
-                      </button>
-                    )}
-                    {generatedOutputType === 'react-tsx' && (
-                      <button
-                        onClick={async () => {
-                          setIsDownloading(true);
-                          try {
-                            const response = await fetch('/api/generate-app-package', {
-                              method: 'POST',
-                              headers: { 'Content-Type': 'application/json' },
-                              body: JSON.stringify({
-                                appDescription: conceptUserPrompt || 'Full-Stack Application',
-                                databaseType,
-                              }),
-                            });
+                    <button
+                      onClick={() => {
+                        const blob = new Blob([generatedCodeContent], { type: 'text/html' });
+                        const href = URL.createObjectURL(blob);
+                        const link = document.createElement('a');
+                        link.href = href;
+                        link.download = 'majestik-magik-concept.html';
+                        document.body.appendChild(link);
+                        link.click();
+                        document.body.removeChild(link);
+                        URL.revokeObjectURL(href);
+                      }}
+                      className="inline-flex items-center justify-center px-4 py-2 font-semibold cursor-pointer text-white bg-blue-600 hover:bg-blue-500 rounded-md transition-colors"
+                      type="button"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+                      Download HTML
+                    </button>
+                    <button
+                      onClick={async () => {
+                        setIsDownloading(true);
+                        try {
+                          const response = await fetch('/api/generate-app-package', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                              appDescription: conceptUserPrompt || 'Full-Stack Application',
+                              databaseType,
+                              format: 'react',
+                            }),
+                          });
 
-                            if (!response.ok) {
-                              const error = await response.json();
-                              throw new Error(error.error || 'Failed to generate package');
-                            }
-
-                            // Get ZIP file from response
-                            const blob = await response.blob();
-                            const href = URL.createObjectURL(blob);
-                            const link = document.createElement('a');
-                            link.href = href;
-                            link.download = `fullstack-app-${databaseType}.zip`;
-                            document.body.appendChild(link);
-                            link.click();
-                            document.body.removeChild(link);
-                            URL.revokeObjectURL(href);
-                          } catch (error) {
-                            console.error('Download failed:', error);
-                            alert('Failed to download application package');
-                          } finally {
-                            setIsDownloading(false);
+                          if (!response.ok) {
+                            const error = await response.json();
+                            throw new Error(error.error || 'Failed to generate package');
                           }
-                        }}
-                        disabled={isDownloading}
-                        className="inline-flex items-center justify-center px-4 py-2 font-semibold cursor-pointer text-white bg-green-600 hover:bg-green-500 disabled:bg-gray-600 disabled:cursor-not-allowed rounded-md transition-colors"
-                        type="button"
-                      >
-                        {isDownloading ? (
-                          <>
-                            <svg className="w-5 h-5 mr-2 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                            Generating...
-                          </>
-                        ) : (
-                          <>
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
-                            Download Full-Stack App
-                          </>
-                        )}
-                      </button>
-                    )}
+
+                          // Get ZIP file from response
+                          const blob = await response.blob();
+                          const href = URL.createObjectURL(blob);
+                          const link = document.createElement('a');
+                          link.href = href;
+                          link.download = `fullstack-app-react-${databaseType}.zip`;
+                          document.body.appendChild(link);
+                          link.click();
+                          document.body.removeChild(link);
+                          URL.revokeObjectURL(href);
+                        } catch (error) {
+                          console.error('Download failed:', error);
+                          alert('Failed to download React application package');
+                        } finally {
+                          setIsDownloading(false);
+                        }
+                      }}
+                      disabled={isDownloading}
+                      className="inline-flex items-center justify-center px-4 py-2 font-semibold cursor-pointer text-white bg-green-600 hover:bg-green-500 disabled:bg-gray-600 disabled:cursor-not-allowed rounded-md transition-colors"
+                      type="button"
+                    >
+                      {isDownloading ? (
+                        <>
+                          <svg className="w-5 h-5 mr-2 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                          Generating...
+                        </>
+                      ) : (
+                        <>
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+                          Download React/Next.js
+                        </>
+                      )}
+                    </button>
                   </div>
                 </div>
               </div>
