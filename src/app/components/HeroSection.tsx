@@ -83,6 +83,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const [hasSavedVersion, setHasSavedVersion] = React.useState(false);
   const [currentCode, setCurrentCode] = React.useState(generatedCodeContent);
   const [showNotification, setShowNotification] = React.useState<'saving' | 'loading' | 'cleared' | null>(null);
+  const [showClearConfirmModal, setShowClearConfirmModal] = React.useState(false);
 
   React.useEffect(() => {
     const currentPrompt = PLACEHOLDER_PROMPTS[promptIndex];
@@ -156,11 +157,16 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
   // Clear localStorage
   const handleClearLocalStorage = () => {
-    if (typeof window !== 'undefined' && confirm('Clear saved app?')) {
+    setShowClearConfirmModal(true);
+  };
+
+  const confirmClearLocalStorage = () => {
+    if (typeof window !== 'undefined') {
       localStorage.removeItem('majestik-magik-app');
       setHasSavedVersion(false);
       setShowNotification('cleared');
       setTimeout(() => setShowNotification(null), 3000);
+      setShowClearConfirmModal(false);
     }
   };
   return (
@@ -497,6 +503,34 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                     </div>
                   </>
                 )}
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Clear Confirmation Modal */}
+        {showClearConfirmModal && (
+          <div className="fixed inset-0 z-[10001] flex items-center justify-center bg-black/70 p-4">
+            <div className="bg-slate-900 border-2 border-slate-700 rounded-lg shadow-2xl p-8 max-w-sm">
+              <h3 className="text-xl font-bold text-white mb-2">Clear Saved App?</h3>
+              <p className="text-slate-300 mb-6">
+                Are you sure you want to delete your saved app? This action cannot be undone.
+              </p>
+              <div className="flex gap-4 justify-end">
+                <button
+                  onClick={() => setShowClearConfirmModal(false)}
+                  className="px-4 py-2 font-semibold text-white bg-slate-700 hover:bg-slate-600 rounded-md transition-colors"
+                  type="button"
+                >
+                  Cancel
+                </button>
+                <button
+                  onClick={confirmClearLocalStorage}
+                  className="px-4 py-2 font-semibold text-white bg-red-600 hover:bg-red-500 rounded-md transition-colors"
+                  type="button"
+                >
+                  Clear App
+                </button>
               </div>
             </div>
           </div>
