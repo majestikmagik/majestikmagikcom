@@ -455,7 +455,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* Notification Modal */}
         {showNotification && (
-          <div className="fixed inset-0 z-[8888] flex items-center justify-center pointer-events-none">
+          <div className="fixed inset-0 z-[10000] flex items-center justify-center pointer-events-none">
             <div className="bg-slate-900 border-2 border-green-500 rounded-lg shadow-2xl p-8 max-w-sm mx-4 pointer-events-auto animate-in fade-in zoom-in duration-300">
               <div className="flex items-center gap-4">
                 {showNotification === 'saving' && (
