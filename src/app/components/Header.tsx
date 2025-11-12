@@ -61,7 +61,7 @@ const Header: React.FC<HeaderProps> = ({
             <a
               key={item.name}
               href={item.url}
-              className="text-slate-300 hover:text-white transition-colors font-semibold duration-600 ease-in-out text-sm md:text-base"
+              className="text-slate-300 hover:text-indigo-400 transition-colors font-semibold duration-600 ease-in-out text-sm md:text-base"
               onClick={(e) => handleNavClick(e, item)}
               {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
             >

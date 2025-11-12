@@ -80,6 +80,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   const [promptIndex, setPromptIndex] = React.useState(0);
   const [charIndex, setCharIndex] = React.useState(0);
   const [isDeleting, setIsDeleting] = React.useState(false);
+  const [hasSavedVersion, setHasSavedVersion] = React.useState(false);
+  const [editPrompt, setEditPrompt] = React.useState('');
+  const [isEditingCode, setIsEditingCode] = React.useState(false);
+  const [currentCode, setCurrentCode] = React.useState(generatedCodeContent);
 
   React.useEffect(() => {
     const currentPrompt = PLACEHOLDER_PROMPTS[promptIndex];
@@ -94,7 +98,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         setCharIndex(charIndex - 1);
       } else if (!isDeleting && charIndex === currentPrompt.length) {
         // Wait before starting to delete
-        setTimeout(() => setIsDeleting(true), 2000);
+        setTimeout(() => setIsDeleting(true), 7000);
       } else if (isDeleting && charIndex === 0) {
         setIsDeleting(false);
         setPromptIndex((prev) => (prev + 1) % PLACEHOLDER_PROMPTS.length);
@@ -103,6 +107,60 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
     return () => clearTimeout(timer);
   }, [charIndex, isDeleting, promptIndex]);
+
+  // Check for saved version on mount
+  React.useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('majestik-magik-app');
+      setHasSavedVersion(!!saved);
+    }
+  }, []);
+
+  // Update currentCode when generatedCodeContent changes
+  React.useEffect(() => {
+    setCurrentCode(generatedCodeContent);
+  }, [generatedCodeContent]);
+
+  // Save to localStorage
+  const handleSaveToLocalStorage = () => {
+    if (typeof window !== 'undefined') {
+      const appData = {
+        code: currentCode,
+        prompt: conceptUserPrompt,
+        timestamp: new Date().toISOString(),
+      };
+      localStorage.setItem('majestik-magik-app', JSON.stringify(appData));
+      setHasSavedVersion(true);
+      alert('✓ App saved to browser storage!');
+    }
+  };
+
+  // Load from localStorage
+  const handleLoadFromLocalStorage = () => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('majestik-magik-app');
+      if (saved) {
+        try {
+          const appData = JSON.parse(saved);
+          setCurrentCode(appData.code);
+          setConceptUserPrompt(appData.prompt);
+          setIsPreviewModalOpen(true);
+          alert('✓ App loaded from browser storage!');
+        } catch {
+          alert('Error loading saved app');
+        }
+      }
+    }
+  };
+
+  // Clear localStorage
+  const handleClearLocalStorage = () => {
+    if (typeof window !== 'undefined' && confirm('Clear saved app?')) {
+      localStorage.removeItem('majestik-magik-app');
+      setHasSavedVersion(false);
+      alert('✓ Saved app cleared');
+    }
+  };
   return (
     <section id="home" aria-labelledby="home-heading" className="relative py-20 md:py-32 overflow-hidden">
 
@@ -147,7 +205,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             onChange={(e) => setConceptUserPrompt(e.target.value)}
             placeholder={placeholderText}
             rows={6}
-            className="w-full p-3 transition-colors duration-300 ease-in-out bg-slate-700 text-slate-200 placeholder-slate-500 scroll-animate"
+            className="w-full p-2 transition-colors duration-300 ease-in-out bg-slate-700 text-slate-200 placeholder-slate-500 scroll-animate"
             style={{
               border: '2px solid',
               borderImage: 'linear-gradient(135deg, #4f46e5 0%, #2563eb 50%, #14b8a6 100%) 1',
@@ -159,7 +217,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <button
               onClick={handleGenerateConceptPreview}
               disabled={isConceptLoading || !isGeminiInitialized}
-              className="flex items-center justify-center w-80 px-6 py-3 font-semibold text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-indigo-600 hover:bg-indigo-500 disabled:bg-slate-600 disabled:cursor-not-allowed"
+              className="flex items-center justify-center w-80 px-6 py-3 font-semibold text-white transition-all duration-300 cursor-pointer rounded-md shadow-md bg-indigo-600 hover:bg-indigo-500 disabled:bg-indigo-400 disabled:cursor-not-allowed"
               aria-live="polite"
               type="button"
             >
@@ -171,7 +229,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               ) : (
                 <>
                   <svg className="w-5 h-5 mr-3 -ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4.5 2.25M12 18h.01"></path></svg>
-                  Build A Website
+                  Build App
                 </>
               )}
             </button>
@@ -201,7 +259,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
           {/* Show modal trigger button when content is generated */}
           {generatedCodeContent && generatedOutputType && (
-            <div className="mt-4 text-center">
+            <div className="mt-4 text-center flex gap-2 justify-center flex-wrap">
               <button
                 onClick={() => setIsPreviewModalOpen(true)}
                 className="inline-flex items-center justify-center px-6 py-3 font-semibold text-white transition-all duration-300 rounded-md shadow-md bg-blue-600 hover:bg-blue-500 cursor-pointer"
@@ -209,6 +267,15 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               >
                 View Your Design Preview
               </button>
+              {hasSavedVersion && (
+                <button
+                  onClick={handleLoadFromLocalStorage}
+                  className="inline-flex items-center justify-center px-6 py-3 font-semibold text-white transition-all duration-300 rounded-md shadow-md bg-purple-600 hover:bg-purple-500 cursor-pointer"
+                  type="button"
+                >
+                  📦 Load Saved App
+                </button>
+              )}
             </div>
           )}
         </div>
@@ -242,9 +309,10 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   ></iframe>
                 </div>
 
-                {/* Download Options */}
+                {/* Download Options & AI Editing */}
                 <div className="flex flex-col gap-4 justify-end">
-                  <div className="flex gap-4 justify-end">
+                  {/* Database & Save Options */}
+                  <div className="flex gap-4 justify-end flex-wrap items-center">
                     <div className="flex gap-2">
                       <label className="text-white text-sm font-semibold">Database:</label>
                       <select
@@ -256,8 +324,65 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                         <option value="mysql">MySQL</option>
                       </select>
                     </div>
+                    <button
+                      onClick={handleSaveToLocalStorage}
+                      className="px-3 py-1 text-sm font-semibold text-white bg-amber-600 hover:bg-amber-500 rounded transition-colors"
+                      title="Save to browser storage for later"
+                      type="button"
+                    >
+                      💾 Save to Browser
+                    </button>
+                    {hasSavedVersion && (
+                      <button
+                        onClick={handleClearLocalStorage}
+                        className="px-3 py-1 text-sm font-semibold text-white bg-red-600 hover:bg-red-500 rounded transition-colors"
+                        title="Clear saved version"
+                        type="button"
+                      >
+                        🗑️ Clear Saved
+                      </button>
+                    )}
                   </div>
-                  <div className="flex gap-4 justify-end">
+
+                  {/* AI Editing Section */}
+                  <div className="border border-slate-600 rounded-lg p-4 bg-slate-800">
+                    <h3 className="text-white font-semibold mb-2">✨ Refine Your Design with AI</h3>
+                    <textarea
+                      value={editPrompt}
+                      onChange={(e) => setEditPrompt(e.target.value)}
+                      placeholder="e.g., 'Add a dark theme toggle', 'Make the buttons larger', 'Change colors to blue and gold'"
+                      className="w-full p-2 bg-slate-700 text-white placeholder-slate-400 rounded border border-slate-600 text-sm mb-2"
+                      rows={3}
+                    />
+                    <button
+                      onClick={async () => {
+                        if (!editPrompt.trim()) {
+                          alert('Please describe what changes you want');
+                          return;
+                        }
+                        setIsEditingCode(true);
+                        try {
+                          // This would require passing Gemini AI to the component
+                          // For now, we'll show a placeholder message
+                          alert('🔄 AI refinement feature coming soon!\n\nYour request: ' + editPrompt);
+                          setEditPrompt('');
+                        } catch (error) {
+                          console.error('Edit failed:', error);
+                          alert('Failed to refine design');
+                        } finally {
+                          setIsEditingCode(false);
+                        }
+                      }}
+                      disabled={isEditingCode || !editPrompt.trim()}
+                      className="w-full px-3 py-2 font-semibold text-white bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 disabled:bg-gray-600 disabled:cursor-not-allowed rounded transition-colors"
+                      type="button"
+                    >
+                      {isEditingCode ? '🔄 Refining...' : '✨ Refine with AI'}
+                    </button>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-4 justify-end flex-wrap">
                     <button
                       onClick={() => setIsPreviewModalOpen(false)}
                       className="px-4 py-2 font-semibold cursor-pointer text-white bg-slate-700 hover:bg-slate-600 rounded-md transition-colors"
@@ -267,7 +392,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                     </button>
                     <button
                       onClick={() => {
-                        const blob = new Blob([generatedCodeContent], { type: 'text/html' });
+                        const blob = new Blob([currentCode], { type: 'text/html' });
                         const href = URL.createObjectURL(blob);
                         const link = document.createElement('a');
                         link.href = href;
