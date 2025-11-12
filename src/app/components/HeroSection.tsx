@@ -265,16 +265,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             </p>
           )}
 
-          {/* Show modal trigger button when content is generated */}
-          {generatedCodeContent && generatedOutputType && (
+          {/* Show modal trigger button when content is generated, or load button if saved version exists */}
+          {(generatedCodeContent && generatedOutputType) || hasSavedVersion ? (
             <div className="mt-4 text-center flex gap-2 justify-center flex-wrap">
-              <button
-                onClick={() => setIsPreviewModalOpen(true)}
-                className="inline-flex items-center justify-center px-6 py-3 font-semibold text-white transition-all duration-300 rounded-md shadow-md bg-blue-600 hover:bg-blue-500 cursor-pointer"
-                type="button"
-              >
-                View Your Design Preview
-              </button>
+              {generatedCodeContent && generatedOutputType && (
+                <button
+                  onClick={() => setIsPreviewModalOpen(true)}
+                  className="inline-flex items-center justify-center px-6 py-3 font-semibold text-white transition-all duration-300 rounded-md shadow-md bg-blue-600 hover:bg-blue-500 cursor-pointer"
+                  type="button"
+                >
+                  View Your Design Preview
+                </button>
+              )}
               {hasSavedVersion && (
                 <button
                   onClick={handleLoadFromLocalStorage}
@@ -285,7 +287,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                 </button>
               )}
             </div>
-          )}
+          ) : null}
         </div>
 
         {/* Modal for Generated Content Preview */}
