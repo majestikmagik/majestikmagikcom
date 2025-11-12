@@ -175,7 +175,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
               ) : (
                 <>
                   <svg className="w-5 h-5 mr-3 -ml-1" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 2a10 10 0 100 20 10 10 0 000-20zM12 6v6l4.5 2.25M12 18h.01"></path></svg>
-                  Create My Website
+                  Build A Website
                 </>
               )}
             </button>
