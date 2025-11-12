@@ -211,6 +211,13 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           <textarea
             value={conceptUserPrompt}
             onChange={(e) => setConceptUserPrompt(e.target.value)}
+            onKeyDown={(e) => {
+              // Allow Tab key to accept the placeholder prompt
+              if (e.key === 'Tab' && !conceptUserPrompt && placeholderText) {
+                e.preventDefault();
+                setConceptUserPrompt(placeholderText);
+              }
+            }}
             placeholder={placeholderText}
             rows={6}
             className="w-full p-2 transition-colors duration-300 ease-in-out bg-slate-700 text-slate-200 placeholder-slate-500 scroll-animate"
@@ -283,7 +290,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                   className="inline-flex items-center justify-center px-6 py-3 font-semibold text-white transition-all duration-300 rounded-md shadow-md bg-purple-600 hover:bg-purple-500 cursor-pointer"
                   type="button"
                 >
-                  📦 Load Saved App
+                  Load Saved App
                 </button>
               )}
             </div>
@@ -291,7 +298,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
         </div>
 
         {/* Modal for Generated Content Preview */}
-        {isPreviewModalOpen && generatedCodeContent && generatedOutputType && (
+        {isPreviewModalOpen && currentCode && (
           <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-4">
             <div className="relative bg-slate-900 rounded-xl shadow-2xl max-w-6xl w-full max-h-screen overflow-auto">
               {/* Close Button */}
