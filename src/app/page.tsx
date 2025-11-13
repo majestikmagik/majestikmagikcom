@@ -331,8 +331,45 @@ const App = () => {
       return;
     }
 
-    // Content safety guardrail: Check for requests involving children's images
+    // Content safety guardrail: Check for requests involving hate speech, violence, illicit drugs, weaponization, self-harm, explicit sexual content, cybercrime, or children's images
     const lowerPrompt = conceptUserPrompt.toLowerCase();
+
+    const hateSpeechViolenceRegex = /\b(?:hate\s+(?:speech|crime|rhetoric)|incit(?:e|ing|ement)\s+(?:violence|harm)|racial\s+slur|race\s+war|ethnic\s+cleansing|genocide|violence\s+(?:against|toward|towards)\s+(?:the\s+)?(?:black|white|asian|latino|latinx|arab|jew(?:ish)?|muslim|sikh|hindu|christian|catholic|lgbtq|gay|lesbian|bisexual|trans|queer|nonbinary|immigrant|refugee|minorit(?:y|ies)|disabled|women|men|people|group|groups|community|communities)|(?:kill|murder|lynch|slaughter|massacre|shoot|bomb|attack|torture|harm|hurt|wipe(?:\s+)?out|eradicate|exterminate|burn|execute|enslave)\s+(?:all\s+)?(?:the\s+|those\s+|these\s+|any\s+)?(?:black|white|asian|latino|latinx|arab|jew(?:ish)?|muslim|sikh|hindu|christian|catholic|lgbtq|gay|lesbian|bisexual|trans|queer|nonbinary|immigrant|refugee|minorit(?:y|ies)|disabled|women|men|people|group|groups|community|communities))\b/;
+
+    if (hateSpeechViolenceRegex.test(lowerPrompt)) {
+      setConceptError('Safety Policy: We do not allow prompts that include hate speech, harassment, or violence against individuals or protected groups.');
+      return;
+    }
+
+    const illicitDrugRegex = /\b(?:cook|make|manufacture|synthesize|produce|grow|distribute|sell|traffic|smuggle|ship|package|supply)\s+(?:meth|methamphetamine|cocaine|heroin|fentanyl|lsd|acid|ecstasy|mdma|ketamine|crack|opioids?|opium|pcp|angel\s*dust|amphetamines?|drugs?)\b|\b(?:drug\s+lab|meth\s+lab|grow\s+house|cartel)\b/;
+    if (illicitDrugRegex.test(lowerPrompt)) {
+      setConceptError('Safety Policy: We cannot assist with creating, distributing, or promoting illegal drugs or controlled substances.');
+      return;
+    }
+
+    const weaponizationRegex = /\b(?:build|make|manufacture|assemble|3d\s*print|construct|fabricate|improvise)\s+(?:bomb|explosive|weapon|gun|firearm|ghost\s*gun|pipe\s*bomb|molotov|grenade|rocket|missile|chemical\s*weapon|bio(?:logical)?\s*weapon|dirty\s*bomb|silencer)\b|\b(?:terrorist|terrorism)\s+(?:plan|attack|guide|manual)\b/;
+    if (weaponizationRegex.test(lowerPrompt)) {
+      setConceptError('Safety Policy: We cannot assist with weapon creation, extremist planning, or any instructions that facilitate physical harm.');
+      return;
+    }
+
+    const selfHarmRegex = /\b(?:kill|harm|hurt|injure)\s+(?:myself|ourselves)\b|\b(?:suicide|self-harm|self\s*harm|self\s*injury|end\s+my\s+life|take\s+my\s+life)\b/;
+    if (selfHarmRegex.test(lowerPrompt)) {
+      setConceptError('Safety Policy: We cannot process prompts related to self-harm. Please seek immediate help from local emergency services or trusted professionals.');
+      return;
+    }
+
+    const explicitSexualContentRegex = /\b(?:porn|pornography|xxx|hardcore|explicit\s+sex|sexual\s+content|nud(?:e|ity)|nsfw|erotica|sex\s+scene|adult\s+(?:video|videos|image|images?|content))\b/;
+    if (explicitSexualContentRegex.test(lowerPrompt)) {
+      setConceptError('Safety Policy: We cannot generate explicit sexual content. Please keep prompts professional and appropriate for all audiences.');
+      return;
+    }
+
+    const cybercrimeRegex = /\b(?:hack(?:ing|er)?|exploit|crack(?:ing)?|ddos|phish(?:ing)?|keylogger|malware|ransomware|virus|trojan|botnet)\b|\b(?:steal|exfiltrate|leak)\s+(?:data|credentials|passwords?|credit\s+cards?)\b/;
+    if (cybercrimeRegex.test(lowerPrompt)) {
+      setConceptError('Safety Policy: We cannot assist with hacking, credential theft, malware creation, or other cybercrime activities.');
+      return;
+    }
 
     const childRegex = /\b(child(ren)?|kid(s)?|toddler(s)?|baby|babies|infant(s)?)\b/i;
     if (childRegex.test(lowerPrompt) && (lowerPrompt.includes('image') || lowerPrompt.includes('picture'))) {
