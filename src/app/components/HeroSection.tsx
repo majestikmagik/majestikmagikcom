@@ -299,78 +299,65 @@ const HeroSection: React.FC<HeroSectionProps> = ({
 
         {/* Modal for Generated Content Preview */}
         {isPreviewModalOpen && currentCode && (
-          <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 p-4">
-            <div className="relative bg-slate-900 rounded-xl shadow-2xl max-w-6xl w-full max-h-screen overflow-auto">
-              {/* Close Button */}
-              <button
-                onClick={() => setIsPreviewModalOpen(false)}
-                className="absolute top-4 right-4 text-slate-400 cursor-pointer hover:text-white transition-colors"
-                aria-label="Close modal"
-              >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-
-              {/* Modal Content */}
-              <div className="p-2">
-                <h2 className="text-2xl font-bold text-white mb-4">Your AI Generated Concept Template</h2>
-
-                {/* Preview */}
-                <div className="overflow-hidden border rounded-md shadow-inner bg-slate-800 border-slate-700 mb-6">
-                  <iframe
-                    srcDoc={currentCode}
-                    title="AI Generated Concept Template"
-                    className="w-full h-[600px] border-0"
-                    sandbox="allow-scripts"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-
-                {/* Download Options & AI Editing */}
-                <div className="flex flex-col gap-4 justify-end">
-                  {/* Database & Save Options */}
-                  <div className="flex gap-4 justify-end flex-wrap items-center">
-                    <div className="flex gap-2">
-                      <label className="text-white text-sm font-semibold">Database:</label>
+          <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4">
+            <div className="relative w-full max-w-6xl text-white rounded-3xl border border-white/10 bg-slate-950/95 shadow-2xl">
+              <div className="flex flex-col max-h-[90vh]">
+                {/* Modal Toolbar */}
+                <div className="sticky top-0 z-10 flex flex-wrap items-center justify-between gap-4 rounded-t-3xl border-b border-white/5 bg-slate-950/85 px-6 py-4">
+                  <div>
+                    <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Concept Preview</p>
+                    <h2 className="text-2xl font-semibold text-white">Your AI Generated Template</h2>
+                  </div>
+                  <div className="flex flex-wrap items-center gap-3">
+                    <div className="flex items-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-3 py-2 text-sm font-medium text-slate-200">
+                      <svg className="w-4 h-4 text-teal-300" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <path d="M4 6h16M4 12h16M4 18h16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        <circle cx="8" cy="6" r="1" fill="currentColor" />
+                        <circle cx="12" cy="12" r="1" fill="currentColor" />
+                        <circle cx="16" cy="18" r="1" fill="currentColor" />
+                      </svg>
                       <select
                         value={databaseType}
                         onChange={(e) => setDatabaseType(e.target.value as 'postgresql' | 'mysql')}
-                        className="px-3 py-1 bg-slate-700 text-white rounded border border-slate-600"
+                        className="bg-transparent text-sm font-semibold text-white focus:outline-none cursor-pointer"
+                        aria-label="Select database"
                       >
-                        <option value="postgresql">PostgreSQL</option>
-                        <option value="mysql">MySQL</option>
+                        <option className="bg-slate-900" value="postgresql">PostgreSQL</option>
+                        <option className="bg-slate-900" value="mysql">MySQL</option>
                       </select>
                     </div>
+
                     <button
                       onClick={handleSaveToLocalStorage}
-                      className="px-3 py-1 text-sm font-semibold text-white bg-amber-600 hover:bg-amber-500 cursor-pointer rounded transition-colors"
-                      title="Save to browser storage for later"
+                      className="group relative flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-100 transition-all hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-teal-400 cursor-pointer"
+                      title="Save to browser"
                       type="button"
                     >
-                      💾 Save to Browser
+                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                        <path d="M7 3h10l4 4v14a1 1 0 01-1 1H4a1 1 0 01-1-1V4a1 1 0 011-1h3z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M7 3v9h10V3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M12 16h.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                      <span className="sr-only">Save preview to browser storage</span>
                     </button>
+
                     {hasSavedVersion && (
                       <button
                         onClick={handleClearLocalStorage}
-                        className="px-3 py-1 text-sm font-semibold text-white bg-red-600 hover:bg-red-500 cursor-pointer rounded transition-colors"
+                        className="group relative flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-100 transition-all hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-400 cursor-pointer"
                         title="Clear saved version"
                         type="button"
                       >
-                        🗑️ Clear Saved
+                        <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                          <path d="M4 7h16" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                          <path d="M16 7l-.9 12.2a1 1 0 01-.995.9H9.895a1 1 0 01-.995-.9L8 7" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                          <path d="M10 11v6M14 11v6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                          <path d="M9 7V4h6v3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        </svg>
+                        <span className="sr-only">Clear saved preview</span>
                       </button>
                     )}
-                  </div>
 
-                  {/* Action Buttons */}
-                  <div className="flex gap-4 justify-end flex-wrap">
-                    <button
-                      onClick={() => setIsPreviewModalOpen(false)}
-                      className="px-4 py-2 font-semibold cursor-pointer text-white bg-slate-700 hover:bg-slate-600 rounded-md transition-colors"
-                      type="button"
-                    >
-                      Close
-                    </button>
                     <button
                       onClick={() => {
                         const blob = new Blob([currentCode], { type: 'text/html' });
@@ -383,12 +370,18 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                         document.body.removeChild(link);
                         URL.revokeObjectURL(href);
                       }}
-                      className="inline-flex items-center justify-center px-4 py-2 font-semibold cursor-pointer text-white bg-blue-600 hover:bg-blue-500 rounded-md transition-colors"
+                      className="group relative flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-slate-100 transition-all hover:bg-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 cursor-pointer"
+                      title="Download HTML preview"
                       type="button"
                     >
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
-                      Download HTML
+                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                        <path d="M12 3v12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                        <path d="M8 11l4 4 4-4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        <path d="M6 19h12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      </svg>
+                      <span className="sr-only">Download HTML preview</span>
                     </button>
+
                     <button
                       onClick={async () => {
                         setIsDownloading(true);
@@ -408,7 +401,6 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                             throw new Error(error.error || 'Failed to generate package');
                           }
 
-                          // Get ZIP file from response
                           const blob = await response.blob();
                           const href = URL.createObjectURL(blob);
                           const link = document.createElement('a');
@@ -426,22 +418,48 @@ const HeroSection: React.FC<HeroSectionProps> = ({
                         }
                       }}
                       disabled={isDownloading}
-                      className="inline-flex items-center justify-center px-4 py-2 font-semibold cursor-pointer text-white bg-green-600 hover:bg-green-500 disabled:bg-gray-600 disabled:cursor-not-allowed rounded-md transition-colors"
+                      className={`group relative flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 cursor-pointer text-slate-100 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-green-400 ${isDownloading ? 'opacity-60 cursor-wait' : 'hover:bg-white/15'}`}
+                      title="Download React/Next.js package"
                       type="button"
                     >
                       {isDownloading ? (
-                        <>
-                          <svg className="w-5 h-5 mr-2 animate-spin" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle><path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                          Generating...
-                        </>
+                        <svg className="w-5 h-5 animate-spin" viewBox="0 0 24 24" fill="none">
+                          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"></circle>
+                          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V2a10 10 0 00-10 10h2z"></path>
+                        </svg>
                       ) : (
-                        <>
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 mr-2"><path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
-                          Download React/Next.js
-                        </>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 32 32" className="w-5 h-5">
+                          <title>Package SVG Icon</title>
+                          <path fill="currentColor" d="M26 30H6a2 2 0 0 1-2-2V16a2 2 0 0 1 2-2h3v2H6v12h20V16h-3v-2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2" />
+                          <path fill="currentColor" d="M13 20h6v2h-6zm7.59-11.41L17 12.17V2h-2v10.17l-3.59-3.58L10 10l6 6l6-6z" />
+                        </svg>
                       )}
+                      <span className="sr-only">Download React/Next.js package</span>
+                    </button>
+
+                    <button
+                      onClick={() => setIsPreviewModalOpen(false)}
+                      className="group relative flex h-11 w-11 items-center justify-center rounded-xl border cursor-pointer border-white/10 bg-white/5 text-slate-100 transition-all hover:bg-rose-500/20 hover:text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400"
+                      title="Close preview"
+                      type="button"
+                    >
+                      <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none">
+                        <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                      </svg>
+                      <span className="sr-only">Close preview modal</span>
                     </button>
                   </div>
+                </div>
+
+                {/* Preview */}
+                <div className="relative flex-1 overflow-hidden rounded-b-3xl bg-slate-950/40">
+                  <iframe
+                    srcDoc={currentCode}
+                    title="AI Generated Concept Template"
+                    className="w-full h-[70vh] min-h-[520px] border-0"
+                    sandbox="allow-scripts"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </div>
             </div>
