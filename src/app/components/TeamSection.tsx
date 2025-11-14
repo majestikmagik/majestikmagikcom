@@ -21,7 +21,7 @@ const teamMembers: TeamMember[] = [
     email: "jamil.matheny@majestikmagik.com",
     emailUrl: "mailto:jamil.matheny@majestikmagik.com",
     bio: "Jamil Matheny is the Founder & CEO of Majestik Magik, Inc., a digital solutions agency born from a lifelong passion for technology and a deep-seated desire to help businesses achieve their goals. He leads the company with a core mission: to create effective, purpose-driven websites that solve real-world business challenges.",
-    imageUrl: "/img/jamil_matheny_img.jpg",
+    imageUrl: "/img/0-jamil.jpg",
     url: "/about/jamil-matheny",
     social: [
       { name: "GitHub", url: "https://github.com/jmathtech", icon: <GithubIcon className="w-5 h-5" /> },

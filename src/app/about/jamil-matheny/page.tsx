@@ -10,7 +10,7 @@ const JamilMathenyContent: React.FC = () => {
         <div className="text-slate-300 leading-relaxed space-y-4">
             <h1 className="text-3xl md:text-4xl font-bold text-slate-100 mb-1">Jamil Matheny, Founder & CEO</h1>
             <p className="text-sm text-slate-400 mb-4">About the Founder</p>
-            <Image src="/img/jamil_matheny_img.jpg" alt="Jamil Matheny" width={150} height={150} className="float-left mr-4 mb-4 rounded-lg md:w-1/5" />
+            <Image src="/img/0-jamil.jpg" alt="Jamil Matheny" width={150} height={150} className="float-left mr-4 mb-4 rounded-lg md:w-1/5" />
             <p>Jamil Matheny is the Founder & CEO of Majestik Magik, Inc., a digital solutions agency born from a lifelong passion for technology and a deep-seated desire to help businesses achieve their goals. He leads the company with a core mission: to create effective, purpose-driven websites and AI-powered solutions that solve real-world business challenges.</p> <p>A Virginia native, Jamil&apos;s fascination with technology began at an early age. Mentored by a neighbor who worked in IT, he gained a foundational understanding of computer hardware components. This interest grew through various school clubs and after-school programs, and his journey into programming was sparked by the creative possibilities of early web platforms like Myspace and Yahoo Geocities.</p> 
             <div className="clear-both">
                 <Link href="/img/344705572_03be87188e_b.jpg"
