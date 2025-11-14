@@ -192,7 +192,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           className="max-w-5xl mx-auto mb-4 md:mb-6 text-lg md:text-xl text-slate-200 scroll-animate"
           style={{ transitionDelay: "0.1s" }}
         >
-          Helping small businesses build powerful websites that attract customers.
+          Helping small businesses build powerful digital systems that attract customers.
         </p>
 
         {/* Accessibility helper to reinforce long-tail terms without cluttering UI */}
