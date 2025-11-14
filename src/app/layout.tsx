@@ -12,8 +12,9 @@ import './globals.css';
 // The metadata export now works correctly because this is a Server Component.
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.majestikmagik.com'),
-  title: 'Majestik Magik | Helping Small Businesses Build Powerful Websites that Attract Customers',
-  description: 'Boost your business with Majestik Magik — Richmond’s AI-powered web design and marketing agency. We build custom AI websites that generate leads, improve SEO rankings, and convert traffic into sales — all in under 30 days. Get expert web design, local SEO, and digital strategy tailored to your industry.',
+  title: 'Majestik Magik | Helping Small Businesses Build Powerful Digital Systems that Attract Customers',
+  description:
+    'Majestik Magik helps small businesses build powerful digital systems that attract customers. Powered by AI, we create high-converting websites, automated funnels, custom AI tools, and modern branding built for growth. Launch your business faster with Majestik Magik AI.',
   authors: [{ name: 'Majestik Magik' }],
   manifest: '/site.webmanifest',
   icons: {
@@ -22,16 +23,17 @@ export const metadata: Metadata = {
     apple: '/img/majestikmagik_logo_indigo.png',
   },
   openGraph: {
-    title: 'Majestik Magik | Helping Small Businesses Build Powerful Websites that Attract Customers',
-    description: 'Boost your business with Majestik Magik — Richmond’s AI-powered web design and marketing agency. We build custom AI websites that generate leads, improve SEO rankings, and convert traffic into sales — all in under 30 days. Get expert web design, local SEO, and digital strategy tailored to your industry.',
+    title: 'Majestik Magik | Helping Small Businesses Build Powerful Digital Systems that Attract Customers',
+    description:
+      'Majestik Magik helps small businesses build powerful digital systems that attract customers. Using the Majestik Magik AI builder, you can create app concepts, generate websites, and launch digital systems built to convert. Perfect for entrepreneurs who want to grow fast.',
     url: 'https://www.majestikmagik.com',
     siteName: 'Majestik Magik',
     images: [
       {
-        url: '/img/screenshot_mm.png', // Relative to the public folder
+        url: '/img/screenshot_mm.png',
         width: 1200,
         height: 630,
-        alt: 'A screenshot of the Majestik Magik website homepage.',
+        alt: 'Majestik Magik AI website screenshot',
       },
     ],
     locale: 'en_US',
@@ -39,11 +41,13 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Majestik Magik | Helping Small Businesses Build Powerful Websites that Attract Customers',
-    description: 'Boost your business with Majestik Magik — Richmond’s AI-powered web design and marketing agency. We build custom AI websites that generate leads, improve SEO rankings, and convert traffic into sales — all in under 30 days. Get expert web design, local SEO, and digital strategy tailored to your industry.',
-    images: ['/img/screenshot_mm.png'], // Relative to the public folder
+    title: 'Majestik Magik | Helping Small Businesses Build Powerful Digital Systems that Attract Customers',
+    description:
+      'Build powerful digital systems that attract customers — with AI. Majestik Magik creates modern websites, automated funnels, and smart business tools tailored to your industry. Launch fast with Majestik Magik AI.',
+    images: ['/img/screenshot_mm.png'],
   },
 };
+
 
 
 export default function RootLayout({
